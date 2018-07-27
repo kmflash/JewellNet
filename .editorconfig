@@ -1,0 +1,33 @@
+# This file is for unifying the coding style for different editors and IDEs
+# editorconfig.org
+
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# spaces in JS unless otherwise specified
+[**.js]
+indent_size = 2
+
+[**.css]
+indent_size = 2
+
+[**.less]
+indent_size = 2
+
+[**.scss]
+indent_size = 2
+
+[**.jsp]
+indent_size = 4
+
+[**.php]
+indent_size = 4
+
+[**.java]
+indent_size = 4
