@@ -1,0 +1,23 @@
+{
+  "name": "jewell-net",
+  "title": "Jewell Net",
+  "version": "0.0.1",
+  "description": "Personal Site of David Jewell",
+  "homepage": "https://www.davidjewell.nyc",
+  "license": "MIT",
+  "author": {
+    "name": "David Jewell"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-qunit": "^2.0.0",
+    "grunt-contrib-uglify": "^3.4.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "dependencies": {}
+}
