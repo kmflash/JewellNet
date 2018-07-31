@@ -1,3 +1,4 @@
 #Global GIT ignores
 
 .DS_Store
+.vscode
