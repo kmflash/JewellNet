@@ -23,14 +23,24 @@
     font-size: 72px;
     color: @color-magenta;
     letter-spacing: -1.8px;
-    margin: 0 0 35px;
+    margin: 0 0 25px;
     line-height: 1;
     font-weight: 300;
     text-decoration: none;
 
+    @media @sm {
+      font-size: 50px;
+      margin-bottom: 14px;
+    }
+  }
+
+  a {
+    padding: 0 10px;
+
     &:hover {
-      color: @color-magenta;
-      text-decoration: underline;
+    background-color: @color-magenta;
+    opacity: .8;
+    color: white;
     }
   }
 
@@ -39,5 +49,9 @@
     font-size: 16px;
     letter-spacing: -0.07px;
     margin: 0;
+
+    @media @sm {
+      font-size: 12px;
+    }
   }
 }
