@@ -34,11 +34,14 @@ function position_background() {
 }
 
 function rotate_bg() {
-  rotateAmt = Math.random() * 50;
+  rotateAmt = Math.random() * 180 - 90;
   theBG.css('transform', 'rotate(' + rotateAmt + 'deg)');
 }
-
 
 window.onload = function () {
   rotate_bg();
 };
+
+var r = setTimeout(function () {
+  rotate_bg();
+}, 1000)
