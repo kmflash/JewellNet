@@ -13,8 +13,12 @@
     width: 10000px;
     height: 10000px;
     position: absolute;
-    transition: all 60s ease-in-out;
+    transition: all .5s ease-out;
     z-index: -1;
+
+    &.hovering {
+      background-color: fade(@color-magenta, 80%);
+    }
   }
 
 
@@ -35,11 +39,7 @@
   }
 
   a {
-    padding: 0 10px;
-
     &:hover {
-    background-color: @color-magenta;
-    opacity: .8;
     color: white;
     }
   }
