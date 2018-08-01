@@ -6,18 +6,19 @@ module.exports = function (grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+      '<%= grunt.template.today("yyyy-mm-dd @ HH:mm") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= pkg.license %> */\n',
     // Task configuration.
     uglify: {
       options: {
-        banner: '<%= banner %>'
+        banner: '<%= banner %>',
+        sourceMap: true,
       },
       dist: {
         src: '_src/js/*.js',
-        dest: 'js/jewellnet.min.js'
+        dest: 'dist/js/jewellnet.min.js'
       }
     },
     jshint: {
@@ -63,11 +64,12 @@ module.exports = function (grunt) {
     },
     less: {
       options: {
-        banner: '<%= banner %>'
+        banner: '<%= banner %>',
+        sourceMap: true,
       },
       dist: {
         src: '_src/less/import-all.less',
-        dest: 'css/jewellnet.css',
+        dest: 'dist/css/jewellnet.css',
       }
     }
   });
