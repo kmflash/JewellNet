@@ -41,7 +41,3 @@ function rotate_bg() {
 window.onload = function () {
   rotate_bg();
 };
-
-var r = setTimeout(function () {
-  rotate_bg();
-}, 1000)
