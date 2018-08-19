@@ -1,0 +1,81 @@
+/*! Jewell Net - v0.0.1 - 2018-08-18 @ 11:08
+* https://www.davidjewell.nyc
+* Copyright (c) 2018 David Jewell; Licensed MIT */
+/* This CSS resource incorporates links to font software which is the
+   valuable copyrighted property of Type Network, Inc. and/or their
+   suppliers. You may not attempt to copy, install, redistribute,
+   convert, modify or reverse engineer this font software. Please
+   contact Type Network with any questions: www.typenetwork.com */
+@font-face {
+  font-family: "Input Mono Reg";
+  font-weight: Normal;
+  font-style: Normal;
+  src: url("//cloud.typenetwork.com/projectLicenseWeb/13179/fontfile/eot/?9b3a94a70e4eeff04bdcafbe4abf9bbf4fc674ca");
+  src: url("//cloud.typenetwork.com/projectLicenseWeb/13179/fontfile/eot/?9b3a94a70e4eeff04bdcafbe4abf9bbf4fc674ca#iefix") format("embedded-opentype"), url("//cloud.typenetwork.com/projectLicenseWeb/13179/fontfile/woff2/?9b3a94a70e4eeff04bdcafbe4abf9bbf4fc674ca") format("woff2"), url("//cloud.typenetwork.com/projectLicenseWeb/13179/fontfile/woff/?9b3a94a70e4eeff04bdcafbe4abf9bbf4fc674ca") format("woff");
+}
+/***************************************************************
+These styles are subject to the following license agreement(s):
+
+https://store.typenetwork.com/cart/eula/djr
+***************************************************************/
+body {
+  font-family: 'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#splash {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+#splash #bg {
+  background-image: url("../img/waaaves-cropped.png");
+  width: 10000px;
+  height: 10000px;
+  position: absolute;
+  transition: background-position 0.5s ease-out;
+  transition: background-color 0.15s ease-in-out;
+  z-index: -1;
+}
+#splash #bg.hovering {
+  background-color: rgba(255, 23, 162, 0.8);
+}
+#splash h1,
+#splash a {
+  text-transform: uppercase;
+  font-size: 72px;
+  color: #FF17A2;
+  letter-spacing: -1.8px;
+  margin: 0 0 25px;
+  line-height: 1;
+  font-weight: 300;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  #splash h1,
+  #splash a {
+    font-size: 50px;
+    margin-bottom: 14px;
+  }
+}
+#splash a:hover {
+  color: white;
+}
+#splash aside {
+  font-family: "Input Mono Reg";
+  font-style: Normal;
+  font-weight: Normal;
+  text-transform: lowercase;
+  font-size: 16px;
+  letter-spacing: -0.07px;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  #splash aside {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=dist/css/jewellnet.css.map */
