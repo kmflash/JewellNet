@@ -17,6 +17,11 @@ module.exports = function (grunt) {
         sourceMap: true,
       },
       prod: {
+        options: {
+          output: {
+            comments: false,
+          },
+        },
         src: '_src/js/*.js',
         dest: 'dist/prod/js/jewellnet.min.js'
       }
