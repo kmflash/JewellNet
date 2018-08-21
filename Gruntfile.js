@@ -16,9 +16,9 @@ module.exports = function (grunt) {
         banner: '<%= banner %>',
         sourceMap: true,
       },
-      dist: {
+      prod: {
         src: '_src/js/*.js',
-        dest: 'dist/js/jewellnet.min.js'
+        dest: 'dist/prod/js/jewellnet.min.js'
       }
     },
     jshint: {
@@ -67,9 +67,16 @@ module.exports = function (grunt) {
         banner: '<%= banner %>',
         sourceMap: true,
       },
-      dist: {
+      prod: {
+        options: {
+          compress: true,
+        },
         src: '_src/less/import-all.less',
-        dest: 'dist/css/jewellnet.css',
+        dest: 'dist/prod/css/jewellnet.min.css',
+      },
+      dev: {
+        src: '_src/less/import-all.less',
+        dest: 'dist/dev/css/jewellnet.css',
       }
     }
   });
@@ -82,6 +89,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task.
-  grunt.registerTask('default', ['less', 'jshint', 'qunit', 'uglify']);
+  grunt.registerTask('default', ['less:dev', 'jshint', 'qunit']);
+
+  grunt.registerTask('dev', ['less:dev', 'jshint', 'qunit']);
+  grunt.registerTask('prod', ['less:prod', 'jshint', 'qunit', 'uglify:prod']);
 
 };
