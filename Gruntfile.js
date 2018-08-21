@@ -88,15 +88,14 @@ module.exports = function (grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task.
-  grunt.registerTask('default', ['less:dev', 'jshint', 'qunit']);
+  grunt.registerTask('default', ['less:dev', 'jshint']);
 
-  grunt.registerTask('dev', ['less:dev', 'jshint', 'qunit']);
-  grunt.registerTask('prod', ['less:prod', 'jshint', 'qunit', 'uglify:prod']);
+  grunt.registerTask('dev', ['less:dev', 'jshint']);
+  grunt.registerTask('prod', ['less:prod', 'jshint', 'uglify:prod']);
 
 };
