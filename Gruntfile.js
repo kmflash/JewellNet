@@ -107,6 +107,24 @@ module.exports = function (grunt) {
           'dist/dev/splash/css/dj-splash.css': ['_src/less/splash.less'],
         }
       }
+    },
+    copy: {
+      dev: {
+        files: [
+          { expand: true, cwd: '_src', src: ['img/social/*'], dest: 'dist/dev/' },
+        ]
+      },
+      prod: {
+        files: [
+          { expand: true, cwd: '_src', src: ['img/social/*'], dest: 'dist/prod/' },
+        ]
+      },
+      complete: {
+        files: [
+          { expand: true, cwd: '_src', src: ['img/*', 'fonts/**'], dest: 'dist/prod' },
+          { expand: true, cwd: '_src', src: ['img/*', 'fonts/**'], dest: 'dist/dev' },
+        ]
+      }
     }
   });
 
@@ -115,11 +133,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task.
   grunt.registerTask('default', ['less:dev', 'uglify:dev']);
 
-  grunt.registerTask('dev', ['less:dev', 'uglify:dev']);
-  grunt.registerTask('prod', ['less:prod', 'uglify:prod']);
+  grunt.registerTask('dev', ['less:dev', 'uglify:dev', 'copy:dev']);
+  grunt.registerTask('prod', ['less:prod', 'uglify:prod', 'copy:prod']);
+
+  grunt.registerTask('complete', ['dev', 'prod', 'copy:complete']);
 
 };

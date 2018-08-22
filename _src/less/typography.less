@@ -13,8 +13,12 @@ h1 {
   font-size: @h1-sm;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: -.5px;
+  letter-spacing: @h1-sm-ls;
 
+  @media @md {
+    font-size: @h1-lg;
+    letter-spacing: @h1-lg-ls;
+  }
 }
 
 h2 {
@@ -23,5 +27,10 @@ h2 {
   font-size: @h2-sm;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: .8px;
+  letter-spacing: @h2-sm-ls;
+
+  @media @md {
+    font-size: @h2-lg;
+    letter-spacing: @h2-lg-ls;
+  }
 }
