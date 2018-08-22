@@ -93,12 +93,19 @@ module.exports = function (grunt) {
         options: {
           compress: true,
         },
-        src: '_src/less/import-all.less',
-        dest: 'dist/prod/css/jewellnet.min.css',
+        files: {
+          'dist/prod/css/jewellnet.min.css': ['_src/less/import-all.less'],
+          'dist/prod/splash/css/dj-splash.min.css': ['_src/less/splash.less'],
+        }
       },
       dev: {
-        src: '_src/less/import-all.less',
-        dest: 'dist/dev/css/jewellnet.css',
+        options: {
+          compress: false,
+        },
+        files: {
+          'dist/dev/css/jewellnet.css': ['_src/less/import-all.less'],
+          'dist/dev/splash/css/dj-splash.css': ['_src/less/splash.less'],
+        }
       }
     }
   });
