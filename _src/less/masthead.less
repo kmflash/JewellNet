@@ -1,0 +1,50 @@
+.masthead {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &__headline {
+    display: inline-block;
+    flex-grow: 1;
+    margin: 0 0 2px;
+    border-top: solid @tl-height @color-highlight;
+    width: percentage(@bp-container-sm / @bp-xs-baseline);
+    text-align: center;
+
+    a {
+      font-weight: @font-normal-light;
+
+      text-transform: uppercase;
+      font-family: @font-normal;
+      text-decoration: none;
+
+      color: @color-highlight;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__aside {
+    font-family: @font-mono;
+    font-size: @aside-sm;
+    width: percentage(@bp-container-sm / @bp-xs-baseline);
+    text-align: center;
+    letter-spacing: -0.05px;
+  }
+
+  &__intro {
+    width: percentage(@bp-container-sm / @bp-xs-baseline);
+    font-family: @font-mono-light;
+    font-size: @intro-sm;
+    line-height: @intro-sm-lh;
+    color: @color-dark-grey;
+
+    strong {
+      font-family: @font-mono-med;
+    }
+  }
+}

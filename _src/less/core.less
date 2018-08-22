@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: @color-bg;
+  color: @color-black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.masthead__links {
+  display: none;
+}
+
+.main {
+  width: percentage(@bp-container-sm / @bp-xs-baseline);
+  border-top: solid @h2-border-height @color-light-grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    margin: -@h2-border-height 0 20px;
+    padding-top: 10 - @h2-border-height;
+    border-top: solid @h2-border-height @color-black;
+  }
+}
