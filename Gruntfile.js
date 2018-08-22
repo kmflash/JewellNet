@@ -112,17 +112,19 @@ module.exports = function (grunt) {
       dev: {
         files: [
           { expand: true, cwd: '_src', src: ['img/social/*'], dest: 'dist/dev/' },
+          { expand: true, flatten: true, cwd: '_src', src: ['html/*'], dest: 'dist/dev/' }
         ]
       },
       prod: {
         files: [
           { expand: true, cwd: '_src', src: ['img/social/*'], dest: 'dist/prod/' },
+          { expand: true, flatten: true, cwd: '_src', src: ['html/*'], dest: 'dist/prod/' }
         ]
       },
       complete: {
         files: [
-          { expand: true, cwd: '_src', src: ['img/*', 'fonts/**'], dest: 'dist/prod' },
-          { expand: true, cwd: '_src', src: ['img/*', 'fonts/**'], dest: 'dist/dev' },
+          { expand: true, cwd: '_src', src: ['img/*', 'fonts/**'], dest: 'dist/prod/' },
+          { expand: true, cwd: '_src', src: ['img/*', 'fonts/**'], dest: 'dist/dev/' },
         ]
       }
     }
