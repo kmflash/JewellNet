@@ -1,4 +1,7 @@
 /*global module:false*/
+
+// todo: figure out if jshint is needed
+
 module.exports = function (grunt) {
 
   // Project configuration.
@@ -22,8 +25,22 @@ module.exports = function (grunt) {
             comments: false,
           },
         },
-        src: '_src/js/*.js',
-        dest: 'dist/prod/js/jewellnet.min.js'
+        files: {
+          'dist/prod/js/jewellnet.min.js': ['_src/js/base.js'],
+          'dist/prod/splash/js/dj-splash.js': ['_src/js/base.js', '_src/js/splash.js'],
+        }
+      },
+      dev: {
+        options: {
+          output: {
+            comments: true,
+            beautify: true,
+          }
+        },
+        files: {
+          'dist/prod/js/jewellnet.min.js': ['_src/js/base.js'],
+          'dist/prod/splash/js/dj-splash.js': ['_src/js/base.js', '_src/js/splash.js'],
+        }
       }
     },
     jshint: {
@@ -93,9 +110,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task.
-  grunt.registerTask('default', ['less:dev', 'jshint']);
+  grunt.registerTask('default', ['less:dev', 'uglify:dev']);
 
-  grunt.registerTask('dev', ['less:dev', 'jshint']);
-  grunt.registerTask('prod', ['less:prod', 'jshint', 'uglify:prod']);
+  grunt.registerTask('dev', ['less:dev', 'uglify:dev']);
+  grunt.registerTask('prod', ['less:prod', 'uglify:prod']);
 
 };
