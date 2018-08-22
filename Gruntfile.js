@@ -80,8 +80,8 @@ module.exports = function (grunt) {
         tasks: ['jshint:lib_test', 'qunit']
       },
       default: {
-        files: ['_src/**/*.less', '_src/**/*.js'],
-        tasks: 'default'
+        files: ['_src/**/*.less', '_src/**/*.js', '_src/**/*.html'],
+        tasks: 'dev'
       }
     },
     less: {
