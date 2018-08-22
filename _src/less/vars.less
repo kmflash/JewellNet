@@ -1,6 +1,13 @@
 // Fonts
-@font-normal: ~"'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, Arial, sans-serif";
-@font-mono: ~"'Input Mono Reg', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+@font-waterfall: ~"'Helvetica Neue', Helvetica, Arial, sans-serif";
+@font-normal: ~"'Gotham A', 'Gotham B'," @font-waterfall;
+@font-mono: ~"'Input Mono Reg'," @font-waterfall;
+@font-mono-light: ~"'Input Mono Lt'," @font-waterfall;
+@font-mono-med: ~"'Input Mono Med'," @font-waterfall;
+
+@font-normal-light: 300;
+@font-normal-book: 400;
+@font-normal-med: 500;
 
 // Colors
 @color-magenta: #FF17A2;
