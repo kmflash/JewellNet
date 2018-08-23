@@ -3,6 +3,8 @@ body {
   padding: 0;
   background-color: @color-bg;
   color: @color-black;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .content {
@@ -19,7 +21,7 @@ body {
   align-items: center;
 
   &__title {
-    margin: -@h2-border-height 0 20px;
+    margin: -@h2-border-height 0 0;
     padding-top: 10 - @h2-border-height;
     border-top: solid @h2-border-height @color-black;
   }
