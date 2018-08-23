@@ -31,6 +31,71 @@
     letter-spacing: -0.05px;
   }
 
+  &__links {
+    @links-height: 26px;
+
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0 30px;
+    padding: 0;
+    justify-content: space-around;
+    width: percentage(@bp-container-sm / @bp-xs-baseline);
+    height: @links-height;
+
+    li {
+      margin: 0;
+      padding: 0;
+
+      a {
+        display: inline-block;
+        width: @links-height;
+        height: @links-height;
+
+        svg {
+          width: @links-height;
+          height: @links-height;
+
+          path {
+            fill: @color-mid-grey;
+          }
+        }
+      }
+    }
+
+    &--linkedin {
+      a:hover {
+        svg path {
+          fill: @color-linkedin;
+        }
+      }
+    }
+
+    &--github {
+      a:hover {
+        svg path {
+          fill: @color-black;
+        }
+      }
+    }
+
+    &--instagram {
+      a:hover {
+        svg path {
+          fill: @color-insta;
+        }
+      }
+    }
+
+    &--strava {
+      a:hover {
+        svg path {
+          fill: @color-strava;
+        }
+      }
+    }
+  }
+
   &__intro {
     width: percentage(@bp-container-sm / @bp-xs-baseline);
     font-family: @font-mono-light;
