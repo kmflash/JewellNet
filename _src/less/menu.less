@@ -1,0 +1,32 @@
+.masthead__menu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  &-burger {
+    width: 64px;
+    height: 64px;
+    background-color: @color-magenta;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      width: 30px;
+      height: 38px;
+    }
+
+    @{no-touch} &:hover {
+      background-color: @color-black;
+
+      svg {
+        fill: @color-white;
+      }
+    }
+  }
+
+  &-wrapper {
+    display: none;
+  }
+}
