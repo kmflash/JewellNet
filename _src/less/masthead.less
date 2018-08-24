@@ -11,6 +11,7 @@
     margin: 0 0 2px;
     border-top: solid @tl-height @color-highlight;
     text-align: center;
+    padding-top: 10px;
 
     a {
       text-decoration: none;
@@ -25,8 +26,14 @@
   &__aside {
     font-family: @font-mono;
     font-size: @aside-sm;
+    line-height: 1;
     text-align: center;
     letter-spacing: -0.05px;
+    text-transform: lowercase;
+
+    @media @md {
+      font-size: @aside-lg;
+    }
   }
 
   &__links {
@@ -40,6 +47,10 @@
     justify-content: space-around;
     width: percentage(@bp-container-sm / @bp-xs-baseline);
     height: @links-height;
+
+    @media @md {
+      width: 266px;
+    }
 
     li {
       margin: 0;
@@ -103,6 +114,12 @@
 
     strong {
       font-family: @font-mono-med;
+    }
+
+    @media @md {
+      width: @bp-container-md;
+      font-size: @intro-md;
+      line-height: @intro-md-lh;
     }
   }
 }

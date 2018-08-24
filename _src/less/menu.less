@@ -4,8 +4,8 @@
   right: 0;
 
   &-burger {
-    width: 64px;
-    height: 64px;
+    width: @burger-width-sm;
+    height: @burger-width-sm;
     background-color: @color-magenta;
     display: flex;
     align-items: center;
@@ -28,5 +28,27 @@
 
   &-wrapper {
     display: none;
+  }
+
+  @media @md {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: 0;
+
+    &-burger {
+      position: relative;
+      top: 28px;
+      left: -@burger-width-lg / 2;
+      width: @burger-width-lg;
+      height: @burger-width-lg;
+      transition: left .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      @{no-touch} &:hover {
+        left: 0;
+      }
+    }
+
   }
 }

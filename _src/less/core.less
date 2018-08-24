@@ -25,6 +25,22 @@ body {
     padding-top: 10 - @h2-border-height;
     border-top: solid @h2-border-height @color-black;
   }
+
+  @media @md {
+    width: @bp-container-md;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: unset;
+
+    &__title-wrapper {
+      flex-basis: 100%;
+      justify-self: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
 }
 
 body.scrolled {
