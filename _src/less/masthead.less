@@ -16,7 +16,7 @@
       text-decoration: none;
       color: @color-highlight;
 
-      &:hover {
+      @{no-touch} &:hover {
         text-decoration: none;
       }
     }
@@ -61,32 +61,32 @@
       }
     }
 
-    &--linkedin {
-      a:hover {
+    &--linkedin a{
+      @{no-touch} &:hover {
         svg path {
           fill: @color-linkedin;
         }
       }
     }
 
-    &--github {
-      a:hover {
+    &--github a{
+      @{no-touch} &:hover {
         svg path {
           fill: @color-black;
         }
       }
     }
 
-    &--instagram {
-      a:hover {
+    &--instagram a{
+      @{no-touch} &:hover {
         svg path {
           fill: @color-insta;
         }
       }
     }
 
-    &--strava {
-      a:hover {
+    &--strava a{
+      @{no-touch} &:hover {
         svg path {
           fill: @color-strava;
         }
@@ -105,4 +105,28 @@
       font-family: @font-mono-med;
     }
   }
+}
+
+// styles to apply once we've scrolled
+body.scrolled {
+  .masthead {
+    width: 100%;
+    position: fixed;
+    height: 68px;
+    background-image: linear-gradient(0deg, rgba(255,255,255,0.00) 0%, #FFFFFF 61%);
+    border-top: solid @tl-scroll-height @color-light-grey;
+
+    &__headline {
+      border-top-width: @tl-scroll-height;
+      font-size: @h1-sm-scrolled;
+      margin-top: -@tl-scroll-height;
+    }
+
+    &__links,
+    &__aside,
+    &__intro {
+      display: none;
+    }
+  }
+
 }
