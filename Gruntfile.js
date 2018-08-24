@@ -27,6 +27,7 @@ module.exports = function (grunt) {
         },
         files: {
           'dist/prod/js/jewellnet.min.js': ['_src/js/base.js'],
+          'dist/prod/js/jquery-scrollspy.min.js': ['_src/js/jquery-scrollspy.js'],
           'dist/prod/splash/js/dj-splash.js': ['_src/js/base.js', '_src/js/splash.js'],
         }
       },
@@ -39,6 +40,7 @@ module.exports = function (grunt) {
         },
         files: {
           'dist/dev/js/jewellnet.js': ['_src/js/base.js'],
+          'dist/dev/js/jquery-scrollspy.js': ['_src/js/jquery-scrollspy.js'],
           'dist/dev/splash/js/dj-splash.js': ['_src/js/base.js', '_src/js/splash.js'],
         }
       }
