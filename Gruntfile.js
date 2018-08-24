@@ -112,19 +112,23 @@ module.exports = function (grunt) {
       dev: {
         files: [
           { expand: true, cwd: '_src', src: ['img/social/**', 'img/portfolio/**'], dest: 'dist/dev/' },
-          { expand: true, flatten: true, cwd: '_src', src: ['html/*'], dest: 'dist/dev/' }
+          { expand: true, flatten: true, cwd: '_src', src: ['html/*'], dest: 'dist/dev/' },
+          { expand: true, cwd: '_src', src: ['css/*'], dest: 'dist/dev/' }
         ]
       },
       prod: {
         files: [
           { expand: true, cwd: '_src', src: ['img/social/**', 'img/portfolio/**'], dest: 'dist/prod/' },
-          { expand: true, flatten: true, cwd: '_src', src: ['html/*'], dest: 'dist/prod/' }
+          { expand: true, flatten: true, cwd: '_src', src: ['html/*'], dest: 'dist/prod/' },
+          { expand: true, cwd: '_src', src: ['css/*'], dest: 'dist/prod/' }
         ]
       },
       complete: {
         files: [
           { expand: true, cwd: '_src', src: ['img/*', 'fonts/**'], dest: 'dist/prod/' },
           { expand: true, cwd: '_src', src: ['img/*', 'fonts/**'], dest: 'dist/dev/' },
+          { expand: true, cwd: '_src', src: ['js/modernizr.js'], dest: 'dist/prod/' },
+          { expand: true, cwd: '_src', src: ['js/modernizr.js'], dest: 'dist/dev/' },
         ]
       }
     }
