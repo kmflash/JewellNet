@@ -35,7 +35,7 @@
     top: 0;
     left: 0;
     bottom: auto;
-    right: 0;
+    right: auto;
 
     &-burger {
       position: relative;
@@ -49,6 +49,11 @@
         left: 0;
       }
     }
+  }
 
+  @media @xl {
+    &-burger {
+      top: 42px;
+    }
   }
 }

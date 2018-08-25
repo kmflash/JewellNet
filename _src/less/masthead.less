@@ -25,6 +25,10 @@
     @media @md {
       margin-bottom: 10px;
     }
+
+    @media @xl {
+      padding-top: 42px;
+    }
   }
 
   &__aside {
@@ -54,15 +58,20 @@
     padding: 0;
     justify-content: space-around;
     height: @links-height;
+    width: 266px;
 
     @media @md {
-      width: 266px;
       margin-left: auto;
       margin-right: auto;
     }
 
     @media @lg {
       margin-right: 0;
+    }
+
+    @media @xl {
+      margin-left: 0;
+      justify-content: space-between;
     }
 
     li {
@@ -139,6 +148,12 @@
       width: 100%;
       margin-top: 40px;
     }
+
+    @media @xl {
+      width: 666px;
+      align-self: flex-end;
+      margin-top: 56px;
+    }
   }
 
   @media @lg {
@@ -146,6 +161,13 @@
     flex-wrap: wrap;
     width: @bp-container-lg;
     margin: auto;
+  }
+
+  @media @xl {
+    width: @bp-container-xl;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 300px;
   }
 }
 
