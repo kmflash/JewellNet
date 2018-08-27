@@ -85,12 +85,16 @@ h3 {
     text-transform: uppercase;
     line-height: @h4-sm-lh;
     font-size: @h4-sm;
-    margin: -@h4-border-height;
+    margin: -@h4-border-height 0 0;
     padding-top: 5 - @h4-border-height;
     border-top: solid @h4-border-height @color-black;
 
     @media @lg {
       font-size: @h4-lg;
     }
+  }
+
+  @media @md {
+    justify-content: flex-start;
   }
 }
