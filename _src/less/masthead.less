@@ -94,7 +94,7 @@
       }
     }
 
-    &--linkedin a{
+    &--linkedin a {
       @{no-touch} &:hover {
         svg path {
           fill: @color-linkedin;
@@ -102,7 +102,7 @@
       }
     }
 
-    &--github a{
+    &--github a {
       @{no-touch} &:hover {
         svg path {
           fill: @color-black;
@@ -110,7 +110,7 @@
       }
     }
 
-    &--instagram a{
+    &--instagram a {
       @{no-touch} &:hover {
         svg path {
           fill: @color-insta;
@@ -118,7 +118,7 @@
       }
     }
 
-    &--strava a{
+    &--strava a {
       @{no-touch} &:hover {
         svg path {
           fill: @color-strava;
@@ -128,7 +128,7 @@
   }
 
   &__intro {
-    width: percentage(@bp-container-sm / @bp-xs-baseline);
+    .xs-container;
     font-family: @font-mono-light;
     font-size: @intro-sm;
     line-height: @intro-sm-lh;
@@ -177,7 +177,11 @@ body.scrolled {
     width: 100%;
     position: fixed;
     height: 68px;
-    background-image: linear-gradient(0deg, rgba(255,255,255,0.00) 0%, #FFFFFF 61%);
+    background-image: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 61%
+    );
     border-top: solid @tl-scroll-height @color-light-grey;
 
     &__headline {
@@ -192,5 +196,4 @@ body.scrolled {
       display: none;
     }
   }
-
 }

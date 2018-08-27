@@ -14,17 +14,10 @@ body {
 }
 
 .main {
-  width: percentage(@bp-container-sm / @bp-xs-baseline);
-  border-top: solid @h2-border-height @color-light-grey;
+  .xs-container;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  &__title {
-    margin: -@h2-border-height 0 0;
-    padding-top: 10 - @h2-border-height;
-    border-top: solid @h2-border-height @color-black;
-  }
 
   @media @md {
     width: @bp-container-md;
@@ -32,22 +25,10 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: unset;
-
-    &__title-wrapper {
-      flex-basis: 100%;
-      justify-self: center;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
   }
 
   @media @lg {
     width: @bp-container-lg;
-
-    &__title-wrapper {
-      justify-content: flex-start;
-    }
   }
 
   @media @xl {

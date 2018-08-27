@@ -3,7 +3,12 @@ body {
   font-family: @font-normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
@@ -35,10 +40,57 @@ h2 {
   }
 }
 
+.h2-wrapper {
+  border-top: solid @h2-border-height @color-light-grey;
+  width: 100%;
+  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  h2 {
+    margin: -@h2-border-height 0 0;
+    padding-top: 10 - @h2-border-height;
+    border-top: solid @h2-border-height @color-black;
+  }
+
+  @media @md {
+    flex-basis: 100%;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media @lg {
+    justify-content: flex-start;
+  }
+}
+
 h3 {
   font-weight: @font-normal-med;
   text-transform: uppercase;
   font-size: @h3;
   line-height: @h3-lh;
   letter-spacing: @h3-ls;
+}
+
+.h4-wrapper {
+  border-top: solid @h4-border-height @color-light-grey;
+  width: 100%;
+
+  h4 {
+    display: inline-block;
+    font-weight: @font-normal-med;
+    text-transform: uppercase;
+    line-height: @h4-sm-lh;
+    font-size: @h4-sm;
+    margin: -@h4-border-height;
+    padding-top: 5 - @h4-border-height;
+    border-top: solid @h4-border-height @color-black;
+
+    @media @lg {
+      font-size: @h4-lg;
+    }
+  }
 }
