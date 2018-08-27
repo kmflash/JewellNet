@@ -8,6 +8,18 @@
 @carousel-image-width-lg: 526px;
 @carousel-image-height-lg: 324px;
 
+@carousel-image-width-xl: 655px;
+@carousel-image-height-xl: 409px;
+
+body#detail {
+  @media @xl {
+    .masthead {
+      height: auto;
+      margin-bottom: 30px;
+    }
+  }
+}
+
 .project {
   display: flex;
   flex-direction: column;
@@ -147,6 +159,15 @@
         height: @carousel-image-height-lg;
       }
     }
+
+    @media @xl {
+      flex-basis: @carousel-image-width-xl;
+
+      &--image-wrapper {
+        width: @carousel-image-width-xl;
+        height: @carousel-image-height-xl;
+      }
+    }
   }
 
   &-info {
@@ -177,6 +198,10 @@
 
     @media @lg {
       flex-basis: 267px;
+    }
+
+    @media @xl {
+      flex-basis: 460px;
     }
   }
 }
