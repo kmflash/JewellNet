@@ -184,16 +184,47 @@ body.scrolled {
     );
     border-top: solid @tl-scroll-height @color-light-grey;
 
+    &__inner-wrapper {
+      @media @md {
+        width: @bp-container-md;
+        margin: auto;
+      }
+
+      @media @lg {
+        width: @bp-container-lg;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @media @xl {
+        width: @bp-container-xl;
+      }
+    }
+
     &__headline {
       border-top-width: @tl-scroll-height;
       font-size: @h1-sm-scrolled;
       margin-top: -@tl-scroll-height;
+
+      @media @md-only {
+        &-block {
+          text-align: center;
+        }
+      }
+
+      @media @xl {
+        padding-top: 10px;
+      }
     }
 
     &__links,
     &__aside,
     &__intro {
       display: none;
+    }
+
+    @media @md {
+      height: auto;
     }
   }
 }

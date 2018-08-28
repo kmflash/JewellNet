@@ -1,4 +1,3 @@
-@menu-height: 134px; // HAS to be an explicit value for animation to work
 .masthead__menu {
   position: fixed;
   bottom: 0;
@@ -46,11 +45,20 @@
     ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+    }
+
+    li {
+      text-align: center;
+
+      &.disabled a {
+        pointer-events: none;
+        color: @color-light-grey;
+        cursor: not-allowed;
+      }
     }
 
     a {
-      display: block;
+      display: inline-block;
       font-weight: @font-normal-med;
       color: @color-white;
       text-transform: uppercase;
@@ -58,10 +66,13 @@
       font-size: 21px;
       text-decoration: none;
       text-align: center;
-      padding: 5px 0;
+      padding: 2px 0 7px;
+      margin-top: -2px;
+      border-top: solid 2px transparent;
 
       @{no-touch} &:hover {
         color: @color-magenta;
+        border-top-color: @color-white;
       }
     }
 
@@ -101,9 +112,7 @@
   }
 
   @media @xl {
-    &-burger {
-      top: 42px;
-    }
+    top: @menu-pos-xl;
   }
 
   &.open {
@@ -126,7 +135,61 @@
         }
 
         @media @md {
-          width: @bp-xs-baseline;
+          width: @menu-width;
+        }
+      }
+    }
+  }
+}
+
+body.scrolled {
+  .masthead {
+    &__menu {
+      @media @md {
+        top: @menu-pos-md;
+      }
+
+      @media @lg {
+        top: 0;
+        left: unset;
+        position: relative;
+
+        &-burger {
+          display: none;
+        }
+
+        &-list {
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        &-wrapper {
+          background-color: transparent;
+          width: auto;
+          height: auto;
+
+          li {
+            display: inline-block;
+            margin: 0 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &.disabled a {
+              color: @color-light-grey;
+            }
+          }
+
+          a {
+            color: @color-magenta;
+            font-size: @menu-font-size-lg;
+
+            @{no-touch} &:hover {
+              color: @color-black;
+              border-top-color: @color-magenta;
+            }
+          }
         }
       }
     }
