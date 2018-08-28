@@ -1,7 +1,12 @@
+@menu-height: 134px; // HAS to be an explicit value for animation to work
 .masthead__menu {
   position: fixed;
   bottom: 0;
   right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
   &-burger {
     width: @burger-width-sm;
@@ -11,6 +16,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: background-color @default-transition;
 
     svg {
       width: 30px;
@@ -24,26 +30,69 @@
         fill: @color-white;
       }
     }
+
+    @media @md {
+      order: 2;
+    }
   }
 
   &-wrapper {
-    display: none;
+    height: 0;
+    width: 0;
+    background-color: @color-black;
+    transition: all @springy-transition;
+    overflow: hidden;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      display: block;
+      font-weight: @font-normal-med;
+      color: @color-white;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 21px;
+      text-decoration: none;
+      text-align: center;
+      padding: 5px 0;
+
+      @{no-touch} &:hover {
+        color: @color-magenta;
+      }
+    }
+
+    @media @sm {
+      width: 100%;
+    }
   }
 
   @media @md {
     position: absolute;
-    top: 0;
+    top: 28px;
     left: 0;
     bottom: auto;
     right: auto;
+    flex-direction: row;
+    align-items: flex-start;
+
+    &-wrapper {
+      height: @menu-height;
+      width: 0;
+      ul {
+        margin: 16px 20px;
+      }
+    }
 
     &-burger {
       position: relative;
-      top: 28px;
       left: -@burger-width-lg / 2;
       width: @burger-width-lg;
       height: @burger-width-lg;
-      transition: left .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: left @default-transition;
 
       @{no-touch} &:hover {
         left: 0;
@@ -54,6 +103,32 @@
   @media @xl {
     &-burger {
       top: 42px;
+    }
+  }
+
+  &.open {
+    .masthead__menu {
+      &-burger {
+        background-color: @color-black;
+
+        @{no-touch} &:hover {
+          background-color: @color-magenta;
+        }
+
+        @media @md {
+          left: 0;
+        }
+      }
+
+      &-wrapper {
+        @media @sm {
+          height: @menu-height;
+        }
+
+        @media @md {
+          width: @bp-xs-baseline;
+        }
+      }
     }
   }
 }

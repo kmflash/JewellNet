@@ -31,7 +31,7 @@
 
 @bp-sm: 767px;
 @bp-md: 1024px;
-@bp-lg: 1200px;
+@bp-lg: 1300px;
 
 // --| container sizes @ breakpoint
 @bp-container-sm: 320px;
@@ -51,6 +51,9 @@
 // Burger vars
 @burger-width-sm: 64px;
 @burger-width-lg: 50px;
+
+// Timing
+@timing-default: 0.25s;
 
 // Type Sizes, Line Heights (lh) & Letter Spacing (ls)
 @h1-sm: 42px;
@@ -100,3 +103,5 @@
 
 // utility vars
 @no-touch: ~"html:not(.touchevents)";
+@default-transition: @timing-default cubic-bezier(0.075, 0.82, 0.165, 1);
+@springy-transition: @timing-default cubic-bezier(0.68, -0.55, 0.27, 1.55);
