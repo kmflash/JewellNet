@@ -106,40 +106,43 @@ function toggleNav() {
 
 $burgerButton.click(toggleNav);
 
-// Set up slideshow
-var show = new Slideshow($(pageInfo.carousel.imgs));
-$(pageInfo.carousel.controls.fwd).click(function() {
-  show.nextImage();
-});
-
-$(pageInfo.carousel.controls.back).click(function() {
-  show.prevImage();
-});
-
-// Enable swiping
-var stage = document.querySelector(pageInfo.carousel.wrapper);
-var swipd = new Hammer(stage);
-swipd
-  .on("swipeleft", function(ev) {
+// if on a detail page...
+if (document.querySelector("body#detail")) {
+  // Set up slideshow
+  var show = new Slideshow($(pageInfo.carousel.imgs));
+  $(pageInfo.carousel.controls.fwd).click(function() {
     show.nextImage();
-  })
-  .on("swiperight", function(ev) {
+  });
+
+  $(pageInfo.carousel.controls.back).click(function() {
     show.prevImage();
   });
 
-//bind arrow keys to slideshow
-$(document).keydown(function(e) {
-  switch (e.which) {
-    case 37: // left
-      show.prevImage();
-      break;
-
-    case 39: // right
+  // Enable swiping
+  var stage = document.querySelector(pageInfo.carousel.wrapper);
+  var swipd = new Hammer(stage);
+  swipd
+    .on("swipeleft", function(ev) {
       show.nextImage();
-      break;
+    })
+    .on("swiperight", function(ev) {
+      show.prevImage();
+    });
 
-    default:
-      return; // exit this handler for other keys
-  }
-  e.preventDefault(); // prevent the default action (scroll / move caret)
-});
+  //bind arrow keys to slideshow
+  $(document).keydown(function(e) {
+    switch (e.which) {
+      case 37: // left
+        show.prevImage();
+        break;
+
+      case 39: // right
+        show.nextImage();
+        break;
+
+      default:
+        return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+  });
+}
