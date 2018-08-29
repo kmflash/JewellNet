@@ -106,8 +106,8 @@ function toggleNav() {
 
 $burgerButton.click(toggleNav);
 
+// Set up slideshow
 var show = new Slideshow($(pageInfo.carousel.imgs));
-
 $(pageInfo.carousel.controls.fwd).click(function() {
   show.nextImage();
 });
@@ -126,3 +126,20 @@ swipd
   .on("swiperight", function(ev) {
     show.prevImage();
   });
+
+//bind arrow keys to slideshow
+$(document).keydown(function(e) {
+  switch (e.which) {
+    case 37: // left
+      show.prevImage();
+      break;
+
+    case 39: // right
+      show.nextImage();
+      break;
+
+    default:
+      return; // exit this handler for other keys
+  }
+  e.preventDefault(); // prevent the default action (scroll / move caret)
+});
