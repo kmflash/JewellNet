@@ -21,20 +21,12 @@ module.exports = function(grunt) {
       },
       prod: {
         options: {
+          compress: true,
           output: {
-            comments: false
+            comments: false,
+            beautify: false
           }
         },
-        // files: {
-        //   "dist/prod/js/jewellnet.min.js": ["_src/js/base.js"],
-        //   "dist/prod/js/jquery-scrollspy.min.js": [
-        //     "_src/js/jquery-scrollspy.js"
-        //   ],
-        //   "dist/prod/splash/js/dj-splash.js": [
-        //     "_src/js/base.js",
-        //     "_src/js/splash.js"
-        //   ]
-        // }
         files: [
           { src: "_src/js/base.js", dest: "dist/prod/js/jewellnet.js" },
           {
@@ -53,6 +45,8 @@ module.exports = function(grunt) {
       },
       dev: {
         options: {
+          compress: true,
+
           output: {
             comments: true,
             beautify: true
