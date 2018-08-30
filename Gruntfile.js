@@ -33,7 +33,8 @@ module.exports = function(grunt) {
             src: [
               "_src/js/lib/jquery-3.3.1.min.js",
               "_src/js/lib/jquery-scrollspy.js",
-              "_src/js/lib/hammer.js"
+              "_src/js/lib/hammer.js",
+              "_src/js/lib/vue.js"
             ],
             dest: "dist/prod/js/lib.js"
           },
@@ -45,11 +46,8 @@ module.exports = function(grunt) {
       },
       dev: {
         options: {
-          compress: true,
-
           output: {
-            comments: true,
-            beautify: true
+            comments: true
           }
         },
         files: [
@@ -58,7 +56,8 @@ module.exports = function(grunt) {
             src: [
               "_src/js/lib/jquery-3.3.1.min.js",
               "_src/js/lib/jquery-scrollspy.js",
-              "_src/js/lib/hammer.js"
+              "_src/js/lib/hammer.js",
+              "_src/js/lib/vue.js"
             ],
             dest: "dist/dev/js/lib.js"
           },
