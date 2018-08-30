@@ -3,6 +3,5 @@
 .DS_Store
 .vscode
 node_modules
-dist/dev
-dist/prod
+dist
 

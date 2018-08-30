@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: @color-bg;
+  color: @color-black;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main {
+  .xs-container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media @md {
+    width: @bp-container-md;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: unset;
+  }
+
+  @media @lg {
+    width: @bp-container-lg;
+  }
+
+  @media @xl {
+    width: @bp-container-xl;
+  }
+}
+
+body.scrolled {
+  .main {
+    margin-top: 68px;
+    overflow: hidden;
+  }
+}

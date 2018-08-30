@@ -1,0 +1,229 @@
+.project__carousel {
+  height: @carousel-image-height-sm;
+  position: relative;
+  width: @bp-xs-baseline;
+  margin-bottom: 14px;
+  opacity: 0;
+
+  &.activated {
+    transition: opacity 1s ease-out;
+    opacity: 1;
+
+    // so we don't see the animations initially
+    .project__carousel--image-wrapper {
+      transition: left @default-transition;
+    }
+  }
+
+  @media @md {
+    height: @carousel-image-height-md;
+  }
+
+  @media @lg {
+    height: @carousel-image-height-lg;
+  }
+
+  @media @xl {
+    height: @carousel-image-height-xl;
+  }
+
+  &-controls {
+    display: none;
+
+    &--back,
+    &--next,
+    &--location {
+      display: inline;
+    }
+
+    &--back,
+    &--next {
+      cursor: pointer;
+
+      &.disabled {
+        svg {
+          .cls-3 {
+            fill: @color-light-grey;
+          }
+        }
+
+        pointer-events: none;
+      }
+    }
+
+    @media @md {
+      display: inline-block;
+      position: absolute;
+      top: -47px;
+      right: 0;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+
+      @{no-touch} &:hover {
+        .cls-3 {
+          fill: @color-black;
+        }
+      }
+    }
+
+    &--next {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--location {
+      font-family: @font-mono-light;
+      color: @color-light-grey;
+      font-size: 12px;
+      letter-spacing: -3px;
+      line-height: 1;
+      vertical-align: text-top;
+
+      &--next {
+        margin-right: 3px;
+      }
+    }
+  }
+
+  &--image {
+    max-width: 100%;
+
+    &-mask {
+      display: none;
+    }
+
+    &-wrapper {
+      @pos-left-px-sm: (@bp-xs-baseline - @carousel-image-width-sm) / 2;
+
+      width: percentage(@carousel-image-width-sm / @bp-xs-baseline);
+      min-height: @carousel-image-height-sm;
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+
+      &.onSecond {
+        @pos-left-px-sm-prev: @pos-left-px-sm - 2 *
+          (@carousel-image-width-sm - @carousel-active-image-offset-sm);
+        left: percentage(@pos-left-px-sm-prev / @bp-xs-baseline);
+      }
+
+      &.onFirst {
+        @pos-left-px-sm-prev: @pos-left-px-sm - @carousel-image-width-sm -
+          @carousel-active-image-offset-sm;
+        left: percentage(@pos-left-px-sm-prev / @bp-xs-baseline);
+      }
+
+      &.atBat {
+        opacity: 1;
+        left: percentage(@pos-left-px-sm / @bp-xs-baseline);
+      }
+
+      &.onDeck {
+        @pos-left-px-sm-next: @pos-left-px-sm + @carousel-image-width-sm +
+          @carousel-active-image-offset-sm;
+        left: percentage(@pos-left-px-sm-next / @bp-xs-baseline);
+      }
+
+      &.inTheHole {
+        @pos-left-px-sm-2x: @pos-left-px-sm + 2 *
+          (@carousel-image-width-sm + @carousel-active-image-offset-sm);
+        left: percentage((@pos-left-px-sm-2x) / @bp-xs-baseline);
+      }
+    }
+  }
+
+  @media @md {
+    flex-basis: @carousel-image-width-md;
+    order: 3;
+
+    &--image {
+      &-mask {
+        background-image: linear-gradient(
+          -90deg,
+          rgba(255, 255, 255, 0.21) 0%,
+          #ffffff 78%
+        );
+        width: @carousel-active-image-offset-md;
+        left: -@carousel-active-image-offset-md*2;
+        height: 100%;
+        display: block;
+        position: absolute;
+      }
+      &-wrapper {
+        @pos-left-px-md: @carousel-image-width-md +
+          @carousel-active-image-offset-md;
+        width: @carousel-image-width-md;
+        height: @carousel-image-height-md;
+        display: none;
+
+        &.onSecond,
+        &.onFirst,
+        &.atBat,
+        &.onDeck {
+          display: block;
+        }
+
+        &.onSecond,
+        &.onFirst {
+          width: @carousel-active-image-offset-md;
+          left: -@carousel-active-image-offset-md*2;
+          overflow: hidden;
+
+          img {
+            max-width: unset;
+            max-height: 100%;
+            position: relative;
+            right: @carousel-image-width-md - @carousel-active-image-offset-md;
+          }
+        }
+
+        &.onSecond {
+          opacity: 0;
+        }
+
+        &.atBat {
+          left: 0;
+        }
+
+        &.onDeck,
+        &.inTheHole {
+          left: @pos-left-px-md;
+        }
+      }
+    }
+  }
+
+  @media @lg {
+    @pos-left-px-lg: @carousel-image-width-lg + @carousel-active-image-offset-lg;
+    flex-basis: @carousel-image-width-lg;
+
+    &--image-wrapper {
+      width: @carousel-image-width-lg;
+      height: @carousel-image-height-lg;
+
+      &.onDeck,
+      &.inTheHole {
+        left: @pos-left-px-lg;
+      }
+    }
+  }
+
+  @media @xl {
+    @pos-left-px-xl: @carousel-image-width-xl + @carousel-active-image-offset-xl;
+    flex-basis: @carousel-image-width-xl;
+
+    &--image-wrapper {
+      width: @carousel-image-width-xl;
+      height: @carousel-image-height-xl;
+
+      &.onDeck,
+      &.inTheHole {
+        left: @pos-left-px-xl;
+      }
+    }
+  }
+}

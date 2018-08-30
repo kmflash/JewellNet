@@ -1,11 +1,130 @@
 // Fonts
-@font-normal: ~"'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, Arial, sans-serif";
-@font-mono: ~"'Input Mono Reg', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+@font-waterfall: ~"'Helvetica Neue', Helvetica, Arial, sans-serif";
+@font-normal: ~"'Gotham A', 'Gotham B'," @font-waterfall;
+@font-mono: ~"'Input Mono Reg'," @font-waterfall;
+@font-mono-light: ~"'Input Mono Lt'," @font-waterfall;
+@font-mono-med: ~"'Input Mono Med'," @font-waterfall;
+
+@font-normal-light: 300;
+@font-normal-book: 400;
+@font-normal-med: 500;
 
 // Colors
-@color-magenta: #FF17A2;
+@color-magenta: #ff17a2;
+@color-black: #000;
+@color-dark-grey: #4a4a4a;
+@color-mid-grey: #7f7f7f;
+@color-light-grey: #c8c8c8;
+@color-white: #fff;
+
+// Color applications
+@color-bg: @color-white;
+@color-highlight: @color-magenta;
+
+// Social Colors
+@color-insta: #e4405f;
+@color-linkedin: #0077b5;
+@color-strava: #fc4c02;
 
 // Breakpoints (upper ranges)
+@bp-xs-baseline: 375px;
+
 @bp-sm: 767px;
 @bp-md: 1024px;
-@bp-lg: 1200px;
+@bp-lg: 1400px;
+
+// --| container sizes @ breakpoint
+@bp-container-sm: 320px;
+@bp-container-md: 675px;
+@bp-container-lg: 850px;
+@bp-container-xl: 1272px;
+
+// Top-line vars
+@tl-height: 10px;
+@tl-scroll-height: 3px;
+@menu-height: 134px; // HAS to be an explicit value for animation to work
+@menu-width: @bp-xs-baseline;
+@menu-pos-md: 6px;
+@menu-pos-xl: 59px;
+@menu-font-size-sm: 21px;
+@menu-font-size-lg: 16px;
+
+@tl-bg-color: @color-light-grey;
+
+@h2-border-height: 2px;
+@h4-border-height: 1px;
+
+// Burger vars
+@burger-width-sm: 64px;
+@burger-width-lg: 50px;
+
+// Timing
+@timing-default: 0.25s;
+
+// Detail Page Slideshow
+@carousel-image-width-sm: 340px;
+@carousel-image-height-sm: 209px;
+@carousel-active-image-offset-sm: 10px;
+
+@carousel-image-width-md: 440px;
+@carousel-image-height-md: 271px;
+@carousel-active-image-offset-md: 28px;
+
+@carousel-image-width-lg: 526px;
+@carousel-image-height-lg: 324px;
+@carousel-active-image-offset-lg: @carousel-active-image-offset-md;
+
+@carousel-image-width-xl: 665px;
+@carousel-image-height-xl: 409px;
+@carousel-active-image-offset-xl: @carousel-active-image-offset-md;
+
+// Type Sizes, Line Heights (lh) & Letter Spacing (ls)
+@h1-sm: 42px;
+@h1-sm-ls: -0.5px;
+@h1-sm-scrolled: 36px;
+
+@h1-lg: 64px;
+@h1-lg-ls: -1.6px;
+@h1-lg-scrolled: 47px;
+
+@h2-sm: 18px;
+@h2-sm-ls: 0.8px;
+
+@h2-lg: 24px;
+@h2-lg-ls: 0.71px;
+
+@h3: 16px;
+@h3-lh: 19px;
+@h3-ls: 0.5px;
+
+@h4-sm: 14px;
+@h4-sm-lh: 1;
+@h4-lg: 16px;
+@h4-lg-lh: 1;
+
+@aside-sm: 14px;
+@aside-lg: 18px;
+
+@intro-sm: 12px;
+@intro-sm-lh: 24px;
+
+@intro-md: 14px;
+@intro-md-lh: 26px;
+
+@intro-lg: 16px;
+@intro-lg-lh: 26px;
+
+@intro-xl: @intro-lg;
+@intro-xl-lh: 30px;
+
+//project detail page vars
+@project-info-text-sm: 10px;
+@project-info-text-sm-lh: 18px;
+
+@project-info-text-lg: 12px;
+@project-info-text-lg-lh: @project-info-text-sm-lh;
+
+// utility vars
+@no-touch: ~"html:not(.touchevents)";
+@default-transition: @timing-default cubic-bezier(0.075, 0.82, 0.165, 1);
+@springy-transition: @timing-default cubic-bezier(0.68, -0.55, 0.27, 1.55);

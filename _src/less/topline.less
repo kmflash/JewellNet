@@ -1,0 +1,15 @@
+
+#topline {
+  position: fixed;
+  z-index: -1;
+  background-color: @tl-bg-color;
+  height: @tl-height;
+  width: 100%;
+  top: 0;
+}
+
+body.scrolled {
+  #topline {
+    height: @tl-scroll-height;
+  }
+}

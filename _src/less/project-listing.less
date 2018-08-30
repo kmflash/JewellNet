@@ -1,0 +1,41 @@
+@listing-size-sm: @bp-container-sm;
+@listing-spacing-sm: 45px;
+
+.project-listing {
+  max-width: 100%;
+  margin: @listing-spacing-sm/2 0 @listing-spacing-sm/2;
+
+  a {
+    text-decoration: none;
+    color: @color-black;
+
+    @{no-touch} &:hover {
+      color: @color-magenta;
+      text-decoration: none;
+    }
+  }
+
+  &__img {
+    min-width: 100%;
+    height: @listing-size-sm;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  &__title {
+    margin-top: 7px;
+  }
+
+  @media @md {
+    width: 320px;
+  }
+
+  @media @lg {
+    width: 409px;
+  }
+}

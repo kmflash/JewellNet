@@ -1,0 +1,230 @@
+.masthead {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &__headline {
+    display: inline-block;
+    flex-grow: 1;
+    margin: 0 0 2px;
+    border-top: solid @tl-height @color-highlight;
+    text-align: center;
+    padding-top: 10px;
+
+    a {
+      text-decoration: none;
+      color: @color-highlight;
+
+      @{no-touch} &:hover {
+        text-decoration: none;
+      }
+    }
+
+    @media @md {
+      margin-bottom: 10px;
+    }
+
+    @media @xl {
+      padding-top: 42px;
+    }
+  }
+
+  &__aside {
+    font-family: @font-mono;
+    font-size: @aside-sm;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -0.05px;
+    text-transform: lowercase;
+
+    @media @md {
+      font-size: @aside-lg;
+    }
+
+    @media @lg {
+      text-align: left;
+    }
+  }
+
+  &__links {
+    @links-height: 26px;
+
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0 30px;
+    padding: 0;
+    justify-content: space-around;
+    height: @links-height;
+    width: 266px;
+
+    @media @md {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media @lg {
+      margin-right: 0;
+    }
+
+    @media @xl {
+      margin-left: 0;
+      justify-content: space-between;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+
+      a {
+        display: inline-block;
+        width: @links-height;
+        height: @links-height;
+
+        svg {
+          width: @links-height;
+          height: @links-height;
+
+          path {
+            fill: @color-mid-grey;
+          }
+        }
+      }
+    }
+
+    &--linkedin a {
+      @{no-touch} &:hover {
+        svg path {
+          fill: @color-linkedin;
+        }
+      }
+    }
+
+    &--github a {
+      @{no-touch} &:hover {
+        svg path {
+          fill: @color-black;
+        }
+      }
+    }
+
+    &--instagram a {
+      @{no-touch} &:hover {
+        svg path {
+          fill: @color-insta;
+        }
+      }
+    }
+
+    &--strava a {
+      @{no-touch} &:hover {
+        svg path {
+          fill: @color-strava;
+        }
+      }
+    }
+  }
+
+  &__intro {
+    .xs-container;
+    font-family: @font-mono-light;
+    font-size: @intro-sm;
+    line-height: @intro-sm-lh;
+    color: @color-dark-grey;
+
+    strong {
+      font-family: @font-mono-med;
+    }
+
+    @media @md {
+      width: @bp-container-md;
+      font-size: @intro-md;
+      line-height: @intro-md-lh;
+    }
+
+    @media @lg {
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    @media @xl {
+      width: 666px;
+      align-self: flex-end;
+      margin-top: 56px;
+    }
+  }
+
+  @media @lg {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: @bp-container-lg;
+    margin: auto;
+  }
+
+  @media @xl {
+    width: @bp-container-xl;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 300px;
+  }
+}
+
+// styles to apply once we've scrolled
+body.scrolled {
+  .masthead {
+    width: 100%;
+    position: fixed;
+    height: 68px;
+    background-image: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 61%
+    );
+    border-top: solid @tl-scroll-height @color-light-grey;
+
+    &__inner-wrapper {
+      @media @md {
+        width: @bp-container-md;
+        margin: auto;
+      }
+
+      @media @lg {
+        width: @bp-container-lg;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @media @xl {
+        width: @bp-container-xl;
+      }
+    }
+
+    &__headline {
+      border-top-width: @tl-scroll-height;
+      font-size: @h1-sm-scrolled;
+      margin-top: -@tl-scroll-height;
+
+      @media @md-only {
+        &-block {
+          text-align: center;
+        }
+      }
+
+      @media @xl {
+        padding-top: 10px;
+      }
+    }
+
+    &__links,
+    &__aside,
+    &__intro {
+      display: none;
+    }
+
+    @media @md {
+      height: auto;
+    }
+  }
+}
