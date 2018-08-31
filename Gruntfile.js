@@ -44,6 +44,31 @@ module.exports = function(grunt) {
           }
         ]
       },
+      vue: {
+        options: {
+          compress: true,
+          output: {
+            comments: false,
+            beautify: false
+          }
+        },
+        files: [
+          { src: "_src/js/base.js", dest: "vue/src/js/jewellnet.js" },
+          {
+            src: [
+              "_src/js/lib/jquery-3.3.1.min.js",
+              "_src/js/lib/jquery-scrollspy.js",
+              "_src/js/lib/hammer.js",
+              "_src/js/lib/vue.js"
+            ],
+            dest: "vue/src/js/lib.js"
+          },
+          {
+            src: ["_src/js/base.js", "_src/js/splash.js"],
+            dest: "vue/src/splash/js/dj-splash.js"
+          }
+        ]
+      },
       dev: {
         options: {
           output: {
@@ -123,6 +148,15 @@ module.exports = function(grunt) {
           "dist/prod/splash/css/dj-splash.min.css": ["_src/less/splash.less"]
         }
       },
+      vue: {
+        options: {
+          compress: true
+        },
+        files: {
+          "vue/src/css/jewellnet.min.css": ["_src/less/import-all.less"],
+          "vue/src/splash/css/dj-splash.min.css": ["_src/less/splash.less"]
+        }
+      },
       dev: {
         options: {
           compress: false
@@ -170,6 +204,16 @@ module.exports = function(grunt) {
           { expand: true, cwd: "_src", src: ["css/*"], dest: "dist/prod/" }
         ]
       },
+      vue: {
+        files: [
+          {
+            expand: true,
+            cwd: "_src",
+            src: ["img/*", "fonts/**"],
+            dest: "vue/src/"
+          }
+        ]
+      },
       complete: {
         files: [
           {
@@ -213,6 +257,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask("dev", ["less:dev", "uglify:dev", "copy:dev"]);
   grunt.registerTask("prod", ["less:prod", "uglify:prod", "copy:prod"]);
+  grunt.registerTask("vue", ["less:prod", "uglify:vue", "copy:vue"]);
 
   grunt.registerTask("complete", ["dev", "prod", "copy:complete"]);
 };

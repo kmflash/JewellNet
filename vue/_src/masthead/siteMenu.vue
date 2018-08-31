@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import burgerSVG from "./svg/icon-burger.svg.vue";
+import burgerSVG from "../svg/icon-burger.svg.vue";
 
 export default {
   name: "site-menu",
@@ -33,7 +33,12 @@ export default {
           text: "Work",
           isDisabled: false
         },
-        { key: "playground", url: "#", text: "Playground", isDisabled: true }
+        {
+          key: "playground",
+          url: "#",
+          text: "Playground",
+          isDisabled: true
+        }
       ]
     };
   },

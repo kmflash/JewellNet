@@ -1,10 +1,11 @@
 # jewellnet-2
 
-> A Vue.js project
+> The Personal Portfolio Site of David Jewell
+> @ https://www.davidjewell.nyc
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

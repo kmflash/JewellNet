@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import linkedinSVG from "./svg/linkedin.svg.vue";
-import githubSVG from "./svg/github.svg.vue";
-import instagramSVG from "./svg/instagram.svg.vue";
-import stravaSVG from "./svg/strava.svg.vue";
+import linkedinSVG from "../svg/linkedin.svg.vue";
+import githubSVG from "../svg/github.svg.vue";
+import instagramSVG from "../svg/instagram.svg.vue";
+import stravaSVG from "../svg/strava.svg.vue";
 export default {
   name: "masthead-links",
   components: {
