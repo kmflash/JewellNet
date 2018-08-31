@@ -220,6 +220,12 @@ module.exports = function(grunt) {
             cwd: "_src",
             src: ["img/*", "fonts/**"],
             dest: "dist/dev/"
+          },
+          {
+            expand: true,
+            cwd: "dist/prod",
+            src: ["img/*", "fonts/**", "css/*", "js/**"],
+            dest: "vue/"
           }
         ]
       }

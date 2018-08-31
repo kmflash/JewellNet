@@ -3,10 +3,10 @@ node_modules/
 dist/
 npm-debug.log
 yarn-error.log
-_src/css
-_src/fonts
-_src/img
-_src/js
+css/*
+fonts/*
+img/*
+js/*
 
 # Editor directories and files
 .idea
