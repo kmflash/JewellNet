@@ -1,8 +1,10 @@
 {
-  "name": "jewellnet-2",
-  "description": "Personal website of David Jewell",
-  "version": "1.0.0",
-  "author": "David Jewell <david@david-jewell.net>",
+  "name": "jewell-net",
+  "title": "Jewell Net",
+  "version": "0.1.0",
+  "description": "The Personal Portfolio Site of David Jewell",
+  "author": "David Jewell <me@davidjewell.nyc>",
+  "homepage": "https://www.davidjewell.nyc",
   "license": "MIT",
   "private": true,
   "scripts": {
