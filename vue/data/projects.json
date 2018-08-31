@@ -1,0 +1,26 @@
+[
+  {
+    "id": "saves",
+    "name": "Saves",
+    "year": "2018",
+    "scope": ["geniuskitchen.com", "foodnetwork.com", "iOS", "Android"],
+    "role": "Visual Design, Front-End",
+    "disc": "Multiplatform redesign and refactor of previous &ldquo;Recipe Box&rdquo; webapp, which allows users to save and organize recipes.",
+    "imgs": [
+      "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png",
+      "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+    ]
+  },
+  {
+    "id": "gk",
+    "name": "Genius Kitchen",
+    "year": "2017",
+    "scope": ["food.com => geniuskitchen.com"],
+    "role": "Visual Design, Front-End",
+    "disc": "Rebrand and relaunch of Food.com to Genius Kitchen (GK) a cooking and food entertainment micronetwork.",
+    "imgs": [
+      "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png",
+      "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png"
+    ]
+  }
+]

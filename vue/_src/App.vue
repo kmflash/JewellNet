@@ -1,7 +1,9 @@
 <template>
   <div id="app-wrapper">
-    <div id="topline">&nbsp;</div>
-    <masthead></masthead>
+    <div class="content" name="top">
+      <masthead></masthead>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
