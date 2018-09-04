@@ -4,21 +4,21 @@
       <a name="work"></a>
       <h2 class="main__title">Selected Work</h2>
     </div>
-    <project-listing
+    <project-list-item
       v-for="project in theProjects"
       v-bind:key="project.id"
       v-bind:project="project"
-    ></project-listing>
+    ></project-list-item>
   </section>
 </template>
 
 <script>
-import projectListing from "./project.vue";
+import projectListItem from "./projectListItem.vue";
 const axios = require("axios");
 export default {
   name: "projects",
   components: {
-    "project-listing": projectListing
+    "project-list-item": projectListItem
   },
   data() {
     return {

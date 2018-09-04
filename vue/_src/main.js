@@ -3,7 +3,7 @@ import VueAxios from "vue-axios";
 import axios from "axios";
 import VueRouter from "vue-router";
 import App from "./App.vue";
-import projectListing from "./project-listing/projects.vue";
+import projectListing from "./projects-list/projectsList.vue";
 import projectDetail from "./project-detail.vue";
 
 Vue.use(VueRouter);
