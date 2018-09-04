@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "project-listing",
+  name: "project-list-item",
   props: ["project"]
 };
 </script>
