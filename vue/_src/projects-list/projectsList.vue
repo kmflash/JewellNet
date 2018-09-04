@@ -5,7 +5,7 @@
       <h2 class="main__title">Selected Work</h2>
     </div>
     <project-list-item
-      v-for="project in theProjects"
+      v-for="project in theProjectList"
       v-bind:key="project.id"
       v-bind:project="project"
     ></project-list-item>
@@ -21,20 +21,8 @@ export default {
     "project-list-item": projectListItem
   },
   data() {
-    return {
-      theProjects: []
-    };
+    return {};
   },
-  created() {
-    console.log("downloading project data");
-    this.fetchData();
-  },
-  methods: {
-    fetchData() {
-      axios
-        .get("./data/projects.json")
-        .then(response => (this.theProjects = response.data));
-    }
-  }
+  props: ["theProjectList"]
 };
 </script>

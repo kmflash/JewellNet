@@ -1,6 +1,6 @@
 <template>
-  <div class="project-listing">
-      <h3 class="project-listing__title">{{project.name}}</h3>
+  <div class="project-listing">fff
+      <!-- <h3 class="project-listing__title">{{project.name}}</h3> -->
   </div>
 </template>
 
