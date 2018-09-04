@@ -1,4 +1,5 @@
 import Vue from "vue";
+import VueAxios from "vue-axios";
 import axios from "axios";
 import VueRouter from "vue-router";
 import App from "./App.vue";
@@ -6,7 +7,7 @@ import projectListing from "./project-listing/projects.vue";
 import projectDetail from "./project-detail.vue";
 
 Vue.use(VueRouter);
-Vue.use(axios);
+Vue.use(VueAxios, axios);
 
 const routes = [
   {
