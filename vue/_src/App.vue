@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import masthead from "./masthead/masthead.vue";
+import masthead from "./components/masthead/masthead.vue";
 const axios = require("axios");
 export default {
   name: "app-wrapper",
