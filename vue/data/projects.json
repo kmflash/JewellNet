@@ -6,6 +6,12 @@
     "scope": ["geniuskitchen.com", "foodnetwork.com", "iOS", "Android"],
     "role": "Visual Design, Front-End",
     "disc": "Multiplatform redesign and refactor of previous &ldquo;Recipe Box&rdquo; webapp, which allows users to save and organize recipes.",
+    "notes": [
+      "Designed in Sketch",
+      "Built on Node.js platform",
+      "Utilizes &lsquo;foodicons&rsquo; custom icon font.",
+      "Responsive"
+    ],
     "imgs": [
       "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png",
       "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png"

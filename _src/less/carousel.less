@@ -40,11 +40,13 @@
     &--next {
       cursor: pointer;
 
+      svg {
+        fill: @color-magenta;
+      }
+
       &.disabled {
         svg {
-          .cls-3 {
-            fill: @color-light-grey;
-          }
+          fill: @color-light-grey;
         }
 
         pointer-events: none;

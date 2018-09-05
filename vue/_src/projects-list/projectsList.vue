@@ -23,6 +23,10 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+    document.body.id = "home";
+    document.body.className = "";
+  },
   props: ["theProjectList"]
 };
 </script>
