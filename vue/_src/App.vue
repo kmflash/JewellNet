@@ -4,16 +4,19 @@
       <router-view
       :theProjectList="this.theProjectsList"
 ></router-view>
+<site-footer></site-footer>
     </div>
 </template>
 
 <script>
 import masthead from "./components/masthead/masthead.vue";
+import siteFooter from "./components/footer.vue";
 const axios = require("axios");
 export default {
   name: "app-wrapper",
   components: {
-    masthead
+    masthead,
+    siteFooter
   },
   data() {
     return {
