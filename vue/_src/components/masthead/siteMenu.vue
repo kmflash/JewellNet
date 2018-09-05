@@ -58,12 +58,10 @@ export default {
         console.log("🍔");
         burgerWrapper.classList.add(this.burger.toggled);
         this.burgerOpen = true;
-        return "opened";
       } else {
         console.log("🚫🍔");
         burgerWrapper.classList.remove(this.burger.toggled);
         this.burgerOpen = false;
-        return "closed";
       }
     }
   }

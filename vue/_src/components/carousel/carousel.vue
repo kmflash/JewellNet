@@ -1,7 +1,14 @@
 <template>
-  <div class="project__carousel activated">
-    <carousel-controls></carousel-controls>
-    <carousel-images :imgs="imgs"></carousel-images>
+  <div class="project__carousel" :class="{activated}">
+    <carousel-controls
+      :total="imgs.length"
+      :pos="pos"
+      :backBtn="backBtn"
+      :nextBtn="nextBtn"
+      v-on:back="prevImage"
+      v-on:next="nextImage"
+      ></carousel-controls>
+    <carousel-images :imgs="imgs" :pos="pos"></carousel-images>
   </div>
 </template>
 
@@ -11,10 +18,50 @@ import carouselImages from "./carouselImages.vue";
 
 export default {
   name: "carousel",
+  data() {
+    return {
+      pos: 1,
+      tot: this.imgs.length,
+      backBtn: true,
+      nextBtn: false,
+      activated: false
+    };
+  },
   components: {
     "carousel-controls": carouselControls,
     "carousel-images": carouselImages
   },
-  props: ["imgs"]
+  props: ["imgs"],
+  methods: {
+    prevImage: function() {
+      // update controls and position info
+      if (this.pos !== 1) {
+        --this.pos;
+        console.log("⬅️");
+        this.updateSlideshow();
+      } else {
+        return;
+      }
+    },
+    nextImage: function() {
+      if (this.pos < this.tot) {
+        ++this.pos;
+        console.log("➡️");
+        this.updateSlideshow();
+      } else {
+        return;
+      }
+    },
+    updateControls: function() {
+      this.pos == this.tot ? (this.nextBtn = true) : (this.nextBtn = false);
+      this.pos == 1 ? (this.backBtn = true) : (this.backBtn = false);
+    },
+    updateSlideshow: function() {
+      this.updateControls();
+    }
+  },
+  mounted() {
+    this.activated = true;
+  }
 };
 </script>

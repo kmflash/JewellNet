@@ -20,12 +20,6 @@ export default {
       theProjectsList: [],
       projectDetail: [],
       pageInfo: {
-        burger: {
-          wrapper: ".masthead__menu",
-          button: ".masthead__menu-burger",
-          menu: ".masthead__menu-wrapper",
-          toggled: "open"
-        },
         carousel: {
           wrapper: ".project__carousel",
           controls: {

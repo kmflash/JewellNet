@@ -12,9 +12,24 @@
       "Utilizes &lsquo;foodicons&rsquo; custom icon font.",
       "Responsive"
     ],
+    "thumb": 0,
     "imgs": [
-      "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png",
-      "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      {
+        "id": 0,
+        "url": "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 1,
+        "url": "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      },
+      {
+        "id": 2,
+        "url": "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 3,
+        "url": "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      }
     ]
   },
   {
@@ -24,9 +39,24 @@
     "scope": ["food.com => geniuskitchen.com"],
     "role": "Visual Design, Front-End",
     "disc": "Rebrand and relaunch of Food.com to Genius Kitchen (GK) a cooking and food entertainment micronetwork.",
+    "thumb": 1,
     "imgs": [
-      "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png",
-      "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png"
+      {
+        "id": 0,
+        "url": "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 1,
+        "url": "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      },
+      {
+        "id": 2,
+        "url": "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 3,
+        "url": "http://localhost/dev/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      }
     ]
   }
 ]
