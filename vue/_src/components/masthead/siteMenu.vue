@@ -1,6 +1,6 @@
 <template>
   <div class="masthead__menu">
-    <div class="masthead__menu-burger">
+    <div class="masthead__menu-burger" v-on:click="toggleNav">
       <burger-icon></burger-icon>
     </div>
     <div class="masthead__menu-wrapper">
@@ -23,13 +23,13 @@ export default {
       theMenu: [
         {
           key: "about",
-          url: "index.html#top",
+          url: "/#top",
           text: "About",
           isDisabled: false
         },
         {
           key: "work",
-          url: "index.html#work",
+          url: "/#work",
           text: "Work",
           isDisabled: false
         },
@@ -39,11 +39,33 @@ export default {
           text: "Playground",
           isDisabled: true
         }
-      ]
+      ],
+      burgerOpen: false,
+      burger: {
+        wrapper: ".masthead__menu",
+        toggled: "open"
+      }
     };
   },
   components: {
     "burger-icon": burgerSVG
+  },
+  methods: {
+    toggleNav: function() {
+      var burgerWrapper = document.querySelector(this.burger.wrapper);
+
+      if (this.burgerOpen == false) {
+        console.log("🍔");
+        burgerWrapper.classList.add(this.burger.toggled);
+        this.burgerOpen = true;
+        return "opened";
+      } else {
+        console.log("🚫🍔");
+        burgerWrapper.classList.remove(this.burger.toggled);
+        this.burgerOpen = false;
+        return "closed";
+      }
+    }
   }
 };
 </script>

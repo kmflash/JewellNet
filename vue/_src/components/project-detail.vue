@@ -1,13 +1,13 @@
 <template>
 <div>
-  <section class="project" v-for="project in theProjectList" v-bind:key="project.id" v-if="project.id === $route.params.id" >
+  <section class="project" v-for="project in theProjectList" :key="project.id" v-if="project.id === $route.params.id" >
     <div class="project-header" >
       <div class="project-header__title-wrapper h2-wrapper">
         <h2 class="project-header__title">{{project.name}}</h2>
       </div>
       <span class="project-header__year">{{project.year}}</span>
     </div>
-    <carousel v-bind:imgs="project.imgs"></carousel>
+    <carousel :imgs="project.imgs"></carousel>
 
     <div class="project-info">
       <div class="project-info__section" v-if="project.disc">
@@ -27,7 +27,7 @@
           <h4 class="project-info__section-title">Technical Notes</h4>
         </div>
         <ul class="project-info__section-list">
-          <li v-for="item in project.notes" v-bind:key="item" v-html="item"></li>
+          <li v-for="item in project.notes" :key="item" v-html="item"></li>
         </ul>
       </div>
     </div>

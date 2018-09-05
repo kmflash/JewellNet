@@ -12,16 +12,26 @@ Vue.use(VueAxios, axios);
 const routes = [
   {
     path: "/",
-    component: projectListing
+    component: projectListing,
+    name: "home"
   },
   {
     path: "/projects/:id",
-    component: projectDetail
+    component: projectDetail,
+    name: "detail"
   }
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: "history",
+  scrollBehavior: function(to, from, savedPosition) {
+    if (to.hash) {
+      return { selector: to.hash };
+    } else {
+      return { x: 0, y: 0 };
+    }
+  }
 });
 
 new Vue({

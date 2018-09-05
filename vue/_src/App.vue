@@ -18,7 +18,25 @@ export default {
   data() {
     return {
       theProjectsList: [],
-      projectDetail: []
+      projectDetail: [],
+      pageInfo: {
+        burger: {
+          wrapper: ".masthead__menu",
+          button: ".masthead__menu-burger",
+          menu: ".masthead__menu-wrapper",
+          toggled: "open"
+        },
+        carousel: {
+          wrapper: ".project__carousel",
+          controls: {
+            back: ".project__carousel-controls--back",
+            fwd: ".project__carousel-controls--next"
+          },
+          position: ".project__carousel-controls--location .pos",
+          total: ".project__carousel-controls--location .total",
+          imgs: ".project__carousel--image-wrapper"
+        }
+      }
     };
   },
   created() {
@@ -28,9 +46,14 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get("./data/projects.json")
+        .get("/data/projects.json")
         .then(response => (this.theProjectsList = response.data));
     }
   }
 };
 </script>
+
+<style>
+@import url("../css/normalize.min.css");
+@import url("../css/jewellnet.min.css");
+</style>
