@@ -22,9 +22,9 @@ export default {
     return {
       theMenu: [
         {
-          key: "about",
-          url: "/#top",
-          text: "About",
+          key: "contact",
+          url: "mailto:me@davidjewell.nyc",
+          text: "Contact",
           isDisabled: false
         },
         {

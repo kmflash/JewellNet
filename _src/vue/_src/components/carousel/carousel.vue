@@ -1,5 +1,5 @@
 <template>
-  <div class="project__carousel" :class="{activated}">
+  <div class="project__carousel" :class="{activated}" v-touch:swipe.left="nextImage" v-touch:swipe.right="prevImage">
     <carousel-controls
       :total="imgs.length"
       :pos="pos"
@@ -38,7 +38,7 @@ export default {
       if (this.pos !== 1) {
         --this.pos;
         console.log("⬅️");
-        this.updateSlideshow();
+        this.updateControls();
       } else {
         return;
       }
@@ -47,7 +47,7 @@ export default {
       if (this.pos < this.tot) {
         ++this.pos;
         console.log("➡️");
-        this.updateSlideshow();
+        this.updateControls();
       } else {
         return;
       }
@@ -55,9 +55,6 @@ export default {
     updateControls: function() {
       this.pos == this.tot ? (this.nextBtn = true) : (this.nextBtn = false);
       this.pos == 1 ? (this.backBtn = true) : (this.backBtn = false);
-    },
-    updateSlideshow: function() {
-      this.updateControls();
     }
   },
   mounted() {
