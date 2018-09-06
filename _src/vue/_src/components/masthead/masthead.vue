@@ -1,15 +1,16 @@
 <template>
   <header class="masthead">
     <div class="masthead__inner-wrapper">
-      <div class="masthead__headline-wrapper">
-        <div class="masthead__headline-block">
-          <h1 class="masthead__headline">
-            <router-link :to="{name: 'home'}">{{myName}}</router-link>
-          </h1>
-          <aside class="masthead__aside" v-html="tagLine"></aside>
+        <div class="masthead__headline-wrapper">
+          <div class="masthead__headline-block">
+            <h1 class="masthead__headline">
+              <router-link :to="{name: 'home'}">{{myName}}</router-link>
+            </h1>
+            <aside class="masthead__aside" v-html="tagLine"></aside>
+          </div>
+                  <masthead-links v-if="this.$route.path === '/'" ></masthead-links>
+
         </div>
-      </div>
-      <masthead-links v-if="this.$route.path === '/'" ></masthead-links>
       <site-menu></site-menu>
       <p class="masthead__intro" v-if="this.$route.path === '/'" v-html="intro"></p>
     </div>

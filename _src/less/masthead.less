@@ -5,6 +5,16 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+
+    @media @lg {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    @media @xl {
+      align-items: flex-start;
+    }
   }
 
   &__headline {
@@ -30,6 +40,20 @@
 
     @media @xl {
       padding-top: 42px;
+    }
+
+    &-wrapper {
+      @media @lg {
+        display: flex;
+        width: 100%;
+        align-items: center;
+      }
+
+      @media @xl {
+        align-items: flex-start;
+        width: unset;
+        flex-direction: column;
+      }
     }
   }
 
@@ -149,27 +173,27 @@
     @media @lg {
       width: 100%;
       margin-top: 40px;
+      font-size: @intro-lg;
+      line-height: @intro-lg-lh;
     }
 
     @media @xl {
       width: 666px;
       align-self: flex-end;
       margin-top: 56px;
+      font-size: @intro-xl;
+      line-height: @intro-xl-lh;
     }
   }
 
   @media @lg {
-    flex-direction: row;
-    flex-wrap: wrap;
     width: @bp-container-lg;
     margin: auto;
   }
 
   @media @xl {
     width: @bp-container-xl;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 300px;
+    min-height: 300px;
   }
 }
 
@@ -194,12 +218,12 @@ body.scrolled {
 
       @media @lg {
         width: @bp-container-lg;
-        display: flex;
         justify-content: space-between;
       }
 
       @media @xl {
         width: @bp-container-xl;
+        flex-direction: row;
       }
     }
 
@@ -216,6 +240,10 @@ body.scrolled {
 
       @media @xl {
         padding-top: 10px;
+      }
+
+      &-wrapper {
+        width: auto;
       }
     }
 

@@ -183,6 +183,12 @@ module.exports = function(grunt) {
             cwd: "_src",
             src: ["html/*"],
             dest: "dist/dev/"
+          },
+          {
+            expand: true,
+            cwd: "dist/prod",
+            src: "css/*",
+            dest: "_src/vue"
           }
         ]
       },
@@ -233,7 +239,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: "dist/prod",
             src: ["img/*", "fonts/**", "css/*", "js/**"],
-            dest: "vue/"
+            dest: "_src/vue"
           }
         ]
       },
