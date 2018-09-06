@@ -1,0 +1,146 @@
+[
+  {
+    "id": "saves",
+    "name": "Saves",
+    "year": "2018",
+    "scope": ["geniuskitchen.com", "foodnetwork.com", "iOS", "Android"],
+    "role": "Visual Design, Front-End",
+    "disc": "Multiplatform redesign and refactor of previous &ldquo;Recipe Box&rdquo; webapp, which allows users to save and organize recipes.",
+    "notes": [
+      "Designed in Sketch",
+      "Built on Node.js platform",
+      "Utilizes &lsquo;foodicons&rsquo; custom icon font.",
+      "Responsive"
+    ],
+    "thumb": 0,
+    "imgs": [
+      {
+        "id": 0,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 1,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      },
+      {
+        "id": 2,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 3,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      }
+    ]
+  },
+  {
+    "id": "gk",
+    "name": "Genius Kitchen",
+    "year": "2017",
+    "scope": ["food.com => geniuskitchen.com"],
+    "role": "Visual Design Lead, Front-End",
+    "disc": "Rebrand and relaunch of Food.com to Genius Kitchen (GK) a cooking and food entertainment micronetwork.",
+    "thumb": 1,
+    "imgs": [
+      {
+        "id": 0,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 1,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      },
+      {
+        "id": 2,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 3,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      }
+    ]
+  },
+  {
+    "id": "fel",
+    "name": "GK Front End Library",
+    "year": "2017",
+    "scope": "geniuskitchen.com",
+    "role": "Visual Design Lead, Front-End",
+    "notes": ["Lorem"],
+    "disc": "A web-based design &amp; engineering resource containing specs, UI patterns, code templates and guidelines for GK enhancements.",
+    "thumb": 1,
+    "imgs": [
+      {
+        "id": 0,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 1,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      },
+      {
+        "id": 2,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 3,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      }
+    ]
+  },
+  {
+    "id": "search-enhancement",
+    "name": "Enhanced Search Experience",
+    "year": "2016",
+    "scope": "geniuskitchen.com",
+    "role": "Visual Design Lead, Front-End",
+    "notes": ["Lorem"],
+    "disc": "Reconceptualized search experience with emphasis on intent, rather than literal matches.",
+    "thumb": 1,
+    "imgs": [
+      {
+        "id": 0,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 1,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      },
+      {
+        "id": 2,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 3,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      }
+    ]
+  },
+  {
+    "id": "activity-feed",
+    "name": "Recipe Page Activity Feed",
+    "year": "2016",
+    "scope": "geniuskitchen.com",
+    "role": "Visual Design Lead",
+    "notes": ["Lorem"],
+    "disc": "A major overhaul of the comments section on recipe pages. The new activity feed allows for multiple post types including photos, questions, tweaks and reviews. Also added &ldquo;Like&rdquo; functionality and inline replies.",
+    "thumb": 1,
+    "imgs": [
+      {
+        "id": 0,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 1,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      },
+      {
+        "id": 2,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage.png"
+      },
+      {
+        "id": 3,
+        "url": "/img/portfolio/genius-kitchen/gk-homepage-rev.png"
+      }
+    ]
+  }
+]

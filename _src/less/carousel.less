@@ -40,11 +40,13 @@
     &--next {
       cursor: pointer;
 
+      svg {
+        fill: @color-magenta;
+      }
+
       &.disabled {
         svg {
-          .cls-3 {
-            fill: @color-light-grey;
-          }
+          fill: @color-light-grey;
         }
 
         pointer-events: none;
@@ -132,6 +134,10 @@
         @pos-left-px-sm-2x: @pos-left-px-sm + 2 *
           (@carousel-image-width-sm + @carousel-active-image-offset-sm);
         left: percentage((@pos-left-px-sm-2x) / @bp-xs-baseline);
+      }
+
+      &.onBench {
+        display: none;
       }
     }
   }
