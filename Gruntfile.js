@@ -3,6 +3,14 @@
 // todo: figure out if jshint is needed
 
 module.exports = function(grunt) {
+  function logIt(msg) {
+    msg = "\n" + msg + "\n";
+    console.log(msg);
+  }
+
+  var thePkg = grunt.file.readJSON("package.json");
+
+  logIt(`[====== ${thePkg.name} v${thePkg.version} ======]`);
   // Project configuration.
   grunt.initConfig({
     // Metadata.
@@ -228,6 +236,50 @@ module.exports = function(grunt) {
             dest: "vue/"
           }
         ]
+      },
+      replace: {
+        local: {
+          overwrite: true, // overwrite the files
+          src: ["dist/dev/css/**/*.css", "dist/dev/js/**/*.js"],
+          replacements: [
+            {
+              from: "{{fontPath}}",
+              to: "localhost"
+            },
+            {
+              from: "{{imgPath}}",
+              to: "localhost"
+            }
+          ]
+        },
+        dev: {
+          overwrite: true, // overwrite the files
+          src: ["dist/prod/css/**/*.css", "dist/prod/js/**/*.js"],
+          replacements: [
+            {
+              from: "{{fontPath}}",
+              to: "https://dev.davidjewell.nyc"
+            },
+            {
+              from: "{{imgPath}}",
+              to: "https://dev.davidjewell.nyc"
+            }
+          ]
+        },
+        prod: {
+          overwrite: true, // overwrite the files
+          src: ["dist/dev/css/**/*.css", "dist/dev/js/**/*.js"],
+          replacements: [
+            {
+              from: "{{fontPath}}",
+              to: "https://www.davidjewell.nyc"
+            },
+            {
+              from: "{{imgPath}}",
+              to: "https://www.davidjewell.nyc"
+            }
+          ]
+        }
       }
     }
   });
@@ -238,10 +290,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-less");
   grunt.loadNpmTasks("grunt-contrib-copy");
+  grunt.loadNpmTasks("grunt-text-replace");
 
   // Default task.
   grunt.registerTask("default", ["less:dev", "uglify:dev"]);
 
+  grunt.registerTask("local", ["less:dev", "uglify:dev", "copy:dev"]);
   grunt.registerTask("dev", ["less:dev", "uglify:dev", "copy:dev"]);
   grunt.registerTask("prod", ["less:prod", "uglify:prod", "copy:prod"]);
   grunt.registerTask("lib", ["uglify:lib", "copy:lib"]);

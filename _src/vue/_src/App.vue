@@ -21,19 +21,7 @@ export default {
   data() {
     return {
       theProjectsList: [],
-      projectDetail: [],
-      pageInfo: {
-        carousel: {
-          wrapper: ".project__carousel",
-          controls: {
-            back: ".project__carousel-controls--back",
-            fwd: ".project__carousel-controls--next"
-          },
-          position: ".project__carousel-controls--location .pos",
-          total: ".project__carousel-controls--location .total",
-          imgs: ".project__carousel--image-wrapper"
-        }
-      }
+      projectDetail: []
     };
   },
   created() {
@@ -43,8 +31,11 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get("/data/projects.json")
+        .get("./data/projects.json")
         .then(response => (this.theProjectsList = response.data));
+
+      console.log("data loaded.");
+      console.log(this.theProjectsList);
     }
   }
 };

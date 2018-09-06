@@ -1,7 +1,7 @@
 {
   "name": "jewell-net",
   "title": "Jewell Net",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "description": "The Personal Portfolio Site of David Jewell",
   "author": "David Jewell <me@davidjewell.nyc>",
   "homepage": "https://www.davidjewell.nyc",
@@ -20,5 +20,7 @@
     "grunt-contrib-uglify": "^3.4.0",
     "grunt-contrib-watch": "^0.6.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "grunt-text-replace": "^0.4.0"
+  }
 }
