@@ -31,7 +31,7 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get("./data/projects.json")
+        .get("./json/projects.json")
         .then(response => (this.theProjectsList = response.data));
 
       console.log("data loaded.");

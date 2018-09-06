@@ -186,8 +186,14 @@ module.exports = function(grunt) {
           },
           {
             expand: true,
-            cwd: "dist/prod",
+            cwd: "dist/dev",
             src: "css/*",
+            dest: "_src/vue"
+          },
+          {
+            expand: true,
+            cwd: "_src",
+            src: ["json/**", "img/social/**", "img/portfolio/**"],
             dest: "_src/vue"
           }
         ]
@@ -206,6 +212,12 @@ module.exports = function(grunt) {
             cwd: "_src",
             src: ["html/*"],
             dest: "dist/prod/"
+          },
+          {
+            expand: true,
+            cwd: "_src",
+            src: ["json/**", "img/social/**", "img/portfolio/**"],
+            dest: "_src/vue"
           }
         ]
       },
@@ -226,13 +238,13 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/*", "fonts/**"],
+            src: ["img/*", "fonts/**", "json/**"],
             dest: "dist/prod/"
           },
           {
             expand: true,
             cwd: "_src",
-            src: ["img/*", "fonts/**"],
+            src: ["img/*", "fonts/**", "json/**"],
             dest: "dist/dev/"
           },
           {
@@ -242,50 +254,62 @@ module.exports = function(grunt) {
             dest: "_src/vue"
           }
         ]
+      }
+    },
+    replace: {
+      local: {
+        overwrite: true, // overwrite the files
+        src: [
+          "dist/dev/css/**/*.css",
+          "dist/dev/js/**/*.js",
+          "_src/vue/json/**/*.json"
+        ],
+        replacements: [
+          {
+            from: "{{fontPath}}",
+            to: ""
+          },
+          {
+            from: "{{imgPath}}",
+            to: ""
+          }
+        ]
       },
-      replace: {
-        local: {
-          overwrite: true, // overwrite the files
-          src: ["dist/dev/css/**/*.css", "dist/dev/js/**/*.js"],
-          replacements: [
-            {
-              from: "{{fontPath}}",
-              to: "localhost"
-            },
-            {
-              from: "{{imgPath}}",
-              to: "localhost"
-            }
-          ]
-        },
-        dev: {
-          overwrite: true, // overwrite the files
-          src: ["dist/prod/css/**/*.css", "dist/prod/js/**/*.js"],
-          replacements: [
-            {
-              from: "{{fontPath}}",
-              to: "https://dev.davidjewell.nyc"
-            },
-            {
-              from: "{{imgPath}}",
-              to: "https://dev.davidjewell.nyc"
-            }
-          ]
-        },
-        prod: {
-          overwrite: true, // overwrite the files
-          src: ["dist/dev/css/**/*.css", "dist/dev/js/**/*.js"],
-          replacements: [
-            {
-              from: "{{fontPath}}",
-              to: "https://www.davidjewell.nyc"
-            },
-            {
-              from: "{{imgPath}}",
-              to: "https://www.davidjewell.nyc"
-            }
-          ]
-        }
+      dev: {
+        overwrite: true, // overwrite the files
+        src: [
+          "dist/prod/css/**/*.css",
+          "dist/prod/js/**/*.js",
+          "_src/vue/json/**/*.json"
+        ],
+        replacements: [
+          {
+            from: "{{fontPath}}",
+            to: "https://dev.davidjewell.nyc"
+          },
+          {
+            from: "{{imgPath}}",
+            to: "https://dev.davidjewell.nyc"
+          }
+        ]
+      },
+      prod: {
+        overwrite: true, // overwrite the files
+        src: [
+          "dist/dev/css/**/*.css",
+          "dist/dev/js/**/*.js",
+          "_src/vue/json/**/*.json"
+        ],
+        replacements: [
+          {
+            from: "{{fontPath}}",
+            to: "https://www.davidjewell.nyc"
+          },
+          {
+            from: "{{imgPath}}",
+            to: "https://www.davidjewell.nyc"
+          }
+        ]
       }
     }
   });
@@ -301,9 +325,24 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask("default", ["less:dev", "uglify:dev"]);
 
-  grunt.registerTask("local", ["less:dev", "uglify:dev", "copy:dev"]);
-  grunt.registerTask("dev", ["less:dev", "uglify:dev", "copy:dev"]);
-  grunt.registerTask("prod", ["less:prod", "uglify:prod", "copy:prod"]);
+  grunt.registerTask("local", [
+    "less:dev",
+    "uglify:dev",
+    "copy:dev",
+    "replace:local"
+  ]);
+  grunt.registerTask("dev", [
+    "less:dev",
+    "uglify:dev",
+    "copy:dev",
+    "replace:dev"
+  ]);
+  grunt.registerTask("prod", [
+    "less:prod",
+    "uglify:prod",
+    "copy:prod",
+    "replace:prod"
+  ]);
   grunt.registerTask("lib", ["uglify:lib", "copy:lib"]);
 
   grunt.registerTask("complete", ["dev", "prod", "copy:complete"]);
