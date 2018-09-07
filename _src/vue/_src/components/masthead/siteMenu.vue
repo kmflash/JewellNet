@@ -6,7 +6,8 @@
     <div class="masthead__menu-wrapper">
       <ul class="masthead__menu-list">
         <li v-for="item in theMenu" :key="item.key" :class="['masthead__menu-list-' + item.key, {disabled: item.isDisabled}]">
-          <a :href="item.url">{{item.text}}</a>
+          <router-link :to="{name: item.key}" v-if="item.key != 'email'">{{item.text}}</router-link>
+          <a :href="buidEmail(item.email)" v-else >{{item.text}}</a>
         </li>
       </ul>
     </div>
@@ -22,15 +23,21 @@ export default {
     return {
       theMenu: [
         {
-          key: "contact",
-          url: "mailto:me@davidjewell.nyc",
-          text: "Contact",
+          key: "home", // named route path
+          url: "/",
+          text: "home",
           isDisabled: false
         },
         {
-          key: "work",
-          url: "/#work",
-          text: "Work",
+          key: "email",
+          email: {
+            // assemble to try and discourage spam
+            name: "me",
+            domain: "davidjewell",
+            tld: "nyc"
+          },
+          text: "Contact Me",
+          isEmail: true,
           isDisabled: false
         },
         {
@@ -63,6 +70,16 @@ export default {
         burgerWrapper.classList.remove(this.burger.toggled);
         this.burgerOpen = false;
       }
+    },
+    buidEmail: function(addr) {
+      return (
+        "mailto\u003A\u0014" +
+        addr.name +
+        "\u0040" +
+        addr.domain +
+        "\u002E" +
+        addr.tld
+      );
     }
   }
 };

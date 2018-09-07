@@ -42,6 +42,6 @@ var app = new Vue({
   }
 });
 
-window.addEventListener("keydown", function(e) {
-  app.handleGlobalKeyDown(e);
-});
+// window.addEventListener("keydown", function(e) {
+//   app.handleGlobalKeyDown(e);
+// });

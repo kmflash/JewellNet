@@ -8,8 +8,7 @@
             </h1>
             <aside class="masthead__aside" v-html="tagLine"></aside>
           </div>
-                  <masthead-links v-if="this.$route.path === '/'" ></masthead-links>
-
+          <masthead-links v-if="this.$route.path === '/'" ></masthead-links>
         </div>
       <site-menu></site-menu>
       <p class="masthead__intro" v-if="this.$route.path === '/'" v-html="intro"></p>
@@ -26,9 +25,9 @@ export default {
   data() {
     return {
       myName: "David Jewell",
-      tagLine: "Digital Project Design &amp; Engineering",
+      tagLine: "Design Technologist",
       intro:
-        "<strong>Why, hello there!</strong> I’m David Jewell, originally from Nashville, I now call Brooklyn my home. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur blah."
+        "<strong>Why, hello there!</strong> I’m David Jewell, a designer living in the beautiful borough of Brooklyn, NY. I specialize in digital products deeply rooted in design thinking. Coupled with technical knowledge, I am involved in all stages of the lifecycle of a product, from conception to execution. I am passionate about discovering how things work, and how to improve upon them. I love cycling, live music, the color magenta and my cat, Em."
     };
   },
   components: {
