@@ -278,8 +278,8 @@ module.exports = function(grunt) {
       dev: {
         overwrite: true, // overwrite the files
         src: [
-          "dist/prod/css/**/*.css",
-          "dist/prod/js/**/*.js",
+          "dist/dev/css/**/*.css",
+          "dist/dev/js/**/*.js",
           "_src/vue/json/**/*.json"
         ],
         replacements: [
