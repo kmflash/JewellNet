@@ -18,7 +18,8 @@
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-qunit": "^2.0.0",
     "grunt-contrib-uglify": "^3.4.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-responsive-images": "^1.10.1"
   },
   "dependencies": {
     "grunt-text-replace": "^0.4.0"

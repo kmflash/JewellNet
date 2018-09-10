@@ -5,7 +5,7 @@
     </div>
     <div class="masthead__menu-wrapper">
       <ul class="masthead__menu-list">
-        <li v-for="item in theMenu" :key="item.key" :class="['masthead__menu-list-' + item.key, {disabled: item.isDisabled}]">
+        <li v-for="item in menuItems" :key="item.key" :class="['masthead__menu-list-' + item.key, {disabled: item.isDisabled}]">
           <router-link :to="{name: item.key}" v-if="item.key != 'email'">{{item.text}}</router-link>
           <a :href="buidEmail(item.email)" v-else >{{item.text}}</a>
         </li>
@@ -19,34 +19,9 @@ import burgerSVG from "../svg/icon-burger.svg.vue";
 
 export default {
   name: "site-menu",
+  props: { menuItems: Array },
   data() {
     return {
-      theMenu: [
-        {
-          key: "home", // named route path
-          url: "/",
-          text: "home",
-          isDisabled: false
-        },
-        {
-          key: "email",
-          email: {
-            // assemble to try and discourage spam
-            name: "me",
-            domain: "davidjewell",
-            tld: "nyc"
-          },
-          text: "Contact Me",
-          isEmail: true,
-          isDisabled: false
-        },
-        {
-          key: "playground",
-          url: "#",
-          text: "Playground",
-          isDisabled: true
-        }
-      ],
       burgerOpen: false,
       burger: {
         wrapper: ".masthead__menu",

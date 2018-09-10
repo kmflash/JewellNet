@@ -24,9 +24,6 @@
 <script>
 export default {
   name: "carousel-images",
-  data() {
-    return {};
-  },
   props: ["imgs", "pos"]
 };
 </script>

@@ -1,0 +1,38 @@
+{
+  "info": {
+    "myName": "David Jewell",
+    "tagline": "Design Technologist",
+    "bio": "<strong>Why, hello there!</strong> I’m David Jewell, a designer living in the beautiful borough of Brooklyn, NY. I specialize in digital products deeply rooted in design thinking. Coupled with technical knowledge, I am involved in all stages of the lifecycle of a product, from conception to execution. I am passionate about discovering how things work, and how to improve upon them. I love cycling, live music, the color magenta and my cat, Em."
+  },
+  "mastheadLinks": [
+    { "key": "linkedin", "url": "https://www.linkedin.com/in/mrjewell/" },
+    { "key": "github", "url": "https://github.com/kmflash/" },
+    { "key": "instagram", "url": "https://www.instagram.com/mrjewell/" },
+    { "key": "strava", "url": "https://www.strava.com/athletes/10766330" }
+  ],
+  "siteNav": [
+    {
+      "key": "home",
+      "url": "/",
+      "text": "home",
+      "isDisabled": false
+    },
+    {
+      "key": "email",
+      "email": {
+        "name": "me",
+        "domain": "davidjewell",
+        "tld": "nyc"
+      },
+      "text": "Contact Me",
+      "isEmail": true,
+      "isDisabled": false
+    },
+    {
+      "key": "playground",
+      "url": "#",
+      "text": "Playground",
+      "isDisabled": true
+    }
+  ]
+}
