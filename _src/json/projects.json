@@ -11,35 +11,35 @@
     "imgs": [
       {
         "id": 0,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-md.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-md-xl.png"
       },
       {
         "id": 1,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-xs.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-xs-xl.png"
       },
       {
         "id": 2,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-xl.png"
       },
       {
         "id": 3,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-md.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-md-xl.png"
       },
       {
         "id": 4,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-xs.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-xs-xl.png"
       },
       {
         "id": 5,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-xl.png"
       },
       {
         "id": 6,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-activity-feed.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-activity-feed-xl.png"
       },
       {
         "id": 7,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-profile-md.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-profile-md-xl.png"
       }
     ]
   }
