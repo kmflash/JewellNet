@@ -15,7 +15,8 @@
       "key": "home",
       "url": "/",
       "text": "home",
-      "isDisabled": false
+      "isDisabled": false,
+      "type": "router"
     },
     {
       "key": "email",
@@ -25,14 +26,15 @@
         "tld": "nyc"
       },
       "text": "Contact Me",
-      "isEmail": true,
+      "type": "email",
       "isDisabled": false
     },
     {
-      "key": "playground",
-      "url": "#",
-      "text": "Playground",
-      "isDisabled": true
+      "key": "resume",
+      "url": "resume/resume-david-jewell.pdf",
+      "text": "Résumé",
+      "isDisabled": false,
+      "type": "link"
     }
   ]
 }
