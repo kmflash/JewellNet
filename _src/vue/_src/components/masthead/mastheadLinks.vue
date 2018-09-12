@@ -1,6 +1,6 @@
 <template>
   <ul class="masthead__links">
-    <li v-for="link in mhLinks" :key="link.key" :class="'masthead__links--' + link.key">
+    <li v-for="link in linx" :key="link.key" :class="'masthead__links--' + link.key">
       <a :href="link.url" target="_blank">
         <linkedin-svg v-if="link.key == 'linkedin'"></linkedin-svg>
         <github-svg v-if="link.key == 'github'"></github-svg>
@@ -24,15 +24,6 @@ export default {
     "instagram-svg": instagramSVG,
     "strava-svg": stravaSVG
   },
-  data() {
-    return {
-      mhLinks: [
-        { key: "linkedin", url: "https://www.linkedin.com/in/mrjewell/" },
-        { key: "github", url: "https://github.com/kmflash/" },
-        { key: "instagram", url: "https://www.instagram.com/mrjewell/" },
-        { key: "strava", url: "https://www.strava.com/athletes/10766330" }
-      ]
-    };
-  }
+  props: ["linx"]
 };
 </script>

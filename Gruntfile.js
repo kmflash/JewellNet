@@ -174,7 +174,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/social/**", "img/portfolio/**"],
+            src: ["img/social/**", "img/portfolio/**", "resume/*"],
             dest: "dist/dev/"
           },
           {
@@ -193,7 +193,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["json/**", "img/social/**", "img/portfolio/**"],
+            src: ["json/**", "img/social/**", "img/portfolio/**", "resume/*"],
             dest: "_src/vue"
           }
         ]
@@ -203,7 +203,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/social/**", "img/portfolio/**"],
+            src: ["img/social/**", "img/portfolio/**", "resume/*"],
             dest: "dist/prod/"
           },
           {
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["json/**", "img/social/**", "img/portfolio/**"],
+            src: ["json/**", "img/social/**", "img/portfolio/**", "resume/*"],
             dest: "_src/vue"
           }
         ]
@@ -238,19 +238,19 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/*", "fonts/**", "json/**"],
+            src: ["img/*", "fonts/**", "json/**", "resume/*"],
             dest: "dist/prod/"
           },
           {
             expand: true,
             cwd: "_src",
-            src: ["img/*", "fonts/**", "json/**"],
+            src: ["img/*", "fonts/**", "json/**", "resume/*"],
             dest: "dist/dev/"
           },
           {
             expand: true,
             cwd: "dist/prod",
-            src: ["img/*", "fonts/**", "css/*", "js/**"],
+            src: ["img/*", "fonts/**", "css/*", "js/**", "resume/*"],
             dest: "_src/vue"
           }
         ]
@@ -311,6 +311,51 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+    responsive_images: {
+      options: {
+        engine: "im",
+        concurrency: 3,
+        density: 150,
+        sizes: [
+          {
+            name: "sm",
+            width: 340,
+            height: 259
+          },
+          {
+            name: "md",
+            width: 440,
+            height: 330
+          },
+          {
+            name: "lg",
+            width: 526,
+            height: 394
+          },
+          {
+            name: "xl",
+            width: 665,
+            height: 499
+          }
+        ]
+      },
+      dev: {
+        files: [
+          {
+            expand: true,
+            cwd: "_src",
+            src: "img/portfolio/**/*.png",
+            dest: "dist/dev"
+          },
+          {
+            expand: true,
+            cwd: "_src",
+            src: "img/portfolio/**/*.png",
+            dest: "_src/vue"
+          }
+        ]
+      }
     }
   });
 
@@ -321,6 +366,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-less");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-text-replace");
+  grunt.loadNpmTasks("grunt-responsive-images");
 
   // Default task.
   grunt.registerTask("default", ["less:dev", "uglify:dev"]);
@@ -329,7 +375,8 @@ module.exports = function(grunt) {
     "less:dev",
     "uglify:dev",
     "copy:dev",
-    "replace:local"
+    "replace:local",
+    "responsive_images:dev"
   ]);
   grunt.registerTask("dev", [
     "less:dev",

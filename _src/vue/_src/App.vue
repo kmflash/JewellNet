@@ -1,10 +1,8 @@
 <template>
     <div id="app-wrapper" class="content" name="top">
-      <masthead></masthead>
-      <router-view
-      :theProjectList="this.theProjectsList"
-></router-view>
-<site-footer></site-footer>
+      <masthead :siteData="this.siteData"></masthead>
+      <router-view :theProjectList="this.theProjectsList"></router-view>
+      <site-footer></site-footer>
     </div>
 </template>
 
@@ -20,16 +18,23 @@ export default {
   },
   data() {
     return {
+      siteData: [],
       theProjectsList: [],
       projectDetail: []
     };
   },
   created() {
-    console.log("downloading project data...");
     this.fetchData();
   },
   methods: {
     fetchData() {
+      // fetch site info
+      console.log("loading site data...");
+      axios
+        .get("json/siteData.json")
+        .then(response => (this.siteData = response.data));
+
+      console.log("loading project data...");
       axios
         .get("./json/projects.json?")
         .then(response => (this.theProjectsList = response.data));

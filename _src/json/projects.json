@@ -11,35 +11,71 @@
     "imgs": [
       {
         "id": 0,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-md.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-md-xl.png"
       },
       {
         "id": 1,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-xs.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-xs-xl.png"
       },
       {
         "id": 2,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-xl.png"
       },
       {
         "id": 3,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-md.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-md-xl.png"
       },
       {
         "id": 4,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-xs.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-xs-xl.png"
       },
       {
         "id": 5,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-xl.png"
       },
       {
         "id": 6,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-activity-feed.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-activity-feed-xl.png"
       },
       {
         "id": 7,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-profile-md.png"
+        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-profile-md-xl.png"
+      }
+    ]
+  },
+  {
+    "id": "fel",
+    "name": "GK Front End Library",
+    "year": "2017",
+    "scope": ["geniuskitchen.com"],
+    "role": "Visual Design Lead, Front-End Lead",
+    "notes": ["Node.js", "Less", "Responsive", "Mobile First"],
+    "disc": "Internal companion site documenting UI patterns, colors, swatches and other tools for maintaining the Genius Kitchen website. Uses an encapsulated copy of the css styling for the GK site, so everything displays as it would on the live site.",
+    "thumb": "{{imgPath}}/img/portfolio/fel/fel-thumb-lg.png",
+    "imgs": [
+      {
+        "id": 0,
+        "url": "{{imgPath}}/img/portfolio/fel/fel-brand-xl.png"
+      },
+      {
+        "id": 1,
+        "url": "{{imgPath}}/img/portfolio/fel/fel-ui-xl.png"
+      },
+      {
+        "id": 2,
+        "url": "{{imgPath}}/img/portfolio/fel/fel-ui-foodicons-xl.png"
+      },
+      {
+        "id": 3,
+        "url": "{{imgPath}}/img/portfolio/fel/fel-ui-carets-xl.png"
+      },
+      {
+        "id": 4,
+        "url": "{{imgPath}}/img/portfolio/fel/fel-editorial-xl.png"
+      },
+      {
+        "id": 5,
+        "url": "{{imgPath}}/img/portfolio/fel/fel-supplemental-xl.png"
       }
     ]
   }
