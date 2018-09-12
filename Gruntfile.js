@@ -174,7 +174,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/social/**", "img/portfolio/**"],
+            src: ["img/social/**", "img/portfolio/**", "resume/*"],
             dest: "dist/dev/"
           },
           {
@@ -193,7 +193,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["json/**", "img/social/**", "img/portfolio/**"],
+            src: ["json/**", "img/social/**", "img/portfolio/**", "resume/*"],
             dest: "_src/vue"
           }
         ]
@@ -203,7 +203,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/social/**", "img/portfolio/**"],
+            src: ["img/social/**", "img/portfolio/**", "resume/*"],
             dest: "dist/prod/"
           },
           {
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["json/**", "img/social/**", "img/portfolio/**"],
+            src: ["json/**", "img/social/**", "img/portfolio/**", "resume/*"],
             dest: "_src/vue"
           }
         ]
@@ -238,19 +238,19 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/*", "fonts/**", "json/**"],
+            src: ["img/*", "fonts/**", "json/**", "resume/*"],
             dest: "dist/prod/"
           },
           {
             expand: true,
             cwd: "_src",
-            src: ["img/*", "fonts/**", "json/**"],
+            src: ["img/*", "fonts/**", "json/**", "resume/*"],
             dest: "dist/dev/"
           },
           {
             expand: true,
             cwd: "dist/prod",
-            src: ["img/*", "fonts/**", "css/*", "js/**"],
+            src: ["img/*", "fonts/**", "css/*", "js/**", "resume/*"],
             dest: "_src/vue"
           }
         ]
