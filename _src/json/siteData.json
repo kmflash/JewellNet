@@ -1,7 +1,7 @@
 {
   "info": {
     "myName": "David Jewell",
-    "tagline": "Design Technologist",
+    "tagline": "Digital Product Design &amp; Engineering",
     "bio": "<strong>Why, hello there!</strong> I’m David Jewell, a designer living in the beautiful borough of Brooklyn, NY. I specialize in digital products deeply rooted in design thinking. Coupled with technical knowledge, I am involved in all stages of the lifecycle of a product, from conception to execution. I am passionate about discovering how things work, and how to improve upon them. I love cycling, live music, the color magenta and my cat, Em."
   },
   "mastheadLinks": [
@@ -13,7 +13,6 @@
   "siteNav": [
     {
       "key": "home",
-      "url": "/",
       "text": "home",
       "isDisabled": false,
       "type": "router"

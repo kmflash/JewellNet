@@ -49,12 +49,7 @@ export default {
     },
     buidEmail: function(addr) {
       return (
-        "mailto\u003A\u0014" +
-        addr.name +
-        "\u0040" +
-        addr.domain +
-        "\u002E" +
-        addr.tld
+        "mailto:" + addr.name + "\u0040" + addr.domain + "\u002E" + addr.tld
       );
     }
   }

@@ -6,6 +6,9 @@
           <h2 class="project-header__title">{{project.name}}</h2>
         </div>
         <span class="project-header__year">{{project.year}}</span>
+        <ul class="project-header__scope">
+          <li v-for="aScope in project.scope" :key="aScope.scope">{{aScope}}</li>
+        </ul>
       </div>
       <carousel :imgs="project.imgs"></carousel>
 
@@ -39,6 +42,11 @@
 import carousel from "./carousel/carousel.vue";
 export default {
   name: "project-item",
+  data() {
+    return {
+      scope: ""
+    };
+  },
   props: ["theProjectList"],
   components: {
     carousel: carousel

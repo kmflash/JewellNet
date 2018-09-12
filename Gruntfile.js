@@ -187,7 +187,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "dist/dev",
-            src: "css/*",
+            src: ["css/**"],
             dest: "_src/vue"
           },
           {
