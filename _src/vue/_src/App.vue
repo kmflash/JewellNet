@@ -2,7 +2,7 @@
     <div id="app-wrapper" class="content" name="top">
       <masthead :siteData="this.siteData"></masthead>
       <router-view :theProjectList="this.theProjectsList"></router-view>
-<site-footer></site-footer>
+      <site-footer></site-footer>
     </div>
 </template>
 

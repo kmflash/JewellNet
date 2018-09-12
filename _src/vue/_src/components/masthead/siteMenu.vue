@@ -6,8 +6,9 @@
     <div class="masthead__menu-wrapper">
       <ul class="masthead__menu-list">
         <li v-for="item in menuItems" :key="item.key" :class="['masthead__menu-list-' + item.key, {disabled: item.isDisabled}]">
-          <router-link :to="{name: item.key}" v-if="item.key != 'email'">{{item.text}}</router-link>
-          <a :href="buidEmail(item.email)" v-else >{{item.text}}</a>
+          <router-link v-if="item.type == 'router'" :to="{name: item.key}">{{item.text}}</router-link>
+          <a :href="buidEmail(item.email)" v-else-if="item.key == 'email'" >{{item.text}}</a>
+          <a v-else :href="item.url">{{item.text}}</a>
         </li>
       </ul>
     </div>

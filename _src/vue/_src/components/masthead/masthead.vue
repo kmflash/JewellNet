@@ -8,10 +8,10 @@
             </h1>
             <aside class="masthead__aside" v-html="siteData.info.tagline"></aside>
           </div>
-          <masthead-links v-if="this.$route.path === '/'" :linx="siteData.mastheadLinks"></masthead-links>
+          <masthead-links v-if="this.$route.name === 'home'" :linx="siteData.mastheadLinks"></masthead-links>
         </div>
       <site-menu :menuItems="siteData.siteNav"></site-menu>
-      <p class="masthead__intro" v-if="this.$route.path === '/'" v-html="siteData.info.bio"></p>
+      <p class="masthead__intro" v-if="this.$route.name === 'home'" v-html="siteData.info.bio"></p>
     </div>
   </header>
 </template>
