@@ -125,6 +125,10 @@ module.exports = function(grunt) {
       default: {
         files: ["_src/**/*.less", "_src/**/*.js", "_src/**/*.html"],
         tasks: "dev"
+      },
+      vue: {
+        files: ["_src/less/*.less", "_src/js/*.js", "_src/**/*.html"],
+        tasks: ["complete", "local"]
       }
     },
     less: {
@@ -316,27 +320,33 @@ module.exports = function(grunt) {
       options: {
         engine: "im",
         concurrency: 3,
-        density: 150,
+        quality: 100,
+        aspectRatio: false,
         sizes: [
           {
             name: "sm",
-            width: 340,
-            height: 259
+            width: 695,
+            height: 391
           },
           {
             name: "md",
-            width: 440,
-            height: 330
+            width: 674,
+            height: 505
           },
           {
             name: "lg",
-            width: 526,
-            height: 394
+            width: 850,
+            height: 637
           },
           {
             name: "xl",
-            width: 665,
-            height: 499
+            width: 927,
+            height: 640
+          },
+          {
+            name: "thumb",
+            width: 409,
+            height: 306
           }
         ]
       },

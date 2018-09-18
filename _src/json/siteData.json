@@ -35,5 +35,39 @@
       "isDisabled": false,
       "type": "link"
     }
+  ],
+  "imageSizes": [
+    {
+      "key": "sm",
+      "imageSize": {
+        "width": 340,
+        "height": 191,
+        "offset": 10
+      }
+    },
+    {
+      "key": "md",
+      "imageSize": {
+        "width": 674,
+        "height": 191,
+        "offset": 28
+      }
+    },
+    {
+      "key": "lg",
+      "imageSize": {
+        "width": 850,
+        "height": 524,
+        "offset": 28
+      }
+    },
+    {
+      "key": "xl",
+      "imageSize": {
+        "width": 927,
+        "height": 570,
+        "offset": 28
+      }
+    }
   ]
 }
