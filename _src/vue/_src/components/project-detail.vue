@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="project__wrapper">
     <section class="project" v-for="project in theProjectList" :key="project.id" v-if="project.id === $route.params.id">
       <div class="project-header" >
         <div class="project-header__title-wrapper h2-wrapper">
@@ -10,9 +10,9 @@
           <li v-for="aScope in project.scope" :key="aScope.scope">{{aScope}}</li>
         </ul>
       </div>
-      <carousel :imgs="project.imgs"></carousel>
+      <carousel :imgs="project.imgs" :imageSizes="imageSizes"></carousel>
 
-      <div class="project-info">
+      <!-- <div class="project-info">
         <div class="project-info__section" v-if="project.disc">
           <div class="project-info__section-title-wrapper h4-wrapper">
             <h4 class="project-info__section-title">About</h4>
@@ -33,7 +33,7 @@
             <li v-for="item in project.notes" :key="item" v-html="item"></li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
       scope: ""
     };
   },
-  props: ["theProjectList"],
+  props: ["theProjectList", "imageSizes"],
   components: {
     carousel: carousel
   },

@@ -31,7 +31,7 @@ export default {
     "carousel-controls": carouselControls,
     "carousel-images": carouselImages
   },
-  props: ["imgs"],
+  props: ["imgs", "imageSizes"],
   methods: {
     prevImage: function() {
       // update controls and position info
@@ -55,10 +55,53 @@ export default {
     updateControls: function() {
       this.pos == this.tot ? (this.nextBtn = true) : (this.nextBtn = false);
       this.pos == 1 ? (this.backBtn = true) : (this.backBtn = false);
+      this.moveTray();
+    },
+    moveTray: function() {
+      var docWidth = document.body.clientWidth;
+      var imageTray = document.querySelector(".project__carousel-images");
+
+      // breakpoints
+      var bpXSBaseLine = 375;
+
+      var bpSM = 768;
+      var bpMD = 1025;
+      var bpLG = 1401;
+
+      //image Sizes
+      var imageWidthSM = 340;
+      var imageOffsetSM = 10;
+
+      var imageWidthMD = 674;
+      var imageOffsetMD = 28;
+
+      var imageWidthLG = 850;
+      var imageOffsetLG = imageOffsetMD;
+
+      var imageWidthXL = 927;
+      var imageOffsetXL = imageOffsetMD;
+
+      var offsetPctSM = (imageWidthSM + imageOffsetSM) / bpXSBaseLine * 100;
+      var offsetMD = imageWidthMD + imageOffsetMD;
+      var offsetLG = imageWidthLG + imageOffsetLG;
+      var offsetXL = imageWidthXL + imageOffsetXL;
+
+      if (docWidth < bpSM) {
+        imageTray.style.left = (this.pos - 1) * offsetPctSM * -1 + "%";
+      } else if (docWidth >= bpSM && docWidth < bpMD) {
+        imageTray.style.left = (this.pos - 1) * offsetMD * -1 + "px";
+      } else if (docWidth >= bpMD && docWidth < bpLG) {
+        imageTray.style.left = (this.pos - 1) * offsetLG * -1 + "px";
+      } else {
+        imageTray.style.left = (this.pos - 1) * offsetXL * -1 + "px";
+      }
+
+      console.log(docWidth);
     }
   },
   mounted() {
     this.activated = true;
+    this.moveTray();
   }
 };
 </script>

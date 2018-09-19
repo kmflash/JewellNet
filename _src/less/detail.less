@@ -9,6 +9,10 @@ body#detail {
 }
 
 .project {
+  &__wrapper {
+    width: 100%;
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,20 +21,11 @@ body#detail {
   overflow-x: hidden;
 
   @media @md {
-    width: @bp-container-md;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: unset;
     overflow-x: unset;
-  }
-
-  @media @lg {
-    width: @bp-container-lg;
-  }
-
-  @media @xl {
-    width: @bp-container-xl;
   }
 
   &-header {
@@ -38,7 +33,15 @@ body#detail {
     margin-bottom: 20px;
 
     @media @md {
-      flex-basis: 100%;
+      flex-basis: @bp-container-md;
+    }
+
+    @media @lg {
+      flex-basis: @bp-container-lg;
+    }
+
+    @media @xl {
+      flex-basis: @bp-container-xl;
     }
 
     &__title {
@@ -70,7 +73,7 @@ body#detail {
       color: @color-light-grey;
       list-style: none;
       padding-left: 10px;
-      width: @bp-container-sm;
+      min-width: @bp-container-sm;
 
       li {
         display: inline-block;
