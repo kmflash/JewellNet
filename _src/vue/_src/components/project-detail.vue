@@ -12,28 +12,30 @@
       </div>
       <carousel :imgs="project.imgs" :imageSizes="imageSizes"></carousel>
 
-      <!-- <div class="project-info">
-        <div class="project-info__section" v-if="project.disc">
-          <div class="project-info__section-title-wrapper h4-wrapper">
-            <h4 class="project-info__section-title">About</h4>
+      <div class="project-info">
+        <div class="project-info__content">
+          <div class="project-info__section" v-if="project.disc">
+            <div class="project-info__section-title-wrapper h4-wrapper">
+              <h4 class="project-info__section-title">About</h4>
+            </div>
+            <p class="project-info__section-text" v-html="project.disc"></p>
           </div>
-          <p class="project-info__section-text" v-html="project.disc"></p>
-        </div>
-        <div class="project-info__section" v-if="project.role">
-          <div class="project-info__section-title-wrapper h4-wrapper">
-            <h4 class="project-info__section-title">Role</h4>
+          <div class="project-info__section" v-if="project.role">
+            <div class="project-info__section-title-wrapper h4-wrapper">
+              <h4 class="project-info__section-title">Role</h4>
+            </div>
+            <p class="project-info__section-text" v-html="project.role"></p>
           </div>
-          <p class="project-info__section-text" v-html="project.role"></p>
-        </div>
-        <div class="project-info__section" v-if="project.notes">
-          <div class="project-info__section-title-wrapper h4-wrapper">
-            <h4 class="project-info__section-title">Technical Notes</h4>
+          <div class="project-info__section" v-if="project.notes">
+            <div class="project-info__section-title-wrapper h4-wrapper">
+              <h4 class="project-info__section-title">Technical Notes</h4>
+            </div>
+            <ul class="project-info__section-list">
+              <li v-for="item in project.notes" :key="item" v-html="item"></li>
+            </ul>
           </div>
-          <ul class="project-info__section-list">
-            <li v-for="item in project.notes" :key="item" v-html="item"></li>
-          </ul>
         </div>
-      </div> -->
+      </div>
     </section>
   </div>
 </template>

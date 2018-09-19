@@ -2,11 +2,24 @@
   min-height: @carousel-image-height-sm;
   width: 100%;
   margin-bottom: 15px;
-  opacity: 0;
   background-color: @color-dark-grey;
   position: relative;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: @carousel-top-padding-sm-md;
+  padding-bottom: @carousel-top-padding-sm-md;
+
+  @media @md {
+    margin-bottom: 0;
+  }
+
+  @media @lg {
+    padding-top: @carousel-top-padding-lg;
+    padding-bottom: @carousel-bottom-padding-lg;
+  }
+
+  @media @xl {
+    padding-top: @carousel-top-padding-xl;
+    padding-bottom: @carousel-bottom-padding-xl;
+  }
 
   &--wrapper {
     width: 100%;
@@ -14,8 +27,6 @@
   }
 
   &.activated {
-    transition: opacity 1s ease-out;
-    opacity: 1;
     // so we don't see the animations initially
     .project__carousel-images {
       transition: left @carousel-transition;
@@ -103,7 +114,6 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     position: relative;
-    margin: 10px 0;
     left: 0;
     width: 100%;
 

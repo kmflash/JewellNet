@@ -28,6 +28,10 @@ body#detail {
     overflow-x: unset;
   }
 
+  @media @xl {
+    position: relative;
+  }
+
   &-header {
     .xs-container;
     margin-bottom: 20px;
@@ -99,6 +103,28 @@ body#detail {
   &-info {
     .xs-container;
 
+    &__content {
+      @media @md {
+        flex-basis: @bp-container-md;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 10px;
+      }
+
+      @media @lg {
+        flex-basis: @bp-container-lg;
+      }
+
+      @media @xl {
+        flex-basis: 319px;
+        background-color: @color-dark-grey;
+        padding-left: 40px;
+        padding-right: 10px;
+        padding-top: 0;
+      }
+    }
+
     &__section {
       margin-bottom: 40px;
 
@@ -108,26 +134,51 @@ body#detail {
 
       &-text,
       &-list {
-        font-family: @font-mono-light;
+        font-family: @font-normal;
         color: @color-dark-grey;
         font-size: @project-info-text-sm;
         line-height: @project-info-text-sm-lh;
+
+        @media @md {
+          color: @color-white;
+        }
+
+        @media @lg {
+          font-size: @project-info-text-lg;
+          line-height: @project-info-text-lg-lh;
+        }
       }
 
       &-list {
         padding-left: 30px;
       }
+
+      @media @md {
+        flex-basis: 323px;
+      }
+
+      @media @lg {
+        flex-basis: 237px;
+
+        &:first-child {
+          flex-basis: 326px;
+        }
+      }
     }
     @media @md {
-      flex-basis: 180px;
-    }
-
-    @media @lg {
-      flex-basis: 267px;
+      flex-basis: 100%;
+      background-color: @color-dark-grey;
+      display: flex;
+      justify-content: center;
     }
 
     @media @xl {
-      flex-basis: 460px;
+      position: absolute;
+      top: 85px;
+      background-color: transparent;
+      width: @bp-container-xl + 80px;
+      justify-content: flex-start;
+      padding-top: @carousel-top-padding-xl;
     }
   }
 }

@@ -75,7 +75,7 @@ h3 {
 }
 
 .h4-wrapper {
-  border-top: solid @h4-border-height @color-light-grey;
+  border-top: solid @h4-border-height @color-black;
   width: 100%;
 
   h4 {
@@ -86,7 +86,6 @@ h3 {
     font-size: @h4-sm;
     margin: -@h4-border-height 0 0;
     padding-top: 5 - @h4-border-height;
-    border-top: solid @h4-border-height @color-black;
 
     @media @lg {
       font-size: @h4-lg;
@@ -95,5 +94,8 @@ h3 {
 
   @media @md {
     justify-content: flex-start;
+
+    color: @color-white;
+    border-top-color: @color-light-grey;
   }
 }

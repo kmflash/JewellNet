@@ -99,13 +99,33 @@ export default {
       } else {
         imageTray.style.left = (this.pos - 1) * offsetXL * -1 + "px";
       }
+    },
+    updateCarouselHeight: function() {
+      var theCarousel = document.querySelector(".project__carousel");
+      var theInfo = document.querySelector(".project-info");
+      var docWidth = document.body.clientWidth;
 
-      console.log(docWidth);
+      if (docWidth > 1400) {
+        if (theCarousel.offsetHeight < theInfo.offsetHeight) {
+          theCarousel.style.height = theInfo.offsetHeight + "px";
+        } else {
+          theInfo.style.height = theCarousel.offsetHeight - 30 + "px";
+        }
+      } else {
+        theCarousel.style.height = "unset";
+        theInfo.style.height = "unset";
+      }
     }
   },
   mounted() {
     this.activated = true;
     this.moveTray();
+    window.addEventListener("resize", this.updateCarouselHeight);
+
+    this.updateCarouselHeight();
+  },
+  beforeDestroy: function() {
+    window.removeEventListener("resize", this.updateCarouselHeight());
   }
 };
 </script>
