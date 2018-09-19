@@ -5,6 +5,13 @@
   opacity: 0;
   background-color: @color-dark-grey;
   position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &--wrapper {
+    width: 100%;
+    position: relative;
+  }
 
   &.activated {
     transition: opacity 1s ease-out;
@@ -21,7 +28,7 @@
     &--back,
     &--next,
     &--location {
-      display: inline;
+      display: inline-block;
     }
 
     &--back,
@@ -42,15 +49,25 @@
     }
 
     @media @md {
-      display: inline-block;
-      position: absolute;
+      display: block;
+      position: relative;
+      width: @bp-container-md;
+      text-align: right;
+      margin: 0 auto -30px;
       top: -70px;
-      right: (@bp-md - @carousel-image-width-md) / 2;
+    }
+
+    @media @lg {
+      width: @bp-container-lg;
+    }
+
+    @media @xl {
+      width: @bp-container-xl;
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
 
       @{no-touch} &:hover {
         .cls-3 {
@@ -68,10 +85,11 @@
     &--location {
       font-family: @font-mono-light;
       color: @color-light-grey;
-      font-size: 12px;
+      font-size: 16px;
       letter-spacing: -3px;
-      line-height: 1;
-      vertical-align: text-top;
+      line-height: 30px;
+      vertical-align: top;
+      padding-top: 2px;
 
       &--next {
         margin-right: 3px;
@@ -157,6 +175,10 @@
         flex-basis: @carousel-image-width-xl;
         height: @carousel-image-height-xl;
         margin-right: @carousel-active-image-offset-xl;
+
+        &.active {
+          margin-left: (@bp-container-xl - @carousel-image-width-xl) / 2;
+        }
       }
     }
 

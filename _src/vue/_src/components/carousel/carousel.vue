@@ -1,6 +1,6 @@
 <template>
-  <div class="project__carousel" :class="{activated}" v-touch:swipe.left="nextImage" v-touch:swipe.right="prevImage">
-    <carousel-controls
+<div class="project__carousel--wrapper">
+      <carousel-controls
       :total="imgs.length"
       :pos="pos"
       :backBtn="backBtn"
@@ -8,8 +8,12 @@
       v-on:back="prevImage"
       v-on:next="nextImage"
       ></carousel-controls>
+<div class="project__carousel" :class="{activated}" v-touch:swipe.left="nextImage" v-touch:swipe.right="prevImage">
+
     <carousel-images :imgs="imgs" :pos="pos"></carousel-images>
   </div>
+</div>
+
 </template>
 
 <script>
