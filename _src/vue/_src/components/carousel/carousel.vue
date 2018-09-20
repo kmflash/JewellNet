@@ -100,7 +100,10 @@ export default {
         imageTray.style.left = (this.pos - 1) * offsetXL * -1 + "px";
       }
     },
-    updateCarouselHeight: function() {
+    updateCarouselHeight: function(destroyed = false) {
+      if (destroyed == true) {
+        return;
+      }
       var theCarousel = document.querySelector(".project__carousel");
       var theInfo = document.querySelector(".project-info");
       var docWidth = document.body.clientWidth;
@@ -120,12 +123,12 @@ export default {
   mounted() {
     this.activated = true;
     this.moveTray();
-    window.addEventListener("resize", this.updateCarouselHeight);
+    window.addEventListener("resize", this.updateCarouselHeight());
 
     this.updateCarouselHeight();
   },
   beforeDestroy: function() {
-    window.removeEventListener("resize", this.updateCarouselHeight());
+    window.removeEventListener("resize", this.updateCarouselHeight(true));
   }
 };
 </script>

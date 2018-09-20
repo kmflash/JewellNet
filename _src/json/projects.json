@@ -92,32 +92,32 @@
     "notes": ["Node.js", "Less", "Responsive", "Mobile First"],
     "disc": "Internal companion site documenting UI patterns, colors, swatches and other tools for maintaining the Genius Kitchen website. Uses an encapsulated copy of the css styling for the GK site, so everything displays as it would on the live site.",
     "basePath": "{{imgPath}}/img/portfolio/fel/",
-    "thumb": "{{imgPath}}/img/portfolio/fel/fel-cover@2x.jpg",
+    "thumb": "{{imgPath}}/img/portfolio/fel/fel-cover@2x.png",
     "imageType": "jpg",
     "imgs": [
       {
         "id": 0,
-        "url": "fel-brand"
+        "fileName": "fel-brand"
       },
       {
         "id": 1,
-        "url": "fel-ui"
+        "fileName": "fel-ui"
       },
       {
         "id": 2,
-        "url": "fel-ui-foodicons"
+        "fileName": "fel-ui-foodicons"
       },
       {
         "id": 3,
-        "url": "fel-ui-ribbons"
+        "fileName": "fel-ui-ribbons"
       },
       {
         "id": 4,
-        "url": "fel-editorial"
+        "fileName": "fel-editorial"
       },
       {
         "id": 5,
-        "url": "fel-supplementary"
+        "fileName": "fel-supplementary"
       }
     ]
   }

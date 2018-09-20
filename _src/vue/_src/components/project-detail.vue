@@ -19,6 +19,7 @@
               <h4 class="project-info__section-title">About</h4>
             </div>
             <p class="project-info__section-text" v-html="project.disc"></p>
+            <a :href="project.visitLink" target="_blank" v-if="project.visitLink">View Live</a>
           </div>
           <div class="project-info__section" v-if="project.role">
             <div class="project-info__section-title-wrapper h4-wrapper">

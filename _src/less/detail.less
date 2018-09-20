@@ -103,6 +103,17 @@ body#detail {
   &-info {
     .xs-container;
 
+    a {
+      color: lighten(@color-magenta, 10%);
+      text-decoration: none;
+      font-weight: @font-normal-med;
+
+      @{no-touch} &:hover {
+        color: @color-white;
+        text-decoration: underline;
+      }
+    }
+
     &__content {
       @media @md {
         flex-basis: @bp-container-md;

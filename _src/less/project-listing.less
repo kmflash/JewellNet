@@ -3,7 +3,7 @@
 
 .project-listing {
   max-width: 100%;
-  margin: @listing-spacing-sm/2 0 @listing-spacing-sm/2;
+  margin: @listing-spacing-sm / 2 0 @listing-spacing-sm / 2;
 
   a {
     text-decoration: none;
@@ -12,6 +12,15 @@
     @{no-touch} &:hover {
       color: @color-magenta;
       text-decoration: none;
+
+      .project-listing__img {
+        background-color: @color-magenta;
+
+        img {
+          filter: grayscale(100%);
+          opacity: 0.4;
+        }
+      }
     }
   }
 
@@ -24,6 +33,7 @@
 
     img {
       max-height: 100%;
+      transition: all @default-transition;
     }
   }
 
