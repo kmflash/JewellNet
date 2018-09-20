@@ -10,7 +10,7 @@
       ></carousel-controls>
 <div class="project__carousel" :class="{activated}" v-touch:swipe.left="nextImage" v-touch:swipe.right="prevImage">
 
-    <carousel-images :imgs="imgs" :pos="pos"></carousel-images>
+    <carousel-images :imgs="imgs" :pos="pos" :basePath="basePath" :imageType="imageType"></carousel-images>
   </div>
 </div>
 
@@ -35,7 +35,7 @@ export default {
     "carousel-controls": carouselControls,
     "carousel-images": carouselImages
   },
-  props: ["imgs", "imageSizes"],
+  props: ["imgs", "imageSizes", "basePath", "imageType"],
   methods: {
     prevImage: function() {
       // update controls and position info

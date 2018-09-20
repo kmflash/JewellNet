@@ -10,7 +10,7 @@
           <li v-for="aScope in project.scope" :key="aScope.scope">{{aScope}}</li>
         </ul>
       </div>
-      <carousel :imgs="project.imgs" :imageSizes="imageSizes"></carousel>
+      <carousel :imgs="project.imgs" :imageSizes="imageSizes" :basePath="project.basePath" :imageType="project.imageType"></carousel>
 
       <div class="project-info">
         <div class="project-info__content">
