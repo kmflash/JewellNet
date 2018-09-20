@@ -1,9 +1,7 @@
 {
-  "info": {
-    "myName": "David Jewell",
-    "tagline": "Digital Product Design &amp; Engineering",
-    "bio": "<strong>Why, hello there!</strong> I’m David Jewell, a designer living in the beautiful borough of Brooklyn, NY. I specialize in digital products deeply rooted in design thinking. Coupled with technical knowledge, I am involved in all stages of the lifecycle of a product, from conception to execution. I am passionate about discovering how things work, and how to improve upon them. I love cycling, live music, the color magenta and my cat, Em."
-  },
+  "myName": "David Jewell",
+  "tagline": "Digital Product Design &amp; Engineering",
+  "bio": "<strong>Why, hello there!</strong> I’m David Jewell, a designer living in the beautiful borough of Brooklyn, NY. I specialize in digital products deeply rooted in design thinking. Coupled with technical knowledge, I am involved in all stages of the lifecycle of a product, from conception to execution. I am passionate about discovering how things work, and how to improve upon them. I love cycling, live music, the color magenta and my cat, Em.",
   "mastheadLinks": [
     { "key": "linkedin", "url": "https://www.linkedin.com/in/mrjewell/" },
     { "key": "github", "url": "https://github.com/kmflash/" },
@@ -34,6 +32,40 @@
       "text": "Résumé",
       "isDisabled": false,
       "type": "link"
+    }
+  ],
+  "imageSizes": [
+    {
+      "key": "sm",
+      "imageSize": {
+        "width": 340,
+        "height": 191,
+        "offset": 10
+      }
+    },
+    {
+      "key": "md",
+      "imageSize": {
+        "width": 674,
+        "height": 191,
+        "offset": 28
+      }
+    },
+    {
+      "key": "lg",
+      "imageSize": {
+        "width": 850,
+        "height": 524,
+        "offset": 28
+      }
+    },
+    {
+      "key": "xl",
+      "imageSize": {
+        "width": 927,
+        "height": 570,
+        "offset": 28
+      }
     }
   ]
 }

@@ -13,31 +13,34 @@
       "Single Page App"
     ],
     "disc": "A completely new way to save recipes on Genius Kitchen and Food Network. Saves replaces Recipe Box, which had remained essentially unchanged since launch in 2013. The webapp is built using Vuejs, which significantly increases site speed and time-to-launch owing to the modular, progressive nature of the framework.",
-    "thumb": "{{imgPath}}/img/portfolio/saves/saves-cover-md.png",
+    "visitLink": "https://www.geniuskitchen.com/saves/",
+    "imageType": "jpg",
+    "basePath": "{{imgPath}}/img/portfolio/saves/",
+    "thumb": "{{imgPath}}/img/portfolio/saves/saves-cover@2x.jpg",
     "imgs": [
       {
         "id": 0,
-        "url": "{{imgPath}}/img/portfolio/saves/saves-landing-xl.png"
+        "fileName": "saves-platforms"
       },
       {
         "id": 1,
-        "url": "{{imgPath}}/img/portfolio/saves/saves-collections-xl.png"
+        "fileName": "saves-landing"
       },
       {
         "id": 2,
-        "url": "{{imgPath}}/img/portfolio/saves/saves-add-to-collection-xl.png"
+        "fileName": "saves-collections"
       },
       {
         "id": 3,
-        "url": "{{imgPath}}/img/portfolio/saves/saves-collections-delete-xl.png"
+        "fileName": "saves-add-to-collection"
       },
       {
         "id": 4,
-        "url": "{{imgPath}}/img/portfolio/saves/saves-add-recipe-xl.png"
+        "fileName": "saves-collections-delete"
       },
       {
         "id": 5,
-        "url": "{{imgPath}}/img/portfolio/saves/saves-platforms-xl.png"
+        "fileName": "saves-add-recipe"
       }
     ]
   },
@@ -49,39 +52,34 @@
     "role": "Visual Design Lead, Front-End",
     "notes": ["Node.js", "Less", "Responsive", "Mobile First", "Cloudinary"],
     "disc": "Rebrand and relaunch of Food.com to Genius Kitchen (GK) a cooking and food entertainment micronetwork.",
-    "thumb": "{{imgPath}}/img/portfolio/genius-kitchen/gk-splash-thumb.png",
+    "imageType": "jpg",
+    "thumb": "{{imgPath}}/img/portfolio/genius-kitchen/gk-cover@2x.jpg",
+    "basePath": "{{imgPath}}/img/portfolio/genius-kitchen/",
+    "visitLink": "https://www.geniuskitchen.com",
     "imgs": [
       {
         "id": 0,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-md-xl.png"
+        "fileName": "gk-home-lg"
       },
       {
         "id": 1,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-xs-xl.png"
+        "fileName": "gk-home-xs"
       },
       {
         "id": 2,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-home-xl.png"
+        "fileName": "gk-home"
       },
       {
         "id": 3,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-md-xl.png"
+        "fileName": "gk-recipe-md"
       },
       {
         "id": 4,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-xs-xl.png"
+        "fileName": "gk-recipe-xs"
       },
       {
         "id": 5,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-recipe-xl.png"
-      },
-      {
-        "id": 6,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-activity-feed-xl.png"
-      },
-      {
-        "id": 7,
-        "url": "{{imgPath}}/img/portfolio/genius-kitchen/gk-profile-md-xl.png"
+        "fileName": "gk-recipe"
       }
     ]
   },
@@ -93,31 +91,33 @@
     "role": "Visual Design Lead, Front-End Lead",
     "notes": ["Node.js", "Less", "Responsive", "Mobile First"],
     "disc": "Internal companion site documenting UI patterns, colors, swatches and other tools for maintaining the Genius Kitchen website. Uses an encapsulated copy of the css styling for the GK site, so everything displays as it would on the live site.",
-    "thumb": "{{imgPath}}/img/portfolio/fel/fel-thumb-lg.png",
+    "basePath": "{{imgPath}}/img/portfolio/fel/",
+    "thumb": "{{imgPath}}/img/portfolio/fel/fel-cover@2x.jpg",
+    "imageType": "jpg",
     "imgs": [
       {
         "id": 0,
-        "url": "{{imgPath}}/img/portfolio/fel/fel-brand-xl.png"
+        "url": "fel-brand"
       },
       {
         "id": 1,
-        "url": "{{imgPath}}/img/portfolio/fel/fel-ui-xl.png"
+        "url": "fel-ui"
       },
       {
         "id": 2,
-        "url": "{{imgPath}}/img/portfolio/fel/fel-ui-foodicons-xl.png"
+        "url": "fel-ui-foodicons"
       },
       {
         "id": 3,
-        "url": "{{imgPath}}/img/portfolio/fel/fel-ui-carets-xl.png"
+        "url": "fel-ui-ribbons"
       },
       {
         "id": 4,
-        "url": "{{imgPath}}/img/portfolio/fel/fel-editorial-xl.png"
+        "url": "fel-editorial"
       },
       {
         "id": 5,
-        "url": "{{imgPath}}/img/portfolio/fel/fel-supplemental-xl.png"
+        "url": "fel-supplementary"
       }
     ]
   }

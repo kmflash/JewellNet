@@ -1,30 +1,36 @@
 .project__carousel {
-  height: @carousel-image-height-sm;
+  min-height: @carousel-image-height-sm;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: @color-dark-grey;
   position: relative;
-  width: @bp-xs-baseline;
-  margin-bottom: 14px;
-  opacity: 0;
-
-  &.activated {
-    transition: opacity 1s ease-out;
-    opacity: 1;
-
-    // so we don't see the animations initially
-    .project__carousel--image-wrapper {
-      transition: left @carousel-transition;
-    }
-  }
+  padding-top: @carousel-top-padding-sm-md;
+  padding-bottom: @carousel-top-padding-sm-md;
 
   @media @md {
-    height: @carousel-image-height-md;
+    margin-bottom: 0;
   }
 
   @media @lg {
-    height: @carousel-image-height-lg;
+    padding-top: @carousel-top-padding-lg;
+    padding-bottom: @carousel-bottom-padding-lg;
   }
 
   @media @xl {
-    height: @carousel-image-height-xl;
+    padding-top: @carousel-top-padding-xl;
+    padding-bottom: @carousel-bottom-padding-xl;
+  }
+
+  &--wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  &.activated {
+    // so we don't see the animations initially
+    .project__carousel-images {
+      transition: left @carousel-transition;
+    }
   }
 
   &-controls {
@@ -33,7 +39,7 @@
     &--back,
     &--next,
     &--location {
-      display: inline;
+      display: inline-block;
     }
 
     &--back,
@@ -54,15 +60,25 @@
     }
 
     @media @md {
-      display: inline-block;
-      position: absolute;
-      top: -47px;
-      right: 0;
+      display: block;
+      position: relative;
+      width: @bp-container-md;
+      text-align: right;
+      margin: 0 auto -30px;
+      top: -70px;
+    }
+
+    @media @lg {
+      width: @bp-container-lg;
+    }
+
+    @media @xl {
+      width: @bp-container-xl;
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
 
       @{no-touch} &:hover {
         .cls-3 {
@@ -80,10 +96,11 @@
     &--location {
       font-family: @font-mono-light;
       color: @color-light-grey;
-      font-size: 12px;
+      font-size: 16px;
       letter-spacing: -3px;
-      line-height: 1;
-      vertical-align: text-top;
+      line-height: 30px;
+      vertical-align: top;
+      padding-top: 2px;
 
       &--next {
         margin-right: 3px;
@@ -91,145 +108,92 @@
     }
   }
 
+  &-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    position: relative;
+    left: 0;
+    width: 100%;
+
+    @media @md {
+      width: @carousel-image-width-md;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media @lg {
+      width: @carousel-image-width-lg;
+    }
+
+    @media @xl {
+      width: @carousel-image-width-xl;
+    }
+  }
+
   &--image {
+    width: 100%;
     max-width: 100%;
+    max-height: 100%;
+
+    &-wrapper {
+      flex-basis: percentage(@carousel-image-width-sm / @bp-xs-baseline);
+      margin-right: percentage(
+        @carousel-active-image-offset-sm / @bp-xs-baseline
+      );
+      flex-shrink: 0;
+      opacity: 0.2;
+
+      &.active {
+        opacity: 1;
+      }
+
+      &:first-child {
+        margin-left: percentage(
+          ((@bp-xs-baseline - @carousel-image-width-sm) / 2) / @bp-xs-baseline
+        );
+      }
+
+      &:last-child {
+        margin-right: percentage(
+            (@bp-xs-baseline - @carousel-image-width-sm) / 2
+          ) / @bp-xs-baseline;
+      }
+
+      @media @md {
+        flex-basis: @carousel-image-width-md;
+        height: @carousel-image-height-md;
+        margin-right: @carousel-active-image-offset-md;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      @media @lg {
+        flex-basis: @carousel-image-width-lg;
+        height: @carousel-image-height-lg;
+        margin-right: @carousel-active-image-offset-lg;
+      }
+
+      @media @xl {
+        flex-basis: @carousel-image-width-xl;
+        height: @carousel-image-height-xl;
+        margin-right: @carousel-active-image-offset-xl;
+
+        &.active {
+          margin-left: (@bp-container-xl - @carousel-image-width-xl) / 2;
+        }
+      }
+    }
 
     &-mask {
       display: none;
-    }
-
-    &-wrapper {
-      @pos-left-px-sm: (@bp-xs-baseline - @carousel-image-width-sm) / 2;
-
-      width: percentage(@carousel-image-width-sm / @bp-xs-baseline);
-      min-height: @carousel-image-height-sm;
-      opacity: 0.3;
-      position: absolute;
-      top: 0;
-
-      &.onSecond {
-        @pos-left-px-sm-prev: @pos-left-px-sm - 2 *
-          (@carousel-image-width-sm - @carousel-active-image-offset-sm);
-        left: percentage(@pos-left-px-sm-prev / @bp-xs-baseline);
-      }
-
-      &.onFirst {
-        @pos-left-px-sm-prev: @pos-left-px-sm - @carousel-image-width-sm -
-          @carousel-active-image-offset-sm;
-        left: percentage(@pos-left-px-sm-prev / @bp-xs-baseline);
-      }
-
-      &.atBat {
-        opacity: 1;
-        left: percentage(@pos-left-px-sm / @bp-xs-baseline);
-      }
-
-      &.onDeck {
-        @pos-left-px-sm-next: @pos-left-px-sm + @carousel-image-width-sm +
-          @carousel-active-image-offset-sm;
-        left: percentage(@pos-left-px-sm-next / @bp-xs-baseline);
-      }
-
-      &.inTheHole {
-        @pos-left-px-sm-2x: @pos-left-px-sm + 2 *
-          (@carousel-image-width-sm + @carousel-active-image-offset-sm);
-        left: percentage((@pos-left-px-sm-2x) / @bp-xs-baseline);
-      }
-
-      &.onBench {
-        display: none;
-      }
-    }
-  }
-
-  @media @md {
-    flex-basis: @carousel-image-width-md;
-    order: 3;
-
-    &--image {
-      &-mask {
-        background-image: linear-gradient(
-          -90deg,
-          rgba(255, 255, 255, 0.21) 0%,
-          #ffffff 78%
-        );
-        width: @carousel-active-image-offset-md;
-        left: -@carousel-active-image-offset-md*2;
-        height: 100%;
-        display: block;
-        position: absolute;
-      }
-      &-wrapper {
-        @pos-left-px-md: @carousel-image-width-md +
-          @carousel-active-image-offset-md;
-        width: @carousel-image-width-md;
-        height: @carousel-image-height-md;
-        display: none;
-
-        &.onSecond,
-        &.onFirst,
-        &.atBat,
-        &.onDeck {
-          display: block;
-        }
-
-        &.onSecond,
-        &.onFirst {
-          width: @carousel-active-image-offset-md;
-          left: -@carousel-active-image-offset-md*2;
-          overflow: hidden;
-
-          img {
-            max-width: unset;
-            max-height: 100%;
-            position: relative;
-            right: @carousel-image-width-md - @carousel-active-image-offset-md;
-          }
-        }
-
-        &.onSecond {
-          opacity: 0;
-        }
-
-        &.atBat {
-          left: 0;
-        }
-
-        &.onDeck,
-        &.inTheHole {
-          left: @pos-left-px-md;
-        }
-      }
-    }
-  }
-
-  @media @lg {
-    @pos-left-px-lg: @carousel-image-width-lg + @carousel-active-image-offset-lg;
-    flex-basis: @carousel-image-width-lg;
-
-    &--image-wrapper {
-      width: @carousel-image-width-lg;
-      height: @carousel-image-height-lg;
-
-      &.onDeck,
-      &.inTheHole {
-        left: @pos-left-px-lg;
-      }
-    }
-  }
-
-  @media @xl {
-    @pos-left-px-xl: @carousel-image-width-xl + @carousel-active-image-offset-xl;
-    flex-basis: @carousel-image-width-xl;
-
-    &--image-wrapper {
-      width: @carousel-image-width-xl;
-      height: @carousel-image-height-xl;
-
-      &.onDeck,
-      &.inTheHole {
-        left: @pos-left-px-xl;
-      }
     }
   }
 }

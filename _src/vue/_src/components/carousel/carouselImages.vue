@@ -5,18 +5,10 @@
       v-for="img in imgs"
       :key="img.id"
       :class="{
-        'atBat': pos === img.id + 1,
-        'onDeck': pos === img.id,
-        'inTheHole': pos === img.id - 1,
-        'onFirst': pos === img.id + 2,
-        'onSecond': pos > img.id + 2,
-        'onBench': pos < img.id - 1
+        'active': pos === img.id + 1
         }"
     >
-      <img :src="img.url" alt="" class="project__carousel--image">
-    </div>
-    <div class="project__carousel--image-mask">
-        &nbsp;
+      <img :src="assembleImagePath(img.fileName)" alt="" class="project__carousel--image" :srcset="assembleImagePath(img.fileName, '2x')">
     </div>
   </div>
 </template>
@@ -24,7 +16,21 @@
 <script>
 export default {
   name: "carousel-images",
-  props: ["imgs", "pos"]
+  props: ["imgs", "pos", "basePath", "imageType"],
+  methods: {
+    assembleImagePath: function(fileName, density = "") {
+      // construct the URL given the parts from the json file
+      let completeURL = this.basePath + fileName;
+
+      if (density != "") {
+        completeURL += "@" + density + "." + this.imageType + " " + density;
+      } else {
+        completeURL += "." + this.imageType;
+      }
+
+      return completeURL;
+    }
+  }
 };
 </script>
 

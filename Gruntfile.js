@@ -125,6 +125,10 @@ module.exports = function(grunt) {
       default: {
         files: ["_src/**/*.less", "_src/**/*.js", "_src/**/*.html"],
         tasks: "dev"
+      },
+      vue: {
+        files: ["_src/less/*.less", "_src/js/*.js", "_src/**/*.html"],
+        tasks: ["complete", "local"]
       }
     },
     less: {
@@ -311,51 +315,6 @@ module.exports = function(grunt) {
           }
         ]
       }
-    },
-    responsive_images: {
-      options: {
-        engine: "im",
-        concurrency: 3,
-        density: 150,
-        sizes: [
-          {
-            name: "sm",
-            width: 340,
-            height: 259
-          },
-          {
-            name: "md",
-            width: 440,
-            height: 330
-          },
-          {
-            name: "lg",
-            width: 526,
-            height: 394
-          },
-          {
-            name: "xl",
-            width: 665,
-            height: 499
-          }
-        ]
-      },
-      dev: {
-        files: [
-          {
-            expand: true,
-            cwd: "_src",
-            src: "img/portfolio/**/*.png",
-            dest: "dist/dev"
-          },
-          {
-            expand: true,
-            cwd: "_src",
-            src: "img/portfolio/**/*.png",
-            dest: "_src/vue"
-          }
-        ]
-      }
     }
   });
 
@@ -366,7 +325,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-less");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-text-replace");
-  grunt.loadNpmTasks("grunt-responsive-images");
 
   // Default task.
   grunt.registerTask("default", ["less:dev", "uglify:dev"]);
@@ -375,8 +333,7 @@ module.exports = function(grunt) {
     "less:dev",
     "uglify:dev",
     "copy:dev",
-    "replace:local",
-    "responsive_images:dev"
+    "replace:local"
   ]);
   grunt.registerTask("dev", [
     "less:dev",
