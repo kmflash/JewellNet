@@ -275,7 +275,7 @@ module.exports = function(grunt) {
           },
           {
             from: "{{imgPath}}",
-            to: ""
+            to: "./img"
           }
         ]
       },
@@ -293,7 +293,7 @@ module.exports = function(grunt) {
           },
           {
             from: "{{imgPath}}",
-            to: "https://dev.davidjewell.nyc"
+            to: "https://dev.davidjewell.nyc/img"
           }
         ]
       },
@@ -311,7 +311,7 @@ module.exports = function(grunt) {
           },
           {
             from: "{{imgPath}}",
-            to: "https://www.davidjewell.nyc"
+            to: "https://www.davidjewell.nyc/img"
           }
         ]
       }

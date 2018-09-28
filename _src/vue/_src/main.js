@@ -6,6 +6,7 @@ import Vue2TouchEvents from "vue2-touch-events";
 import App from "./App.vue";
 import projectListing from "./components/projects-list/projectsList.vue";
 import projectDetail from "./components/project-detail.vue";
+import aboutPage from "./components/about.vue";
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -21,6 +22,11 @@ const routes = [
     path: "/projects/:id",
     component: projectDetail,
     name: "detail"
+  },
+  {
+    path: "/about",
+    component: aboutPage,
+    name: "about"
   }
 ];
 
