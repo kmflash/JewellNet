@@ -120,5 +120,26 @@
         "fileName": "fel-supplementary"
       }
     ]
+  },
+  {
+    "id": "cc",
+    "name": "Cooking Channel",
+    "year": "2010",
+    "scope": ["cookingchanneltv.com"],
+    "role": "Visual Design",
+    "disc": "A new food-centric network and website. Unlike other food websites in the Scripps portfoio, the network branding was borne from the system developed from the web property.",
+    "basePath": "{{imgPath}}/img/portfolio/cooking-channel/",
+    "thumb": "{{imgPath}}/img/portfolio/cooking-channel/cc-cover@2x.jpg",
+    "imageType": "jpg",
+    "imgs": [
+      {
+        "id": 0,
+        "fileName": "cc-home"
+      },
+      {
+        "id": 1,
+        "fileName": "cc-talent"
+      }
+    ]
   }
 ]
