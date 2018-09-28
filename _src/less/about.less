@@ -6,8 +6,87 @@ body#about {
       min-height: 0;
     }
   }
+}
 
-  .about {
-    margin-top: 68px;
+.about {
+  margin-top: 68px;
+  width: 100%;
+  overflow-x: hidden;
+
+  &__header {
+    .xs-container;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__content {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-photo {
+      width: 100vw;
+      height: calc(100vw * 0.75); // maintain 4:3 aspect
+      overflow: hidden;
+      margin-bottom: 20px;
+
+      img {
+        max-width: 100%;
+        margin-top: -30%;
+      }
+    }
+
+    &-long-bio {
+      .xs-container;
+
+      font-size: 14px;
+      line-height: 21px;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contact {
+    .xs-container;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: @burger-width-sm;
+  }
+}
+
+#contact-form {
+  .contact-form {
+    &__group {
+      margin-bottom: 40px;
+    }
+  }
+  label {
+    width: 100%;
+    font-size: @h2-sm;
+    letter-spacing: @h2-sm-ls;
+    font-weight: @font-normal-med;
+    text-transform: uppercase;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    border-bottom: dashed 1px @color-black;
+    padding: 10px 5px 2px;
+    font-family: @font-mono;
+    font-size: 14px;
+    line-height: 21px;
+    color: @color-dark-grey;
+
+    &:focus {
+      border-bottom-style: solid;
+    }
+
+    &.valid {
+      border-bottom-color: #ff0000;
+    }
   }
 }
