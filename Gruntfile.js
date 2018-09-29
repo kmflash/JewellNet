@@ -1,6 +1,7 @@
 /*global module:false*/
 
 // todo: figure out if jshint is needed
+// TODO: make everything build to common dist folders
 
 module.exports = function(grunt) {
   function logIt(msg) {
@@ -123,12 +124,8 @@ module.exports = function(grunt) {
         tasks: ["jshint:lib_test", "qunit"]
       },
       default: {
-        files: ["_src/**/*.less", "_src/**/*.js", "_src/**/*.html"],
-        tasks: "dev"
-      },
-      vue: {
         files: ["_src/less/*.less", "_src/js/*.js", "_src/**/*.html"],
-        tasks: ["complete", "local"]
+        tasks: "local"
       }
     },
     less: {
@@ -315,6 +312,18 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+    postcss: {
+      options: {
+        map: true, // inline sourcemaps
+        processors: [
+          require("pixrem")(), // add fallbacks for rem units
+          require("autoprefixer")({ browsers: "last 2 versions" }) // add vendor prefixes
+        ]
+      },
+      vue: {
+        src: "_src/vue/css/*.css"
+      }
     }
   });
 
@@ -325,6 +334,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-less");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-text-replace");
+  grunt.loadNpmTasks("grunt-postcss");
 
   // Default task.
   grunt.registerTask("default", ["less:dev", "uglify:dev"]);
@@ -333,7 +343,8 @@ module.exports = function(grunt) {
     "less:dev",
     "uglify:dev",
     "copy:dev",
-    "replace:local"
+    "replace:local",
+    "postcss:vue"
   ]);
   grunt.registerTask("dev", [
     "less:dev",
