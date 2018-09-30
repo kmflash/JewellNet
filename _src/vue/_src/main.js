@@ -6,7 +6,7 @@ import Vue2TouchEvents from "vue2-touch-events";
 import App from "./App.vue";
 import projectListing from "./components/projects-list/projectsList.vue";
 import projectDetail from "./components/project-detail.vue";
-import aboutPage from "./components/about.vue";
+import aboutPage from "./components/about/about.vue";
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);

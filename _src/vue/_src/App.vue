@@ -46,6 +46,12 @@ export default {
 </script>
 
 <style>
+/* common */
 @import url("../css/normalize.min.css");
-@import url("../css/jewellnet.min.css");
+
+/* dev */
+@import url("../css/jewellnet.css");
+
+/* prod */
+/* @import url("../css/jewellnet.min.css"); */
 </style>

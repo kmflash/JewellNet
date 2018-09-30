@@ -57,36 +57,70 @@ body#about {
 }
 
 #contact-form {
+  margin-top: 40px;
+  width: 100%;
+
   .contact-form {
     &__group {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    &__error-text,
+    &__requirments {
+      font-size: @type-small;
+      line-height: @type-small + 2px;
+      font-weight: @font-normal-book;
+      display: block;
+      margin: 5px 0 0;
+    }
+
+    &__error-text {
+      color: @color-warning;
+      font-weight: @font-normal-med;
+    }
+
+    &__requirments {
+      color: @color-light-grey;
     }
   }
   label {
-    width: 100%;
-    font-size: @h2-sm;
+    font-size: @type-xs;
     letter-spacing: @h2-sm-ls;
     font-weight: @font-normal-med;
     text-transform: uppercase;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: @color-dark-grey;
+
+    &.invalid {
+      color: @color-warning;
+    }
   }
 
   input,
   textarea {
     width: 100%;
+    box-sizing: border-box;
     border: none;
-    border-bottom: dashed 1px @color-black;
-    padding: 10px 5px 2px;
+    padding: 15px 5px 2px;
     font-family: @font-mono;
     font-size: 14px;
     line-height: 21px;
     color: @color-dark-grey;
-
-    &:focus {
-      border-bottom-style: solid;
-    }
+    background-color: @color-lightest-grey;
+    appearance: none;
+    border-radius: 3px;
+    overflow: hidden;
 
     &.valid {
-      border-bottom-color: #ff0000;
+      background-color: @color-success-bg;
+    }
+
+    &.invalid {
+      background-color: @color-warning-bg;
+      color: @color-warning;
     }
   }
 }
