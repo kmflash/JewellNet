@@ -1,23 +1,26 @@
 <template>
   <form id="contact-form" v-on:submit.prevent="submitForm">
-    <div class="contact-form__group">
+    <div class="contact-form__submitting-message" v-if="this.submitting == true">
+      <h3>{{formMsg}}</h3>
+    </div>
+    <div class="contact-form__group name-group" v-if="!this.submitting">
       <label for="name" :class="{invalid: this.nameValid === false}">Name</label>
       <input type="text" name="name" v-model.lazy="name" v-on:blur="checkName" :class="{valid: this.nameValid, invalid: this.nameValid === false}">
       <small class="contact-form__error-text" v-if="this.nameValid === false">Please enter your name</small>
     </div>
-    <div class="contact-form__group">
+    <div class="contact-form__group email-group" v-if="!this.submitting">
       <label for="email" :class="{invalid: this.emailValid === false}">Email</label>
       <input type="email" name="email" v-model.lazy="email" v-on:blur="checkEmail" :class="{valid: this.emailValid, invalid: this.emailValid === false }">
       <small class="contact-form__error-text" v-if="this.emailValid === false">Hmm, might want to check that address. 🤔</small>
     </div>
-    <div class="contact-form__group">
+    <div class="contact-form__group message-group" v-if="!this.submitting">
       <label for="name" :class="{invalid: this.messageValid === false}">Message</label>
       <textarea name="message" rows="5" :maxlength="this.maxLength" v-model="message" v-on:blur="checkMessage" :class="{valid: this.messageValid, invalid: this.messageValid === false}"></textarea>
       <small class="contact-form__requirments">Characters remaining {{this.checkMessageChars()}} <br> Please, no HTML</small>
       <small class="contact-form__error-text" v-if="this.messageValid === false">Please enter a message. I'd love to hear from you!</small>
     </div>
-    <div class="contact-form__group">
-      <button type="submit" :disabled="validForm == false">Send 💌</button>
+    <div class="contact-form__group" v-if="!this.submitting">
+      <button type="submit" :disabled="validForm == false" class="contact-form__submit-button">Send 💌</button>
     </div>
   </form>
 </template>
@@ -35,7 +38,8 @@ export default {
       nameValid: null,
       emailValid: null,
       messageValid: null,
-      errors: []
+      submitting: null,
+      formMsg: "Thanks for saying 👋"
     };
   },
   methods: {
@@ -48,7 +52,6 @@ export default {
         this.nameValid = true;
       } else {
         this.nameValid = false;
-        this.errors.push("Please enter your name");
       }
       this.checkForm();
     },
@@ -77,7 +80,6 @@ export default {
       this.checkForm();
     },
     checkForm: function() {
-      this.errors = [];
       if (
         this.nameValid == true &&
         this.emailValid == true &&
@@ -86,6 +88,7 @@ export default {
         this.validForm = true;
         console.log("Huzzah, the form is valid 🎉");
       } else {
+        this.validForm = false;
         console.log(
           "Checking form... \n Name:",
           this.nameValid,
@@ -101,6 +104,7 @@ export default {
       //      are invalid and display message
       // TODO submit to form processor
       console.log("submitting message...");
+      this.submitting = true;
 
       var formdata = new FormData();
       formdata.append("name", this.name);

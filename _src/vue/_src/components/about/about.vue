@@ -10,13 +10,15 @@
         <img :src="this.bioPhoto" alt="David Jewell">
       </div>
       <div class="about__content-long-bio" v-html="this.longBio"></div>
-    </div>
-    <section class="about__contact">
-      <div class="h2-wrapper">
-        <h2>Say Hi</h2>
-      </div>
+      <section class="about__contact">
+        <div class="about__content-long-bio" v-html="this.longBio"></div>
+        <div class="h2-wrapper">
+          <h2>Say Hi</h2>
+        </div>
       <contact-form></contact-form>
     </section>
+    </div>
+
   </section>
 </template>
 
@@ -32,6 +34,8 @@ export default {
   mounted() {
     document.body.id = "about";
     document.body.className = "scrolled";
+
+    document.querySelector(".masthead__menu").classList.remove("open"); // hide the burger menu when clicking through from burger nav
   }
 };
 </script>
