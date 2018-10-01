@@ -1,7 +1,7 @@
 <template>
     <div id="app-wrapper" class="content" name="top">
       <masthead :siteData="this.siteData"></masthead>
-      <router-view :theProjectList="this.theProjectsList" :imageSizes="this.siteData.imageSizes"></router-view>
+      <router-view :theProjectList="this.theProjectsList" :imageSizes="this.siteData.imageSizes" :longBio="this.siteData.longBio" :bioPhoto="this.siteData.bioPhoto"></router-view>
       <site-footer></site-footer>
     </div>
 </template>
@@ -46,6 +46,12 @@ export default {
 </script>
 
 <style>
+/* common */
 @import url("../css/normalize.min.css");
-@import url("../css/jewellnet.min.css");
+
+/* dev */
+@import url("../css/jewellnet.css");
+
+/* prod */
+/* @import url("../css/jewellnet.min.css"); */
 </style>
