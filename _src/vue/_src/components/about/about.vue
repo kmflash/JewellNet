@@ -33,7 +33,7 @@ export default {
   props: ["longBio", "bioPhoto"],
   mounted() {
     document.body.id = "about";
-    document.body.className = "scrolled";
+    // document.body.className = "scrolled";
 
     document.querySelector(".masthead__menu").classList.remove("open"); // hide the burger menu when clicking through from burger nav
   }

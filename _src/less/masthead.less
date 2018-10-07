@@ -24,6 +24,8 @@
     border-top: solid @tl-height @color-highlight;
     text-align: center;
     padding-top: 10px;
+    position: relative;
+    z-index: 101;
 
     a {
       text-decoration: none;
@@ -39,7 +41,7 @@
     }
 
     @media @xl {
-      padding-top: 42px;
+      flex-grow: 0;
     }
 
     &-wrapper {
@@ -51,8 +53,16 @@
 
       @media @xl {
         align-items: flex-start;
-        width: unset;
+        width: 100%;
         flex-direction: column;
+      }
+    }
+
+    &-block {
+      @media @xl {
+        width: 100%;
+        display: flex;
+        align-items: baseline;
       }
     }
   }
@@ -71,6 +81,11 @@
 
     @media @lg {
       text-align: left;
+    }
+
+    @media @xl {
+      text-align: right;
+      flex-grow: 100;
     }
   }
 
@@ -180,7 +195,7 @@
     @media @xl {
       width: 666px;
       align-self: flex-end;
-      margin-top: 56px;
+      margin-top: 23px;
       font-size: @intro-xl;
       line-height: @intro-xl-lh;
     }
@@ -193,7 +208,7 @@
 
   @media @xl {
     width: @bp-container-xl;
-    min-height: 300px;
+    // min-height: 300px;
   }
 }
 
@@ -254,6 +269,32 @@ body.scrolled {
 
     @media @md {
       height: auto;
+    }
+  }
+}
+
+// home page specific styles
+body#home {
+  @media @xl {
+    .masthead {
+      &__headline {
+        // padding-top: 42px;
+        flex-grow: unset;
+
+        &-wrapper {
+          width: unset;
+        }
+
+        &-block {
+          width: unset;
+          display: inline-block;
+          align-items: unset;
+        }
+      }
+
+      &__aside {
+        text-align-last: left;
+      }
     }
   }
 }
