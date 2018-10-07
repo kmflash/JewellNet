@@ -28,19 +28,7 @@
       },
       {
         "id": 2,
-        "fileName": "saves-collections"
-      },
-      {
-        "id": 3,
         "fileName": "saves-add-to-collection"
-      },
-      {
-        "id": 4,
-        "fileName": "saves-collections-delete"
-      },
-      {
-        "id": 5,
-        "fileName": "saves-add-recipe"
       }
     ]
   },
@@ -106,18 +94,27 @@
       {
         "id": 2,
         "fileName": "fel-ui-foodicons"
+      }
+    ]
+  },
+  {
+    "id": "fdc",
+    "name": "Food.com",
+    "year": "2015",
+    "scope": ["food.com"],
+    "role": "Visual Design",
+    "disc": "A new food-centric network and website. Unlike other food websites in the Scripps portfoio, the network branding was borne from the system developed from the web property.",
+    "basePath": "{{imgPath}}/portfolio/fdc/",
+    "thumb": "{{imgPath}}/portfolio/fdc/fdc-cover@2x.jpg",
+    "imageType": "jpg",
+    "imgs": [
+      {
+        "id": 0,
+        "fileName": "fdc-home"
       },
       {
-        "id": 3,
-        "fileName": "fel-ui-ribbons"
-      },
-      {
-        "id": 4,
-        "fileName": "fel-editorial"
-      },
-      {
-        "id": 5,
-        "fileName": "fel-supplementary"
+        "id": 1,
+        "fileName": "fdc-recipe"
       }
     ]
   },
