@@ -18,12 +18,6 @@
       "type": "router"
     },
     {
-      "key": "email",
-      "email": {
-        "name": "me",
-        "domain": "davidjewell",
-        "tld": "nyc"
-      },
       "text": "About",
       "isDisabled": false,
       "type": "router",
