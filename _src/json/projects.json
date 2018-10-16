@@ -12,7 +12,7 @@
       "Mobile First",
       "Single Page App"
     ],
-    "disc": "A completely new way to save recipes on Genius Kitchen and Food Network. Saves replaces Recipe Box, which had remained essentially unchanged since launch in 2013. The webapp is built using Vuejs, which significantly increases site speed and time-to-launch owing to the modular, progressive nature of the framework.",
+    "disc": "<p>A completely new way to save recipes on Genius Kitchen and Food Network. Saves replaces Recipe Box, which remained essentially unchanged since launch in 2013. The webapp is built using Vuejs, which significantly increases site speed and time-to-launch owing to the modular, progressive nature of the framework.</p><p>Personal responsibilities included visual design for web and Android, as well as visual UAT in the form of authoring Sass stylesheets and light JavaScript to ensure the final product matched the vision.</p>",
     "visitLink": "https://www.geniuskitchen.com/saves/",
     "imageType": "jpg",
     "basePath": "{{imgPath}}/portfolio/saves/",
@@ -39,7 +39,7 @@
     "scope": ["food.com => geniuskitchen.com"],
     "role": "Visual Design Lead, Front-End",
     "notes": ["Node.js", "Less", "Responsive", "Mobile First", "Cloudinary"],
-    "disc": "Rebrand and relaunch of Food.com to Genius Kitchen (GK) a cooking and food entertainment micronetwork.",
+    "disc": "<p>Rebrand and relaunch of Food.com to Genius Kitchen (GK) a cooking and food entertainment OTT micronetwork.</p><p>Personal responsibilities included visual design, as well as visual UAT in the form of authoring Less stylesheets.</p>",
     "imageType": "jpg",
     "thumb": "{{imgPath}}/portfolio/genius-kitchen/gk-cover@2x.jpg",
     "basePath": "{{imgPath}}/portfolio/genius-kitchen/",
@@ -78,7 +78,7 @@
     "scope": ["geniuskitchen.com"],
     "role": "Visual Design Lead, Front-End Lead",
     "notes": ["Node.js", "Less", "Responsive", "Mobile First"],
-    "disc": "Internal companion site documenting UI patterns, colors, swatches and other tools for maintaining the Genius Kitchen website. Uses an encapsulated copy of the css styling for the GK site, so everything displays as it would on the live site.",
+    "disc": "<p>Internal companion site documenting UI patterns, colors, swatches and other tools for maintaining the Genius Kitchen website. Uses an encapsulated copy of the css styling for the GK site, so everything displays as it would on the live site.</p><p>Personally designed, built and maintained using HTML, JavaScript and Less; compiled with Grunt.js</p>",
     "basePath": "{{imgPath}}/portfolio/fel/",
     "thumb": "{{imgPath}}/portfolio/fel/fel-cover@2x.png",
     "imageType": "jpg",
@@ -102,8 +102,16 @@
     "name": "Food.com",
     "year": "2015",
     "scope": ["food.com"],
-    "role": "Visual Design",
-    "disc": "A new food-centric network and website. Unlike other food websites in the Scripps portfoio, the network branding was borne from the system developed from the web property.",
+    "role": "Visual Design, Frontend",
+    "disc": "<p>Food.com (now rebranded as <a href=”./#/projects/gk/”>Genius Kitchen</a>) was completely reimagined from the ground up, including a new branding package to attract a younger audience, new site architecture and refactored front and backends to remove the aggregate cruft of the previous 10 years.</p><p>Modern design methodologies and techniques such as mobile first and responsive design were utilized to create a lightweight, easily-maintained footprint, and tools such as a forked version of Bootstrap, dynamic image resizing and a custom-designed icon font (foodicons) brought the technology up to date. The result was a faster, leaner site with larger photos, fewer “walls of text” and a friendlier, younger voice.</p><p>Personal responsibilities included an adaptation of the visual grid system to facilitate breakpoints and fluid widths, visual design, visual UAT in the form of authoring less stylesheets, and the creation and maintenance of a companion living style guide site dubbed the &ldquo;Front-end Library.&rdquo;</p>",
+    "notes": [
+      "Responsive",
+      "Mobile First",
+      "Node.js",
+      "Cloudinary",
+      "Less",
+      "Bootstrap"
+    ],
     "basePath": "{{imgPath}}/portfolio/fdc/",
     "thumb": "{{imgPath}}/portfolio/fdc/fdc-cover@2x.jpg",
     "imageType": "jpg",
@@ -124,7 +132,7 @@
     "year": "2010",
     "scope": ["cookingchanneltv.com"],
     "role": "Visual Design",
-    "disc": "A new food-centric network and website. Unlike other food websites in the Scripps portfoio, the network branding was borne from the system developed from the web property.",
+    "disc": "<p>A new food-centric network and website. Unlike other food websites in the Scripps portfolio, the on-air network branding was derived from the system developed for the web property.</p><p>Personal responsibilities included visual design, asset creation as well as visual UAT.</p>",
     "basePath": "{{imgPath}}/portfolio/cooking-channel/",
     "thumb": "{{imgPath}}/portfolio/cooking-channel/cc-cover@2x.jpg",
     "imageType": "jpg",
@@ -136,6 +144,23 @@
       {
         "id": 1,
         "fileName": "cc-talent"
+      }
+    ]
+  },
+  {
+    "id": "jn2",
+    "name": "Jewell Net v2.0",
+    "year": "2018",
+    "role": "Everything!",
+    "notes": ["Responsive", "Retina-ready", "Vue.js", "JavaScript", "Less"],
+    "disc": "Inspired from experience working with Vue.js on the <a href='./#/projects/saves'>Saves webapp</a>, I designed and created my portfolio site to teach myself the capabilities of Vue. Built 99% from the ground up (I needed a bit of help for the contact form 😉) . I utilized the BEM structure for creating an easily styleable architecture. I also built using vanilla JavaScript to strengthen my JS and avoid using jQuery as a crutch. This site is responsive and utilizes the srcset HTML attribute to deliver images based on native pixel density.",
+    "basePath": "{{imgPath}}/portfolio/jn2/",
+    "thumb": "{{imgPath}}/portfolio/jn2/jn2-cover@2x.jpg",
+    "imageType": "jpg",
+    "imgs": [
+      {
+        "id": 0,
+        "fileName": "jn2-about"
       }
     ]
   }
