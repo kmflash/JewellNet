@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  z-index: 102;
 
   &-burger {
     width: @burger-width-sm;
@@ -73,6 +74,7 @@
       @{no-touch} &:hover {
         color: @color-magenta;
         border-top-color: @color-white;
+        text-decoration: none;
       }
     }
 
@@ -109,10 +111,6 @@
         left: 0;
       }
     }
-  }
-
-  @media @xl {
-    top: @menu-pos-xl;
   }
 
   &.open {
@@ -195,3 +193,12 @@ body.scrolled {
     }
   }
 }
+
+// home-specific styles
+// body#home {
+//   @media @xl {
+//     .masthead__menu {
+//       top: @menu-pos-xl;
+//     }
+//   }
+// }
