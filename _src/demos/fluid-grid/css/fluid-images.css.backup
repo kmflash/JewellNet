@@ -1,0 +1,359 @@
+/* General */
+
+body
+{
+	font-size: 100%; /* default to 16px */
+
+	color: #353a3b;
+	background-color: #efece2;
+	letter-spacing: .005em;
+
+	/* These make webfonts look pretty :) */
+	-webkit-font-smoothing: antialiased!important;
+	-moz-font-smoothing: antialiased!important;
+	font-smoothing: antialiased!important;
+	text-rendering: optimizelegibility;*/
+}
+
+span{
+	margin-right: 0 !important;
+}
+
+a, a:visited{
+	color: #00DEAF;
+	text-decoration: none;
+}
+
+/* Fonts */
+body{
+	font-family: 'Tenso-Regular', Helvetica, Arial, Sans;
+}
+
+.title, .meta-data{
+	font-family: 'Tenso-Medium';
+}
+
+/* Overrides */
+.col
+{
+	height: auto;
+	margin-bottom: 1em;
+	padding-top: 2em;
+	padding-bottom: 1em;
+
+	border-top: solid 3px #aea997;
+	background-color: #d4ceb8;
+}
+
+.col, .col h1
+{
+	text-align: left;
+}
+
+
+
+
+/*
+.dP"Y8 8b    d8    db    88     88     
+`Ybo." 88b  d88   dPYb   88     88     
+o.`Y8b 88YbdP88  dP__Yb  88  .o 88  .o 
+8bodP' 88 YY 88 dP""""Yb 88ood8 88ood8 
+*/
+
+/* General Tile Styles (style as if mobile) */
+.fd-tile
+{
+	/*font-size: 70%;*/
+
+/*	width: 47.619047619%; 42.8571428571% (4-cols) + 4.7619047619% (gutters) */
+
+	position: relative;
+
+	overflow: hidden;
+
+	height: 16em;
+
+	text-align: center;
+
+	background: #fff;
+	float: left;
+
+	margin-bottom: 1em;
+}
+
+.double{
+	width: 100%;
+}
+
+.right-side{
+	margin-left: 4.7619047619%;
+}
+
+/* hide all of these items for mobile */
+.sponsored, .tags, .description, .fd-tile-footer, .author
+{
+	display: none;
+}
+
+.details
+{
+	padding-right: 6.802721088%;
+	padding-left: 6.802721088%;
+	z-index: 100;
+	padding-top: .9375em;
+}
+
+.name
+{
+	color: #009c7b;
+}
+
+.name span
+{
+	color: #353a3b;
+}
+
+.fd-img-wrap
+{
+	z-index: 0;
+	position: absolute;
+	top: 50%;
+	bottom: 0;
+
+	width: 100%;
+	overflow: hidden;
+
+	background-color: #000;
+}
+
+.fd-img-wrap .img-overlay{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+
+	width: 100%;
+	height: 50px;
+
+	background: -moz-linear-gradient(top,  rgba(27,26,25,0) 0%, rgba(27,26,25,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(27,26,25,0)), color-stop(100%,rgba(27,26,25,1)));
+	background: -webkit-linear-gradient(top,  rgba(27,26,25,0) 0%,rgba(27,26,25,1) 100%);
+	background: -o-linear-gradient(top,  rgba(27,26,25,0) 0%,rgba(27,26,25,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(27,26,25,0) 0%,rgba(27,26,25,1) 100%);
+	background: linear-gradient(to bottom,  rgba(27,26,25,0) 0%,rgba(27,26,25,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001b1a19', endColorstr='#1b1a19',GradientType=0 );
+
+}
+
+.fd-img-wrap img
+{ 
+	position: relative;
+	left: 50%;
+
+	max-height: 100%;
+
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.img-lg{
+	display: none;
+}
+
+.fd-slideshow .fd-img-wrap, .fd-recipe.double .fd-img-wrap{
+	top: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.fd-slideshow .fd-img-wrap .img-overlay, .fd-recipe.double .fd-img-wrap .img-overlay{
+	height: 12.6875em;
+}
+
+.fd-slideshow .details, .fd-recipe.double .details{
+	position: absolute;
+	bottom: 1.25em;
+	left: 0;
+	right: 0;
+	color: #fff;
+}
+
+.title
+{
+	font-size: 1.125em; 18 / 16 
+	line-height: 1.375em; 22px / 16 
+	font-weight: 700;
+}
+
+.double .title, .fd-slideshow .title, .fd-recipe.double .title{
+	font-size: 1.5em; 24 / 16 
+	line-height: 1.25em; /* 30 / 24 
+}
+
+.meta-data{
+	margin-top: .625em;
+}
+
+.fd-recipe .meta-data{
+	position: absolute;
+	bottom: 1.25em;
+	width: 100%;
+	margin-left: -6.802721088%;
+}
+
+.meta-data div{
+	display: inline-block;
+	color: #fff;
+}
+
+.meta-data div:not(:last-child){
+	margin-right: .9375em;
+}
+
+.meta-data i{
+	color: #FFCA35;
+}
+
+@media screen and (min-width: 495px) and (max-width: 767px){ /* mini-breakpoint for switching centering methods for images */
+	.fd-img-wrap img{
+		height: 100%;
+		width: auto;
+		left: 0;
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+
+/*
+8b    d8 888888 8888b.  88 88   88 8b    d8 
+88b  d88 88__    8I  Yb 88 88   88 88b  d88 
+88YbdP88 88""    8I  dY 88 Y8   8P 88YbdP88 
+88 YY 88 888888 8888Y"  88 `YbodP' 88 YY 88 
+*/
+
+@media screen and (min-width: 768px){
+	.img-sm{
+		display: none;
+	}
+	.img-md{
+		display: block;
+	}
+	.fd-tile{
+		width: 30.8411214953%;
+		margin-left: 1.869158879%;
+		font-size: 100%;
+		height: 26.25em;
+	}
+
+	.fd-recipe .tags, .fd-slideshow.double .tags{
+		display: inline-block;
+		position: relative;
+		color: #FD4A47;
+		font-size: .75em;
+		padding-top: 1.25em;
+	}
+
+	.author{
+		display: block;
+		position: relative;
+		height: 6.3125em;
+		position: relative;
+		padding-top: .9375em;
+	}
+
+	.author .name{
+		font-size: 1.125em;
+		color: #009C7B;
+	}
+
+	.name span{
+		color: #353A3B;
+	}
+
+	.author .avatar{
+		height: 60px;
+		width: 60px;
+
+		overflow: hidden;
+
+		-webkit-border-radius: 60px;
+		-moz-border-radius: 60px;
+		border-radius: 60px;
+
+		border: solid 4px #fff;
+		position: absolute;
+		bottom: 0;
+		background-color: #fff;
+
+		box-sizing: border-box;
+
+		margin-left: 3.3175355%;/* for some reason things don't center otherwise */
+	}
+
+	.avatar img{
+		height: 60px;
+		margin-left: -15px;
+	}
+
+	.fd-img-wrap, .fd-img-wrap img{
+		height: 14.4375em;
+		top: auto;
+	}
+
+	.fd-slideshow .fd-img-wrap .img-overlay, .fd-recipe.double .fd-img-wrap .img-overlay{
+		height: 23.875em;
+	}
+
+	.fd-slideshow .fd-img-wrap, .fd-slideshow .fd-img-wrap img, .fd-recipe.double .fd-img-wrap, .fd-recipe.double .fd-img-wrap img{
+		height: 100%;
+	}
+
+	.double{
+		width: 63.5514018692%;
+	}
+
+	.fd-slideshow .description{
+		font-size: 1.125em;
+		line-height: 1.375em;
+	}
+
+	.fd-slideshow.double .tags, .fd-recipe.double .tags{
+		background-color: #fff;
+		padding: 0 1.666666667em .166666667em 1.666666667em;
+		margin-top: 1.25em;
+	}
+
+}
+
+/*
+88        db    88""Yb  dP""b8 888888 
+88       dPYb   88__dP dP   `" 88__   
+88  .o  dP__Yb  88"Yb  Yb  "88 88""   
+88ood8 dP""""Yb 88  Yb  YboodP 888888 
+*/
+@media screen and (min-width: 1025px){
+	.img-md{
+		display: block;
+	}
+	.img-lg{
+		display: block;
+	}
+	.fd-tile{
+		width: 23.2394366197%;
+		margin-left: 1.408450704%;
+	}
+
+	.double{
+		width: 47.8873239437%;
+	}
+
+	.fd-slideshow .description{
+		display: block;
+	}
+
+	.double .title{
+		font-size: 2.625em;
+	}
+}
