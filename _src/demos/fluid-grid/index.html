@@ -1,127 +1,131 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-	
-	<title>Fluid Current Grid</title>
-	<!-- Load jQuery -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="js/grids.js"></script>
-	<link rel="stylesheet" href="css/ads.css">
-	<link rel="stylesheet" href="css/general.css">
-	
-	<link rel="stylesheet" href="css/grid.css">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+    <title>Fluid Current Grid</title>
+    <!-- Load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="js/grids.js"></script>
+    <link rel="stylesheet" href="css/ads.css">
+    <link rel="stylesheet" href="css/general.css">
+
+    <link rel="stylesheet" href="css/grid.css">
 </head>
+
 <body>
-	<div id='bookmarklet'>
-		<a class='toggleTools' href="javascript:void((function(d){if(self!=top||d.getElementById('toolbar')&&d.getElementById('toolbar').getAttribute('data-resizer'))return%20false;d.write('<!DOCTYPE%20HTML><html%20style=&quot;opacity:0;&quot;><head><meta%20charset=&quot;utf-8&quot;></head><body><a%20data-viewport=&quot;320x480&quot;%20data-icon=&quot;mobile&quot;%20title=&quot;Small&quot;>Small</a><a%20data-viewport=&quot;768x1024&quot;%20data-icon=&quot;tablet&quot;%20title=&quot;Medium&quot;>Medium</a><a%20data-viewport=&quot;1025x768&quot;%20data-icon=&quot;notebook&quot;%20title=&quot;Large&quot;>Large</a><a%20data-viewport=&quot;1300x1080&quot;%20data-icon=&quot;tv&quot;%20title=&quot;X-Large&quot;>X-Large</a><script%20src=&quot;http://lab.maltewassermann.com/viewport-resizer/resizer.min.js&quot;></script></body></html>')})(document));">Breakpoint Bookmarklet</a>
-		<p>Click or drag this link to your bookmarks bar to see breakpoints</p>
-	</div>
-	<div id='foldBox'><span>FOLD: <span class='foldHeight'></span>px</span></div>
-	<div id="wrapper">
-		<div id='gridOverlays'>
-			<img src="img/threetwenty.gif" class='threetwenty' />
-			<img src="img/sevensixtyeight.gif" class="sevensixtyeight">
-			<img src="img/thousandtwentyfour.gif" class='thousandtwentyfour' />
-			<img src="img/fourteenhundred.gif" class='fourteenhundred' />
-		</div>
-		<div id='colNumbers'>
-			<h3>1</h3>
-		</div>
-		<div class='hdr'>
-			<h1>Fluid FDC Grid<span></span></h1>
-			<h4 class='layoutType'>Layout Type: <span class='type'></span><br />Viewport Width: <span class='windowWidth'></span></h4>
-			<h2 class='wrapWidth'>Wrapper Width: <span></span></h2>
-			<h3 class='contentWidth'>Content Width: <span></span></h3>
-			<h3 class='outerGutterWidth'></h3>
-			<h3 class='columnWidth'></h3>
-			<h3 class='innerGutterWidth'></h3>
-		</div>
-		<div class='ad_leaderboards'>
-			<img class='ad-leaderboard' src="img/728x90.gif" alt="728x90" />
-			<img class='ad-mobileLeaderboard' src="img/320x50.gif" width="320" height="50" alt="320x50" />
-		</div>
-		<div class='header full col'>Header <span></span><br />
-			<a class='toggle' href='javascript:toggleHeader();'>Info</a>
-			<!-- <a class='toggle'href='javascript:toggleLR();'>Left Rail</a> -->
-			<!-- <a id='foldButton' class='toggle' href='javascript:toggleFold();'>Fold</a> -->
-			<!-- <a class='toggle on' href='javascript:toggleImages();'>Image Roles</a> -->
-			<a class='toggle' href='javascript:toggleGridDivs();'>Grid Divisions</a>
-			<a class='toggle' href='javascript:lockGrid();'>Lock Grid</a>
-		</div>
-	<div id='ngd'>
-			<div class='contentTile col'>Content Tile <span></span>
-			</div>
-			<div class='contentTile ad-native col'>Content Tile (native ad) <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class="ad">
-				<img class='ad-halfPage' src="img/300x600.gif" width="300" height="600" alt="300x600">
-				<img class='ad-bigBox' src="img/300x250.gif" alt="300x250">
-				<img class='ad-mobileLeaderboard' src="img/320x50.gif" width="320" height="50" alt="320x50">
-				<img class='ad-leaderboard' src="img/728x90.gif" alt="728x90" />
-			</div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='contentTile col'>Content Tile <span></span></div>
-			<div class='footer full col '>Footer <span></span></div>
-		</div>
-			<div id="gridDivs">
-				<div id="gOne"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwo"><span class='l'></span><span class='r'></span></div>
-				<div id="gThree"><span class='l'></span><span class='r'></span></div>
-				<div id="gFour"><span class='l'></span><span class='r'></span></div>
-				<div id="gFive"><span class='l'></span><span class='r'></span></div>
-				<div id="gSix"><span class='l'></span><span class='r'></span></div>
-				<div id="gSeven"><span class='l'></span><span class='r'></span></div>
-				<div id="gEight"><span class='l'></span><span class='r'></span></div>
-				<div id="gNine"><span class='l'></span><span class='r'></span></div>
-				<div id="gTen"><span class='l'></span><span class='r'></span></div>
-				<div id="gEleven"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwelve"><span class='l'></span><span class='r'></span></div>
-				<div id="gThirteen"><span class='l'></span><span class='r'></span></div>
-				<div id="gFourteen"><span class='l'></span><span class='r'></span></div>
-				<div id="gFifteen"><span class='l'></span><span class='r'></span></div>
-				<div id="gSixteen"><span class='l'></span><span class='r'></span></div>
-				<div id="gSeventeen"><span class='l'></span><span class='r'></span></div>
-				<div id="gEighteen"><span class='l'></span><span class='r'></span></div>
-				<div id="gNineteen"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwenty"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentyOne"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentyTwo"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentyThree"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentyFour"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentyFive"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentySix"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentySeven"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentyEight"><span class='l'></span><span class='r'></span></div>
-				<div id="gTwentyNine"><span class='l'></span><span class='r'></span></div>
-				<div id="gThirty"><span class='l'></span><span class='r'></span></div>
-				<div id="gThirtyOne"><span class='l'></span><span class='r'></span></div>
-				<div id="gThirtyTwo"><span class='l'></span><span class='r'></span></div>
-				<div id="gThirtyThree"><span class='l'></span><span class='r'></span></div>
-				<div id="gThirtyFour"><span class='l'></span><span class='r'></span></div>
-			</div>
+    <!-- <div id='bookmarklet'>
+        <a class='toggleTools' href="javascript:(function(){var jsCode = document.createElement('script');jsCode.setAttribute('src','https://www.davidjewell.nyc/demos/fluid-grid/js/grid-overlay.js?v=1.2');document.body.appendChild(jsCode);}());">Breakpoint
+            Bookmarklet</a>
+        <p>Click or drag this link to your bookmarks bar to see breakpoints</p>
+    </div> -->
+    <div id='foldBox'><span>FOLD: <span class='foldHeight'></span>px</span></div>
+    <div id="wrapper">
+        <div id='gridOverlays'>
+            <img src="img/threetwenty.gif" class='threetwenty' />
+            <img src="img/sevensixtyeight.gif" class="sevensixtyeight">
+            <img src="img/thousandtwentyfour.gif" class='thousandtwentyfour' />
+            <img src="img/fourteenhundred.gif" class='fourteenhundred' />
+        </div>
+        <div id='colNumbers'>
+            <h3>1</h3>
+        </div>
+        <div class='hdr'>
+            <h1>Fluid FDC Grid<span></span></h1>
+            <h4 class='layoutType'>Layout Type: <span class='type'></span><br />Viewport Width: <span class='windowWidth'></span></h4>
+            <h2 class='wrapWidth'>Wrapper Width: <span></span></h2>
+            <h3 class='contentWidth'>Content Width: <span></span></h3>
+            <h3 class='outerGutterWidth'></h3>
+            <h3 class='columnWidth'></h3>
+            <h3 class='innerGutterWidth'></h3>
+        </div>
+        <div class='ad_leaderboards'>
+            <img class='ad-leaderboard' src="img/728x90.gif" alt="728x90" />
+            <img class='ad-mobileLeaderboard' src="img/320x50.gif" width="320" height="50" alt="320x50" />
+        </div>
+        <div class='header full col'>Header <span></span><br />
+            <a class='toggle' href='javascript:toggleHeader();'>Info</a>
+            <!-- <a class='toggle'href='javascript:toggleLR();'>Left Rail</a> -->
+            <!-- <a id='foldButton' class='toggle' href='javascript:toggleFold();'>Fold</a> -->
+            <!-- <a class='toggle on' href='javascript:toggleImages();'>Image Roles</a> -->
+            <a class='toggle' href='javascript:toggleGridDivs();'>Grid Divisions</a>
+            <a class='toggle' href='javascript:lockGrid();'>Lock Grid</a>
+        </div>
+        <div id='ngd'>
+            <div class='contentTile col'>Content Tile <span></span>
+            </div>
+            <div class='contentTile ad-native col'>Content Tile (native ad) <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class="ad">
+                <img class='ad-halfPage' src="img/300x600.gif" width="300" height="600" alt="300x600">
+                <img class='ad-bigBox' src="img/300x250.gif" alt="300x250">
+                <img class='ad-mobileLeaderboard' src="img/320x50.gif" width="320" height="50" alt="320x50">
+                <img class='ad-leaderboard' src="img/728x90.gif" alt="728x90" />
+            </div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='contentTile col'>Content Tile <span></span></div>
+            <div class='footer full col '>Footer <span></span></div>
+        </div>
+        <div id="gridDivs">
+            <div id="gOne"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwo"><span class='l'></span><span class='r'></span></div>
+            <div id="gThree"><span class='l'></span><span class='r'></span></div>
+            <div id="gFour"><span class='l'></span><span class='r'></span></div>
+            <div id="gFive"><span class='l'></span><span class='r'></span></div>
+            <div id="gSix"><span class='l'></span><span class='r'></span></div>
+            <div id="gSeven"><span class='l'></span><span class='r'></span></div>
+            <div id="gEight"><span class='l'></span><span class='r'></span></div>
+            <div id="gNine"><span class='l'></span><span class='r'></span></div>
+            <div id="gTen"><span class='l'></span><span class='r'></span></div>
+            <div id="gEleven"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwelve"><span class='l'></span><span class='r'></span></div>
+            <div id="gThirteen"><span class='l'></span><span class='r'></span></div>
+            <div id="gFourteen"><span class='l'></span><span class='r'></span></div>
+            <div id="gFifteen"><span class='l'></span><span class='r'></span></div>
+            <div id="gSixteen"><span class='l'></span><span class='r'></span></div>
+            <div id="gSeventeen"><span class='l'></span><span class='r'></span></div>
+            <div id="gEighteen"><span class='l'></span><span class='r'></span></div>
+            <div id="gNineteen"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwenty"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentyOne"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentyTwo"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentyThree"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentyFour"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentyFive"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentySix"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentySeven"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentyEight"><span class='l'></span><span class='r'></span></div>
+            <div id="gTwentyNine"><span class='l'></span><span class='r'></span></div>
+            <div id="gThirty"><span class='l'></span><span class='r'></span></div>
+            <div id="gThirtyOne"><span class='l'></span><span class='r'></span></div>
+            <div id="gThirtyTwo"><span class='l'></span><span class='r'></span></div>
+            <div id="gThirtyThree"><span class='l'></span><span class='r'></span></div>
+            <div id="gThirtyFour"><span class='l'></span><span class='r'></span></div>
+        </div>
 
-			<hr class='clearboth' />
+        <hr class='clearboth' />
 
-	</div>
+    </div>
 
-	<script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8">
 
-		resizeWindow(); // populate numbers
+        resizeWindow(); // populate numbers
 
-	</script>
-	</body>
+    </script>
+</body>
+
 </html>

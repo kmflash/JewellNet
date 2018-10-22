@@ -175,7 +175,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/social/**", "img/portfolio/**", "resume/*"],
+            src: ["img/social/**", "img/portfolio/**", "resume/*", "demos/**"],
             dest: "dist/dev/"
           },
           {
@@ -194,7 +194,13 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["json/**", "img/social/**", "img/portfolio/**", "resume/*"],
+            src: [
+              "json/**",
+              "img/social/**",
+              "img/portfolio/**",
+              "resume/*",
+              "demos/**"
+            ],
             dest: "_src/vue"
           }
         ]
@@ -204,7 +210,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/social/**", "img/portfolio/**", "resume/*"],
+            src: ["img/social/**", "img/portfolio/**", "resume/*", "demos/**"],
             dest: "dist/prod/"
           },
           {
@@ -217,7 +223,13 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["json/**", "img/social/**", "img/portfolio/**", "resume/*"],
+            src: [
+              "json/**",
+              "img/social/**",
+              "img/portfolio/**",
+              "resume/*",
+              "demos/**"
+            ],
             dest: "_src/vue"
           }
         ]
@@ -239,19 +251,26 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: "_src",
-            src: ["img/*", "fonts/**", "json/**", "resume/*"],
+            src: ["img/*", "fonts/**", "json/**", "resume/*", "demos/**"],
             dest: "dist/prod/"
           },
           {
             expand: true,
             cwd: "_src",
-            src: ["img/*", "fonts/**", "json/**", "resume/*"],
+            src: ["img/*", "fonts/**", "json/**", "resume/*", "demos/**"],
             dest: "dist/dev/"
           },
           {
             expand: true,
             cwd: "dist/prod",
-            src: ["img/*", "fonts/**", "css/*", "js/**", "resume/*"],
+            src: [
+              "img/*",
+              "fonts/**",
+              "css/*",
+              "js/**",
+              "resume/*",
+              "demos/**"
+            ],
             dest: "_src/vue"
           }
         ]

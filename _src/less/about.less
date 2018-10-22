@@ -61,7 +61,7 @@ body#about {
 
     &-photo {
       width: 100vw;
-      height: calc(100vw * 0.75); // maintain 4:3 aspect
+      min-height: 100%;
       overflow: hidden;
       margin-bottom: 20px;
 
@@ -72,7 +72,6 @@ body#about {
 
       @media @md {
         width: 321px;
-        height: auto;
 
         img {
           margin-top: 0;
