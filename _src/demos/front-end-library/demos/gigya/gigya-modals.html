@@ -1,0 +1,755 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gigya Modals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="../../css/fel.css"> -->
+    <link rel="stylesheet" href="../../../gk/css/gk.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .fel-example {
+            display: flex;
+            -webkit-flex-direction: column;
+            -moz-flex-direction: column;
+            -ms-flex-direction: column;
+            -o-flex-direction: column;
+            flex-direction: column;
+            -ms-align-items: center;
+            align-items: center;
+        }
+
+        .fel-example div.gigya-screen-dialog {
+            position: static !important;
+            margin: 0 auto 40px;
+            width: 420px;
+        }
+
+        div.gigya-screen-dialog #gigya-screen-dialog-page-overlay {
+            display: none !important;
+        }
+
+        .fel-example input,
+        .fel-example .input-group-addon {
+            font-size: 12px;
+        }
+
+        .hide-modals .fel-example .gigya-screen-dialog {
+            display: none;
+        }
+
+        .hide-modals .fel-example h3 {
+            display: none;
+        }
+
+        .hide-modals .fel-example .gigya-screen-dialog .show {
+            display: block;
+        }
+
+        .sticky-footer-button {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 10px;
+            z-index: 10000000000000000000000000000000;
+            border-top: solid 2px black;
+        }
+
+        .sticky-footer-button button {
+            width: 100%;
+        }
+
+        .sticky-footer-button button:first-child {
+            margin-bottom:  10px;
+        }
+
+        .sticky-footer-button button.active {
+            background-color: black;
+            color: white;
+        }
+
+        @media screen and (min-width: 768px) {
+            .sticky-footer-button {
+                display: none;
+            }
+        }
+
+    </style>
+
+<style type="text/css">div.gigya-screen-dialog,div.gigya-screen-dialog-mobile{position:absolute;display:inline-block;background-color:#FFF}div.gigya-screen-dialog{top:25px;left:25px;border:8px solid #CCC;border-radius:8px;outline:0}div.gigya-screen-dialog-inner{border:1px solid #AAA}div.gigya-screen-dialog-close{line-height:33px;height:33px;width:20px;float:right;cursor:pointer;background-image:url(http://cdn2.gigya.com/gs/i//accounts/close_dialog.png);background-position:right;background-repeat:no-repeat}div.gigya-screen-dialog-caption{float:left;font-weight:700;font-size:16px;font-family:arial}div.gigya-screen-dialog-mobile{top:0;left:0;width:100%}div.gigya-screen-dialog-top{overflow:hidden;zoom:1;background-color:#F3F3F3;line-height:33px;padding:0 10px 0 11px}#gigya-screen-dialog-page-overlay{width:100vw;height:100vh;background:#000;position:fixed;top:0;left:0;z-index:-1;filter:alpha(opacity=20);opacity:.2}</style>
+
+<style type="text/css">.gigya-reset *,.gigya-reset a:active,.gigya-reset a:hover,.gigya-reset a:link,.gigya-reset a:visited,.gigya-reset span,div.gigya-reset{border:none;padding:0;margin:0;text-decoration:none;width:auto;float:none;-moz-border-radius:0;border-radius:0;font-family:arial;font-size:12px;color:#333;text-align:left}.gigya-screen .gigya-error-msg{color:#DD4B39;font-size:11px;display:block;visibility:hidden}.gigya-screen .gigya-error-msg.gigya-error-msg-active{color:#DD4B39;font-size:11px;display:block;visibility:visible}.gigya-screen .gigya-terms-error,.gigya-screen input.gigya-error,.gigya-screen input[type=email].gigya-error,.gigya-screen input[type=password].gigya-error,.gigya-screen input[type=text].gigya-error,.gigya-screen select.gigya-error{padding:5px;border-radius:5px;border:1px solid #DD4B39;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;box-shadow:none!important}.gigya-screen input.gigya-error[type=checkbox],.gigya-screen input.gigya-error[type=radio]{padding:0}.gigya-screen input:disabled,.gigya-screen input[disabled]{background-color:#e1e1e1;color:#4a4a4a;border-color:#ccc}div.gigya-attach-file-upload-form{position:absolute;overflow:hidden;font-size:50px;cursor:pointer;filter:alpha(opacity=0);opacity:0}div.gigya-photo-upload-form>input{font-size:500px;direction:rtl;height:100%;cursor:pointer}.gigya-password-strength-bubble .gig-balloon-nub{background-image:url(http://cdn2.gigya.com/gs/i//screenSet/triangle_left.png);height:16px;width:10px;left:+2px}.gigya-password-strength-bubble .gig-balloon-nub-up{background-image:url(http://cdn2.gigya.com/gs/i//screenSet/triangle_up.png);height:10px;width:16px;top:+2px}.gigya-password-strength-bubble .gig-balloon-nub-right{background-image:url(http://cdn2.gigya.com/gs/i//screenSet/triangle_right.png);height:16px;width:10px;left:-2px}.gigya-password-strength-bubble .gig-balloon-nub-down{background-image:url(http://cdn2.gigya.com/gs/i//screenSet/triangle_down.png);height:10px;width:16px;top:-2px}.gigya-password-strength-bubble .gig-balloon-frame{background-color:#F3F5F6;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;border:1px solid #BFCFDA;-webkit-box-shadow:inset 0 0 1px 1px RGBA(0,0,0,.05);-moz-box-shadow:inset 0 0 1px 1px RGBA(0,0,0,.05);box-shadow:inset 0 0 1px 1px RGBA(0,0,0,.05)}.gigya-password-strength-bubble .gig-balloon{position:relative}.gigya-password-strength-bubble.gig-balloon-left .gig-balloon{left:+10px;top:+3px}.gigya-password-strength-bubble.gig-balloon-right .gig-balloon{left:-10px;top:+3px}.gigya-password-strength-bubble.gig-balloon-up .gig-balloon{left:-5px;top:+17px}.gigya-password-strength-bubble.gig-balloon-down .gig-balloon{left:-5px;top:-12px}.gigya-passwordStrength-text{text-align:center}span.gigya-passwordStrength-text{font-weight:700;display:inline-block}div.gigya-passwordStrength-text-requirements{text-align:center;width:100%;margin-top:8px}span.gigya-passwordStrength-scoreText{margin-left:3px}.gigya-passwordStrength-too_weak .gigya-passwordStrength-scoreText,.gigya-passwordStrength-weak .gigya-passwordStrength-scoreText{color:#e76468}.gigya-passwordStrength-fair .gigya-passwordStrength-scoreText{color:#d99b4b}.gigya-passwordStrength-strong .gigya-passwordStrength-scoreText,.gigya-passwordStrength-very_strong .gigya-passwordStrength-scoreText{color:#4ababc}div.gigya-passwordStrength-bar{width:100%;height:1px;background-color:#b6b6b6;margin-top:8px}div.gigya-passwordStrength-bar-too_weak{width:20%;height:100%;background-color:#e76468}div.gigya-passwordStrength-bar-weak{width:40%;height:100%;background-color:#e76468}div.gigya-passwordStrength-bar-fair{width:60%;height:100%;background-color:#d99b4b}div.gigya-passwordStrength-bar-strong{width:80%;height:100%;background-color:#4ababc}div.gigya-passwordStrength-bar-very_strong{width:100%;height:100%;background-color:#4ababc}.gigya-calculate-size{position:absolute!important;-ms-zoom:1!important;zoom:1!important;left:10px!important;top:-1000px!important}.gigya-calculate-size div.gigya-captcha{min-width:318px;min-height:129px;_width:318px;_height:129px}.gigya-calculate-size div.gigya-social-login{min-width:110px;min-height:120px;_width:110px;_height:120px}.gigya-calculate-size div.gigya-tfa{min-width:325px;min-height:200px;_width:325px;_height:200px}div.gigya-container{display:none}div.gigya-container.gigya-container-enabled{display:block}div.gigya-loginID-availability{line-height:18px;background-repeat:no-repeat;background-position:left center}div.gigya-loginID-availability-available{padding-left:17px;background-image:url(http://cdn2.gigya.com/gs/i//accounts/ok.png);color:#4FA373}div.gigya-loginID-availability-not-available{padding-left:16px;background-image:url(http://cdn2.gigya.com/gs/i//accounts/error.png);color:#DD4B39}div.gigya-loginID-availability-progress{padding-left:20px;background-image:url(http://cdn2.gigya.com/gs/i//accounts/smallLoader.gif);color:#666}div.gigya-profile-photo{border-radius:3px}.gigya-calculate-size div.gigya-profile-photo{min-width:64px;min-height:64px}div.gigya-screen-dimmer{position:absolute;opacity:.5;filter:'alpha(opacity=50)';background-color:#FFF}div.gigya-screen-loader{position:absolute;background:url(http://cdn2.gigya.com/gs/i//accounts/bigLoader.gif) center center no-repeat;min-height:32px;min-width:32px}div.gigya-screen-dialog-content{overflow:auto;padding:25px}div.gigya-screen-dialog-mobile div.gigya-composite-control-captcha-widget{padding:0}div.gigya-screen-dialog-mobile .gigya-screen{width:100%}div.gigya-secret-question{display:none}div.gigya-photo-upload{height:63px;width:300px;zoom:1}div.gigya-photo-upload-button{display:inline-block;zoom:1;margin:0 8px 8px 0;border:1px solid #CECECE;cursor:pointer;padding:0 12px;color:#333;font-weight:700;border-radius:4px;line-height:28px;background:#F2F2F2;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFFFF", endColorstr="#F2F2F2");background:-webkit-gradient(linear,left top,left bottom,from(#FFF),to(#F2F2F2));background:-moz-linear-gradient(top,#FFF,#F2F2F2)}div.gigya-photo-upload-button:hover{background:#FFF;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#F2F2F2", endColorstr="#FFFFFF");background:-webkit-gradient(linear,left top,left bottom,from(#F2F2F2),to(#FFF));background:-moz-linear-gradient(top,#F2F2F2,#FFF)}div.gigya-photo-upload-text{font-size:11px;color:#666}div.gigya-photo-upload-image{border-radius:6px;background-position:center center;background-repeat:no-repeat;width:64px;height:64px;background-color:#F2F2F2;float:left;margin-right:8px}div.gigya-photo-upload-path{white-space:nowrap;width:107px;vertical-align:middle;text-overflow:ellipsis;overflow:hidden;background-position:right;background-repeat:no-repeat;display:inline-block;*display:inline;zoom:1;padding-right:20px}.gigya-show-checkmark.gigya-pending,.gigya-show-checkmark.gigya-valid{background-position-x:100%;background-position-y:50%;background-position:right 5px center;background-repeat:no-repeat}h1.gigya-screen-caption{border-bottom:1px solid #dbdbdb;font-size:16px;font-weight:700;color:#333;padding-bottom:5px;padding-top:5px;margin:0 auto}.gigya-error-display{display:none}.gigya-error-display.gigya-error-display-active{display:block}.gigya-hidden{display:none!important}.gigya-screen .gigya-tfa input[type=text]{margin:5px 0;padding:5px;border-radius:5px;border:1px solid #CCC}.gigya-screen .gigya-tfa input[type=text]:focus{border-color:#87B9EA}.gigya-show-checkmark.gigya-valid{background-image:url(http://cdn2.gigya.com/gs/i//screenSet/checkmarkValid.png);padding-right:25px}.gigya-show-checkmark.gigya-valid.gigya-empty{background-image:none;padding-right:5px}.gigya-show-checkmark.gigya-pending{background-image:url(http://cdn2.gigya.com/gs/i//screenSet/checkmarkPending.gif);padding-right:25px}.gigya-screen .gigya-composite-control-image{overflow:hidden}.gigya-image{background-repeat:no-repeat;box-sizing:content-box;background-position:center;min-height:10px}.gigya-image[data-background-size=fit]{background-size:contain}.gigya-image[data-background-size=fit-horizontally]{background-size:100% auto}.gigya-image[data-background-size=fit-vertically]{background-size:auto 100%}.gigya-image[data-background-size=stretch]{background-size:100% 100%}.gigya-ie8 .gigya-layout-cell{overflow:hidden;margin-left:-1px!important}.gigya-ie8 .gigya-attach-file-upload-form .gigya-attach-file-upload-file-input{width:1000px}.gigya-ie8 .gigya-calculate-size div.gigya-profile-photo{_width:64px;_height:64px}.gigya-ie8 div.gigya-photo-upload,.gigya-ie8 div.gigya-photo-upload-button{*display:inline}.gigya-ie8 .gigya-screen .gigya-placeholder{color:#A9A9BB;padding-left:5px;text-indent:0}.gigya-ie8 .gigya-placeholder:focus{padding-left:5px}.gigya-ie8 .gigya-screen .gigya-input-text:focus{padding-left:5px;text-indent:0}.gigya-ie8 .gigya-screen .gigya-input-text.gigya-error,.gigya-ie8 .gigya-screen.gigya-input-text{padding-top:12px}.gigya-ie9 .gigya-screen input.gigya-input-password,.gigya-ie9 .gigya-screen input.gigya-input-text{padding-top:1px;text-indent:0;padding-bottom:5px}.gigya-ie9 .gigya-screen .gigya-input-password:focus,.gigya-ie9 .gigya-screen .gigya-input-text:focus{box-shadow:0 0 5px 0 #1d87ff;border:1px solid #87B9EA;text-indent:0}.gigya-ie9 .gigya-screen input.gigya-input-password.gigya-placeholder,.gigya-ie9 .gigya-screen input.gigya-input-text.gigya-placeholder{color:#A9A9BB;padding-top:5px;text-indent:0}.gigya-ie10 .gigya-screen input.gigya-input-password,.gigya-ie10 .gigya-screen input.gigya-input-text{padding-top:1px}.gigya-screen .forgot-password-cell a,.gigya-screen .gigya-composite-control.gigya-change-password-link,.gigya-screen .gigya-composite-control.gigya-composite-control-link,.gigya-screen .gigya-composite-control.gigya-forgotPassword{padding-bottom:0}</style>
+
+<style type="text/css">#gigya-modal-plugin-container-showScreenSet_social_2 td, #gigya-modal-plugin-container-showScreenSet_social_2 table {width:auto;font-size:1px;vertical-align:top;border-collapse:separate;border:none; padding:0px;margin:0px;} #gigya-modal-plugin-container-showScreenSet_social_2 {} .tabbing-button{font-size: 0px;border: none;padding: 0;background-color: transparent;cursor: pointer;}</style>
+
+<style type="text/css">#gigya-modal-plugin-container-showScreenSet_social_6 td, #gigya-modal-plugin-container-showScreenSet_social_6 table {width:auto;font-size:1px;vertical-align:top;border-collapse:separate;border:none; padding:0px;margin:0px;} #gigya-modal-plugin-container-showScreenSet_social_6 {} .tabbing-button{font-size: 0px;border: none;padding: 0;background-color: transparent;cursor: pointer;}</style>
+
+<style type="text/css">#gigya-modal-plugin-container-showScreenSet_social_7 td, #gigya-modal-plugin-container-showScreenSet_social_7 table {width:auto;font-size:1px;vertical-align:top;border-collapse:separate;border:none; padding:0px;margin:0px;} #gigya-modal-plugin-container-showScreenSet_social_7 {} .tabbing-button{font-size: 0px;border: none;padding: 0;background-color: transparent;cursor: pointer;}</style>
+</head>
+<body class="fel">
+    <div class="gigya-wrapper">
+        <h1 class="fel">Gigya Modals</h1>
+        <div class="fel-example">
+
+            <h3>Loading</h3>
+            <div class="gigya-screen-dialog gigya-screen-loader"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen loader"></div></div></div></div>
+
+
+            <h3>Initial</h3>
+            <div role="dialog" tabindex="-1" class="gigya-screen-dialog" style="z-index: 1000000000; visibility: visible; top: 285px; left: 396px;" gigid="showScreenSet"><div id="gigya-screen-dialog-page-overlay" style="display:none;"></div>
+            <div class="gigya-screen-dialog-inner" id="gigya-modal-plugin-container-showScreenSet">
+                <div class="gigya-screen-dialog-top">
+                    <div class="gigya-screen-dialog-caption">&nbsp;</div>
+                    <div class="gigya-screen-dialog-close"></div>
+                </div>
+                <div id="gigya-modal-plugin-container-showScreenSet_content" class="gigya-screen-content gigya-screen-dialog-content gigya-locale-en"><div id="gigya-register-screen" class="gigya-screen mrb-external" data-width="100%" data-on-pending-verification-screen="gigya-thank-you-screen" data-screenset-element-id="gigya-register-screen" data-screenset-element-id-publish="true" data-screenset-roles="instance"> <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                    <form class="gigya-register-form" onsubmit="return false;" data-screenset-element-id="__gig_template_element_20_1498578761095" data-screenset-element-id-publish="false" data-screenset-roles="instance">
+                        <div class="gigya-layout-row">
+                            <h1 class="gigya-composite-control gigya-composite-control-header">Save your favorite recipes, share your photos, create meal plans and grocery lists
+                                — and do it all from any device.</h1>
+                                <div class="gigya-layout-row">
+                                    <div class="gigya-left-side">
+                                        <h2 class="gigya-composite-control gigya-composite-control-header">Sign Up Easily With:</h2>
+                                        <div class="gigya-composite-control gigya-composite-control-social-login">
+                                            <div class="gigya-social-login gigya-reset" data-screenset-element-id="__gig_template_element_23_1498578761096" data-screenset-element-id-publish="false" data-screenset-roles="instance"><div class="gigya-social-login-container" id="gigya-modal-plugin-container-showScreenSet_social_2" gigid="showScreenSet_showLoginUI_v1" style="width: 250px; height: 50px;"><table width="100%" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;background-color:transparent;vertical-align: middle; width: 250px; height: 50px;"><tbody><tr><td style="vertical-align:middle;margin:0px;padding:0px;border:0px;"><center><table style="margin:0px;padding:0px;border:0px;vertical-align:middle; height: 50px;width:100%" align="center" cellspacing="0" cellpadding="0"><tbody><tr style="height:99%"><td align="right" style="margin:0px;padding:0px;border:0px;vertical-align:middle;width:48%;text-align:right"><div align="right" style="text-align:right;width:auto"></div></td><td align="center" style="width:191px;margin:0px;padding:0px;border:0px;vertical-align:middle;white-space:nowrap" id="gigya-modal-plugin-container-showScreenSet_social_2_page"><table align="center" cellspacing="0" cellpadding="0" style="margin: 0px; padding: 0px; border: 0px;" id="gigya-modal-plugin-container-showScreenSet_social_2_p0"><tbody><tr><td align="center" style="margin:0px;padding:0px;border:0px;vertical-align:middle"><table align="center" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:0px;"><tbody><tr><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_2','facebook')" title="Facebook" alt="Facebook" style="zoom:1;cursor:pointer; width:44px;"><div gigid="facebook" style="width:44px; height:44px"><div style="background-image:url('http://cdn3.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-0px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_2','instagram')" title="Instagram" alt="Instagram" style="zoom:1;cursor:pointer; width:44px;"><div gigid="instagram" style="width:44px; height:44px"><div style="background-image:url('http://cdn3.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-88px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_2','googleplus')" title="Google+" alt="Google+" style="zoom:1;cursor:pointer; width:44px;"><div gigid="googleplus" style="width:44px; height:44px"><div style="background-image:url('http://cdn3.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-44px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_2','yahoo')" title="Yahoo" alt="Yahoo" style="zoom:1;cursor:pointer; width:44px;"><div gigid="yahoo" style="width:44px; height:44px"><div style="background-image:url('http://cdn3.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-132px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td></tr></tbody></table></td></tr></tbody></table></td><td align="left" style="margin:0px;padding:0px;border:0px;vertical-align:middle;width:48%"></td></tr></tbody></table></center></td></tr></tbody></table></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="gigya-right-side">
+                                        <div class="gigya-layout-row">
+                                            <h2 class="gigya-composite-control gigya-composite-control-header"> <a data-switch-screen="gigya-register-email-screen" data-screenset-element-id="__gig_template_element_24_1498578761096" data-screenset-element-id-publish="false" data-screenset-roles="instance" href="javascript:void(0)">Or, Sign Up With Your Email</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="gigya-clear"></div>
+                                    <div class="gigya-layout-row gigya-terms">
+                                        <div class="gigya-composite-control gigya-composite-control-checkbox" style="display: block;">
+                                            <input type="checkbox" name="data.terms" class="gigya-input-checkbox" checked="checked" data-display-name="" tabindex="9" data-screenset-element-id="__gig_template_element_21_1498578761095" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="data.terms" data-original-value="true" aria-required="false">
+                                            <label class="gigya-label">
+                                                <span class="gigya-label-text">By signing up you agree to Genius Kitchen's <a target="_blank" href="http://www.scrippsnetworksinteractive.com/terms-of-use/">Terms of Use</a> and
+                                                    <a target="_blank" href="http://www.scrippsnetworksinteractive.com/privacy-policy/">Privacy Policy</a>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="gigya-input-text" name="profile.photoURL" value="http://img-nonprod.sndimg.com/food/image/upload/v1/dev1/fdc/img/placeholder/fdc-generic-avatar.jpg" data-display-name="" data-screenset-element-id="__gig_template_element_22_1498578761095" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="profile.photoURL" data-original-value="http://img-nonprod.sndimg.com/food/image/upload/v1/dev1/fdc/img/placeholder/fdc-generic-avatar.jpg" aria-required="false">
+                        </form>
+                        <div class="gigya-layout-row gigya-footer">
+                            <label class="gigya-composite-control gigya-composite-control-label">Already a member? <a data-switch-screen="gigya-login-screen" data-screenset-element-id="__gig_template_element_25_1498578761096" data-screenset-element-id-publish="false" data-screenset-roles="instance" href="javascript:void(0)">Log In</a>
+                            </label>
+                        </div>
+                    </div></div></div></div>
+
+            <h3>Log In</h3>
+            <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close" id="gig_1421094639411_showScreenSet_content_close"></div></div><div class="gigya-screen mrb-external" id="gigya-login-screen">
+            <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+            <form class="gigya-login-form">
+                <div class="gigya-left-side">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Log in with:</h1>
+                    <div class="gigya-composite-control gigya-composite-control-social-login">
+                        <div class="gigya-social-login gigya-reset" data-screenset-element-id="__gig_template_element_8_1498756756327" data-screenset-element-id-publish="false" data-screenset-roles="instance"><div class="gigya-social-login-container" id="gigya-modal-plugin-container-showScreenSet_social_0" gigid="showScreenSet_showLoginUI_v1" style="width: 250px; height: 50px;"><table width="100%" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;background-color:transparent;vertical-align: middle; width: 250px; height: 50px;"><tbody><tr><td style="vertical-align:middle;margin:0px;padding:0px;border:0px;"><center><table style="margin:0px;padding:0px;border:0px;vertical-align:middle; height: 50px;width:100%" align="center" cellspacing="0" cellpadding="0"><tbody><tr style="height:99%"><td align="right" style="margin:0px;padding:0px;border:0px;vertical-align:middle;width:48%;text-align:right"><div align="right" style="text-align:right;width:auto"></div></td><td align="center" style="width:191px;margin:0px;padding:0px;border:0px;vertical-align:middle;white-space:nowrap" id="gigya-modal-plugin-container-showScreenSet_social_0_page"><table align="center" cellspacing="0" cellpadding="0" style="margin: 0px; padding: 0px; border: 0px;" id="gigya-modal-plugin-container-showScreenSet_social_0_p0"><tbody><tr><td align="center" style="margin:0px;padding:0px;border:0px;vertical-align:middle"><table align="center" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:0px;"><tbody><tr><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_0','facebook')" title="Facebook" alt="Facebook" style="zoom:1;cursor:pointer; width:44px;"><div gigid="facebook" style="width:44px; height:44px"><div style="background-image:url('https://cdns.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-0px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_0','instagram')" title="Instagram" alt="Instagram" style="zoom:1;cursor:pointer; width:44px;"><div gigid="instagram" style="width:44px; height:44px"><div style="background-image:url('https://cdns.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-88px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_0','googleplus')" title="Google+" alt="Google+" style="zoom:1;cursor:pointer; width:44px;"><div gigid="googleplus" style="width:44px; height:44px"><div style="background-image:url('https://cdns.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-44px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_0','yahoo')" title="Yahoo" alt="Yahoo" style="zoom:1;cursor:pointer; width:44px;"><div gigid="yahoo" style="width:44px; height:44px"><div style="background-image:url('https://cdns.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-132px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td></tr></tbody></table></td></tr></tbody></table></td><td align="left" style="margin:0px;padding:0px;border:0px;vertical-align:middle;width:48%"></td></tr></tbody></table></center></td></tr></tbody></table></div></div>
+                            </div>
+                </div>
+                <div class="gigya-right-side">
+                    <h2 class="gigya-composite-control gigya-composite-control-header">Or use your email:</h2>
+                    <div class="gigya-composite-control gigya-spacer" data-units="2"></div>
+                    <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                        <input type="email" name="loginID" class="gigya-input-text" tabindex="1" placeholder="Email">
+                        <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                    </div>
+                    <div class="gigya-composite-control">
+                        <div class="gigya-composite-control-password">
+                            <input id="password" type="password" class="gigya-input-password" name="password" data-display-name="" tabindex="2" placeholder="Password"> <span class="gigya-error-msg" data-bound-to="password"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                            <input type="submit" class="gigya-input-submit btn" value="Log In" tabindex="3">
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-forgot-pwd" style="display: block;">
+                            <a data-switch-screen="gigya-forgot-password-screen" class="forgotPassword">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="gigya-clear"></div>
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-login-form">
+                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-login-form"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </form>
+            <div class="gigya-layout-row gigya-footer">
+                <div class="gigya-footer-content">
+                    <label class="gigya-composite-control gigya-composite-control-label">
+                        Don't have an account yet? <a data-switch-screen="gigya-register-screen">Sign Up</a>
+                    </label>
+                </div>
+            </div>
+        </div></div></div></div>
+
+
+        <h3>Reauth</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-recent-login-screen" data-width="100%">
+            <a class="gigya-screen-dialog-close"></a>
+            <form class="gigya-login-form">
+                <div class="gigya-left-side">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Please Log In Again To Make Changes To Your Account:</h1>
+                    <h2 class="gigya-composite-control gigya-composite-control-header">Log in with:</h2>
+                    <div class="gigya-composite-control gigya-composite-control-social-login">
+                        <div class="gigya-social-login gigya-reset" data-screenset-element-id="__gig_template_element_23_1498578761096" data-screenset-element-id-publish="false" data-screenset-roles="instance"><div class="gigya-social-login-container" id="gigya-modal-plugin-container-showScreenSet_social_2" gigid="showScreenSet_showLoginUI_v1" style="width: 250px; height: 50px;"><table width="100%" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;background-color:transparent;vertical-align: middle; width: 250px; height: 50px;"><tbody><tr><td style="vertical-align:middle;margin:0px;padding:0px;border:0px;"><center><table style="margin:0px;padding:0px;border:0px;vertical-align:middle; height: 50px;width:100%" align="center" cellspacing="0" cellpadding="0"><tbody><tr style="height:99%"><td align="right" style="margin:0px;padding:0px;border:0px;vertical-align:middle;width:48%;text-align:right"><div align="right" style="text-align:right;width:auto"></div></td><td align="center" style="width:191px;margin:0px;padding:0px;border:0px;vertical-align:middle;white-space:nowrap" id="gigya-modal-plugin-container-showScreenSet_social_2_page"><table align="center" cellspacing="0" cellpadding="0" style="margin: 0px; padding: 0px; border: 0px;" id="gigya-modal-plugin-container-showScreenSet_social_2_p0"><tbody><tr><td align="center" style="margin:0px;padding:0px;border:0px;vertical-align:middle"><table align="center" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:0px;"><tbody><tr><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_2','facebook')" title="Facebook" alt="Facebook" style="zoom:1;cursor:pointer; width:44px;"><div gigid="facebook" style="width:44px; height:44px"><div style="background-image:url('http://cdn3.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-0px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_2','instagram')" title="Instagram" alt="Instagram" style="zoom:1;cursor:pointer; width:44px;"><div gigid="instagram" style="width:44px; height:44px"><div style="background-image:url('http://cdn3.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-88px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_2','googleplus')" title="Google+" alt="Google+" style="zoom:1;cursor:pointer; width:44px;"><div gigid="googleplus" style="width:44px; height:44px"><div style="background-image:url('http://cdn3.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-44px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_2','yahoo')" title="Yahoo" alt="Yahoo" style="zoom:1;cursor:pointer; width:44px;"><div gigid="yahoo" style="width:44px; height:44px"><div style="background-image:url('http://cdn3.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-132px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td></tr></tbody></table></td></tr></tbody></table></td><td align="left" style="margin:0px;padding:0px;border:0px;vertical-align:middle;width:48%"></td></tr></tbody></table></center></td></tr></tbody></table></div></div>
+                    </div>
+                </div>
+                <div class="gigya-right-side">
+                    <h2 class="gigya-composite-control gigya-composite-control-header">Or use your email:</h2>
+                    <div class="gigya-composite-control gigya-spacer" data-units="2"></div>
+                    <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                        <input type="email" name="loginID" class="gigya-input-text" tabindex="1" placeholder="Email"> <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                    </div>
+                    <div class="gigya-composite-control">
+                        <div class="gigya-composite-control-password">
+                            <input id="password" type="password" class="gigya-input-password" name="password" data-display-name="" tabindex="2" placeholder="Password"> <span class="gigya-error-msg" data-bound-to="password"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                            <input type="submit" class="gigya-input-submit btn" value="Log In" tabindex="3">
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-forgot-pwd" style="display: block;">
+                            <a data-switch-screen="gigya-forgot-password-screen" class="forgotPassword">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="gigya-clear"></div>
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-login-form">
+                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-login-form"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </form>
+            <div class="gigya-layout-row gigya-footer">
+                &nbsp;
+            </div>
+        </div></div></div></div>
+
+        <h3>Sign Up</h3>
+        <div class="gigya-screen-dialog"><div id="gigya-screen-dialog-page-overlay" style="display:none"></div>
+        <div class="gigya-screen-dialog-inner" id="gigya-modal-plugin-container-showScreenSet">
+            <div class="gigya-screen-dialog-top">
+                <div class="gigya-screen-dialog-caption" id="gigya-screen-dialog-caption-gig_1498587390422_showScreenSet">&nbsp;</div>
+                <div class="gigya-screen-dialog-close"></div>
+            </div>
+            <div id="gigya-modal-plugin-container-showScreenSet_content" class="gigya-screen-content gigya-screen-dialog-content gigya-locale-en"><div id="gigya-register-email-screen" class="gigya-screen mrb-external" data-width="100%" data-on-pending-verification-screen="gigya-thank-you-screen" data-screenset-element-id="gigya-register-email-screen" data-screenset-element-id-publish="true" data-screenset-roles="instance"> <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <form class="gigya-register-form" onsubmit="return false;" data-screenset-element-id="__gig_template_element_32_1498587400980" data-screenset-element-id-publish="false" data-screenset-roles="instance">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Save your favorite recipes, share your photos, create meal plans and grocery lists
+                        — and do it all from any device.</h1>
+                        <div class="gigya-left-side">
+                            <h2 class="gigya-composite-control gigya-composite-control-header">Sign Up Easily With:</h2>
+                            <div class="gigya-composite-control gigya-composite-control-social-login">
+                                <div class="gigya-social-login gigya-reset" data-screenset-element-id="__gig_template_element_45_1498587400983" data-screenset-element-id-publish="false" data-screenset-roles="instance"><div class="gigya-social-login-container" id="gigya-modal-plugin-container-showScreenSet_social_7" gigid="showScreenSet_showLoginUI_v1" style="width: 250px; height: 50px;"><table width="100%" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;background-color:transparent;vertical-align: middle; width: 250px; height: 50px;"><tbody><tr><td style="vertical-align:middle;margin:0px;padding:0px;border:0px;"><center><table style="margin:0px;padding:0px;border:0px;vertical-align:middle; height: 50px;width:100%" align="center" cellspacing="0" cellpadding="0"><tbody><tr style="height:99%"><td align="right" style="margin:0px;padding:0px;border:0px;vertical-align:middle;width:48%;text-align:right"><div align="right" style="text-align:right;width:auto"></div></td><td align="center" style="width:191px;margin:0px;padding:0px;border:0px;vertical-align:middle;white-space:nowrap" id="gigya-modal-plugin-container-showScreenSet_social_7_page"><table align="center" cellspacing="0" cellpadding="0" style="margin: 0px; padding: 0px; border: 0px;" id="gigya-modal-plugin-container-showScreenSet_social_7_p0"><tbody><tr><td align="center" style="margin:0px;padding:0px;border:0px;vertical-align:middle"><table align="center" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:0px;"><tbody><tr><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_7','facebook')" title="Facebook" alt="Facebook" style="zoom:1;cursor:pointer; width:44px;"><div gigid="facebook" style="width:44px; height:44px"><div style="background-image:url('http://cdn1.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-0px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_7','instagram')" title="Instagram" alt="Instagram" style="zoom:1;cursor:pointer; width:44px;"><div gigid="instagram" style="width:44px; height:44px"><div style="background-image:url('http://cdn1.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-88px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;padding-right:5px;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_7','googleplus')" title="Google+" alt="Google+" style="zoom:1;cursor:pointer; width:44px;"><div gigid="googleplus" style="width:44px; height:44px"><div style="background-image:url('http://cdn1.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-44px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td><td style="margin:0px;padding:0px;border:0px;line-height: normal;font-family:arial;font-size:11px;color:#9b9b9b;text-align:center;vertical-align:top"><center><div onclick="gigya.socialize.plugins.login.providerClick('gigya-modal-plugin-container-showScreenSet_social_7','yahoo')" title="Yahoo" alt="Yahoo" style="zoom:1;cursor:pointer; width:44px;"><div gigid="yahoo" style="width:44px; height:44px"><div style="background-image:url('http://cdn1.gigya.com/gs/GetSprite.ashx?path=%2FHTMLLogin%2F%5Bfacebook%2Cgoogleplus%2Cinstagram%2Cyahoo%5D_40.png%7C44%2C44');background-position:-132px 0px;width: 44px;height: 44px;line-height: 44px;background-repeat:no-repeat;position:static;"></div></div></div></center></td></tr></tbody></table></td></tr></tbody></table></td><td align="left" style="margin:0px;padding:0px;border:0px;vertical-align:middle;width:48%"></td></tr></tbody></table></center></td></tr></tbody></table></div></div>
+                            </div>
+                        </div>
+                        <div class="gigya-right-side">
+                            <div class="gigya-layout-row">
+                                <h2 class="gigya-composite-control gigya-composite-control-header"> <a data-switch-screen="gigya-register-screen" data-screenset-element-id="__gig_template_element_46_1498587400983" data-screenset-element-id-publish="false" data-screenset-roles="instance" href="javascript:void(0)">Or, Sign Up With Your Email</a>:</h2>
+                            </div>
+                            <div class="gigya-layout-row">
+                                <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                                    <input type="email" class="gigya-input-text" name="email" data-display-name="" placeholder="Email" data-screenset-element-id="__gig_template_element_33_1498587400980" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="email" data-original-value="" aria-required="true">
+                                    <span class="gigya-error-msg" data-bound-to="email" data-screenset-element-id="__gig_template_element_27_1498587400979" data-screenset-element-id-publish="false" data-screenset-roles="instance" role="alert"></span>
+                                </div>
+                            </div>
+                            <div class="gigya-layout-row">
+                                <div class="gigya-composite-control gigya-composite-control-password" style="display: block;">
+                                    <div class="gigya-password-strength gigya-reset" data-bound-to="password" data-on-focus-bubble="true" data-screenset-element-id="__gig_template_element_42_1498587400981" data-screenset-element-id-publish="false" data-screenset-roles="instance" style="display: none;"></div>
+                                    <div class="input-group">
+                                        <input type="password" name="password" class="gigya-input-password" placeholder="Password" data-display-name="" show-password-strength="down" data-screenset-element-id="__gig_template_element_34_1498587400980" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="password" data-original-value="" aria-required="true"><div class="gigya-password-strength gigya-reset" data-on-focus-bubble="true" data-bubble-orientation="down" data-screenset-element-id="__gig_template_element_1_1498587413404" data-screenset-element-id-publish="false" data-screenset-roles="template,instance" style="display: none;"></div>
+                                        <span class="input-group-addon">show</span>
+                                    </div>
+                                    <span class="gigya-error-msg" data-bound-to="password" data-screenset-element-id="__gig_template_element_28_1498587400979" data-screenset-element-id-publish="false" data-screenset-roles="instance" role="alert"></span>
+                                </div>
+                            </div>
+                            <!-- <div class="gigya-layout-row">
+                            <div class="gigya-composite-control gigya-composite-control-textbox">
+                            <input type="text" class="gigya-input-text" name="profile.firstName" data-display-name="" placeholder="First Name" />
+                            <span class="gigya-error-msg" data-bound-to="profile.firstName"></span>
+                            </div>
+                            <div class="gigya-composite-control gigya-composite-control-textbox">
+                            <input type="text" class="gigya-input-text" name="profile.lastName" data-display-name="" placeholder="Last Name" />
+                            <span class="gigya-error-msg" data-bound-to="profile.lastName"></span>
+                            </div>
+                            </div>
+                            -->
+                            <div class="gigya-layout-row">
+                                <div class="gigya-composite-control gigya-composite-control-textbox">
+                                    <input type="text" class="gigya-input-text" name="profile.birthYear" data-display-name="" placeholder="Year You Were Born" data-screenset-element-id="__gig_template_element_35_1498587400980" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="profile.birthYear" data-original-value="" aria-required="true">
+                                    <span class="gigya-error-msg" data-bound-to="profile.birthYear" data-screenset-element-id="__gig_template_element_29_1498587400979" data-screenset-element-id-publish="false" data-screenset-roles="instance" role="alert"></span>
+                                    <div class="gigya-container gigya-dob-container" data-condition="profile.birthYear >= (new Date().getFullYear() - 13)" data-screenset-element-id="__gig_template_element_43_1498587400982" data-screenset-element-id-publish="false" data-screenset-roles="instance">
+                                        <input type="text" class="gigya-input-text" name="profile.birthMonth" data-display-name="" placeholder="mm" data-screenset-element-id="__gig_template_element_36_1498587400980" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="profile.birthMonth" data-original-value="" aria-required="false">/
+                                        <input type="text" class="gigya-input-text" name="profile.birthDay" data-display-name="" placeholder="dd" data-screenset-element-id="__gig_template_element_37_1498587400980" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="profile.birthDay" data-original-value="" aria-required="false">
+                                        <div class="alert alert-warning">Please add the month and day of your birth</div>
+                                    </div>
+                                </div>
+                                <div class="gigya-composite-control gigya-composite-control-multi-choice gigya-gender">
+                                    <label class="gigya-label">
+                                        <span class="gigya-label-text">Gender</span>
+                                        <label class="gigya-required-display gigya-reset" data-bound-to="profile.gender" data-screenset-element-id="__gig_template_element_44_1498587400983" data-screenset-element-id-publish="false" data-screenset-roles="instance" aria-hidden="true">*</label>
+                                    </label>
+                                    <div class="gigya-multi-choice-item">
+                                        <input type="radio" class="gigya-input-radio" name="profile.gender" value="m" data-screenset-element-id="__gig_template_element_38_1498587400981" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="profile.gender" data-original-value="null" aria-required="true">
+                                        <label>Male</label>
+                                    </div>
+                                    <div class="gigya-multi-choice-item">
+                                        <input type="radio" class="gigya-input-radio" name="profile.gender" value="f" data-screenset-element-id="__gig_template_element_39_1498587400981" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="profile.gender" data-original-value="null" aria-required="true">
+                                        <label>Female</label>
+                                    </div>
+                                    <span class="gigya-error-msg" data-screenset-element-id="__gig_template_element_30_1498587400979" data-screenset-element-id-publish="false" data-screenset-roles="instance" role="alert"></span>
+                                </div>
+                            </div>
+                            <div class="gigya-layout-row ">
+                                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-profile-form" style="display: block;" data-screenset-element-id="__gig_template_element_26_1498587400979" data-screenset-element-id-publish="false" data-screenset-roles="instance" role="alert">
+                                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-profile-form" style="" data-screenset-element-id="__gig_template_element_31_1498587400979" data-screenset-element-id-publish="false" data-screenset-roles="instance" role="alert"></div>
+                                </div>
+                                <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                                    <input type="submit" class="gigya-input-submit gigya-signup-submit-button btn" value="Sign Up" data-screenset-element-id="__gig_template_element_40_1498587400981" data-screenset-element-id-publish="false" data-screenset-roles="instance" aria-required="false">
+                                </div>
+                            </div>
+                            <div class="gigya-layout-row gigya-terms">
+                                <div class="gigya-composite-control gigya-composite-control-checkbox" style="display: block;" aria-invalid="false">
+                                    <input type="checkbox" name="data.terms" class="gigya-input-checkbox" checked="checked" data-display-name="" data-screenset-element-id="__gig_template_element_41_1498587400981" data-screenset-element-id-publish="false" data-screenset-roles="instance" data-gigya-name="data.terms" data-original-value="true" aria-required="false">
+                                    <label class="gigya-label">
+                                        <span class="gigya-label-text">By signing up you agree to Genius Kitchen's <a target="_blank" href="http://www.scrippsnetworksinteractive.com/terms-of-use/">Terms of Use</a> and
+                                            <a target="_blank" href="http://www.scrippsnetworksinteractive.com/privacy-policy/">Privacy Policy</a>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            </div>
+                            </form>
+                            <div class="gigya-layout-row gigya-footer">
+                                <label class="gigya-composite-control gigya-composite-control-label">Already a member? <a data-switch-screen="gigya-login-screen" data-screenset-element-id="__gig_template_element_47_1498587400983" data-screenset-element-id-publish="false" data-screenset-roles="instance" href="javascript:void(0)">Log In</a>
+                                </label>
+                            </div>
+        </div></div></div></div>
+
+        <h3>More Details</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-complete-registration-screen" data-width="100%">
+                <form class="gigya-profile-form">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">We still need some details from you...</h1>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-spacer" data-units="1" style="height: 10px;"></div>
+                        <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                            <input type="email" value="" name="profile.email" class="gigya-input-text" placeholder="Email" tabindex="1">
+                            <span class="gigya-error-msg" data-bound-to="profile.email"></span>
+                        </div>
+                        <!--
+                        <div class="gigya-layout-row">
+                            <div class="gigya-composite-control gigya-composite-control-textbox">
+                                <input type="text" class="gigya-input-text" name="profile.firstName" data-display-name="" placeholder="First Name">
+                                <span class="gigya-error-msg" data-bound-to="profile.firstName"></span>
+                            </div>
+                            <div class="gigya-composite-control gigya-composite-control-textbox">
+                                <input type="text" class="gigya-input-text" name="profile.lastName" data-display-name="" placeholder="Last Name">
+                                <span class="gigya-error-msg" data-bound-to="profile.lastName"></span>
+                            </div>
+                        </div>
+                        -->
+                        <div class="gigya-composite-control gigya-composite-control-textbox">
+                            <input type="number" class="gigya-input-text" name="profile.birthYear" data-display-name="" placeholder="Year You Were Born" tabindex="4"> <span class="gigya-error-msg" data-bound-to="profile.birthYear"></span>
+                            <div class="gigya-container gigya-dob-container" data-condition="profile.birthYear >= (new Date().getFullYear() - 13)">
+                                <input type="number" class="gigya-input-text" name="profile.birthDay" data-display-name="" placeholder="mm" tabindex="5">/
+                                <input type="number" class="gigya-input-text" name="profile.birthMonth" data-display-name="" placeholder="dd" tabindex="6">
+                                <div class="alert alert-warning">Please add the month and day of your birth</div>
+                            </div>
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-multi-choice gigya-gender">
+                            <label class="gigya-label"> <span class="gigya-label-text">Gender</span>
+                                <label class="gigya-required-display gigya-hidden" data-bound-to="profile.gender">*</label>
+                            </label>
+                            <div class="gigya-multi-choice-item">
+                                <input type="radio" class="gigya-input-radio" name="profile.gender" value="m">
+                                <label>Male</label>
+                            </div>
+                            <div class="gigya-multi-choice-item">
+                                <input type="radio" class="gigya-input-radio" name="profile.gender" value="f">
+                                <label>Female</label>
+                            </div> <span class="gigya-error-msg"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-profile-form" style="display: block;">
+                            <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-profile-form" style=""></div>
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                            <input type="submit" class="gigya-input-submit btn" value="Finish Signing Up" tabindex="5">
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row gigya-terms">
+                        <div class="gigya-composite-control gigya-composite-control-checkbox" style="display: block;">
+                            <input type="checkbox" name="data.terms" class="gigya-input-checkbox" checked="checked" data-display-name="">
+                            <label class="gigya-label">
+                                <span class="gigya-label-text">
+                                    By signing up you agree to Genius Kitchen's <a target="_blank" href="http://www.scrippsnetworksinteractive.com/terms-of-use/">Terms of Use</a>
+                                    and <a target="_blank" href="http://www.scrippsnetworksinteractive.com/privacy-policy/">Privacy Policy</a>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="gigya-layout-row gigya-footer">
+                    &nbsp;
+                </div>
+        </div></div></div></div>
+
+
+        <h3>Success</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-thank-you-screen" data-width="100%">
+                <form class="gigya-thank-you-scree-form" data-on-success-screen="">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">
+                        Success!<br>
+                        Welcome to Genius Kitchen!
+                    </h1>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                            <input type="submit" class="gigya-input-submit btn" value="Continue Browsing" tabindex="2">
+                        </div>
+                    </div>
+                </form>
+                <div class="gigya-layout-row">
+                    <form class="gigya-resend-verification-code-form" data-on-success-screen="gigya-thank-you-screen">
+                        <div class="gigya-layout-row">
+                            <label class="gigya-composite-control gigya-composite-control-label gigya-message">We've sent an email to
+                            <span class="gigya-text-email">insert.email@here.com</span> to verify your account. Didn’t get the email?
+                            <a onclick="this.form.submit(); return false;" class="gigya-submit-link">Send it again</a>.</label>
+                        </div>
+                        <div class="gigya-layout-row">
+                            <div class="gigya-composite-control gigya-composite-control-textbox gigya-hidden">
+                                <input name="profile.email" class="gigya-thank-you-email-resend" type="hidden">
+                                <span class="gigya-error-msg" data-bound-to="email"></span>
+                            </div>
+                            <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error gigya-hidden" data-bound-to="gigya-resend-verification-code-form" style="display: block;">
+                                <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-resend-verification-code-form" style=""></div>
+                            </div>
+                            <input type="hidden" class="gigya-input-submit btn" value="Resend the Email" tabindex="2">
+                        </div>
+                    </form>
+                </div>
+                <div class="gigya-layout-row gigya-footer">
+                    <div class="gigya-footer-content">
+                        <label class="gigya-composite-control gigya-composite-control-label">&nbsp;</label>
+                    </div>
+                </div>
+        </div></div></div></div>
+
+
+        <h3>Under Age</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close" id="gig_1421094639411_showScreenSet_content_close"></div></div><div class="gigya-screen mrb-external" id="gigya-under-age" data-width="100%">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <div class="gigya-form">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Could Not Create Your Account</h1>
+                    <div class="gigya-layout-row">
+                        <label class="gigya-composite-control gigya-composite-control-label gigya-message">In order to have a Genius Kitchen account, you must meet certain age requirements.
+                            <br>
+                        </label>
+                        <div class="gigya-composite-control gigya-spacer" data-units="5" style="height: 5px; display: block;"></div>
+                        <label class="gigya-composite-control gigya-composite-control-label gigya-message">To learn more about online child safety, <a href="http://www.ftc.gov/">visit the Federal Trade Commission's website.</a>
+                        </label>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-spacer" data-units="5" style="height: 5px; display: block;"></div>
+                        <label class="gigya-composite-control gigya-composite-control-label">
+                            <a target="_blank" href="http://www.scrippsnetworksinteractive.com/terms-of-use/">Terms of Use</a> and <a target="_blank" href="http://www.scrippsnetworksinteractive.com/privacy-policy/">Privacy Policy</a>
+                        </label>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-row gigya-footer">
+                    <div class="gigya-footer-content">
+                        <label class="gigya-composite-control gigya-composite-control-label">&nbsp;</label>
+                    </div>
+                </div>
+        </div></div></div></div>
+
+        <h3>Link Social Account</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-link-account-screen" data-width="100%">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <form class="gigya-link-accounts-form">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Link to Your Social Network Account</h1>
+                    <div class="gigya-layout-row">
+                        <label class="gigya-composite-control gigya-composite-control-label" style="display: block;">
+                            Please provide your site password to link to your existing account.
+                        </label>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-spacer" data-units="14"></div>
+                        <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                            <input type="email" name="loginID" class="gigya-input-text" tabindex="1" placeholder="Email"> <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-password" style="display: block;">
+                            <input type="password" name="password" class="gigya-input-password" tabindex="2" placeholder="Password"> <span class="gigya-error-msg" data-bound-to="password"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-link-accounts-form" style="display: block;">
+                            <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-link-accounts-form" style=""></div>
+                        </div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                            <input type="submit" class="gigya-input-submit btn" value="Link Account" tabindex="3">
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-forgot-pwd" style="display: block;">
+                            <a data-switch-screen="gigya-forgot-password-screen" class="forgotPassword">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="gigya-clear"></div>
+                </form>
+                <div class="gigya-layout-row gigya-footer">
+                    <div class="gigya-footer-content">
+                        <label class="gigya-composite-control gigya-composite-control-label">
+                            <a data-switch-screen="gigya-register-screen">Click here</a> to create a new account instead or contact <a href="/contact">Customer Service</a>.
+                        </label>
+                    </div>
+                </div>
+        </div></div></div></div>
+
+        <h3>Forgot Password</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-forgot-password-screen">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <form class="gigya-reset-password-form" data-on-success-screen="gigya-forgot-password-success-screen">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Forgot Password</h1>
+                    <div class="gigya-layout-row">
+                        <label class="gigya-composite-control gigya-composite-control-label gigya-mobile-width-80 gigya-mobile-margin-top-space" style="display: block;">Enter your email address and we'll send you directions to change your password</label>
+                        <div class="gigya-composite-control gigya-spacer" data-units="1" style="height: 10px;"></div>
+                        <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                            <input type="text" name="loginID" class="gigya-input-text" tabindex="1" placeholder="Email" autocapitalize="off"> <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                            <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                                <input type="submit" class="gigya-input-submit btn" value="Reset Password" tabindex="2">
+                            </div>
+                            <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-reset-password-form" style="display: block;">
+                                <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-reset-password-form"></div>
+                            </div>
+                        </div>
+                        <div class="gigya-layout-cell">
+                            <label class="gigya-composite-control gigya-composite-control-label" style="display: block;">or <a data-switch-screen="gigya-login-screen">Go Back to Log In </a>
+                            </label>
+                        </div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                    <div class="gigya-layout-row"></div>
+                    <div class="gigya-clear"></div>
+                </form>
+                <div class="gigya-layout-row gigya-footer">
+                    &nbsp;
+                </div>
+        </div></div></div></div>
+
+        <h3>Password Reset</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div data-width="100%" id="gigya-forgot-password-success-screen" class="gigya-screen mrb-external">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <div class="gigya-form">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Password Reset</h1>
+                    <div class="gigya-layout-row">
+                        <div style="height: 40px;" data-units="4" class="gigya-composite-control gigya-spacer"></div>
+                        <label class="gigya-composite-control gigya-composite-control-label gigya-message">An e-mail has been sent to your email with directions to change your password.</label>
+                        <div class="gigya-composite-control gigya-spacer" data-units="5" style="height: 50px;"></div>
+                    </div>
+                </div>
+        </div></div></div></div>
+
+        <h3>Verify Email</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-email-verification-screen" data-width="100%">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <form class="gigya-resend-verification-code-form" data-on-success-screen="gigya-thank-you-screen">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Verify Your Email</h1>
+                    <div class="gigya-layout-row">
+                        <label class="gigya-composite-control gigya-composite-control-label gigya-mobile-margin-top-small gigya-mobile-width-80" style="display: block;">
+                            We have not verified that the email belongs to you. Please check your inbox for the verification email.
+                            <br><br>
+                            To resend the verification email, please enter your email address and click Submit.
+                        </label>
+                        <div class="gigya-composite-control gigya-spacer" data-units="1" style="height: 10px;"></div>
+                        <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                            <input type="text" name="email" class="gigya-input-text" tabindex="1" placeholder="Email"> <span class="gigya-error-msg" data-bound-to="email"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-resend-verification-code-form" style="display: block;">
+                            <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-resend-verification-code-form" style=""></div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                            <input type="submit" class="gigya-input-submit btn" value="Verify" tabindex="2">
+                        </div>
+                    </div>
+                </form>
+                <div class="gigya-layout-row gigya-footer">
+                    <div class="gigya-footer-content">
+                        <label class="gigya-composite-control gigya-composite-control-label">&nbsp;</label>
+                    </div>
+                </div>
+        </div></div></div></div>
+
+        <h3>Change Password</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-password-change-required-screen" data-width="100%">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <form class="gigya-profile-form">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Change Your Password</h1>
+                    <div class="gigya-layout-row">
+                        <label class="gigya-composite-control gigya-composite-control-label" style="display: block;">For security reasons your password needs to be changed</label>
+                        <div class="gigya-composite-control gigya-composite-control-password" style="display: block;">
+                            <input type="password" name="password" class="gigya-input-password" tabindex="1" placeholder="Current Password"> <span class="gigya-error-msg" data-bound-to="password"></span>
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-password" style="display: block;">
+                            <input type="password" name="newPassword" class="gigya-input-password" tabindex="2" placeholder="New Password"> <span class="gigya-error-msg" data-bound-to="newPassword"></span>
+                            <div class="gigya-password-strength" data-bound-to="newPassword" data-on-focus-bubble="true"></div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row ">
+                        <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-profile-form" style="display: block;">
+                            <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-profile-form" style=""></div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row ">
+                        <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                            <input type="submit" class="gigya-input-submit btn" value="Change Password" tabindex="4">
+                        </div>
+                    </div>
+                </form>
+                <div class="gigya-layout-row gigya-footer">
+                    <div class="gigya-footer-content">
+                        <label class="gigya-composite-control gigya-composite-control-label">&nbsp;</label>
+                    </div>
+                </div>
+        </div></div></div></div>
+
+        <h3>Password Reset</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-password-reset" data-width="100%">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <form class="gigya-profile-form">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Password reset</h1>
+                    <div id="reset-password-screen" class="gigya-profile-form">
+                        <div class="gigya-composite-control gigya-composite-control-password">
+                            <input type="password" id="password" class="gigya-input-password" name="password" placeholder="New Password">
+                            <div class="gigya-password-strength" data-on-focus-bubble="true" data-bound-to="password" data-bubble-orientation="left"></div>
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-password">
+                            <input type="password" id="passwordRetype" class="gigya-input-password" placeholder="Confirm Password">
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-submit">
+                            <input type="submit" id="button1" onclick="profileGigya.resetPassword()" class="gigya-input-submit btn" value="Reset Password">
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-form-error" style="display: none;">
+                            <label id="lblStatus" class="gigya-form-error-msg"></label>
+                        </div>
+                    </div>
+                </form>
+                <label id="lblSuccess" style="display: none" class="gigya-composite-control gigya-composite-control-success-label gigya-message">Your password has been successfully reset.
+                    <br>You may now use your new password to <a id="backToLoginScreen">login.</a>
+                </label>
+                <div class="gigya-layout-row gigya-footer">
+                    <div class="gigya-footer-content">
+                        <label class="gigya-composite-control gigya-composite-control-label">&nbsp;</label>
+                    </div>
+                </div>
+        </div></div></div></div>
+
+
+        <h3>Change Password</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-change-password-screen" data-width="100%">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <form class="gigya-profile-form" data-on-success-screen="gigya-update-profile-screen">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Change Password</h1>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-composite-control gigya-composite-control-password">
+                            <input type="password" name="password" class="gigya-input-password" tabindex="1" placeholder="Current Password"> <span class="gigya-error-msg" data-bound-to="password"></span>
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-password">
+                            <input id="newPassword1" type="password" name="newPassword" class="gigya-input-password" tabindex="2" placeholder="New Password"> <span class="gigya-error-msg" data-bound-to="newPassword1"></span>
+                            <div class="gigya-password-strength" data-on-focus-bubble="true" data-bubble-orientation="left"></div>
+                        </div>
+                        <div class="gigya-composite-control gigya-composite-control-password">
+                            <input type="password" name="passwordRetype" class="gigya-input-password" tabindex="3" placeholder="Confirm Password">
+                            <span class="gigya-error-msg" data-bound-to="passwordRetype"></span>
+                        </div>
+                        <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-profile-form" style="display: none;">
+                            <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-profile-form" style=""></div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row ">
+                        <div class="gigya-composite-control gigya-composite-control-submit">
+                            <input type="submit" class="gigya-input-submit btn" value="Change Password" tabindex="4">
+                        </div>
+                    </div>
+                </form>
+                <div class="gigya-layout-row gigya-footer">
+                    &nbsp;
+                </div>
+        </div></div></div></div>
+
+        <h3>Password Changed</h3>
+        <div class="gigya-screen-dialog"><div class="gigya-screen-dialog-inner"><div class="gigya-screen-content gigya-screen-dialog-content"><div class="gigya-screen-dialog-top"><div class="gigya-screen-dialog-caption">&nbsp;</div><div class="gigya-screen-dialog-close"></div></div><div class="gigya-screen mrb-external" id="gigya-update-profile-screen" data-width="100%">
+                <a class="gigya-screen-dialog-close" onclick="gigya.accounts.hideScreenSet({screenSet: 'GK-LoginReg'})"></a>
+                <div class="gigya-form">
+                    <h1 class="gigya-composite-control gigya-composite-control-header">Password Changed</h1>
+                    <div class="gigya-layout-row">
+                        <div style="height: 40px;" data-units="4" class="gigya-composite-control gigya-spacer"></div>
+                        <label class="gigya-composite-control gigya-composite-control-label gigya-message">Your password has been updated.</label>
+                        <div class="gigya-composite-control gigya-spacer" data-units="5" style="height: 50px;"></div>
+                    </div>
+                </div>
+        </div></div></div></div>
+
+
+        </div> <!-- /.fel-example -->
+    </div> <!-- /.gigya-wrapper -->
+
+    <div class="sticky-footer-button">
+        <button class="fel-toggle" id="mobile-toggle">Toggle Mobile Modals</button>
+        <button class="fel-toggle" id="step-through">Step Through Mobile Modals</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+
+    <script>
+        $(document).ready(function(){
+            var $modals = $('.gigya-screen-dialog');
+
+             $('#mobile-toggle').click(function(){
+                $modals.toggleClass('gigya-screen-dialog-mobile hide').toggleClass('gigya-screen-dialog');
+                $('body').toggleClass('hide-modals');
+                $(this).toggleClass('active');
+
+                if( $(this).hasClass('active') ) {
+                    $modals.first().removeClass('hide').addClass('show');
+                } else {
+                    $modals.removeClass('show').removeClass('hide');
+                }
+
+
+            });
+
+             $('#step-through').click(function() {
+                $('.gigya-screen-dialog-mobile.show').removeClass('show').addClass('hide').next().next().removeClass('hide').addClass('show');
+             });
+        });
+    </script>
+</body>
+</html>

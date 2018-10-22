@@ -1,0 +1,174 @@
+@media print {
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1025px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 1025px) {
+}
+@media (min-width: 1025px) {
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) {
+}
+@-ms-viewport {
+  width: device-width;
+}
+@font-face {
+  font-family: 'BrandonGrotesque';
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Regular.eot');
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Regular.eot?#iefix') format('embedded-opentype'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Regular.woff') format('woff'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Regular.woff2') format('woff2'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BrandonGrotesque';
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Bold.eot');
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Bold.eot?#iefix') format('embedded-opentype'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Bold.woff') format('woff'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Bold.woff2') format('woff2'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BrandonGrotesque';
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Black.eot');
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Black.eot?#iefix') format('embedded-opentype'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Black.woff') format('woff'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Black.woff2') format('woff2'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/BrandonGrotesqueWeb-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/Gotham-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/Gotham-Medium.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/Gotham-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Foodicons";
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/Foodicons.eot?v=3.8');
+  src: url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/Foodicons.eot?#iefix&v=3.8') format('embedded-opentype'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/Foodicons.woff?v=3.8') format('woff'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/Foodicons.woff2?v=3.8') format('woff2'), url('http://localhost.dev-geniuskitchen.com:8889/fd/fonts/Foodicons.ttf?v=3.8') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1025px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media (min-width: 1025px) {
+}
+@media screen and (min-width: 1025px) {
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (min-width: 1025px) {
+}
+@media print {
+  @page {
+    margin: 2cm 1cm;
+  }
+  .fel.menu,
+  .prettyprint {
+    display: none;
+  }
+  body {
+    color: #000000;
+    background-color: #FFF;
+  }
+  .fel-wrapper:before {
+    position: absolute;
+    border-width: 0.15875cm;
+  }
+  section.fel,
+  .gk-color,
+  .fel-component {
+    page-break-inside: none;
+  }
+  h1.fel {
+    font-size: 22.5pt;
+    line-height: 30;
+  }
+  h2.fel {
+    font-size: 19.5pt;
+    line-height: 22.5pt;
+  }
+  h3.fel {
+    font-size: 10.5pt;
+    line-height: 13.5pt;
+  }
+  h4.fel {
+    font-size: 12pt;
+    line-height: 13.5pt;
+  }
+  p.fel {
+    font-size: 12pt;
+    line-height: 22.5pt;
+  }
+  p.fel.intro {
+    font-size: 16.5pt;
+    line-height: 22.5pt;
+  }
+  p.fel.usage {
+    font-size: 10.5pt;
+    line-height: 15.75pt;
+  }
+  .fel-component .half,
+  .fel-component .quarter,
+  .fel-component .third {
+    display: inline-block;
+  }
+  .fel-component .half {
+    width: 45%;
+  }
+  .fel-component .quarter {
+    width: 25%;
+  }
+  .fel-component .third {
+    width: 33.33333333%;
+  }
+}
+/*# sourceMappingURL=fel-print.css.map */

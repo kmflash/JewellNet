@@ -1,0 +1,1003 @@
+// GK FRONT END LIBRARY STYLES
+//
+//
+// The following styles are helpers for the front end library, to represent styles that aren't by default visible from the gk.css file (eg: color swatches)
+
+@import (reference) "../../../_src/gk/less/core/variables/colors.less";
+@import (reference) "../../../_src/gk/less/core/fonts/icons/food/foodicons-variables.less";
+
+
+@color-swatch-width: 25%;
+@color-swatch-height: 150px;
+
+@icon-swatch-width: 33.33%;
+@icon-swatch-height: @color-swatch-height;
+@icon-size: 65px;
+@icon-size-lg: 80px;
+
+@transition-duration: .15s;
+
+.fel-example{
+    h1,h2,h3,h4,h5,h6{
+        // margin-top: 0 !important; //aligns headlines vertically
+
+        &.over-image{
+            margin-top: @spacing !important;
+            text-align: center;
+        }
+    }
+
+    button{
+        // display: block !important;
+        margin-bottom: @spacing !important;
+    }
+
+    input[type=text] + input[type=password] {
+        margin-top: 14px;
+    }
+
+    //create the gradient classes
+    .gradient-berry {
+        .gradient-angle(@gradient-berry-angle-fel, @gradient-berry-start-color, @gradient-berry-start-pos, @gradient-berry-end-color, @gradient-berry-end-pos);
+    }
+    .gradient-pumpkin {
+        .gradient-angle(@gradient-pumpkin-angle, @gradient-pumpkin-start-color, @gradient-pumpkin-start-pos, @gradient-pumpkin-end-color, @gradient-pumpkin-end-pos);
+    }
+    .gradient-clover {
+        .gradient-angle(@gradient-clover-angle, @gradient-clover-start-color, @gradient-clover-start-pos, @gradient-clover-end-color, @gradient-clover-end-pos);
+    }
+    .gradient-sangria {
+        .gradient-angle(@gradient-sangria-angle, @gradient-sangria-start-color, @gradient-sangria-start-pos, @gradient-sangria-end-color, @gradient-sangria-end-pos);
+    }
+    .gradient-gk {
+        .gradient-angle(@gradient-gk-angle, @gradient-gk-start-color, @gradient-gk-start-pos, @gradient-gk-end-color, @gradient-gk-end-pos);
+    }
+
+
+    .gk-color{
+        margin-bottom: @lg-spacing;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+
+        // Brand Primary
+        .black{
+            background-color: @black !important;
+
+            + .color-name{
+                color: @black;
+            }
+        }
+
+        .charcoal{
+            background-color: @charcoal !important; // need all these !important flags to ensure they show up on print
+
+            + .color-name{
+                color: @charcoal;
+            }
+        }
+
+        .iron{
+            background-color: @iron !important;
+
+            + .color-name{
+                color: @iron;
+            }
+        }
+
+        .asphalt{
+            background-color: @asphalt !important;
+
+            + .color-name{
+                color: @asphalt;
+            }
+        }
+
+        .white{
+            background-color: @white !important;
+            border: solid 1px @asphalt;
+        }
+
+        .turquoise{
+            background-color: @turquoise !important;
+
+            + .color-name{
+                color: @turquoise;
+            }
+        }
+
+        .berry{
+            &.light{
+                background-color: @berry-light !important;
+
+                + .color-name{
+                    color: @berry-light;
+                }
+            }
+
+            &.mid{
+                background-color: @berry-mid !important;
+
+                + .color-name{
+                    color: @berry-mid;
+                }
+            }
+
+            &.dark{
+                background-color: @berry-dark !important;
+
+                + .color-name{
+                    color: @berry-dark;
+                }
+            }
+        }
+
+        .pumpkin{
+            &.light{
+                background-color: @pumpkin-light !important;
+
+                + .color-name{
+                    color: @pumpkin-light;
+                }
+            }
+
+            &.mid{
+                background-color: @pumpkin-mid !important;
+
+                + .color-name{
+                    color: @pumpkin-mid;
+                }
+            }
+
+            &.dark{
+                background-color: @pumpkin-dark !important;
+
+                + .color-name{
+                    color: @pumpkin-dark;
+                }
+            }
+        }
+
+        .clover{
+            &.light{
+                background-color: @clover-light !important;
+
+                + .color-name{
+                    color: @clover-light;
+                }
+            }
+
+            &.mid{
+                background-color: @clover-mid !important;
+
+                + .color-name{
+                    color: @clover-mid;
+                }
+            }
+
+            &.dark{
+                background-color: @clover-dark !important;
+
+                + .color-name{
+                    color: @clover-dark;
+                }
+            }
+        }
+
+        .sangria{
+            &.light{
+                background-color: @sangria-light !important;
+
+                + .color-name{
+                    color: @sangria-light;
+                }
+            }
+
+            &.mid{
+                background-color: @sangria-mid !important;
+
+                + .color-name{
+                    color: @sangria-mid;
+                }
+            }
+
+            &.dark{
+                background-color: @sangria-dark !important;
+
+                + .color-name{
+                    color: @sangria-dark;
+                }
+            }
+        }
+
+        .gk{
+            &.light{
+                background-color: @gk-light !important;
+
+                + .color-name{
+                    color: @gk-light;
+                }
+            }
+
+            &.mid{
+                background-color: @gk-mid !important;
+
+                + .color-name{
+                    color: @gk-mid;
+                }
+            }
+
+            &.dark{
+                background-color: @gk-dark !important;
+
+                + .color-name{
+                    color: @gk-dark;
+                }
+            }
+        }
+
+        .package{
+            &.clover-green{
+                background-color: @package-clover-green !important;
+
+                + .color-name{
+                    color: @package-clover-green;
+                }
+            }
+
+            &.pumpkin-orange{
+                background-color: @package-pumpkin-orange !important;
+
+                + .color-name{
+                    color: @package-pumpkin-orange;
+                }
+            }
+
+            &.sangria-red{
+                background-color: @package-sangria-red !important;
+
+                + .color-name{
+                    color: @package-sangria-red;
+                }
+            }
+            &.salmon-pink{
+                background-color: @package-salmon-pink !important;
+
+                + .color-name{
+                    color: @package-salmon-pink;
+                }
+            }
+            &.bright-blueberry{
+                background-color: @package-bright-blueberry !important;
+
+                + .color-name{
+                    color: @package-bright-blueberry;
+                }
+            }
+            &.rad-raspberry{
+                background-color: @package-rad-raspberry !important;
+
+                + .color-name{
+                    color: @package-rad-raspberry;
+                }
+            }
+            &.teal-treat{
+                background-color: @package-teal-treat !important;
+
+                + .color-name{
+                    color: @package-teal-treat;
+                }
+            }
+        }
+
+        .social{
+            &.pinterest{
+                background-color: @pinterest-red !important;
+
+                + .color-name{
+                    color: @pinterest-red;
+                }
+            }
+
+            &.facebook{
+                background-color: @facebook-blue !important;
+
+                + .color-name{
+                    color: @facebook-blue;
+                }
+            }
+
+            &.twitter{
+                background-color: @twitter-blue !important;
+
+                + .color-name{
+                    color: @twitter-blue;
+                }
+            }
+
+            &.google{
+                background-color: @google-red !important;
+
+                + .color-name{
+                    color: @google-red;
+                }
+            }
+
+            &.instagram{
+                background-image: @instagram-gradient !important;
+
+                + .color-name{
+                    color: @instagram-purple;
+                }
+            }
+
+            &.instagram-solid{
+                background-color: @instagram-purple !important;
+
+                + .color-name{
+                    color: @instagram-purple;
+                }
+            }
+
+            &.yahoo{
+                background-color: @yahoo-purple !important;
+
+                + .color-name{
+                    color: @yahoo-purple;
+                }
+            }
+
+            &.youtube {
+                background-color: @youtube-red !important;
+
+                + .color-name {
+                    color: @youtube-red;
+                }
+            }
+        }
+
+        span.color{
+            width: 100%;
+            height: @color-swatch-height;
+            display: block;
+            text-align: center;
+            line-height: @color-swatch-height;
+            font-weight: @os-semi;
+            color: @white;
+            margin-bottom: @sm-spacing;
+
+        }
+
+        span.color.bright{ //for over light backgruonds (i.e. white)
+            color: @black;
+        }
+
+        .color-name{
+            display: block;
+            font-weight: @os-bold;
+            margin-bottom: @sm-spacing;
+        }
+
+        .color-var{
+            display: block;
+            font-size: 12px;
+            line-height: 23px;
+            .fel-mono;
+        }
+    }
+
+    &.sticky-share {
+        position: relative;
+        min-height: 38px;
+        margin-bottom: 20px;
+
+        .fd-menu {
+            position: static;
+        }
+
+        .fd-share-tools {
+            i {
+                line-height: 38px;
+            }
+        }
+    }
+
+    .ribbon {
+        &.horizontal {
+            left: 50px;
+        }
+    }
+}
+
+.text-link {
+    .gk-link();
+}
+
+ul.fel-example{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 0;
+}
+
+
+//   .dP"Y8 88""Yb 888888  dP""b8 88 888888 88  dP""b8      dP"Yb  Yb    dP 888888 88""Yb 88""Yb 88 8888b.  888888 .dP"Y8
+//   `Ybo." 88__dP 88__   dP   `" 88 88__   88 dP   `"     dP   Yb  Yb  dP  88__   88__dP 88__dP 88  8I  Yb 88__   `Ybo."
+//   o.`Y8b 88"""  88""   Yb      88 88""   88 Yb          Yb   dP   YbdP   88""   88"Yb  88"Yb  88  8I  dY 88""   o.`Y8b
+//   8bodP' 88     888888  YboodP 88 88     88  YboodP      YbodP     YP    888888 88  Yb 88  Yb 88 8888Y"  888888 8bodP'
+
+#brand-fonts {
+    .fel-example {
+        h2,
+        p {
+            font-size: 40px;
+            line-height: 40px;
+
+            @media @sm {
+                font-size: 50px;
+                line-height: 50px;
+            }
+        }
+
+        h2 {
+            font-weight: @weight-brandon-black;
+        }
+
+        p {
+            font-weight: @weight-gotham-med;
+        }
+    }
+}
+
+.fel-example {
+    .caretbox {
+        padding: 14px;
+        background-color: @berry;
+        color: @fel-white;
+        margin-right: 14px;
+        margin-bottom: 14px;
+        display: inline-block;
+    }
+
+    .caretbox.mixin-example {
+        background-color: @fel-black;
+        color: @fel-white;
+        font-weight: @os-bold;
+
+        .bubble-caret(top; left; 75%; 5px; @fel-black; 0);
+    }
+
+    .caretbox.mixin-example2 {
+        font-weight: @os-bold;
+        .gradient-angle(0deg; @pumpkin-dark; 5%; @gk-mid; 100%);
+
+        .bubble-caret(bottom; right; 20px; 20px; @pumpkin-dark; 0);
+    }
+
+    .caretbox.mixin-example3 {
+        background-color: transparent;
+        border: solid 3px @turquoise;
+        color: @fel-black;
+        font-weight: @os-bold;
+
+        .bubble-caret(bottom; left; 20px; 30px; @turquoise; 3px);
+    }
+
+    &.caret-button {
+        button:first-child {
+            .bubble-caret(top; left; 28px; 20px; @turquoise; 0);
+            display: inline-block !important;
+
+            &:hover:after {
+                border-bottom-color: @berry-mid;
+            }
+        }
+
+        button:last-child {
+            .bubble-caret(bottom; left; 28px; 20px; @turquoise; 0);
+            display: inline-block !important;
+
+            &:hover:after {
+                border-top-color: @berry-mid;
+            }
+        }
+    }
+}
+
+// ribbons
+
+.ribbon-intro {
+    margin-bottom: 20px !important;
+}
+
+.ribbon-horiz {
+    margin-bottom: 20px;
+    flex-basis: 20%;
+
+    .ribbons {
+        min-height: 100px;
+    }
+}
+
+
+.ribbon-vert {
+    margin-top: 20px;
+
+    .v-ribbon-example {
+       flex-basis: 20%;
+        .VerticalRibbon(@sangria-dark, @sangria-light, 42px);
+    }
+}
+
+#dropdown-menus {
+    .fel-example {
+        overflow: initial;
+    }
+}
+
+.ribbon-example {
+    .HorizontalRibbon(@white, @sangria-mid, auto, auto);
+
+    &.two {
+        margin-top: 40px;
+        cursor: pointer;
+
+        .rib-text {
+            color: @white;
+            background-color: @pumpkin-mid;
+        }
+
+        .rib-tail {
+            border-top-color: @pumpkin-mid;
+            border-bottom-color: @pumpkin-mid;
+        }
+
+        &:hover {
+            .rib-text {
+                color: @pumpkin-light;
+                background-color: @black;
+            }
+
+            .rib-tail {
+                border-top-color: @black;
+                border-bottom-color: @black;
+            }
+        }
+    }
+
+    &.three {
+        margin-top: 80px;
+
+        .rib-text {
+            background-color: @icing;
+            padding-right: 20px;
+        }
+
+        .rib-tail {
+            border-top-color: @icing;
+            border-bottom-color: @icing;
+        }
+    }
+}
+
+.icon.bulb {
+    flex-basis: 50%;
+    height: 310px;
+    background-color: @fel-super-light-grey;
+    padding: 20px;
+    text-align: center;
+
+    h5 {
+        margin-bottom: 20px;
+    }
+
+    i {
+        font-size: 225px;
+    }
+
+    img {
+        margin-top: 20px;
+        height: 170px;
+    }
+}
+
+// logos
+
+#brand-logos {
+    h6 {
+        margin: 0 0 @spacing;
+    }
+
+    .fel-component {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .logo-container {
+        text-align: center;
+    }
+
+    .app-icon-container {
+        img {
+            max-width: 150px;
+        }
+    }
+
+    .fel-gk-logo {
+        max-width: 100%;
+        height: 65px;
+    }
+}
+
+#brand-share-gfx {
+    img {
+        max-width: 250px;
+    }
+}
+
+// avatars
+
+#brand-avatars {
+    .fel-component {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .fel-avatar-container {
+        flex-basis: 20%;
+        margin-bottom: @spacing;
+        margin-right: @spacing;
+        text-align: center;
+
+        h6 {
+            margin-top: @sm-spacing;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#count {
+    .fel-component.col2 {
+        justify-content: space-around;
+    }
+
+    .fel-right {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+// themes
+
+#brand-themes {
+    @ribbon-offset-h: -1 * @spacing;
+    @ribbon-offset-v: @spacing;
+
+    .fel-component {
+        background-color: @fel-super-light-grey;
+        padding: @spacing*2 @spacing @spacing;
+        position: relative;
+        margin-bottom: @spacing;
+
+        .img {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        &.default {
+            padding-top: @spacing;
+
+            h4 {
+                margin-top: 0;
+                border: none;
+            }
+        }
+
+        // @media @sm {
+        //     margin: @spacing;
+        // }
+    }
+
+    .gk-color.gradient {
+        .start,
+        .end,
+        .angle {
+            text-align: left;
+            line-height: 20px;
+            clear: left;
+
+            &:before {
+                width: 20px;
+                height: 20px;
+                content: "";
+                border: solid 1px @fel-light-grey;
+                display: block;
+                margin-right: @sm-spacing;
+                float: left;
+                margin-bottom: @sm-spacing;
+            }
+        }
+
+        .angle {
+            &:before {
+                background-color: @fel-light-grey;
+                content: "\2221";
+                text-align: center;
+                line-height: 11px;
+                font-size: 20px;
+            }
+        }
+
+        // create a mixin to set color sample values for gradients
+        .apply-colors(@color1, @color2) {
+            &.start:before {
+                background-color: @color1;
+                border-color: darken(@color1, 20%);
+            }
+            &.end:before {
+                background-color: @color2;
+                border-color: darken(@color2, 20%);
+            }
+        }
+
+        .gradient-sangria-var {
+            .apply-colors(@turquoise, @sangria-dark);
+
+        }
+
+        .gradient-berry-var {
+            .apply-colors(@turquoise, @berry-mid);
+        }
+
+        .gradient-gk-var {
+            .apply-colors(@berry-mid, @gk-mid);
+        }
+
+        .gradient-clover-var {
+            .apply-colors(@gk-mid, @clover-mid);
+        }
+
+        .gradient-pumpkin-var {
+            .apply-colors(@berry-mid, @pumpkin-dark);
+        }
+    }
+
+    .fel-example {
+        .ribbon {
+
+            &:hover {
+                cursor: pointer;
+
+                .rib-text {
+                    background-color: @black !important;
+                }
+
+                .rib-tail {
+                    border-top-color: @black !important;
+                    border-bottom-color: @black !important;
+                }
+            }
+
+            &.gk {
+                .HorizontalRibbon(@black; @gk-mid; @ribbon-offset-v; @ribbon-offset-h);
+
+                &:hover {
+                    .rib-text {
+                        color: @gk-light;
+                    }
+                }
+            }
+
+            &.community-pick {
+                .HorizontalRibbon(@white; @sangria-mid; @ribbon-offset-v; @ribbon-offset-h);
+
+                &:hover {
+                    .rib-text {
+                        color: @sangria-light;
+                    }
+                }
+            }
+
+            &.new {
+                .HorizontalRibbon(@white; @clover-mid; @ribbon-offset-v; @ribbon-offset-h);
+
+                &:hover {
+                    .rib-text {
+                        color: @clover-light;
+                    }
+                }
+            }
+
+            &.staff {
+                .HorizontalRibbon(@white; @pumpkin-mid; @ribbon-offset-v; @ribbon-offset-h);
+
+                &:hover {
+                    .rib-text {
+                        color: @pumpkin-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// vendors
+
+#vendors {
+    .logo {
+        flex-basis: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .contact {
+        flex-basis: 100%;
+
+        p:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+// heroes
+
+#heroes {
+    .fel-component.heroes-examples {
+        background-color: @fel-super-light-grey;
+        padding: 20px;
+
+        img {
+            width: 100%;
+        }
+
+        &.wow {
+            background-color: transparent;
+            text-align: center;
+            margin-top: 0;
+
+            .half {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .fel-yes,
+            .fel-no {
+                max-width: 320px;
+                margin-bottom: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            img {
+                max-width: 320px;
+            }
+        }
+    }
+}
+
+// spinner helper icons
+.spin-helper {
+    @size: 50px;
+    i {
+        font-size: @size;
+        line-height: @size;
+        padding: @size/2;
+    }
+
+    img {
+        width: @size;
+        height: @size;
+        margin: @size/2;
+    }
+
+    span {
+        font-size: @size;
+        line-height: @size;
+        padding: @size/2;
+        display: inline-block;
+    }
+}
+
+.spin-fast,
+.spin-slow {
+    display: inline-block;
+}
+
+.spin-fast {
+    i {
+        .spin(.5s);
+    }
+}
+
+.spin-slow {
+    i {
+        .spin(5s);
+    }
+}
+
+// ads
+
+#ads {
+    .fel-component {
+        font-size: @font-size-body; // so the "advertisement" label displays correctly
+    }
+}
+
+.sparkle-anim-example {
+    background-color: @black;
+
+
+    /*=====================
+        Sparkle Animations
+    =======================*/
+    @keyframes sparkle-1 {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes sparkle-2 {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    div {
+        width: 45%;
+        display: inline-block;
+        text-align: center;
+    }
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .sparkle-1 {
+        svg {
+            .right-top {
+                .sparkle();
+            }
+
+            .right-bottom {
+                opacity: 0;
+                .sparkle(@name: sparkle-2);
+            }
+        }
+    }
+
+    .sparkle-2 {
+
+        svg {
+            .right-top {
+                opacity: 0;
+                .sparkle(@name: sparkle-2);
+            }
+
+            .right-bottom {
+                .sparkle();
+            }
+        }
+    }
+}

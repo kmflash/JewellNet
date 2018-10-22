@@ -1,0 +1,124 @@
+.fd-site-wrapper {
+  padding-top: 74px;
+}
+.container {
+  margin-bottom: 21px;
+  position: relative;
+}
+.container h1,
+.container h2 {
+  padding-top: 21px;
+  margin-top: 0;
+}
+.container p,
+.container li {
+  font-size: 14px;
+}
+.container .content {
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+}
+.container .content ul {
+  padding: 14px;
+}
+.container .content.main {
+  background-color: #892074;
+}
+.container .content.side {
+  background-color: #671056;
+  min-height: 300px;
+}
+.container #section1 {
+  width: 95.23809524%;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+@media screen and (min-width: 768px) {
+  .container #section1 {
+    width: 98.13084112%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .container #section1 {
+    width: 98.5915493%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+.container #section1 .content-well {
+  min-height: 100px;
+  background-color: #FF8B60;
+  /*
+            .make-contextual-column(@cols: 1, @context: @screen-md-min, @pad: @grid-gutter-width);
+            col-xs-8 col-sm-13 col-md-20  col-lg-27
+             */
+  float: none;
+  width: 100%;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+@media screen and (min-width: 768px) {
+  .container #section1 .content-well {
+    width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .container #section1 .content-well {
+    width: 60%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .container #section1 .content-well {
+    width: 70.37037037%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+.container #section1 .side-well {
+  min-height: 100px;
+  background-color: #D64A17;
+  /*
+            side-well col-xs-8 col-md-8 col-lg-8
+             */
+  float: none;
+  width: 100%;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+@media screen and (min-width: 768px) {
+  .container #section1 .side-well {
+    width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .container #section1 .side-well {
+    width: 40%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .container #section1 .side-well {
+    width: 29.62962963%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+.container #section2 .a {
+  background-color: #04771A;
+}
+.container #section2 .b {
+  background-color: #08AD28;
+}
+/*# sourceMappingURL=grid.css.map */

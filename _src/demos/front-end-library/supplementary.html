@@ -1,0 +1,318 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Kitchen Front End Library</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fel.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+
+</head>
+
+<body class="fel">
+    <div class="fel fel-wrapper">
+        <div class="fel page-title">
+            <div class="fel logo"><img src="img/gk-logo-fel.svg" alt="Genius Kitchen"></div>
+            <h1 class="fel">Front-End Library</h1>
+            <h2 class="fel">Supplementary Information</h2>
+        </div>
+        <section class="fel content">
+            <section class="fel" id="templates">
+                <h2 class="fel">Designer Shell Template</h2>
+                <div class="fel-component">
+                    <p class="fel third">An empty sketch file with colors, fonts and UI elements is available for
+                        designers to have a fresh starting point when working on new templates.</p>
+                    <div class="fel half">
+                        <a class="fel download">Download
+                            from Box</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fel" id="structure">
+                <h2 class="fel">Front End Library Page Structure</h2>
+                <p class="fel intro">Please format any additions to the Front End Library as follows.</p>
+                <section class="fel" id="structure-page">
+                    <div class="fel-component">
+                        <pre class="prettyprint lang-html">&lt;section class="fel content"&gt; &lt;!-- The wrapper for all page content [REQUIRED] --&gt;
+    &lt;p class="fel intro"&gt; ... &lt;/p&gt;
+
+    &lt;!-- BEGIN ITEM GROUP --&gt;
+    &lt;section class="fel" id="grid"&gt;
+        &lt;h2 class="fel"&gt;Grid&lt;/h2&gt;
+
+        &lt;!-- BEGIN ITEM --&gt;
+        &lt;h4 class="fel" id="item-name"&gt; ... &lt;/h4&gt;
+        &lt;p class="fel [intro]"&gt; ... &lt;/p&gt;                                  &lt;!-- [.intro] : makes text larger --&gt;
+        &lt;div class="fel-component"&gt;
+                                                                          &lt;!-- Add [.full|.half|.third|.quarter] to set width of elements inside .fel-component --&gt;
+            &lt;div class="fel-example"&gt;                                     &lt;!-- [.fel-left] : attach to left side if 2 cols --&gt;
+
+                *** PUT ALL GK MARKUP HERE ***
+
+            &lt;/div&gt;
+            &lt;pre class="prettyprint [linenums] [lang-*] [fel half] ">     &lt;!-- [linenums] : show line numbers --&gt;
+                                                                          &lt;!-- [lang-*] : syntax highlighting for (html|css|less|js) --&gt;
+                    *** PUT ALL CODE EXAMPLES IN HERE ***
+                    ***      WHITESPACE MATTERS       ***
+
+                    You MUST escape open/close brackets with
+                    &amp;lt; and &amp;gt; respectively.
+
+            &lt;/pre&gt;
+        &lt;/div&gt;
+        &lt;!-- END ITEM --&gt;
+
+        &lt;!-- [Repeat as needed] --&gt;
+
+    &lt;/section&gt;
+    &lt;!-- END ITEM GROUP --&gt;
+&lt;/section&gt;
+&lt;!-- END CONTENT --&gt;
+
+</pre>
+                    </div>
+
+                    <h4 class="fel" id="structure-menu">FEL Menu Structure</h4>
+                    <p class="fel">This is the structure of the navigation menu, which appears in a burger nav on
+                        xs->sm and as a left rail on md. It goes inside <code>div.fel.menu -> div.fel.menu-inner</code>
+                        at the bottom of the DOM.
+                        <div class="fel-component">
+                            <pre class="prettyprint lang-html full"> &lt;ul class="fel"&gt; &lt;!-- Top --&gt;
+    &lt;li class="fel"&gt;&lt;a href="some_page.html" class="fel"&gt;Top Level FEL Page&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="fel"&gt;&lt;a href="this_page.html" class="fel"&gt;This Page&lt;/a&gt;&lt;/li&gt;
+
+    &lt;!-- BEGIN menu for this page --&gt;
+    &lt;ul class="fel sub" id="pageMenu"&gt; &lt;!-- This is the container for all the menu items on this page --&gt;
+
+        &lt;li class="fel"&gt;&lt;a href="#mySection" class="fel menu-page-section"&gt;A section&lt;/a&gt; &lt;!-- A group --&gt;
+
+            &lt;ul class="fel sub menu-sub-section"&gt; &lt;!-- Children of that section --&gt;
+
+                &lt;li class="fel"&gt;&lt;a href="#mySection-item" class="fel"&gt;An Item&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="fel"&gt;&lt;a href="#mySection-item2" class="fel"&gt;Another Item&lt;/a&gt;&lt;/li&gt;
+
+            &lt;/ul&gt; &lt;!-- END section children --&gt;
+
+        &lt;/li&gt; &lt;!-- END section --&gt;
+
+        &lt;!-- [repeat as needed] --&gt;
+
+    &lt;/ul&gt; &lt;!-- END #pageMenu --&gt;
+
+&lt;/ul&gt; &lt;!-- END top menu --&gt;</pre>
+                        </div>
+
+                        <h4 class="fel" id="structure-helpers">Helper Classes</h4>
+                        <p class="fel">There are a number of helper classes available to format the Front End Library.</p>
+                        <div class="fel-component">
+                            <table class="fel">
+                                <tr class="fel">
+                                    <th class="fel">Where to Use</th>
+                                    <th class="fel">Class</th>
+                                    <th class="fel">Notes</th>
+                                </tr>
+                                <tr class="fel">
+                                    <td class="fel"><code class="light">.fel-component</code></td>
+                                    <td class="fel"><code>.noflex</code></td>
+                                    <td class="fel">Turn off flex positioning</td>
+                                </tr>
+                                <tr class="fel">
+                                    <td class="fel" rowspan="4">Inside <code class="light">.fel-component</code></td>
+                                    <td class="fel"><code>.full</code></td>
+                                    <td class="fel">Makes width of element 100% of the content well</td>
+                                </tr>
+                                <tr class="fel">
+                                    <td class="fel"><code>.half</code></td>
+                                    <td class="fel">Makes width of element 50% of the content well</td>
+                                </tr>
+                                <tr class="fel">
+                                    <td class="fel"><code>.third</code></td>
+                                    <td class="fel">Makes width of element 33.3% of the content well</td>
+                                </tr>
+                                <tr class="fel">
+                                    <td class="fel"><code>.quarter</code></td>
+                                    <td class="fel">Makes width of element 25% of the content well</td>
+                                </tr>
+                                <tr class="fel">
+                                    <td class="fel"><code class="light">&lt;p&gt;</code></td>
+                                    <td class="fel"><code>.intro</code></td>
+                                    <td class="fel">Makes text size larger</td>
+                                </tr>
+                                <tr class="fel">
+                                    <td class="fel">Any element</td>
+                                    <td class="fel"><code>.pad</code></td>
+                                    <td class="fel">Adds 20px padding all around</td>
+                                </tr>
+                                <tr class="fel">
+                                    <td class="fel"><code class="light">.fel-content</code></td>
+                                    <td class="fel"><code>.grey-bg</code></td>
+                                    <td class="fel">Adds light grey background</td>
+                                </tr>
+                            </table>
+                        </div>
+                </section>
+            </section>
+
+
+
+            <section class="fel" id="vendors">
+                <h2 class="fel">Vendors</h2>
+                <p class="fel intro">While most of Genius Kitchen, including the CMS that powers it is custom-build by
+                    our team, we do use 3rd parties for certain elements of the <a href="www.geniuskitchen.com">geniuskitchen.com</a>
+                    website.</p>
+
+                <h4 class="fel" id="vendors-cloudinary"><a href="http://cloudinary.com/" target="_blank" class="fel">Cloudinary</a></h4>
+                <div class="fel-component">
+                    <div class="logo">
+                        <img src="img/vendor-logos/cloudinary-logo.png" alt="Cloudinary Logo">
+                    </div>
+                    <div class="fel half">
+                        <p class="fel">Practically all images are stored &amp; served from cloudinary AWS servers.
+                            Using their service allows for on-the-fly image transformations hosted around the world on
+                            Amazon CDN servers. Documentation can be found <a href="http://cloudinary.com/documentation"
+                                target="_blank" class="fel">here</a>.</p>
+                        <ul class="fel">
+                            <li class="fel">Website: <a href="http://cloudinary.com/" target="_blank" class="fel">cloudinary.com/</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="fel" id="vendors-filestack"><a href="https://www.filestack.com/" target="_blank" class="fel">Filestack
+                        (formerly filepicker.io)</a></h4>
+                <div class="fel-component">
+                    <div class="logo">
+                        <img src="img/vendor-logos/filestack-logo.png" alt="Filestack">
+                    </div>
+                    <div class="fel half">
+                        <p class="fel">Before Cloudinary, Filestack (formerly filepicker.io) hosted UGC images. Since
+                            the adoption of Cloudinary, all uploads now go through that process. But many legacy images
+                            remain on the filestack servers.</p>
+                        <ul class="fel">
+                            <li class="fel">Website: <a href="https://www.filestack.com/" target="_blank" class="fel">www.filestack.com/</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="fel" id="vendors-gigya"><a href="http://www.gigya.com/" target="_blank" class="fel">Gigya</a></h4>
+                <div class="fel-component">
+                    <div class="logo">
+                        <img src="img/vendor-logos/gigya-logo.png" alt="Gigya Logo">
+                    </div>
+                    <div class="fel half">
+                        <p class="fel">Gigya is used for user authentication on Genius Kitchen. GK uses styled
+                            "screensets" for log in/sign up modals.</p>
+                        <ul class="fel">
+                            <li class="fel">Website: <a href="http://www.gigya.com" target="_blank" class="fel">www.gigya.com</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="fel" id="vendors-helix"><a href="http://helix.solutions/" target="_blank" class="fel">Helix
+                        Business Solutions</a></h4>
+                <div class="fel-component">
+                    <div class="logo">
+                        <img src="img/vendor-logos/helix-logo.png" alt="Helix Logo">
+                    </div>
+                    <div class="fel half">
+                        <p class="fel">Helix hosts, maintains &amp; operates the <a class="fel" target="_blank" href="http://food.custhelp.com/">GK
+                                customer service pages</a>.</p>
+                        <ul class="fel">
+                            <li class="fel">Website: <a href="http://helix.solutions/" target="_blank" class="fel">helix.solutions</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="fel" id="vendors-psd"><a href="http://www.perfectsensedigital.com/" target="_blank" class="fel">Perfect
+                        Sense Digital</a></h4>
+                <div class="fel-component">
+                    <div class="logo">
+                        <img src="img/vendor-logos/psd-logo.png" alt="Perfect Sense Digital Logo">
+                    </div>
+                    <div class="fel half">
+                        <p class="fel">PSD hosts &amp; maintains <a href="http://www.geniuskitchen.com/recipes" class="fel">Recipe
+                                Box</a> for Genius Kitchen as well as Food Network.</p>
+                        <ul class="fel">
+                            <li class="fel">Website: <a href="http://www.perfectsensedigital.com/" target="_blank"
+                                    class="fel">www.perfectsensedigital.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </section>
+            <!-- END ITEM GROUP -->
+
+        </section> <!-- /.fel-content -->
+
+        <div class="fel menu">
+            <button class="fel burger">
+                <svg width="21px" height="18px" viewBox="0 0 21 18" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="fel-burger" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                        <g id="fel-burger-bars" transform="translate(-282.000000, -25.000000)" stroke="#FD4A47"
+                            stroke-width="2">
+                            <g id="Group" transform="translate(283.000000, 25.000000)">
+                                <path d="M0.5,1 L18.6107703,1" id="Line"></path>
+                                <path d="M0.5,9 L18.6107703,9" id="Line"></path>
+                                <path d="M0.5,17 L18.6107703,17" id="Line"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="fel menu-inner">
+                <button class="fel burger-close">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="fel-close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="fel-close-stroke" transform="translate(-468.000000, -395.000000)" stroke="#FFFFFF"
+                                stroke-width="2">
+                                <g id="FDC-fel-close" transform="translate(469.000000, 396.000000)">
+                                    <path d="M0.5,0.5 L18.5277564,18.5277564" id="Line"></path>
+                                    <path d="M18.5,0.5 L0.82233047,18.1776695" id="Line"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <ul class="fel">
+                    <li class="fel"><a class="fel" href="index.html">Introduction</a></li>
+                    <li class="fel"><a class="fel" href="brand.html">GK Brand</a></li>
+                    <li class="fel"><a class="fel" href="editorial.html">Editorial Style Guide</a></li>
+                    <li class="fel"><a href="ui.html" class="fel">UI/Frontend Patterns</a></li>
+                    <li class="fel"><a class="fel" href="supplementary.html">Supplementary Info</a></li>
+                    <ul class="fel sub" id="pageMenu">
+                        <li class="fel"><a href="#templates" class="fel menu-page-section">Templates</a></li>
+                        <li class="fel"><a href="#structure" class="fel menu-page-section">Structure</a>
+                            <ul class="fel sub menu-sub-section">
+                                <li class="fel"><a href="#structure-page" class="fel">Page Structure</a></li>
+                                <li class="fel"><a href="#structure-menu" class="fel">Menu Structure</a></li>
+                                <li class="fel"><a href="#structure-helpers" class="fel">Helper Classes</a></li>
+                            </ul>
+                        </li>
+                        <li class="fel"><a href="#vendors" class="fel menu-page-secton">Vendors</a>
+                            <ul class="fel sub menu-sub-section">
+                                <li class="fel"><a href="#vendors-cloudinary" class="fel">Cloudinary</a></li>
+                                <li class="fel"><a href="#vendors-filestack" class="fel">Filestack</a></li>
+                                <li class="fel"><a href="#vendors-gigya" class="fel">Gigya</a></li>
+                                <li class="fel"><a href="#vendors-helix" class="fel">Helix Business Solutions</a></li>
+                                <li class="fel"><a href="#vendors-psd" class="fel">Perfect Sense Digital</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <script src="js/support.js" type="text/javascript" charset="utf-8"></script>
+        <!-- This must be before fel.less because of dependencies! -->
+        <script src="js/fel.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

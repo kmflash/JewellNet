@@ -1,0 +1,627 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Kitchen Front End Library</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fel.css">
+    <link rel="stylesheet" media="print" href="./css/fel-print.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+
+</head>
+
+<body class="fel">
+    <div class="fel fel-wrapper">
+        <div class="fel page-title">
+            <div class="fel logo"><img src="img/gk-logo-fel.svg" alt="Genius Kitchen"></div>
+            <h1 class="fel">Front-End Library</h1>
+            <h2 class="fel">GK Brand</h2>
+        </div>
+        <section class="fel content">
+            <section class="fel" id="brand-fonts">
+                <p class="fel intro">The following fonts, colors &amp; logos are used throughout the Genius Kitchen
+                    website.</p>
+                <h2 class="fel">Brand Fonts</h2>
+                <div class="fel-component">
+                    <div class="fel-example">
+                        <h2>Brandon Grotesque</h2>
+                    </div>
+                    <p class="fel usage">Brandon Grotesque is used for most headlines, as well as button text. Brandon
+                        Grotesque should <strong>always</strong> be used UPPERCASE, and with 1px kerning.</p>
+                </div>
+                <div class="fel-component">
+                    <div class="fel-example">
+                        <p>Gotham</p>
+                    </div>
+                    <p class="fel usage">Gotham is the default font for body copy. It may sometimes be used UPPERCASE,
+                        but generally should be considered a mixed-case font.</p>
+                </div>
+            </section>
+            <!--
+             dP""b8  dP"Yb  88      dP"Yb  88""Yb .dP"Y8
+            dP   `" dP   Yb 88     dP   Yb 88__dP `Ybo."
+            Yb      Yb   dP 88  .o Yb   dP 88"Yb  o.`Y8b
+             YboodP  YbodP  88ood8  YbodP  88  Yb 8bodP'
+ -->
+            <section class="fel" id="brand-colors" name="brand-colors">
+                <h2 class="fel">Brand Colors</h2>
+                <div class="fel-component">
+                    <h4 class="fel full">Brand Primary</h4>
+                    <ul class="fel-colors fel-example full">
+                        <li class="gk-color quarter">
+                            <span class="turquoise color bright">#77E2E1</span>
+                            <span class="color-name">Turquoise</span>
+                            <span class="color-var">@turquoise</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="berry mid color">#892074</span>
+                            <span class="color-name">Berry Mid</span>
+                            <span class="color-var">@berry-mid</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="gk mid color bright">#F4CE33</span>
+                            <span class="color-name">GK Mid</span>
+                            <span class="color-var">@gk-mid<br>@ratingStarColor</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="black color">#000000</span>
+                            <span class="color-name">Black</span>
+                            <span class="color-var">@black<br>@text-color</br>@border-color</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="charcoal color">#4C4C4C</span>
+                            <span class="color-name">Charcoal</span>
+                            <span class="color-var">@charcoal</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="iron color">#606060</span>
+                            <span class="color-name">Iron</span>
+                            <span class="color-var">@iron<br>@timestamp</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="asphalt color">#8C8C8C</span>
+                            <span class="color-name">Asphalt</span>
+                            <span class="color-var">@asphalt</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="white color bright">#FFFFFF</span>
+                            <span class="color-name">White</span>
+                            <span class="color-var">@white</span>
+                        </li>
+                    </ul>
+
+                    <hr class="fel dashed">
+                    <h4 class="fel full">Package Accent Colors</h4>
+                    <p class="fel full">These colors are used at the top of packages to bring extra personality to the
+                        header areas. There is some overlap between these colors and recipe themes, but they should be
+                        considered exclusive.</p>
+                    <ul class="fel-colors fel-example">
+                        <li class="gk-color quarter">
+                            <span class="package sangria-red color">#AA0113</span>
+                            <span class="color-name">Sangria Red</span>
+                            <class class="color-var">@package-sangria-red</class>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="package salmon-pink color">#EA5362</span>
+                            <span class="color-name">Salmon Pink</span>
+                            <class class="color-var">@package-salmon-pink</class>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="package pumpkin-orange color">#D64A17</span>
+                            <span class="color-name">Pumpkin Orange</span>
+                            <class class="color-var">@package-clover-green</class>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="package clover-green color">#08AD28</span>
+                            <span class="color-name">Clover Green</span>
+                            <class class="color-var">@package-clover-green</class>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="package bright-blueberry color">#3029A6</span>
+                            <span class="color-name">Bright Blueberry</span>
+                            <class class="color-var">@package-bright-blueberry</class>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="package teal-treat color">#1993A1</span>
+                            <span class="color-name">Teal Treat</span>
+                            <class class="color-var">@pacakge-teal-treat</class>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="package rad-raspberry color">#892074</span>
+                            <span class="color-name">Rad-Raspberry</span>
+                            <class class="color-var">@package-rad-raspberry</class>
+                        </li>
+                    </ul>
+                    <h4 class="fel full">Social Colors</h4>
+                    <p class="fel full">For use with 3rd party social networks such as Pinterest and Facebook</p>
+                    <ul class="fel-colors fel-example full">
+                        <li class="gk-color quarter">
+                            <span class="social pinterest color">#CB031C</span>
+                            <span class="color-name">Pinterest Red</span>
+                            <span class="color-var">@pinterest-red</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="social google color">#DC4E41</span>
+                            <span class="color-name">Google Red</span>
+                            <span class="color-var">@google-red</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="social youtube color">#FF0000</span>
+                            <span class="color-name">Youtube Red</span>
+                            <span class="color-var">@youtube-red</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="social facebook color">#3C5899</span>
+                            <span class="color-name">Facebook Blue</span>
+                            <span class="color-var">@facebook-blue</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="social twitter color">#55ACEE</span>
+                            <span class="color-name">Twitter Blue</span>
+                            <span class="color-var">@twitter-blue</span>
+                        </li>
+                        <!-- <li class="gk-color quarter">
+                            <span class="social instagram color"></span>
+                            <span class="color-name">Instagram Gradient</span>
+                            <span class="color-var">@instagram-gradient</span>
+                        </li> -->
+                        <li class="gk-color quarter">
+                            <span class="social instagram-solid color">#C32AA3</span>
+                            <span class="color-name">Instagram Purple</span>
+                            <span class="color-var">@instagram-purple</span>
+                        </li>
+                        <li class="gk-color quarter">
+                            <span class="social yahoo color">#400090</span>
+                            <span class="color-name">Yahoo! Purple</span>
+                            <span class="color-var">@yahoo-purple</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--
+            88      dP"Yb   dP""b8  dP"Yb  .dP"Y8      d888         88  dP""b8  dP"Yb  88b 88 .dP"Y8
+            88     dP   Yb dP   `" dP   Yb `Ybo."     dP_______     88 dP   `" dP   Yb 88Yb88 `Ybo."
+            88  .o Yb   dP Yb  "88 Yb   dP o.`Y8b     Yb"""88""     88 Yb      Yb   dP 88 Y88 o.`Y8b
+            88ood8  YbodP   YboodP  YbodP  8bodP'     `Ybo 88       88  YboodP  YbodP  88  Y8 8bodP'
+ -->
+            <section class="fel" id="brand-logos">
+                <h2 class="fel">GK Logos &amp; Icons</h2>
+                <p class="fel">Because the Genius Kitchen network &amp; website branding was created in parallel on
+                    different timelines, there are different logos for use on the gk website and for network graphics.</p>
+                <p><a class="fel download" target="_blank">Download
+                        all logos (multiple formats) from Box</a></p>
+                <h4 class="fel" id="brand-logos-web-network">Web Logo</h4>
+                <div class="fel-component">
+                    <div class="fel logo-container">
+                        <h6 class="fel">Full Logo</h6>
+                        <img class="fel-gk-logo" src="img/gk-logo.svg" alt="">
+                    </div>
+                    <div class="fel logo-container">
+                        <h6 class="fel">Logo Mark</h6>
+                        <img src="img/gk-logo-fel.svg" alt="" class="fel-gk-logo">
+                    </div>
+                </div>
+                <h4 class="fel">Network Logos</h4>
+                <div class="fel-component">
+                    <div class="fel logo-container">
+                        <h6 class="fel">Full Network Logo</h6>
+                        <img src="img/gk-network-full-logo.svg" alt="Network Full Logo" class="fel-gk-logo">
+                    </div>
+                    <div class="fel logo-container">
+                        <h6 class="fel">Bug</h6>
+                        <img src="img/gk-network-bug.svg" alt="Bug" class="fel-gk-logo">
+                    </div>
+                </div>
+                <p class="fel"><a class="fel download" target="_blank">Network usage guidelines</a></p>
+
+                <h4 class="fel" id="brand-icons-favicon">Favicon &amp; Touch Icons</h4>
+                <p class="fel">Favicons and Touch Icons are used when a user bookmarks or adds the Genius Kitchen site
+                    to a device home screen, respectively.</p>
+                <p class="fel"><a class="fel download" target="_blank">Adobe Illustrator source file</a></p>
+                <div class="fel-component">
+                    <div class="fel half logo-container grey-bg pad">
+                        <h6 class="fel">Favicon<sup>1</sup></h6>
+                        <a href="http://geniuskitchen.sndimg.com/gk/img/favicon.ico" class="fel" target="_blank">
+                            <img src="http://geniuskitchen.sndimg.com/gk/img/favicon.ico" alt="GK favicon">
+                        </a>
+                    </div>
+                    <div class="fel half logo-container grey-bg pad">
+                        <h6 class="fel">Touch Icon<sup>2</sup></h6>
+                        <img src="http://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-iphone-retina-precomposed.png"
+                            alt="">
+                    </div>
+                </div>
+                <p class="fel usage"><sup>1</sup>The favicon .ico file contains multiple sizes in one image for usage
+                    in different contexts: 16x16, 32x32, 64x64, 96x96, 256x256. </p>
+                <p class="fel usage"><sup>2</sup>The [Apple] touch icons come in <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html"
+                        target="_blank">several pre-cut sizes</a> and are used based on the user&apos;s device and
+                    pixel density: <a href="http://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-precomposed.png"
+                        target="_blank">120x120</a>, <a href="http://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-ipad-precomposed.png"
+                        target="_blank">152x152</a>, <a href="http://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-ipad-retina-precomposed.png"
+                        target="_blank">167x167</a>, <a href="http://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-iphone-retina-precomposed.png"
+                        target="_blank">180x180</a></p>
+
+                <!-- <h4 class="fel" id="brand-icons-app">App Icons</h4>
+                <p class="fel">There are two basic creatives for the GK app, which are sized and cropped according to their platform guidelines.</p>
+                <div class="fel-component">
+                    <div class="fel half pad grey-bg">
+                            <h5 class="fel full">Bulb</h5>
+                            <div class="fel app-icon-container">
+                                <h6 class="fel">Android</h6>
+                                <a href="https://play.google.com/store/apps/details?id=com.geniuskitchen.watcher&hl=en" target="_blank"><img src="https://lh3.googleusercontent.com/7-0NRZexaZEjwXgCU4aUNQB79aylbv899KRe3O3Ucz6YdME41n18yZ8Fu_Uq7cqEx5I=w300-rw" alt="Android GK App Logo"></a>
+                            </div>
+                            <div class="fel quarter app-icon-container">
+                                <h6 class="fel">iOS</h6>
+                                <a href="https://itunes.apple.com/us/app/genius-kitchen/id1213089535" target="_blank"><img src="http://is4.mzstatic.com/image/thumb/Purple128/v4/2b/50/b0/2b50b0a3-76d5-c02f-91d4-c527995eee57/source/350x350bb.jpg" alt="" class="ios-corners"></a>
+                            </div>
+                    </div>
+                    <div class="fel half logo-container">
+                        <h6 class="fel">Bulb Icon</h6>
+                        <img src="https://lh3.googleusercontent.com/7-0NRZexaZEjwXgCU4aUNQB79aylbv899KRe3O3Ucz6YdME41n18yZ8Fu_Uq7cqEx5I=w300-rw" alt="GK Bulb app icon">
+                        <p class="fel usage">TVos<br>iOS<br>Android OS</p>
+                    </div>
+                    <div class="fel half logo-container">
+                        <h6 class="fel">Wordmark Icon</h6>
+                        <img src="img/app-icons/GK-Roku-App-Icon-Channel-Store-FHD-540x405.png" alt="GK wordmark app icon">
+                    </div>
+                </div> -->
+
+            </section>
+
+            <!--
+            .dP"Y8 88  88    db    88""Yb 888888      dP""b8 888888 Yb  dP
+            `Ybo." 88  88   dPYb   88__dP 88__       dP   `" 88__    YbdP
+            o.`Y8b 888888  dP__Yb  88"Yb  88""       Yb  "88 88""    dPYb
+            8bodP' 88  88 dP""""Yb 88  Yb 888888      YboodP 88     dP  Yb
+-->
+
+            <section class="fel" id="brand-share-gfx" name="brand-share-gfx">
+                <h2 class="fel">Social Sharing Graphics</h2>
+                <div class="fel-component">
+                    <p class="fel half">Since some recipes do not have photos, for social sites such as Facebook &amp;
+                        Pinterest we need to have a default image to use in its place. </p>
+                    <img class="fel half" src="./img/gk-shareGraphic.png" alt="">
+                </div>
+            </section>
+            <!--
+               db    Yb    dP    db    888888    db    88""Yb .dP"Y8
+              dPYb    Yb  dP    dPYb     88     dPYb   88__dP `Ybo."
+             dP__Yb    YbdP    dP__Yb    88    dP__Yb  88"Yb  o.`Y8b
+            dP""""Yb    YP    dP""""Yb   88   dP""""Yb 88  Yb 8bodP'
+-->
+
+
+            <section class="fel" id="brand-avatars" name="brand-avatars">
+                <h2 class="fel">Default Avatars</h2>
+                <div class="fel-component">
+                    <p class="fel">In order to ensure all users have a photo and to ensure variety, there is a set of
+                        eight default avatars, assigned at random during registration. Users are then free to either
+                        choose another from the set or upload their own.</p>
+                    <div class="fel-avatar-container quarter">
+                        <img src="./img/avatar/burger.png" alt="burger" class="fel">
+                        <h6 class="fel">Burger</h6>
+                    </div>
+                    <div class="fel-avatar-container quarter">
+                        <img src="./img/avatar/drink.png" alt="drink" class="fel">
+                        <h6 class="fel">Drink</h6>
+                    </div>
+                    <div class="fel-avatar-container quarter">
+                        <img src="./img/avatar/fruit-kebab.png" alt="fruit-kebab" class="fel">
+                        <h6 class="fel">Fruit Kebab</h6>
+                    </div>
+                    <div class="fel-avatar-container quarter">
+                        <img src="./img/avatar/pasta.png" alt="pasta" class="fel">
+                        <h6 class="fel">Pasta</h6>
+                    </div>
+                    <div class="fel-avatar-container quarter">
+                        <img src="./img/avatar/pie.png" alt="pie" class="fel">
+                        <h6 class="fel">Pie</h6>
+                    </div>
+                    <div class="fel-avatar-container quarter">
+                        <img src="./img/avatar/pop.png" alt="pop" class="fel">
+                        <h6 class="fel">Pop</h6>
+                    </div>
+                    <div class="fel-avatar-container quarter">
+                        <img src="./img/avatar/sushi.png" alt="sushi" class="fel">
+                        <h6 class="fel">Sushi</h6>
+                    </div>
+                    <div class="fel-avatar-container quarter">
+                        <img src="./img/avatar/taco.png" alt="taco" class="fel">
+                        <h6 class="fel">Taco</h6>
+                    </div>
+                </div>
+                <p class="fel"><a class="fel download" file-type="zip">Download GK default avatar collection</a></p>
+            </section>
+
+            <!--
+            888888 88  88 888888 8b    d8 888888 .dP"Y8
+              88   88  88 88__   88b  d88 88__   `Ybo."
+              88   888888 88""   88YbdP88 88""   o.`Y8b
+              88   88  88 888888 88 YY 88 888888 8bodP'
+-->
+
+            <section class="fel" id="brand-themes">
+                <h2 class="fel">Recipe Themes &amp; Badges</h2>
+                <p class="fel intro ">Certain recipes are given additional prominence in the form of special color
+                    themes and a &ldquo;badge&rdquo; at the top of the recipe page, and in a future release, on search
+                    tiles.</p>
+
+                <div class="fel-component default">
+                    <div class="full">
+                        <h4 class="fel">Default</h4>
+                        <p class="fel">Default recipes which don&apos;t fall under a specific category or theme. These
+                            recipes do not have a badge.</p>
+                    </div>
+                    <div class="fel half img">
+                        <img src="img/examples/recipe-themes/default.png" alt="default theme">
+                    </div>
+                    <ul class="fel-colors fel-example half">
+                        <li class="gk-color theme half">
+                            <span class="berry dark color">#671056</span>
+                            <span class="color-name">Berry Dark</span>
+                            <span class="color-var">@berry-dark<br>@berry-header-rule</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="berry mid color">#892074</span>
+                            <span class="color-name">Berry Mid</span>
+                            <span class="color-var">@berry-mid<br>@berry-link<br>@gk-link</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="berry light color">#B02B96</span>
+                            <span class="color-name">Berry Light</span>
+                            <span class="color-var">@berry-light</span>
+                        </li>
+                        <li class="gk-color gradient half">
+                            <span class="gradient-berry color">Berry</span>
+                            <span class="gradient-berry-var start color-var">@turqoise</span>
+                            <span class="gradient-berry-var end color-var">@berry-mid</span>
+                            <span class="gradient-berry-var angle color-var">212&deg;</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="fel-component community-pick">
+                    <div class="fel-example full">
+                        <div class="ribbon horizontal community-pick">
+                            <div class="rib-text">Commuinity Pick</div>
+                            <div class="rib-tail"></div>
+                        </div>
+                    </div>
+                    <div class="full">
+                        <p class="fel">Community Pick recipes are based on popularity among users.</p>
+                    </div>
+                    <div class="fel half img">
+                        <img src="img/examples/recipe-themes/community-pick.png" alt="community pick theme">
+                    </div>
+                    <ul class="fel-colors fel-example half">
+                        <li class="gk-color half">
+                            <span class="sangria dark color">#AA0113</span>
+                            <span class="color-name">Sangria Dark</span>
+                            <span class="color-var">@sangria-dark</span>
+                        </li>
+                        <li class="gk-color half">
+                            <span class="sangria mid color">#D12436</span>
+                            <span class="color-name">Sangria Mid</span>
+                            <span class="color-var">@sangria-mid<br>@sangria-link<br>@sangria-header-rule</span>
+                        </li>
+                        <li class="gk-color half">
+                            <span class="sangria light color">#EB5262</span>
+                            <span class="color-name">Sangria Light</span>
+                            <span class="color-var">@sangria-light</span>
+                        </li>
+                        <li class="gk-color gradient half">
+                            <span class="gradient-sangria color">Sangria</span>
+                            <span class="gradient-sangria-var start color-var">@turqoise</span>
+                            <span class="gradient-sangria-var end color-var">@sangria-dark</span>
+                            <span class="gradient-sangria-var angle color-var">162&deg;</span>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="fel-component genius-kitchen">
+                    <div class="fel-example full">
+                        <div class="ribbon horizontal gk">
+                            <div class="rib-text">Video Spotlight</div>
+                            <div class="rib-tail"></div>
+                        </div>
+                    </div>
+                    <div class="full">
+                        <p class="fel">Video Spotlight recipes appear on network shows &amp; clips.</p>
+                    </div>
+                    <div class="fel half img">
+                        <img src="img/examples/recipe-themes/video-spotlight.png" alt="video spotlight theme">
+                    </div>
+                    <ul class="fel-colors fel-example half">
+                        <li class="gk-color theme half">
+                            <span class="gk dark color bright">#F0B000</span>
+                            <span class="color-name">GK Dark</span>
+                            <span class="color-var">@gk-dark</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="gk mid color bright">#F4CE33</span>
+                            <span class="color-name">GK Mid</span>
+                            <span class="color-var">@gk-mid<br>@gk-header-rule</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="gk light color bright">#FFE26D</span>
+                            <span class="color-name">GK Light</span>
+                            <span class="color-var">@gk-light</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="berry mid color">#892074</span>
+                            <span class="color-name">Berry Mid</span>
+                            <span class="color-var">@berry-mid<br>@berry-link<br>@gk-link</span>
+                        </li>
+                        <li class="gk-color gradient">
+                            <span class="gradient-gk color">GK</span>
+                            <span class="gradient-gk-var start color-var">@berry-mid</span>
+                            <span class="gradient-gk-var end color-var">@gk-mid</span>
+                            <span class="gradient-gk-var angle color-var">162&deg;</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="fel-component new">
+                    <div class="fel-example full">
+                        <div class="ribbon horizontal new">
+                            <div class="rib-text">New Recipe</div>
+                            <div class="rib-tail"></div>
+                        </div>
+                    </div>
+                    <div class="full">
+                        <p class="fel">New Recipes have been recently created. They retain the badge for 6 months after
+                            creation.</p>
+                    </div>
+                    <div class="fel half img">
+                        <img src="img/examples/recipe-themes/new-recipe.png" alt="new recipe theme">
+                    </div>
+                    <ul class="fel-colors fel-example half">
+                        <li class="gk-color theme half">
+                            <span class="clover dark color">#04771A</span>
+                            <span class="color-name">Clover Dark</span>
+                            <span class="color-var">@clover-dark</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="clover mid color">#08AD28</span>
+                            <span class="color-name">Clover Mid</span>
+                            <span class="color-var">@clover-mid<br>@clover-link<br>@clover-header-rule</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="clover light color">#2CD351</span>
+                            <span class="color-name">Clover Light</span>
+                            <span class="color-var">@clover-light</span>
+                        </li>
+                        <li class="gk-color gradient half">
+                            <span class="gradient-clover color">Clover</span>
+                            <span class="gradient-clover-var start color-var">@gk-mid</span>
+                            <span class="gradient-clover-var end color-var">@clover-mid</span>
+                            <span class="gradient-clover-var angle color-var">27&deg;</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="fel-component staff">
+                    <div class="fel-example full">
+                        <div class="ribbon horizontal staff">
+                            <div class="rib-text">Staff Pick</div>
+                            <div class="rib-tail"></div>
+                        </div>
+                    </div>
+                    <div class="full">
+                        <p class="fel">Staff Pick recipes are editorially curated.</p>
+                    </div>
+                    <div class="fel half img">
+                        <img src="img/examples/recipe-themes/staff-pick.png" alt="staff pick">
+                    </div>
+                    <ul class="fel-colors fel-example half">
+                        <li class="gk-color theme half">
+                            <span class="pumpkin dark color">#D64A17</span>
+                            <span class="color-name">Pumpkin Dark</span>
+                            <span class="color-var">@pumpkin-dark<br>@pumpkin-link</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="pumpkin mid color">#FF6932</span>
+                            <span class="color-name">Pumpkin Mid</span>
+                            <span class="color-var">@pumpkin-mid<br>@pumpkin-header-rule</span>
+                        </li>
+                        <li class="gk-color theme half">
+                            <span class="pumpkin light color">#FF8B60</span>
+                            <span class="color-name">Pumpkin Light</span>
+                            <span class="color-var">@pumpkin-light</span>
+                        </li>
+                        <li class="gk-color gradient half">
+                            <span class="gradient-pumpkin color">Pumpkin</span>
+                            <span class="gradient-pumpkin-var start color-var">@berry-mid</span>
+                            <span class="gradient-pumpkin-var end color-var">@pumpkin-dark</span>
+                            <span class="gradient-pumpkin-var angle color-var">42&deg;</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+            <!-- END ITEM GROUP -->
+
+            <section class="fel" id="brand-network">
+                <h2 class="fel" id="brand-network">Network Styleguide</h2>
+                <div class="fel-component col2">
+                    <p class="fel fel-left">The Genius Kitchen Network (onair), while maintaining a similar aesthetic
+                        as the website does have some differences in color usage &amp; text treatments.</p>
+                    <div class="fel-right">
+                        <a target="_blank" class="fel download">Download
+                            Network Styleguide</a>
+                    </div>
+                </div>
+
+
+            </section>
+        </section>
+
+        <div class="fel menu">
+            <button class="fel burger">
+                <svg width="21px" height="18px" viewBox="0 0 21 18" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="fel-burger" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                        <g id="fel-burger-bars" transform="translate(-282.000000, -25.000000)" stroke="#FD4A47"
+                            stroke-width="2">
+                            <g id="Group" transform="translate(283.000000, 25.000000)">
+                                <path d="M0.5,1 L18.6107703,1" id="Line"></path>
+                                <path d="M0.5,9 L18.6107703,9" id="Line"></path>
+                                <path d="M0.5,17 L18.6107703,17" id="Line"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="fel menu-inner">
+                <button class="fel burger-close">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="fel-close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="fel-close-stroke" transform="translate(-468.000000, -395.000000)" stroke="#FFFFFF"
+                                stroke-width="2">
+                                <g id="FDC-fel-close" transform="translate(469.000000, 396.000000)">
+                                    <path d="M0.5,0.5 L18.5277564,18.5277564" id="Line"></path>
+                                    <path d="M18.5,0.5 L0.82233047,18.1776695" id="Line"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <ul class="fel">
+                    <li class="fel"><a class="fel" href="index.html">Introduction</a></li>
+                    <li class="fel"><a class="fel" href="brand.html">GK Brand</a></li>
+                    <ul class="fel sub" id="pageMenu">
+                        <li class="fel"><a class="fel menu-page-section" href="#brand-fonts">Fonts</a></li>
+                        <li class="fel"><a class="fel menu-page-section" href="#brand-colors">Colors</a></li>
+                        <li class="fel"><a class="fel menu-page-section" href="#brand-logos">Logos &amp; Icons</a>
+                            <ul class="fel sub menu-sub-section">
+                                <li class="fel"><a href="#brand-logos-web-network" class="fel">Web &amp; Network Logos</a></li>
+                                <li class="fel"><a href="#brand-icons-favicon" class="fel">Favicon &amp; Touch Icons</a></li>
+                            </ul>
+                        </li>
+                        <li class="fel"><a href="#brand-share-gfx" class="fel menu-page-section">Social Sharing Graphic</a></li>
+                        <li class="fel"><a href="#brand-avatars" class="fel menu-page-section">Default Avatars</a></li>
+                        <li class="fel"><a href="#brand-themes" class="fel menu-page-section">Recipe Themes &amp;
+                                Badges</a></li>
+                        <li class="fel"><a href="#brand-network" class="fel menu-page-section">Network Styleguide</a></li>
+                    </ul>
+                    <li class="fel"><a class="fel" href="editorial.html">Editorial Style Guide</a></li>
+                    <li class="fel"><a class="fel" href="ui.html">UI/Frontend Patterns</a></li>
+                    <li class="fel"><a class="fel" href="supplementary.html">Supplementary Info</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="js/support.js" type="text/javascript" charset="utf-8"></script>
+        <!-- This must be before fel.less because of dependencies! -->
+        <script src="js/fel.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>
