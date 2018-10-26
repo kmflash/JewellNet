@@ -80,6 +80,7 @@
     "notes": ["Node.js", "Less", "Responsive", "Mobile First"],
     "disc": "<p>Internal companion site documenting UI patterns, colors, swatches and other tools for maintaining the Genius Kitchen website. Uses an encapsulated copy of the css styling for the GK site, so everything displays as it would on the live site.</p><p>Personally designed, built and maintained using HTML, JavaScript and Less; compiled with Grunt.js</p>",
     "basePath": "{{imgPath}}/portfolio/fel/",
+    "visitLink": "https://www.davidjewell.nyc/demos/front-end-library/",
     "thumb": "{{imgPath}}/portfolio/fel/fel-cover@2x.png",
     "imageType": "jpg",
     "imgs": [
