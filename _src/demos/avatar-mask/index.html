@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Avatar masking tests</title>
+	<style>
+		body{
+			background-color: #eee;
+		}
+		thead{
+			background-color: #ccc;
+		}
+		td{
+			padding: 10px;
+			border-right: solid 1px #eee;
+			border-bottom: solid 1px #eee;
+		}
+		.pngMask::before{
+			content: url(img/avatar-mask.png);
+			position: absolute;
+			pointer-events: none;
+		}
+		.pngMask-outline::before{
+			content: url(img/avatar-mask-outline.png);
+			position: absolute;
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<td>Original Image</td>
+			<td>.png mask</td>
+			<td>.png mask (outline)</td>
+			<td>Cloudinary Mask</td>
+		</thead>
+		<tr>
+			<td>
+				<img src="http://img.sndimg.com/food/image/upload/w_100,h_100/v1/food_avatar/7380292/HJzq2mC5RYyQP4eVXlcz_self-portrait-small.jpg" alt="Original Image">
+			</td>
+			<td class="pngMask">
+				<img src="http://img.sndimg.com/food/image/upload/w_100,h_100/v1/food_avatar/7380292/HJzq2mC5RYyQP4eVXlcz_self-portrait-small.jpg" alt=".png mask">
+			</td>
+			<td class="pngMask-outline">
+				<img src="http://img.sndimg.com/food/image/upload/w_100,h_100/v1/food_avatar/7380292/HJzq2mC5RYyQP4eVXlcz_self-portrait-small.jpg" alt=".png mask">
+			</td>
+			<td width="100" class="cloudinary-mask">
+				<a href="http://cloudinary.com/cookbook/custom_shapes_cropping"><img src="http://img-nonprod.sndimg.com/food/image/upload/w_100,h_100/l_quote-mask-x10_pi6i4l,fl_cutter.relative,w_1.0,h_1.0/food_avatar_dev1/02186cb45e7949838b68526a533d59cc/6qvku9J6SUyyHYacsnhq_cool_kat.png" alt="Cloudinary Mask"></a>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

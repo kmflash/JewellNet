@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Button Test</title>
+
+    <link rel="stylesheet" href="/gk/css/gk.css">
+
+    <style>
+        .wrap{
+            margin-bottom: 10px;
+        }
+
+        .wrap > button{
+            margin-right: 10px;
+        }
+
+        .btn-test-wrap{
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            bottom: -6px;
+            left: -6px;
+            z-index: 0;
+            background-image: url('http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDttNeG4Jlx18rTxO_Zp4jcgBM6hu2RddLRlENg5MKtkoyDo7b2QN1npzi3sEkGlWhw96MhCURHkdecFKumqqEPRHACeiE_Xht9AubkrEIO2bAtjmhkJJNzdDvfzSyQjshM7O0dsAVE9YNPy1LnxeP7Z3ypp7PZuJNBZNMFbkw/');
+            background-size: cover;
+            padding: 6px;
+        }
+
+        .btn-blur{
+            background-image: url('http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDttNeG4Jlx18rTxO_Zp4jcgBM6hu2RddLRlENg5MKtkoyDo7b2QN1npzi3sEkGlWhw96MhCURHkdecFKumqqEPRHACeiE_Xht9AubkrEIO2bAtjmhkJJNzdDvfzSyQjshM7O0dsAVE9YNPy1LnxeP7Z3ypp7PZuJNBZNMFbkw/');
+        }
+    </style>
+</head>
+<body>
+
+<div class='btn-test-wrap'>
+    <div class="container">
+        <div class="wrap">
+            <button class='btn-sm'>.btn-sm</button>
+            <button class='btn-default btn-sm'>.btn-default.btn-sm</button>
+            <button class="btn-secondary btn-sm">.btn-secondary.btn-sm</button>
+            <button class="btn-blurred btn-sm btn-icon-text">
+                <div class="btn-blur"></div>
+                <i class='icon-fdc-search'></i>btn-blurred.btn-sm.btn-icon-text
+            </button>
+        </div>
+        <div class="wrap">
+            <button>No Classname</button>
+            <button class='btn-default'>.btn-default</button>
+            <button class="btn-secondary">.btn-secondary</button>
+                <button class="btn-blurred btn-icon-text"><div class="btn-blur"></div>
+                    <i class='icon-fdc-search'></i>btn-blurred.btn-icon-text
+                </button>
+        </div>
+        <div class="wrap">
+            <button class='btn-lg'>.btn-lg</button>
+            <button class='btn-default btn-lg'>.btn-default.btn-lg</button>
+            <button class="btn-secondary btn-lg">.btn-secondary.btn-lg</button>
+                <button class="btn-blurred btn-lg btn-icon-text">
+                    <div class="btn-blur"></div>
+                    <i class='icon-fdc-search'></i>btn-blurred.btn-lg.btn-icon-text
+                </button>
+        </div>
+        <div class="wrap">
+            <button class="btn-round print"><i class="icon-fdc-print"></i></button>
+            <button class="btn-round email"><i class="icon-fdc-email"></i></button>
+            <button class="btn-round pinterest"><i class="icon-fdc-pinterest"></i></button>
+            <button class="btn-round facebook"><i class="icon-fdc-facebook"></i></button>
+            <button class="btn-round instagram"><i class="icon-fdc-instagram"></i></button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

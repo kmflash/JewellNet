@@ -1,0 +1,91 @@
+@import (reference) "fel.less";
+
+// Print styles for front end library
+
+@media print {
+   // set up general page dimensions
+   @page {
+       margin: 2cm 1cm;
+   }
+   // hide things we don't need for printing
+    .fel.menu,
+    .prettyprint {
+        display: none;
+    }
+
+   // page style modifications
+   body {
+       color: @fel-abs-black;
+       background-color: @fel-white;
+   }
+
+   .fel-wrapper {
+       &:before {
+           position: absolute;
+           border-width: convert(@fel-top-border-width-sm-md, cm);
+       }
+   }
+
+   section.fel,
+   .gk-color,
+   .fel-component {
+       page-break-inside: none;
+   }
+
+   // need to specify points for printing
+   h1.fel {
+       font-size: convert(@f-h1, pt);
+       line-height: convert(@f-h1-lh, pt);
+   }
+
+   h2.fel {
+       font-size: convert(@f-h2, pt);
+       line-height: convert(@f-h2-lh, pt);
+   }
+
+   h3.fel {
+       font-size: convert(@f-h3, pt);
+       line-height: convert(@f-h3-lh, pt);
+   }
+
+   h4.fel {
+       font-size: convert(@f-h4, pt);
+       line-height: convert(@f-h4-lh, pt);
+   }
+
+   p.fel {
+       font-size: convert(@f-p, pt);
+       line-height: convert(@f-p-lh, pt);
+
+       &.intro {
+           font-size: convert(@f-p-intro, pt);
+           line-height: convert(@f-p-lh-intro, pt);
+       }
+
+       &.usage {
+           font-size: convert(@f-p-usage, pt);
+           line-height: convert(@f-p-lh-usage, pt);
+       }
+   }
+
+   .fel-component {
+       .half,
+       .quarter,
+       .third {
+           display: inline-block;
+       }
+
+        .half {
+            width: 45%;
+        }
+        .quarter {
+            width: 25%;
+        }
+        .third {
+            width: percentage(1/3);
+        }
+   }
+
+
+
+}

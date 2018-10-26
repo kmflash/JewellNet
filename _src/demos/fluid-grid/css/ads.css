@@ -1,0 +1,50 @@
+/*This file defines the ad sizes only. To hide/show ads, please modify the grid's stylesheet.*/
+
+/* make all ads invisible by default, set to center */
+.ad_leaderboards, .ad{
+	position: relative;
+}
+.ad_leaderboards img, .ad img{
+	display: none;
+	position: absolute;
+	left: 50%;
+	opacity: .8;
+}
+
+/*--- MOBILE SIZES --- */
+.ad-mobileLeaderboard{ /* mobile leaderboard */
+	width: 320px;
+	height: 50px;
+	margin-left: -160px;
+}
+
+/* --- LEADERBOARDS --- */
+
+.ad-leaderboard{ /* leaderboard */
+	width: 728px;
+	height: 90px;
+	margin-left: -364px;
+}
+
+/* --- BIG BOXES --- */
+
+.B{ /* short bigbox */
+	width: 300px;
+	height: 150px;
+	margin-left: -150px;
+}
+
+
+.ad-bigBox{ /* std bigbox */
+	width: 300px;
+	height: 250px;
+	margin-left: -150px;
+}
+
+/* --- HALF-PAGE --- */
+
+.ad-halfPage{ /* half-page, small */
+	width: 300px;
+	height: 600px;
+	margin-left: -150px;
+}

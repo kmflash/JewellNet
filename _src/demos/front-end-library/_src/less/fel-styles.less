@@ -1,0 +1,876 @@
+// GK FRONT END LIBRARY STYLES
+//
+//
+// The following styles define the look and feel for the Front End Library.
+
+
+
+// fel colors
+@fel-red: #FD475C;
+@fel-white: #FFF;
+@fel-black: #3d3d3d;
+@fel-light-grey: #CCCCCC;
+@fel-super-light-grey: #EEE;
+@fel-abs-black: #000000;
+
+@fel-yes: #5AB24D;
+@fel-no: #CD1D26;
+
+//spacing
+@xs-spacing: 2.5px;
+@sm-spacing: 7px;
+@spacing: 14px;
+@lg-spacing: 28px;
+@xl-spacing: 35px;
+
+// top border
+@fel-top-border-width-xs: 10px;
+@fel-top-border-width-sm-md: 6px; // need to have smaller to sit nicely next to GK logo
+@fel-top-border: solid @fel-top-border-width-xs @fel-red;
+
+//font weights (for open sans)
+@os-light: 300;
+@os-norm: 400;
+@os-semi: 600;
+@os-bold: 800;
+
+@menu-width: 280px;
+
+// breakpoints
+@screen-xs-baseline: 320px;
+@screen-sm-min: 768px;
+@screen-md-min: 1025px;
+
+// menu size @ larger breakpoints
+@menu-width-lg: 25%;
+
+// gk logo sizes (for masthead)
+@gk-logo-sm-w: 23px;
+@gk-logo-sm-h: 28px;
+@gk-logo-lg-w: 100px;
+@gk-logo-lg-h: 83.65px;
+
+// minimum height for code blocks
+@code-min-height: 58px;
+
+// avatar sizes
+@avatar-size: 200px;
+@download-icon-size: 30px; // should be the same for height, width since the icon is square
+
+// font sizes
+@f-h1-xs: 21px;
+@f-h1: 30px;
+@f-h2-xs: 16px;
+@f-h2: 26px;
+@f-h3: 14px;
+@f-h4: 16px;
+@f-p-xs: 14px;
+@f-p-intro-xs: 16px;
+@f-p-usage: 14px;
+@f-p: 16px;
+@f-p-intro: 22px;
+
+// line-heights
+@f-h1-lh-xs: 28px;
+@f-h1-lh: 30;
+@f-h2-lh-xs: 21px;
+@f-h2-lh: 30px;
+@f-h3-lh: 18px;
+@f-h4-lh: 18px;
+@f-p-lh-xs: 21px;
+@f-p-lh-intro-xs: 21px;
+@f-p-lh-usage: 21px;
+@f-p-lh: 30px;
+@f-p-lh-intro: 30px;
+
+
+// mixins
+
+.border-solid(@color: @fel-red; @side: top){
+    border-@{side}: solid 1px @color;
+}
+
+.border-dashed(@color: @fel-light-grey; @side: bottom){
+    border-@{side}: dashed 1px @color;
+}
+
+.fel-mono(){ // monospace mixin
+    font-family: "Input Mono", "Sudo", "Consolas", "Courier New", Courier, Monospace;
+}
+
+
+//      88     88 88b 88 88  dP .dP"Y8 
+//      88     88 88Yb88 88odP  `Ybo." 
+//      88  .o 88 88 Y88 88"Yb  o.`Y8b 
+//      88ood8 88 88  Y8 88  Yb 8bodP' 
+
+a,
+a.fel{
+    color: @fel-red;
+    text-decoration: none;
+
+    &:visited{
+        color: @fel-red;
+    }
+
+    &:active,
+    &:hover{
+        color: @fel-red;
+        text-decoration: underline;
+    }
+
+    &.fel-btn{
+        border: solid 1px @fel-light-grey;
+        border-radius: 2px;
+        color: @fel-red;
+        font-weight: @os-semi;
+        text-transform: uppercase;
+        padding: @spacing;
+        display: inline-block;
+        margin-bottom: @sm-spacing;
+        cursor: -webkit-grab;
+
+        &:hover{
+            border: solid 1px @fel-red;
+            background-color: @fel-red;
+            color: @fel-white;
+            text-decoration: none;
+        }
+    }
+}
+
+.fel.download {
+    &:before {
+        width: @download-icon-size;
+        height: @download-icon-size;
+        content: url("../img/fel-download.svg");
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 0;
+        margin-bottom: 3px;
+    }
+    
+    &:hover {
+        &:before svg path {
+            fill: @fel-abs-black;
+        }
+    }
+}
+
+
+//      888888 888888 Yb  dP 888888     .dP"Y8 888888 Yb  dP 88     888888 .dP"Y8 
+//        88   88__    YbdP    88       `Ybo."   88    YbdP  88     88__   `Ybo." 
+//        88   88""    dPYb    88       o.`Y8b   88     8P   88  .o 88""   o.`Y8b 
+//        88   888888 dP  Yb   88       8bodP'   88    dP    88ood8 888888 8bodP' 
+
+
+body.fel{
+    font-family: "Open Sans", Helvetica, Arial;
+}
+
+h1.fel{
+    font-size: @f-h1-xs;
+    line-height: @f-h1-lh-xs;
+    font-weight: @os-semi;
+
+    @media @sm {
+        font-size: @f-h1;
+        line-height: @f-h1-lh;
+    }
+}
+
+h2.fel{
+    font-size: @f-h2-xs;
+    line-height: @f-h2-lh-xs;
+    font-weight: @os-bold;
+
+    & + .fel-component > h4:first-child,
+    & + h4 {
+        border: none;
+    }
+
+    @media @sm {
+        font-size: @f-h2;
+        line-height: @f-h2-lh;
+    }
+}
+
+h3.fel{
+    font-size: @f-h3;
+    line-height: @f-h3-lh;
+    font-weight: @os-semi;
+}
+
+h4.fel{
+    font-size: @f-h4;
+    line-height: @f-h4-lh;
+    font-weight: @os-bold;
+    text-transform: uppercase;
+    margin-top: @lg-spacing;
+    margin-bottom: @spacing;
+    padding-bottom: @sm-spacing;
+    padding-top: @sm-spacing;
+    .border-dashed(@fel-light-grey; top);
+}
+
+p.fel{
+    font-size: @f-p-xs;
+    line-height: @f-p-lh-xs;
+    margin-bottom: @spacing;
+    margin-top: 0;
+    color: @fel-black;
+
+    &.intro{
+        font-size: @f-p-intro-xs;
+        line-height: @f-p-lh-intro-xs;
+        font-weight: @os-semi;
+        margin-bottom: @sm-spacing;
+        margin-top: @spacing;
+    }
+
+    &.usage{
+        font-style: italic;
+        font-size: @f-p-usage;
+        line-height: @f-p-lh-usage;
+    }
+
+    @media @sm {
+        font-size: @f-p;
+        line-height: @f-p-lh;
+        margin-bottom: @lg-spacing;
+
+        &.intro{
+            font-size: @f-p-intro;
+            line-height: @f-p-lh-intro;
+            font-weight: @os-norm;
+        }
+    }
+}
+
+code,
+code.fel{
+    background-color: fade(@fel-red, 15%);
+    .fel-mono;
+    color: @fel-red;
+    padding: 0 @xs-spacing;
+    border-radius: 2px;
+
+    &.light {
+        background-color: transparent;
+        color: @fel-black;
+    }
+}
+
+.fel-wrapper{
+    padding: 16px;
+    overflow-x: hidden;
+    position: relative;
+    margin-bottom: @lg-spacing;
+
+    &:before{
+        border-top: @fel-top-border;
+        content: " ";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    @media @sm {
+        border-top: none;
+        padding: 0;
+
+        &:before{
+            border-top-width: @fel-top-border-width-sm-md;
+        }
+    }
+}
+
+section.fel {
+    margin-bottom: @lg-spacing * 2;
+}
+
+.fel{
+    &.fel.logo{
+        width: @gk-logo-sm-w;
+        height: @gk-logo-sm-h;
+        margin-right: @sm-spacing;
+        margin-top: -2px;
+        float: left;
+
+        img{
+            width: @gk-logo-sm-w;
+            height: @gk-logo-sm-h;
+        }
+
+        @media @sm {
+            position: absolute;
+            top: 2px;
+            left: -1px;
+            width: @gk-logo-lg-w;
+            height: @gk-logo-lg-h;
+            z-index: 10001;
+
+            img{
+                width: @gk-logo-lg-w;
+                height: @gk-logo-lg-h;
+            }
+        }
+    }
+
+    &.page-title{
+        margin-bottom: @lg-spacing;
+
+        h1{
+            line-height: 1;
+            margin: 0;
+        }
+
+        h2{
+            line-height: 1;
+            margin: 0;
+        }
+
+        @media @sm {
+            flex-basis: 100%;
+            flex-grow: 10;
+            padding-top: 8px;
+            padding-left: @gk-logo-lg-w + @spacing;
+            margin-bottom: @spacing;
+            height: @gk-logo-lg-h;
+
+            h1{
+                display: inline-block;
+                margin-top: 12px;
+
+                &:after{
+                    content: ">";
+                    color: @fel-red;
+                    font-weight: @os-semi;
+                    margin: 0 @spacing;
+                    font-size: 30px;
+                    vertical-align: middle;
+                }
+            }
+
+            h2{
+                display: inline;
+            }
+        }
+    }
+
+    &.loader{ // see https://codepen.io/aurer/pen/jEGbA
+      margin: 0 0 2em;
+      height: 100px;
+      width: 20%;
+      text-align: center;
+      padding: 1em;
+      margin: 0 auto 1em;
+      display: inline-block;
+      vertical-align: top;
+
+      svg path,
+      svg rect{
+        fill: @fel-red;
+      }
+    }
+}
+
+.fel.content {
+    @media @sm {
+        margin: 0 @xl-spacing 75vh;
+    }
+
+    @media @md {
+        width: auto;
+        margin: 0 @xl-spacing 75vh @menu-width-lg;
+        padding-left: @spacing;
+        position: relative;
+
+    }
+
+    h2.fel{
+        .border-solid(@fel-red; top);
+        display: block;
+        padding-top: 2px;
+    }
+}
+
+.fel-component {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: @lg-spacing;
+    padding-bottom: @spacing;
+
+    @media @sm {
+        flex-flow: row wrap;
+    }
+
+    &.noflex {
+        display: inline-block;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.fel-example{
+    min-height: @lg-spacing;
+    width: 100%;
+    overflow: hidden;
+
+    &.img{
+        background-color: @fel-light-grey;
+        background-attachment: fixed;
+
+        &.for-blur{
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            bottom: -6px;
+            left: -6px;
+            z-index: 0;
+            background-size: cover;
+            padding: 6px;
+        }
+    }
+}
+
+
+
+.fel#commitFeed{
+    ol{
+        li{
+            .feed.timestamp{
+                font-size: 10px;
+                display: block;
+            }
+
+            .feed.poster{
+                font-size: 12px;
+                font-weight: @os-semi;
+                display: block;
+                margin-bottom: @sm-spacing;
+            }
+        }
+    }
+}
+
+//      88     88 .dP"Y8 888888 .dP"Y8      d888         888888    db    88""Yb 88     888888 .dP"Y8 
+//      88     88 `Ybo."   88   `Ybo."     dP_______       88     dPYb   88__dP 88     88__   `Ybo." 
+//      88  .o 88 o.`Y8b   88   o.`Y8b     Yb"""88""       88    dP__Yb  88""Yb 88  .o 88""   o.`Y8b 
+//      88ood8 88 8bodP'   88   8bodP'     `Ybo 88         88   dP""""Yb 88oodP 88ood8 888888 8bodP' 
+
+ul.fel{
+    &.no-bullets{
+        list-style: none;
+    }
+}
+
+table,
+table.fel{
+    width: 100%;
+    display: block;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: @sm-spacing @spacing;
+    }
+
+    tr{
+        &:last-child{
+            td{
+                border-bottom: 0;
+            }
+        }
+
+        &.spacer{
+            .border-solid(@fel-white; top);
+
+            td{
+                background-color: @fel-super-light-grey;
+                height: @spacing;
+                border: none;
+                padding: 0;
+            }
+        }
+    }
+}
+
+th,
+th.fel{
+    margin: 0;
+    padding: 0 @sm-spacing @xs-spacing;
+    border-bottom: solid 2px @fel-black;
+    text-align: left;
+    font-weight: @os-semi;
+    vertical-align: bottom;
+}
+
+td,
+td.fel{
+    margin: 0;
+    padding: @spacing @sm-spacing;
+    .border-dashed(@fel-light-grey, bottom);
+}
+
+
+
+//      88  dP""b8  dP"Yb  88b 88 .dP"Y8 
+//      88 dP   `" dP   Yb 88Yb88 `Ybo." 
+//      88 Yb      Yb   dP 88 Y88 o.`Y8b 
+//      88  YboodP  YbodP  88  Y8 8bodP' 
+
+.fel-icon {
+    margin-bottom: @lg-spacing;
+    flex-basis: @icon-swatch-width;
+    width: @icon-swatch-width;
+
+    div.icon{
+        width: 100%;
+        height: @icon-swatch-height;
+        display: flex;
+        justify-content: center;
+        line-height: @icon-swatch-height;
+        font-weight: @os-semi;
+        margin-bottom: @sm-spacing;
+        border: solid 1px @fel-white;
+        background-color: @fel-super-light-grey;
+        cursor: pointer;
+        position: relative;
+
+        i {
+            font-size: @icon-size;
+            line-height: @icon-swatch-height;
+            transition: all @transition-duration;
+            color: @fel-abs-black;
+            position: absolute;
+        }
+
+        &:hover {
+            i {
+                font-size: @icon-size-lg;
+            }
+        }
+    }
+
+    .icon-name{
+        display: block;
+        font-weight: @os-bold;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+
+    .icon-var{
+        display: block;
+        font-size: 12px;
+        .fel-mono;
+        text-align: center;
+    }
+}
+
+//      88  88 888888 88     88""Yb 888888 88""Yb      dP""b8 88        db    .dP"Y8 .dP"Y8 888888 .dP"Y8 
+//      88  88 88__   88     88__dP 88__   88__dP     dP   `" 88       dPYb   `Ybo." `Ybo." 88__   `Ybo." 
+//      888888 88""   88  .o 88"""  88""   88"Yb      Yb      88  .o  dP__Yb  o.`Y8b o.`Y8b 88""   o.`Y8b 
+//      88  88 888888 88ood8 88     888888 88  Yb      YboodP 88ood8 dP""""Yb 8bodP' 8bodP' 888888 8bodP' 
+
+// visibility classes
+
+.xs{
+    display: inline-block;
+
+    @media @sm {
+        display: none;
+    }
+}
+
+.sm-md{
+    display: none;
+
+    @media @sm {
+        display: inline-block;
+    }
+}
+
+// for blocking out sections (everything is 100% on xs)
+
+@media @sm {
+    .full {
+        flex-basis: 100%;
+    }
+
+    .half {
+        flex-basis: 45%; // use 45% to allow for paddings & whatnot
+    }
+    
+    .third {
+        flex-basis: 33.33%;
+    }
+    
+    .quarter {
+        flex-basis: 25%;
+    }
+
+    .noflex {
+        .full {
+            width: 100%;
+        }
+
+        .half {
+            width: 50%;
+        }
+
+        .third {
+            width: 33.33%;
+        }
+
+        .quarter {
+            flex-basis: 25%;
+        }
+    }
+}
+
+// apply to images to mask the corners to match iOS' rounded corner radii
+.ios-corners {
+    overflow: hidden;
+    border-radius: 25%;
+}
+
+
+// for indicating correct/incorrect
+.fel-yes,
+.fel-no {
+    padding: @sm-spacing;
+    color: @fel-white;
+    text-align: center;
+}
+
+.fel-yes {
+    background-color: @fel-yes;
+}
+
+.fel-no {
+    background-color: @fel-no;
+}
+
+.copied {
+    opacity: .2;
+}
+
+.pad {
+    padding: 20px;
+}
+    
+.grey-bg {
+    background-color: @icing;
+}
+
+
+hr.fel.dashed{
+    border-top: 0;
+    .border-dashed(@fel-light-grey; bottom);
+}
+
+hr.fel.solid{
+    border-top: 0;
+    .border-solid(@fel-red; top);
+}
+
+
+//
+//
+//      8b    d8 888888 88b 88 88   88 
+//      88b  d88 88__   88Yb88 88   88 
+//      88YbdP88 88""   88 Y88 Y8   8P 
+//      88 YY 88 888888 88  Y8 `YbodP' 
+//
+//
+
+.fel.menu{ // burger/menu styles
+    position: fixed;
+    right: 0;
+    top: @fel-top-border-width-xs;
+
+    button.burger,
+    button.burger-close{
+        position: absolute;
+        top: @fel-top-border-width-xs;
+        right: 10px;
+
+        width: 44px;
+        height: 44px;
+
+        border: none;
+        background-color: transparent;
+
+        border-radius: 2px;
+
+        &:hover,
+        &:active{
+            background-color: @fel-red;
+
+            & svg #fel-burger-bars{
+                stroke: @fel-white;
+            }
+
+            & svg #fel-close-stroke{
+                stroke: @fel-black;
+            }
+        }
+    }
+
+    @media @sm  {
+        top: @fel-top-border-width-sm-md;
+
+        button.burger,
+        button.burger-close {
+            top: @fel-top-border-width-sm-md;
+        }
+    }
+
+    .fel.menu-inner{
+        position: absolute;
+        background-color: @fel-black;
+        top: 0;
+        width: @menu-width;
+        right: -@menu-width;
+        -webkit-transition: 250ms cubic-bezier(0.4, 0, 1, 1);
+        -moz-transition:    250ms cubic-bezier(0.4, 0, 1, 1);
+        -ms-transition:     250ms cubic-bezier(0.4, 0, 1, 1);
+        -o-transition:      250ms cubic-bezier(0.4, 0, 1, 1);
+        transition:         250ms cubic-bezier(0.4, 0, 1, 1);
+
+        color: @fel-white;
+    }
+
+    &.show{
+        .fel.menu-inner{
+            right: 0;
+            border-left: solid 5px @fel-abs-black;
+        }
+    }
+
+    ul.fel{
+        list-style: none;
+        padding-left: @spacing;
+        padding-right: @spacing;
+
+        li{
+            line-height: 44px;
+            border-bottom:  solid 1px @fel-abs-black;
+
+            &:last-child{
+                border-bottom: 0;
+            }
+
+            &.active > a{
+                font-weight: @os-bold;
+                color: @fel-white;
+            }
+        }
+
+        &.sub{
+            &:last-child{
+                border-bottom: solid 1px @fel-abs-black;
+            }
+        }
+
+        &.sub .sub{
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: @screen-md-min){
+        width: @menu-width-lg;
+        left: 0;
+        top: @gk-logo-lg-h + @lg-spacing;
+        right: auto;
+        -webkit-transition: position .25s cubic-bezier(0.4, 0, 1, 1);
+        -moz-transition:    position .25s cubic-bezier(0.4, 0, 1, 1);
+        -ms-transition:     position .25s cubic-bezier(0.4, 0, 1, 1);
+        -o-transition:      position .25s cubic-bezier(0.4, 0, 1, 1);
+        transition:         position .25s cubic-bezier(0.4, 0, 1, 1);
+
+        &.stuck{
+            position: fixed;
+            top: @spacing;
+            bottom: 0;
+            overflow-y: auto;
+        }
+
+        .fel.menu-inner{
+            position: static;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        ul.fel{
+            li{
+                padding-left: @lg-spacing;
+                border-bottom: 0;
+                font-size: 22px;
+                line-height: 30px;
+                font-weight: @os-semi;
+                padding-top: 4px;
+                padding-bottom: 4px;
+
+                &.active{
+                    & > a{
+                        font-weight: @os-bold;
+                        color: @fel-black;
+                    }
+
+                    .sub {
+                        display: block;
+                    }
+                }
+            }
+
+            &.sub{
+                li{
+                    font-size: 14px;
+                    line-height: 26px;
+                    font-weight: @os-light;
+
+                    .sub {
+                        li {
+                            border-left: solid 2px @fel-super-light-grey;
+
+                            &.active {
+                                border-left-color: @fel-black;
+                            }
+
+                            &:hover {
+                                border-left-color: @fel-red;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child{
+                    border-bottom: 0;
+                }
+            }
+
+            @media screen and (min-width: @screen-md-min){
+                padding-left: 0;
+            }
+        }
+
+        button.burger-close,
+        button.burger{
+            display: none;
+        }
+    }
+
+    .menu-page-section {
+        &:hover {
+            cursor: pointer !important;
+        }
+    }
+}

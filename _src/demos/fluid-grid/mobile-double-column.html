@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	
+	<title>Mobile Double Recipe Column</title>
+	<!-- Load jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<!--	<script src="js/grids.js"></script> -->
+	<link rel="stylesheet" href="css/ads.css">
+	<link rel="stylesheet" href="css/general.css">
+	
+	<link rel="stylesheet" href="css/grid.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> <!-- add fontAwesome for stars n' junk -->
+	<link rel="stylesheet" type="text/css" href="css/mdc.css">
+</head>
+<body>
+	<div id='foldBox'><span>FOLD: <span class='foldHeight'></span>px</span></div>
+	<div id="wrapper">
+<!-- 		<div id='gridOverlays'>
+			<img src="img/threetwenty.gif" class='threetwenty' />
+			<img src="img/sevensixtyeight.gif" class="sevensixtyeight">
+			<img src="img/thousandtwentyfour.gif" class='thousandtwentyfour' />
+			<img src="img/fourteenhundred.gif" class='fourteenhundred' />
+		</div> -->
+		<div class='header full col'>Header<br />
+		</div>
+	<div id='ngd'>
+			<div class='contentTile col'>
+				<div class='recipeMeta'>
+					<h6 class='cat'>Quick and Easy</h6>
+					<h2 class='recipeTitle'>Bourbon Chicken</h2>
+					<h3 class='byline'><span>By</span> LinMarie</h3>
+				</div>
+				<div class='img'>
+					<div class='avatar'>
+						<img src="http://share.food.com/skins/main/images/profilephotolookup/112_medthumb_hor.gif">
+					</div>
+					<div class='imgOverlay'>&nbsp;</div>
+					<img class='recipeImg' src="http://pictures.food.com/api/file/a2ZX1DphTjK0YuAi916b-149-bourbon-chicken.jpg/convert?loc=/pictures.food.com/recipes/45/80/9/nFW9boVTGrjnGMv0b0RQ_149%20bourbon%20chicken.jpg&width=640&height=480&fit=scale" />
+				</div>
+				<div class='rating'>
+					<i class='fa fa-star-o'></i>4.5
+				</div>
+			</div>
+			<div class='contentTile col'>
+				<div class='recipeMeta'>
+					<h6 class='cat'>Awesome and Delicious</h6>
+					<h2 class='recipeTitle'>Crock-Pot Chicken With Black Beans &amp; Cream Cheese</h2>
+					<h3 class='byline'><span>By</span> Jen Santiago</h3>
+				</div>
+				<div class='img'>
+					<div class='avatar'>
+						<img src="http://share.food.com/skins/main/images/profilephotolookup/134_medthumb_hor.gif">
+					</div>
+					<div class='imgOverlay'>&nbsp;</div>
+					<img class='recipeImg' src="http://img.food.com/img/recipes/89/20/4/large/picec1bG3.jpg" />
+				</div>
+				<div class='rating'>
+					<i class='fa fa-star-o'></i>4.5
+				</div>
+			</div>
+			<div class='contentTile col'>
+				<div class='recipeMeta'>
+					<h6 class='cat'>Quick and Easy</h6>
+					<h2 class='recipeTitle'>Creamy Cajun Chicken Pasta</h2>
+					<h3 class='byline'><span>By</span> Lorac</h3>
+				</div>
+				<div class='img'>
+					<div class='avatar'>
+						<img src="http://picklemedia1.scrippsnetworks.com/pickle_media1/media/userphoto/100506/U12633322/Photo_Video_64315216289960085162744_medthumb_hor.jpg">
+					</div>
+					<div class='imgOverlay'>&nbsp;</div>
+					<img class='recipeImg' src="http://img.food.com/img/recipes/39/08/7/large/piccZDaro.jpg" />
+				</div>
+				<div class='rating'>
+					<i class='fa fa-star-o'></i>4.5
+				</div>
+			</div>
+			<div class='contentTile col'>
+				<div class='recipeMeta'>
+					<h6 class='cat'>Amazetastic</h6>
+					<h2 class='recipeTitle'>Oven Fried Chicken Chimichangas</h2>
+					<h3 class='byline'><span>By</span> Miss Annie</h3>
+				</div>
+				<div class='img'>
+					<div class='avatar'>
+						<img src="http://picklemedia1.scrippsnetworks.com/pickle_media1/media/userphoto/130207/U25156557/Photo_Video_23667777518059629088752_medthumb_hor.jpg">
+					</div>
+					<div class='imgOverlay'>&nbsp;</div>
+					<img class='recipeImg' src="http://pictures.food.com/api/file/gsDYYdNQSqyoDxaFbSSB-Oven-Fried-Chicken-Chimichangas---28148-4.JPG/convert?loc=/pictures.food.com/recipes/28/14/8/vymB3NzQV2NMEwxTYKpB_Oven-Fried%20Chicken%20Chimichangas%20-%2328148-4.JPG&width=640&height=480&fit=scale" />
+				</div>
+				<div class='rating'>
+					<i class='fa fa-star-o'></i>4.5
+				</div>
+			</div>
+			<div class='contentTile col double first'>
+				<div class='recipeMeta'>
+					<h6 class='cat'>Quick and Easy</h6>
+					<h2 class='recipeTitle'>Bourbon Chicken</h2>
+					<h3 class='byline'><span>By</span> LinMarie</h3>
+				</div>
+				<div class='img'>
+					<div class='avatar'>
+						<img src="http://share.food.com/skins/main/images/profilephotolookup/112_medthumb_hor.gif">
+					</div>
+					<div class='imgOverlay'>&nbsp;</div>
+					<img class='recipeImg' src="http://pictures.food.com/api/file/a2ZX1DphTjK0YuAi916b-149-bourbon-chicken.jpg/convert?loc=/pictures.food.com/recipes/45/80/9/nFW9boVTGrjnGMv0b0RQ_149%20bourbon%20chicken.jpg&width=640&height=480&fit=scale" />
+				</div>
+				<div class='rating'>
+					<i class='fa fa-star-o'></i>4.5
+				</div>
+			</div>
+			<div class='contentTile col double'>
+				<div class='recipeMeta'>
+					<h6 class='cat'>Awesome and Delicious</h6>
+					<h2 class='recipeTitle'>Crock-Pot Chicken With Black Beans &amp; Cream Cheese</h2>
+					<h3 class='byline'><span>By</span> Jen Santiago</h3>
+				</div>
+				<div class='img'>
+					<div class='avatar'>
+						<img src="http://share.food.com/skins/main/images/profilephotolookup/134_medthumb_hor.gif">
+					</div>
+					<div class='imgOverlay'>&nbsp;</div>
+					<img class='recipeImg' src="http://img.food.com/img/recipes/89/20/4/large/picec1bG3.jpg" />
+				</div>
+				<div class='rating'>
+					<i class='fa fa-star-o'></i>4.5
+				</div>
+			</div>
+			<div class='contentTile col double first'>
+				<div class='recipeMeta'>
+					<h6 class='cat'>Quick and Easy</h6>
+					<h2 class='recipeTitle'>Creamy Cajun Chicken Pasta</h2>
+					<h3 class='byline'><span>By</span> Lorac</h3>
+				</div>
+				<div class='img'>
+					<div class='avatar'>
+						<img src="http://picklemedia1.scrippsnetworks.com/pickle_media1/media/userphoto/100506/U12633322/Photo_Video_64315216289960085162744_medthumb_hor.jpg">
+					</div>
+					<div class='imgOverlay'>&nbsp;</div>
+					<img class='recipeImg' src="http://img.food.com/img/recipes/39/08/7/large/piccZDaro.jpg" />
+				</div>
+				<div class='rating'>
+					<i class='fa fa-star-o'></i>4.5
+				</div>
+			</div>
+			<div class='contentTile col double'>
+				<div class='recipeMeta'>
+					<h6 class='cat'>Amazetastic</h6>
+					<h2 class='recipeTitle'>Oven Fried Chicken Chimichangas</h2>
+					<h3 class='byline'><span>By</span> Miss Annie</h3>
+				</div>
+				<div class='img'>
+					<div class='avatar'>
+						<img src="http://picklemedia1.scrippsnetworks.com/pickle_media1/media/userphoto/130207/U25156557/Photo_Video_23667777518059629088752_medthumb_hor.jpg">
+					</div>
+					<div class='imgOverlay'>&nbsp;</div>
+					<img class='recipeImg' src="http://pictures.food.com/api/file/gsDYYdNQSqyoDxaFbSSB-Oven-Fried-Chicken-Chimichangas---28148-4.JPG/convert?loc=/pictures.food.com/recipes/28/14/8/vymB3NzQV2NMEwxTYKpB_Oven-Fried%20Chicken%20Chimichangas%20-%2328148-4.JPG&width=640&height=480&fit=scale" />
+				</div>
+				<div class='rating'>
+					<i class='fa fa-star-o'></i>4.5
+				</div>
+			</div>
+
+			<!-- <div class='footer full col '>Footer</div> -->
+		</div>
+			<hr class='clearboth' />
+
+	</div>
+
+	<script type="text/javascript" charset="utf-8">
+
+	//	resizeWindow(); // populate numbers
+
+	</script>
+	</body>
+</html>

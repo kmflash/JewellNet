@@ -1,0 +1,777 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*style as if at 320px*/
+
+/*		--- EIGHT COLUMN GRID ACTIVE --- 294px wide || 4.761904761904762% gutters
+		
+|| 1            || 2            || 3            || 4            || 5            || 6            || 7            || 8            ||
+----------------------------------------------------------------------------------------------------------------------------------
+|| 7.142857143% || 19.04761905% || 30.95238095% || 42.85714286% || 54.76190476% || 66.66666667% || 78.57142857% || 90.47619048% ||
+
+*/		
+body{
+	background: #efefef;
+	font-size: 87.5%; /*14px*/
+	font-family: 'Open Sans','Helvetica Neue', Helvetica, Arial, Sans-serif;
+	color: #333;
+}
+
+#wrapper{
+	min-width: 294px;
+	height: 100%;
+	margin: auto;
+	position: relative;
+	width: 91.875%; /* 294 / 320 */
+}
+
+#bookmarklet{
+	width: 100%;
+	border-bottom: solid 1px #d4c667;
+	background-color: #f4e374;
+	text-align: center;
+	font-size: 80%;
+	padding: 1em 0;
+}
+
+#bookmarklet a{
+	display: inline-block;
+	font-weight: bold;
+}
+
+#gridOverlays img{
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	z-index: -100;
+}
+
+#gridOverlays img.threetwenty{
+	display: block;
+}
+
+.col{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	font-size: 1em;
+	background: rgba(225,225,225, .8); /*#ddd;*/
+	border: solid 1px #ccc;
+	margin: 0 4.7619047619% 1em 4.7619047619%;
+	float: left;
+	width: 90.4761904762%;
+	text-align: center;
+	padding-top: .5em;
+	padding-left: .5em;
+	font-weight: 700;
+	}
+
+.col p{
+	font-weight: normal;
+}
+	
+.full{
+	width: 100% !important;
+	margin:0 0 1em 0 !important;
+}
+	
+.header, .footer, .rightRail, .nav, .leftRail{
+	height: 6.25em;
+}
+
+.ad, .ad_leaderboards{
+	clear: both;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.ad_leaderboards{
+	height: 50px;
+	padding-top: 1em;
+}
+
+.ad{
+	height: 250px;
+}
+
+.ad_leaderboards .ad-mobileLeaderboard, .ad .ad-mobileLeaderboard, .ad .ad-bigBox{
+	display: block;
+}
+
+.hdr{
+	display: none;
+}
+
+.outerGutterWidth, .columnWidth, .innerGutterWidth{
+	position: relative;
+	font-size: 9px;
+}
+
+h3{
+	margin-left: 4.761904761904762%; /* 14 / 294 */
+	margin-right: 4.761904761904762%;
+}
+
+.outerGutterWidth{
+	left: -4.761904761904762%;
+	width: 4.761904761904762%;
+}
+
+.columnWidth{
+	width: 7.142857143%; /*21 / 294 */
+}
+
+.innerGutterWidth{
+	width: 4.761904761904762%;
+	left: 7.142857143%;
+}	
+#ngd{
+	clear: both;
+}
+
+#gridDivs{
+	display: none;
+	clear: both;
+}
+
+#gridDivs div{
+	display: none;
+}
+
+#gridDivs span{
+	background: #ff6666;
+	display: block;
+	margin-right: 4.761904761904762%;
+	margin-bottom: 1em;
+	color: #fff;
+	text-align: center;
+	padding: .5em 0 .5em 0;
+	overflow: hidden;
+}
+
+#gridDivs div{
+	clear: both;
+}
+
+#gridDivs span.r{
+	float: right;
+	background: #ffaaaa;
+}
+
+#gridDivs div span.l{
+	margin-left: 4.761904761904762%;
+	float: left;
+}
+
+ #gOne, #gTwo, #gThree, #gFour, #gFive, #gSix, #gSeven{
+	display: block !important;
+}
+
+#gOne span.l, #gSeven span.r{
+	width: 7.142857143%;
+}
+#gTwo span.l, #gSix span.r{
+	width: 19.047619048%
+}
+#gThree span.l, #gFive span.r{
+	width: 30.952380952%;
+}
+#gFour span.l, #gFour span.r{
+	width: 42.857142857%;
+}
+#gFive span.l, #gThree span.r{
+	width: 54.761904762%;
+}
+#gSix span.l, #gTwo span.r{
+	width: 66.666666667%;
+}
+#gSeven span.l, #gOne span.r{
+	width: 78.571428571%;
+}
+
+/*content-related styles*/
+.contentTile{
+	height: 345px;
+	width: 90.47619048%;
+	float: left;
+	margin-right: 0 !important;
+	position: relative;
+}
+
+.tileNumber{
+	position: absolute;
+	font-size: 500%;
+	width: 100%;
+	text-align: center;
+	line-height: 345px;
+	height: 345px;
+	opacity: .1;
+	top: 0;
+	left: 0;
+}
+
+.bookmarklet{
+	text-align: left;
+	margin: 1em;
+	font-size: .8125em;
+}
+#colNumbers{
+	width: 91.875%;
+}
+#colNumbers h3{
+	margin-left: 4.761904761904762%;
+	width: 7.142857143%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+/*		
+	
+
+--- TWENTYONE COLUMN GRID ACTIVE --- 749px wide || 1.869158879% gutters
+		
+----|| 1             || 2             || 3              || 4              || 5              || 6              || 7              || 8              || 9              || 10             || 11             || 12             || 13             || 14             || 15             || 16             || 17             || 18             || 19             || 20             || 21             ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    || 2.8037383178% || 7.4766355140% || 12.1495327103% || 16.8224299065% || 21.4953271028% || 26.1682242991% || 30.8411214953% || 35.5140186916% || 40.1869158879% || 44.8598130841% || 49.5327102804% || 54.2056074766% || 58.8785046729% || 63.5514018692% || 68.2242990654% || 72.8971962617% || 77.5700934579% || 82.2429906542% || 86.9158878505% || 91.5887850467% || 96.2616822430% || 
+
+*/
+
+@media screen and (min-width: 768px){ /* Medium [tablet] */
+	body {
+		font-size: 87.5%; /* 14 */
+	}
+	#wrapper {
+		min-width: 749px;
+		width: 97.526041667%;
+	}
+	h3,.col,.images {
+		margin-left: 1.869158879%;
+		margin-right: 1.869158879%;
+		width: 96.078431372%;
+	}
+	#gridOverlays img.threetwenty,#gridOverlays img.thousandtwentyfour{
+		display: none;
+	}
+	#gridOverlays img.sevensixtyeight {
+		display: inline;
+	}
+	.ad {
+		width: 63.5514018692%;
+		float: left;
+		clear: none;
+		margin-left: 1.869158879%;
+		height: 300px;
+	}
+	.ad_leaderboards{
+		height: 90px;
+	}
+	#wrapper .ad-mobileLeaderboard{
+		display: none;
+	}
+	#wrapper .ad_leaderboards .ad-leaderboard{
+		display: block;
+	}
+	.outerGutterWidth {
+		left: -1.869158879%;
+		width: 1.869158879%;
+	}
+	.columnWidth {
+		width: 2.803738318%; /* 14 / 749 */
+	}
+	.innerGutterWidth {
+		width: 1.869158879%;
+		left: 2.803738318%;
+	}
+	.contentTile {
+		width: 30.8411214953%;
+	}
+	.tileNumber, .contentTile{
+		height: 300px;
+	}
+	#colNumbers h3{
+		margin-left: 1.869158879%;
+		width: 2.8037383178%;
+	}
+	
+	
+	#gSix, #gSeven, #gEight, #gNine, #gTen, #gEleven, #gTwelve, #gThirteen, #gFourteen, #gFifteen, #gSixteen, #gSeventeen, #gEighteen, #gNineteen, #gTwenty{
+		display: block !important;
+	}
+	
+	span{
+		margin-right: 1.869158879% !important;
+	}
+	
+	span.l{
+		margin-left: 1.869158879% !important;
+	}
+	
+	#gOne span.l, #gTwenty span.r{
+		width: 2.803738318%;
+	}
+	
+	#gTwo span.l, #gNineteen span.r{
+		width: 7.476635514%;
+	}
+	
+	#gThree span.l, #gEighteen span.r{
+		width: 12.14953271%;
+	}
+	
+	#gFour span.l, #gSeventeen span.r{
+		width: 16.822429907%;
+	}
+
+	#gFive span.l, #gSixteen span.r{
+		width: 21.495327103%;
+	}
+
+	#gSix span.l, #gFifteen span.r{
+		width: 26.168224299%;
+	}
+
+	#gSeven span.l, #gFourteen span.r{
+		width: 30.841121495%;
+	}
+
+	#gEight span.l, #gThirteen span.r{
+		width: 35.514018692%;
+	}
+
+	#gNine span.l, #gTwelve span.r{
+		width: 40.186915888%;
+	}
+
+	#gTen span.l, #gEleven span.r{
+		width: 44.859813084%;
+	}
+
+	#gEleven span.l, #gTen span.r{
+		width: 49.53271028%;
+	}
+
+	#gTwelve span.l, #gNine span.r{
+		width: 54.205607477%;
+	}
+
+	#gThirteen span.l, #gEight span.r{
+		width: 58.878504673%;
+	}
+
+	#gFourteen span.l, #gSeven span.r{
+		width: 63.551401869%;
+	}
+
+	#gFifteen span.l, #gSix span.r{
+		width: 68.22429907%;
+	}
+
+	#gSixteen span.l, #gFive span.r{
+		width: 72.89719626%;
+	}
+
+	#gSeventeen span.l, #gFour span.r{
+		width: 77.57009346%;
+	}
+
+	#gEighteen span.l, #gThree span.r{
+		width: 82.24299065%;
+	}
+
+	#gNineteen span.l, #gTwo span.r{
+		width: 86.91588785%;
+	}
+	
+	#gTwenty span.l, #gOne span.r{
+		width: 91.58878505%;
+	}
+
+	#colNumbers{
+		width: 97.526041667%;
+	}
+	#colNumbers h3{
+		margin-left: 1.869158879%;
+		width: 2.8037383178%;
+	}
+
+	
+}
+
+/*
+
+--- TWENTY EIGHT COLUMN GRID ACTIVE --- 994px wide || 1.408450704% gutters
+		
+----|| 1             || 2             || 3             || 4              || 5              || 6              || 7              || 8              || 9              || 10             || 11             || 12             || 13             || 14             || 15             || 16             || 17             || 18             || 19             || 20             || 21             || 22             || 23             || 24             || 25             || 26             || 27             || 28             ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 5%	|| 2.1126760563% || 5.6338028169% || 9.1549295775% || 12.6760563380% || 16.1971830986% || 19.7183098592% || 23.2394366197% || 26.7605633803% || 30.2816901408% || 33.8028169014% || 37.3239436620% || 40.8450704225% || 44.3661971831% || 47.8873239437% || 51.4084507042% || 54.9295774648% || 58.4507042254% || 61.9718309859% || 65.4929577465% || 69.0140845070% || 72.5352112676% || 76.0563380282% || 79.5774647887% || 83.0985915493% || 86.6197183099% || 90.1408450704% || 93.6619718310% || 97.1830985915% ||
+
+*/
+
+@media screen and (min-width: 1025px){ /* Large [desktop: standard]*/
+	body{
+		font-size: 100%;
+	}
+	
+
+	#wrapper{
+		min-width: 994px;
+		width: 97.0703125000%;
+	}
+
+	.locked{
+		width: 994px !important;
+	}
+
+	.locked #colNumbers{
+		width: 994px !important;
+	}
+	
+	#gridOverlays img.threetwenty, #gridOverlays img.sevensixtyeight{
+		display: none;
+	}
+	
+	#gridOverlays img.thousandtwentyfour{
+		display: inline;
+	}
+	
+	h3, .col, .images{
+		width: 97.183098592%;
+		margin-left: 1.408450704%; /* 14 / 994 */
+		margin-right: 1.408450704%;
+	}
+
+	.nav{
+		clear: both;
+	}
+	.ad{
+		clear: right;
+		width: 47.8873239437%;
+		float: right;
+		margin-left: 1.408450704%;	
+		height: 600px;
+		display: block;
+	}
+
+	.ad .ad-halfPage{
+		display: block;
+	}
+	
+	.outerGutterWidth{
+		left: -1.408450704%;
+		width: 1.408450704%;
+	}
+	
+	.columnWidth{
+		width: 2.112676056%; /* 21 / 994 */
+	}
+	
+	.innerGutterWidth{
+		width: 1.408450704%;
+		left: 2.112676056%; /* 35 / 994 */
+	}
+
+
+	/*begin grid stuff*/
+	
+	#gTen, #gEleven, #gTwelve, #gThirteen, #gFourteen, #gFifteen, #gSixteen, #gSeventeen, #gEighteen, #gNineteen, #gTwenty, #gTwentyOne, #gTwentyTwo, #gTwentyThree, #gTwentyFour, #gTwentyFive, #gTwentySix, #gTwentySeven{
+		display: block !important;
+	}
+	
+	#gridDivs span{
+		margin-right: 1.408450704% !important;
+	}
+	
+	#gridDivs span.l{
+		margin-left: 1.408450704% !important;
+	}
+	
+	#gOne span.l, #gTwentySeven span.r{
+		width: 2.112676056%;
+	}
+	
+	#gTwo span.l, #gTwentySix span.r{
+		width: 5.633802817%;
+	}
+
+	#gThree span.l, #gTwentyFive span.r{
+		width: 9.154929577%;
+	}
+
+	#gFour span.l, #gTwentyFour span.r{
+		width: 12.67605634%;
+	}
+
+	#gFive span.l, #gTwentyThree span.r{
+		width: 16.1971831%;
+	}
+
+	#gSix span.l, #gTwentyTwo span.r{
+		width: 19.71830986%;
+	}
+
+	#gSeven span.l, #gTwentyOne span.r{
+		width: 23.23943662%;
+	}
+	#gEight span.l, #gTwenty span.r{
+		width: 26.76056338%;
+	}
+	#gNine span.l, #gNineteen span.r{
+		width: 30.28169014%;
+	}
+	#gTen span.l, #gEighteen span.r{
+		width: 33.8028169%;
+	}
+	#gEleven span.l, #gSeventeen span.r{
+		width: 37.32394366%;
+	}
+	#gTwelve span.l, #gSixteen span.r{
+		width: 40.84507042%;
+	}
+	#gThirteen span.l, #gFifteen span.r{
+		width: 44.36619718%;
+	}
+	#gFourteen span.l, #gFourteen span.r{
+		width: 47.88732394%;
+	}
+	#gFifteen span.l, #gThirteen span.r{
+		width: 51.4084507%;
+	}
+	#gSixteen span.l, #gTwelve span.r{
+		width: 54.92957746%;
+	}
+	#gSeventeen span.l, #gEleven span.r{
+		width: 58.45070423%;
+	}
+	#gEighteen span.l, #gTen span.r{
+		width: 61.97183099%;
+	}
+	#gNineteen span.l, #gNine span.r{
+		width: 65.49295775%;
+	}
+	#gTwenty span.l, #gEight span.r{
+		width: 69.01408451%;
+	}
+	#gTwentyOne span.l, #gSeven span.r{
+		width: 72.53521127%;
+	}
+	#gTwentyTwo span.l, #gSix span.r{
+		width: 76.05633803%;
+	}
+	#gTwentyThree span.l, #gFive span.r{
+		width: 79.57746479%;
+	}
+	#gTwentyFour span.l, #gFour span.r{
+		width: 83.09859155%;
+	}
+	#gTwentyFive span.l, #gThree span.r{
+		width: 86.61971831%;
+	}
+	#gTwentySix span.l, #gTwo span.r{
+		width: 90.14084507%;
+	}
+	#gTwentySeven span.l, #gOne span.r{
+		width: 93.66197183%;
+	}
+	.contentTile{
+		width: 23.2394366197%;
+	}
+	.tileNumber, .contentTile{
+		height: 292px;
+	}
+	#colNumbers{
+		width: 96.975609756%;
+	}
+	#colNumbers h3{
+		margin-left: 1.408450704%;
+		width: 2.1126760563%;
+	}
+}
+
+
+/*
+
+--- THIRTY FIVE COLUMN GRID ACTIVE --- 1239px wide || 1.1299435028% gutters
+		
+----|| 1             || 2             || 3             || 4             || 5              || 6              || 7              || 8              || 9              || 10             || 11             || 12             || 13             || 14             || 15             || 16             || 17             || 18             || 19             || 20             || 21             || 22             || 23             || 24             || 25             || 26             || 27             || 28             || 29             || 30             || 31             || 32             || 33             || 34             || 35             || 36             || 37             || 38             || 39             ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----|| 1.6949152542% || 4.5197740113% || 7.3446327684% || 10.1694915254% || 12.9943502825% || 15.8192090395% || 18.6440677966% || 21.4689265537% || 24.2937853107% || 27.1186440678% || 29.9435028249% || 32.7683615819% || 35.5932203390% || 38.4180790960% || 41.2429378531% || 44.0677966102% || 46.8926553672% || 49.7175141243% || 52.5423728814% || 55.3672316384% || 58.1920903955% || 61.0169491525% || 63.8418079096% || 66.6666666667% || 69.4915254237% || 72.3163841808% || 75.1412429379% || 77.9661016949% || 80.7909604520% || 83.6158192090% || 86.4406779661% || 89.2655367232% || 92.0903954802% || 94.9152542373% || 97.7401129944% || */
+
+
+@media screen and (min-width: 1300px) {
+	body{
+		font-size: 112.5%; /* 18 / 16 */
+	}
+
+	#gridOverlays img.threetwenty, #gridOverlays img.sevensixtyeight, #gridOverlays img.thousandtwentyfour{
+		display: none;
+	}
+	#gridOverlays img.fourteenhundred{
+		display: inline;
+	}
+	#wrapper{
+		min-width: 1169px;
+		width: 95.3076923077%;
+	}	
+	.locked{
+		width: 994px !important;
+		min-width: 994px !important;
+	}
+	.outerGutterWidth{
+		left: -1.1299435028%;
+		width: 1.1299435028%;
+	}
+	h3, .col, .images{
+		width: 97.7401129944%;
+		margin-left: 1.1299435028%;
+		margin-right: 1.1299435028%;
+	}
+	.columnWidth{
+		width: 1.6949152542%;
+	}
+	
+	.innerGutterWidth{
+		width: 1.1299435028%;
+		left: 1.6949152542%;
+	}
+
+	.ad{
+		width: 38.4180790960%;
+		margin-left: 1.1299435028%;
+		height: 602px;
+	}
+
+	#gridDivs span{
+		margin-right: 1.1299435028% !important;
+	}
+	
+	#gridDivs span.l{
+		margin-left: 1.1299435028% !important;
+	}
+
+	#gTwentyEight, #gTwentyNine, #gThirty, #gThirtyOne, #gThirtyTwo, #gThirtyThree, #gThirtyFour, #gThirtyFive, #gThirtySix, #gThirtySeven, #gThirtyEight{
+		display: block !important;
+	}
+
+
+	#gOne span.l, #gThirtyFour span.r{
+		width: 1.6949152542%;
+	}
+	#gTwo span.l, #gThirtyThree span.r{
+		width: 4.5197740113%;
+	}
+	#gThree span.l, #gThirtyTwo span.r{
+		width: 7.3446327684%;
+	}
+	#gFour span.l, #gThirtyOne span.r{
+		width: 10.1694915254%;
+	}
+	#gFive span.l, #gThirty span.r{
+		width: 12.9943502825%;
+	}
+	#gSix span.l, #gTwentyNine span.r{
+		width: 15.8192090395%;
+	}
+	#gSeven span.l, #gTwentyEight span.r{
+		width: 18.6440677966%;
+	}
+	#gEight span.l, #gTwentySeven span.r{
+		width: 21.4689265537%;
+	}
+	#gNine span.l, #gTwentySix span.r{
+		width: 24.2937853107%;
+	}
+	#gTen span.l, #gTwentyFive span.r{
+		width: 27.1186440678%;
+	}
+	#gEleven span.l, #gTwentyFour span.r{
+		width: 29.9435028249%;
+	}
+	#gTwelve span.l, #gTwentyThree span.r{
+		width: 32.7683615819%;
+	}
+	#gThirteen span.l, #gTwentyTwo span.r{
+		width: 35.5932203390%;
+	}
+	#gFourteen span.l, #gTwentyOne span.r{
+		width: 38.4180790960%;
+	}
+	#gFifteen span.l, #gTwenty span.r{
+		width: 41.2429378531%;
+	}
+	#gSixteen span.l, #gNineteen span.r{
+		width: 44.0677966102%;
+	}
+	#gSeventeen span.l, #gEighteen span.r{
+		width: 46.8926553672%;
+	}
+	#gEighteen span.l, #gSeventeen span.r{
+		width: 49.7175141243%;
+	}
+	#gNineteen span.l, #gSixteen span.r{
+		width: 52.5423728814%;
+	}
+	#gTwenty span.l, #gFifteen span.r{
+		width: 55.3672316384%;
+	}
+	#gTwentyOne span.l, #gFourteen span.r{
+		width: 58.1920903955%;
+	}
+	#gTwentyTwo span.l, #gThirteen span.r{
+		width: 61.0169491525%;
+	}
+	#gTwentyThree span.l, #gTwelve span.r{
+		width: 63.8418079096%;
+	}
+	#gTwentyFour span.l, #gEleven span.r{
+		width: 66.6666666667%;
+	}
+	#gTwentyFive span.l, #gTen span.r{
+		width: 69.4915254237%;
+	}
+	#gTwentySix span.l, #gNine span.r{
+		width: 72.3163841808%;
+	}
+	#gTwentySeven span.l, #gEight span.r{
+		width: 75.1412429379%;
+	}
+	#gTwentyEight span.l, #gSeven span.r{
+		width: 77.9661016949%;
+	}
+	#gTwentyNine span.l, #gSix span.r{
+		width: 80.7909604520%;
+	}
+	#gThirty span.l, #gFive span.r{
+		width: 83.6158192090%;
+	}
+	#gThirtyOne span.l, #gFour span.r{
+		width: 86.4406779661%;
+	}
+	#gThirtyTwo span.l, #gThree span.r{
+		width: 89.2655367232%;
+	}
+	#gThirtyThree span.l, #gTwo span.r{
+		width: 92.0903954802%;
+	}
+	#gThirtyFour span.l, #gOne span.r{
+		width: 94.9152542373%;
+	}
+	.contentTile{
+		width: 18.6440677966%;
+	}
+	#colNumbers{
+		width: 95.3076923077%;
+	}
+	#colNumbers h3{
+		margin-left: 1.1299435028%;
+		width: 1.6949152542%;
+	}
+	.locked #colNumbers{
+		width: 994px !important;
+	}
+
+}

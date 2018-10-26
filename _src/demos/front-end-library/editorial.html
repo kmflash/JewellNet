@@ -1,0 +1,462 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Kitchen Front End Library</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fel.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+
+</head>
+
+<body class="fel">
+    <div class="fel fel-wrapper">
+        <div class="fel page-title">
+            <div class="fel logo"><img src="img/gk-logo-fel.svg" alt="Genius Kitchen"></div>
+            <h1 class="fel">Front-End Library</h1>
+            <h2 class="fel">Editorial Style Guide</h2>
+        </div>
+        <section class="fel content">
+            <!-- BEGIN ITEM GROUP -->
+            <section class="fel" id="heroes">
+                <h2 class="fel">Heroes</h2>
+                <p class="fel intro">Many curated pages on Genus Kitchen contain large photos, or hero images.</p>
+                <p class="fel">These images have logos, menus and other UI elements sitting above, so care should be
+                    taken to ensure all text is readable and nothing clashes, visually. You can download a PDF version
+                    of these guidelines <a href="https://sni.box.com/s/i58djf2ichn86763vchynd5k43w6rebv" target="_blank"
+                        class="fel download">here</a>.</p>
+
+                <!-- BEGIN ITEM -->
+                <h4 class="fel" id="heroes-guides">General Guidelines</h4>
+                <div class="fel-component">
+                    <div class="fel half">
+                        <table class="fel">
+                            <tr class="fel">
+                                <th class="fel">Name</th>
+                                <th class="fel">Height</th>
+                                <th class="fel"></th>
+                                <th class="fel">Width</th>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel">Package Hero</td>
+                                <td class="fel">1025</td>
+                                <td class="fel">&times;</td>
+                                <td class="fel">376</td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel">Home Hero</td>
+                                <td class="fel">1025</td>
+                                <td class="fel">&times;</td>
+                                <td class="fel">437</td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel">WOW Home Hero</td>
+                                <td class="fel">1025</td>
+                                <td class="fel">&times;</td>
+                                <td class="fel">576</td>
+                            </tr>
+                        </table>
+                        <p class="fel usage">*Image resolution should be 300 ppi</p>
+                    </div>
+                    <div class="fel half">
+                        <ul class="fel">
+                            <li class="fel">Clean, precisely staged set ups look far more fun and organic when placed
+                                in layout.</li>
+                            <li class="fel">Colorful aerial shots with saturated base colors (i.e. non white
+                                background) work best.</li>
+                            <li class="fel">Leave &ldquo;room for copy&rdquo; and/or breathing room between materials.</li>
+                            <li class="fel">Shoot wide to allow for GK&apos;s unique cropping needs.</li>
+                            <li class="fel">Things to avoid: busyness, congestion, stark white or washed out imagery,
+                                lots of different colors close together under copy areas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END ITEM -->
+
+                <div class="fel-component heroes-examples">
+                    <img src="img/examples/gk-hero-package-yes.png" alt="YES" class="full">
+                    <img src="img/examples/gk-hero-home-yes.png" alt="YES" class="full">
+                    <img src="img/examples/gk-hero-home-no.png" alt="NO" class="full">
+                </div>
+
+                <h4 class="fel" id="heroes-wow">Watch on Web Hero</h4>
+                <div class="fel">
+                    <p class="fel">Please note, the Watch on Web home hero is cropped on the XS breakpoint, so extra
+                        care should be given to the lower 3rd, as well as sides of the hero image to ensure nothing
+                        important is hidden.</p>
+                </div>
+                <div class="fel-component heroes-examples wow">
+                    <div class="fel half">
+                        <h4 class="fel-yes">YES</h4>
+                        <img src="img/examples/wow-home.png" alt="WOW Home">
+                    </div>
+                    <div class="fel half">
+                        <h4 class="fel-no">NO</h4>
+                        <img src="img/examples/wow-heroes-no.png" alt="NO.">
+                    </div>
+                </div>
+
+
+
+            </section>
+            <!-- END ITEM GROUP -->
+
+            <!-- BEGIN ITEM GROUP -->
+            <section class="fel" id="count">
+                <h2 class="fel">Character Counts</h2>
+                <p class="fel intro">While most all user-generated components of GK have hard-coded character limits to
+                    prevent breaking, shifting or otherwise obscuring other page elements, most editorially-programmed
+                    fields do not have such restrictions.</p>
+                <p class="fel"> This is to allow greater flexibitlity when programming content. There are, however
+                    "best practice" limits determined by Design that should allow for optimal programming. Unless there
+                    is a specific need to use more characters, please avoid going over these limits.</p>
+                <p class="fel">All character counts include spaces.</p>
+
+                <!-- BEGIN ITEM -->
+                <h4 class="fel" id="count-homepage">Home Page</h4>
+                <div class="fel-component">
+                    <div class="fel half">
+                        <table class="charcount">
+                            <tr class="fel">
+                                <th class="fel">Ref. #</th>
+                                <th class="fel">Field name</th>
+                                <th class="fel">Chars.</th>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">1.0</td>
+                                <td class="fel">Top Ribbon Heading</td>
+                                <td class="fel">20</td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">1.1</td>
+                                <td class="fel">Top Ribbon Text <sup>1</sup></td>
+                                <td class="fel">75</td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">1.2</td>
+                                <td class="fel">Top Ribbon CTA</td>
+                                <td class="fel">12</td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">2.0</td>
+                                <td class="fel">Welcome Banner</td>
+                                <td class="fel">88 <sup>2</sup></td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">3.0</td>
+                                <td class="fel">Feature Cards Label</td>
+                                <td class="fel">31</td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">3.1</td>
+                                <td class="fel">Feature Cards CTA <sup>1</sup></td>
+                                <td class="fel">15</td>
+                            </tr>
+                        </table>
+                        <p class="fel usage">1. Not displayed on XS breakpoint<br>
+                            2. Total character count for all fields</p>
+                    </div>
+                    <div class="fel half">
+                        <img src="img/examples/home-top.png" alt="Homepage Top">
+                    </div>
+                </div>
+                <!-- END ITEM -->
+
+                <!-- BEGIN ITEM -->
+                <h4 class="fel" id="count-footer">Footer Search</h4>
+                <div class="fel-component">
+                    <div class="fel half">
+                        <table class="charcount">
+                            <tr class="fel">
+                                <th class="fel">Ref. #</th>
+                                <th class="fel">Field name</th>
+                                <th class="fel">Chars.</th>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">1.0</td>
+                                <td class="fel">CTA</td>
+                                <td class="fel">14</td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">1.1</td>
+                                <td class="fel">Ghost Text</td>
+                                <td class="fel">48</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="fel half">
+                        <img src="img/examples/footer-search.png" alt="Homepage Top">
+                    </div>
+                </div>
+                <!-- END ITEM -->
+
+                <h4 class="fel" id="count-scc">Smart Content Collections</h4>
+                <h5 class="fel">Tier 1 & 2</h5>
+                <div class="fel-component">
+                    <table class="fel half charcount">
+                        <tr class="fel">
+                            <th class="fel">Ref. #</th>
+                            <th class="fel">Field name</th>
+                            <th class="fel">Chars.</th>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">1.0</td>
+                            <td class="fel">Name</td>
+                            <td class="fel">23</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">1.1</td>
+                            <td class="fel">Header Label</td>
+                            <td class="fel">40</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">1.2</td>
+                            <td class="fel">Header Text</td>
+                            <td class="fel">32</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">1.3</td>
+                            <td class="fel">CTA</td>
+                            <td class="fel">32</td>
+                        </tr>
+                    </table>
+                    <div class="fel half">
+                        <img src="img/examples/t1-t2-header.png" alt="Tier 1 &amp; 2">
+                    </div>
+                </div>
+                <!-- END T1 -->
+
+                <hr class="fel dashed">
+                <h5 class="fel">Tier 3</h5>
+                <div class="fel-component">
+                    <table class="fel half charcount">
+                        <tr class="fel">
+                            <th class="fel">Ref. #</th>
+                            <th class="fel">Field name</th>
+                            <th class="fel">Chars.</th>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">2.0</td>
+                            <td class="fel">Name</td>
+                            <td class="fel">90</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">2.1</td>
+                            <td class="fel">Description</td>
+                            <td class="fel">40</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">2.2</td>
+                            <td class="fel">Parent Label</td>
+                            <td class="fel">23</td>
+                        </tr>
+                    </table>
+                    <div class="fel half">
+                        <img src="img/examples/t3-header.png" alt="Tier 3">
+                    </div>
+                </div>
+                <!-- END T3 -->
+                <hr class="fel dashed">
+                <h5 class="fel">Cards</h5>
+                <h3 class="fel">Article, Collection, Playlist, Video, How-To</h3>
+                <div class="fel-component">
+                    <table class="fel half charcount">
+                        <tr class="fel">
+                            <th class="fel">Ref. #</th>
+                            <th class="fel">Field name</th>
+                            <th class="fel">Chars</th>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">3.0</td>
+                            <td class="fel">Title</td>
+                            <td class="fel">45</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">3.1</td>
+                            <td class="fel">Description</td>
+                            <td class="fel">50</td>
+                        </tr>
+                    </table>
+                    <div class="fel half">
+                        <img src="img/examples/cards-general.png" alt="General Card">
+                    </div>
+                </div>
+                <hr class="fel dashed">
+                <h3 class="fel">Recipe</h3>
+                <div class="fel-component">
+                    <table class="fel half charcount">
+                        <tr class="fel">
+                            <th class="fel">Ref. #</th>
+                            <th class="fel">Field name</th>
+                            <th class="fel">Chars.</th>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">3.2</td>
+                            <td class="fel">Title</td>
+                            <td class="fel">40</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">3.3</td>
+                            <td class="fel">Description</td>
+                            <td class="fel">300</td>
+                        </tr>
+                    </table>
+                    <div class="fel half">
+                        <img src="img/examples/cards-recipe.png" alt="Recipe Cards">
+                    </div>
+                </div>
+
+                <hr class="fel dashed">
+                <h3 class="fel">User</h3>
+
+                <div class="fel-component">
+                    <table class="fel half charcount">
+                        <tr class="fel">
+                            <th class="fel">Ref. #</th>
+                            <th class="fel">Field name</th>
+                            <th class="fel">Chars.</th>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">3.4</td>
+                            <td class="fel">Title</td>
+                            <td class="fel">45</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">3.5</td>
+                            <td class="fel">Description</td>
+                            <td class="fel">125</td>
+                        </tr>
+                        <tr class="fel">
+                            <td class="fel char-ref">3.6</td>
+                            <td class="fel">CTA</td>
+                            <td class="fel">50</td>
+                        </tr>
+                    </table>
+                    <div class="fel half">
+                        <img src="img/examples/cards-user.png" alt="User">
+                    </div>
+                </div>
+
+                <hr class="fel dashed">
+                <h4 class="fel" id="count-show">Show Page</h4>
+                <div class="fel-component">
+                    <div class="fel half">
+                        <table class="charcount">
+                            <tr class="fel">
+                                <th class="fel">Ref. #</th>
+                                <th class="fel">Field name</th>
+                                <th class="fel">Character Max.</th>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">1.0</td>
+                                <td class="fel">Header</td>
+                                <td class="fel">19</td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">1.1</td>
+                                <td class="fel">Subhead</td>
+                                <td class="fel">29<sup>1</sup></td>
+                            </tr>
+                            <tr class="fel">
+                                <td class="fel char-ref">1.2</td>
+                                <td class="fel">Description</td>
+                                <td class="fel">85</td>
+                            </tr>
+                        </table>
+                        <p class="fel usage"><sup>1</sup>Includes "with [name of talent]"</p>
+                    </div>
+                    <div class="fel half">
+                        <img src="img/examples/show-package.png" alt="Show Package">
+                    </div>
+                </div>
+                <!-- END ITEM -->
+            </section>
+            <!-- END ITEM GROUP -->
+
+            <!-- BEGIN ITEM GROUP -->
+            <section class="fel" id="voice">
+                <h2 class="fel">Brand Voice Guidelines</h2>
+
+                <!-- BEGIN ITEM -->
+                <div class="fel-component">
+                    <p>Brand Voice documentation will go here, and will be provided by Amanda Marsteller.</p>
+                </div>
+                <!-- END ITEM -->
+
+                <!-- [Repeat as needed] -->
+
+            </section>
+            <!-- END ITEM GROUP -->
+
+        </section> <!-- /.fel-content -->
+
+        <div class="fel menu">
+            <button class="fel burger">
+                <svg width="21px" height="18px" viewBox="0 0 21 18" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="fel-burger" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                        <g id="fel-burger-bars" transform="translate(-282.000000, -25.000000)" stroke="#FD4A47"
+                            stroke-width="2">
+                            <g id="Group" transform="translate(283.000000, 25.000000)">
+                                <path d="M0.5,1 L18.6107703,1" id="Line"></path>
+                                <path d="M0.5,9 L18.6107703,9" id="Line"></path>
+                                <path d="M0.5,17 L18.6107703,17" id="Line"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="fel menu-inner">
+                <button class="fel burger-close">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="fel-close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="fel-close-stroke" transform="translate(-468.000000, -395.000000)" stroke="#FFFFFF"
+                                stroke-width="2">
+                                <g id="FDC-fel-close" transform="translate(469.000000, 396.000000)">
+                                    <path d="M0.5,0.5 L18.5277564,18.5277564" id="Line"></path>
+                                    <path d="M18.5,0.5 L0.82233047,18.1776695" id="Line"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <ul class="fel">
+                    <li class="fel"><a class="fel" href="index.html">Introduction</a></li>
+                    <li class="fel"><a class="fel" href="brand.html">GK Brand</a></li>
+                    <li class="fel"><a class="fel" href="editorial.html">Editorial Style Guide</a></li>
+                    <ul class="fel sub" id="pageMenu">
+                        <li class="fel"><a href="#heroes" class="fel menu-page-section">Heroes</a>
+                            <ul class="fel sub menu-sub-section">
+                                <li class="fel"><a href="#heroes" class="fel">Introduction</a></li>
+                                <li class="fel"><a href="#heroes-wow" class="fel">Watch on Web Hero</a></li>
+                            </ul>
+                        </li>
+                        <li class="fel"><a href="#count" class="fel menu-page-section">Character Counts</a>
+                            <ul class="fel sub menu-sub-section">
+                                <li class="fel"><a href="#count-homepage" class="fel">Home Page</a></li>
+                                <li class="fel"><a href="#count-footer" class="fel">Footer Search Module</a></li>
+                                <li class="fel"><a href="#count-scc" class="fel">Smart Content Collections</a></li>
+                                <li class="fel"><a href="#count-show" class="fel">Show Pages</a></li>
+                            </ul> <!-- END section children -->
+                        </li> <!-- END section -->
+                        <li class="fel"><a href="#voice" class="fel menu-page-section">Brand Voice</a>
+                            <ul class="fel sub menu-sub-section">
+                                <li class="fel"><a href="#voice" class="fel">Brand Voice Guidelines</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li class="fel"><a href="ui.html" class="fel">UI/Frontend Patterns</a></li>
+                    <li class="fel"><a class="fel" href="supplementary.html">Supplementary Info</a></li>
+                </ul>
+            </div>
+        </div>
+        <script src="js/support.js" type="text/javascript" charset="utf-8"></script>
+        <!-- This must be before fel.less because of dependencies! -->
+        <script src="js/fel.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
