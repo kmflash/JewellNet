@@ -12,16 +12,16 @@
   ],
   "siteNav": [
     {
-      "key": "home",
-      "text": "home",
-      "isDisabled": false,
-      "type": "router"
-    },
-    {
       "text": "About",
       "isDisabled": false,
       "type": "router",
       "key": "about"
+    },
+    {
+      "key": "home",
+      "text": "work",
+      "isDisabled": false,
+      "type": "router"
     },
     {
       "key": "resume",
