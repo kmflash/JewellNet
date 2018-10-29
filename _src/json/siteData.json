@@ -29,6 +29,11 @@
       "text": "Résumé",
       "isDisabled": false,
       "type": "link"
+    },
+    {
+      "key": "artifacts",
+      "text": "Artifacts",
+      "isDisabled": true
     }
   ],
   "imageSizes": [
