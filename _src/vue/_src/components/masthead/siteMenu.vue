@@ -7,7 +7,6 @@
       <ul class="masthead__menu-list">
         <li v-for="item in menuItems" :key="item.key" :class="['masthead__menu-list-' + item.key, {disabled: item.isDisabled}]">
           <router-link v-if="item.type == 'router'" :to="{name: item.key}">{{item.text}}</router-link>
-          <a :href="buidEmail(item.email)" v-else-if="item.key == 'email'" >{{item.text}}</a>
           <a v-else :href="item.url" >{{item.text}}</a>
         </li>
       </ul>
@@ -46,11 +45,6 @@ export default {
         burgerWrapper.classList.remove(this.burger.toggled);
         this.burgerOpen = false;
       }
-    },
-    buidEmail: function(addr) {
-      return (
-        "mailto:" + addr.name + "\u0040" + addr.domain + "\u002E" + addr.tld
-      );
     }
   }
 };
