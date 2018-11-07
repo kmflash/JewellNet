@@ -1,9 +1,9 @@
 <template>
-  <div class="masthead__menu">
+  <div class="masthead__menu" ref="hamburger">
     <div class="masthead__menu-burger" v-on:click="toggleNav">
       <burger-icon></burger-icon>
     </div>
-    <div class="masthead__menu-wrapper">
+    <div class="masthead__menu-wrapper" ref="thewrapper">
       <ul class="masthead__menu-list">
         <li v-for="item in menuItems" :key="item.key" :class="['masthead__menu-list-' + item.key, {disabled: item.isDisabled}]">
           <router-link v-if="item.type == 'router'" :to="{name: item.key}">{{item.text}}</router-link>
@@ -39,21 +39,38 @@ export default {
   },
   methods: {
     toggleNav: function() {
-      var burgerWrapper = document.querySelector(this.burger.wrapper);
-      var mWrapper = document.querySelector(this.burger.menuWrapper);
-
       if (this.burgerOpen == false) {
-        console.log("🍔");
-        burgerWrapper.classList.add(this.burger.toggled);
-        mWrapper.style.height = 40 * this.burger.menuLength + "px";
-        this.burgerOpen = true;
+        this.openNav();
       } else {
-        console.log("🚫🍔");
-        burgerWrapper.classList.remove(this.burger.toggled);
-        mWrapper.style.height = 0;
-        this.burgerOpen = false;
+        this.closeNav();
+      }
+    },
+    openNav() {
+      console.log("🍔");
+      this.$refs.hamburger.classList.add(this.burger.toggled);
+      this.$refs.thewrapper.style.height = 40 * this.burger.menuLength + "px";
+      this.burgerOpen = true;
+    },
+    closeNav() {
+      console.log("🚫🍔");
+      this.$refs.hamburger.classList.remove(this.burger.toggled);
+      this.$refs.thewrapper.style.height = 0;
+      this.burgerOpen = false;
+    },
+    documentClick(tgt) {
+      let el = this.$refs.hamburger;
+      let target = tgt.target;
+
+      if (this.burgerOpen == true && el !== target && !el.contains(target)) {
+        this.closeNav();
       }
     }
+  },
+  created() {
+    document.addEventListener("click", this.documentClick);
+  },
+  destroyed() {
+    document.removeEventListener("click", this.documentClick);
   }
 };
 </script>
