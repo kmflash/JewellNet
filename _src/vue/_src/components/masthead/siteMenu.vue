@@ -5,7 +5,7 @@
     </div>
     <div class="masthead__menu-wrapper" ref="thewrapper">
       <ul class="masthead__menu-list">
-        <li v-for="item in menuItems" :key="item.key" :class="['masthead__menu-list-' + item.key, {disabled: item.isDisabled}]">
+        <li v-for="item in menuItems" :key="item.key" :class="['masthead__menu-list-' + item.key, {disabled: item.isDisabled}]" @click="closeNav">
           <router-link v-if="item.type == 'router'" :to="{name: item.key}">{{item.text}}</router-link>
           <a v-else :href="item.url" target="_blank">{{item.text}}</a>
         </li>
