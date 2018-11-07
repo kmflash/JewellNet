@@ -1,0 +1,49 @@
+
+#foldBox{
+	position: absolute;
+	top: 356px;
+	z-index: 10000;
+	float: right;
+	width: 100%;
+	border-top: #FF00FF dashed 1px;
+	font-size: 10px;
+}
+
+#foldBox span{
+	background: #FF00FF;
+	color: #FFF;
+	padding: 1px 2px;
+}
+
+a.toggle{
+	display: inline-block;
+	font-size: 80%;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: .5em;
+	-moz-border-radius: .25em;
+		-webkit-border-radius: .25em;
+		border-radius: .25em;
+	border-bottom: solid 2px #666;
+	background-color: #bbb;
+	margin-bottom: .25em;
+	color: #000;
+	border-top: solid 1px #fff;
+}
+
+
+a.on{
+	color: #fff;
+	text-shadow: none;
+	background-color: #999;
+	border-bottom: solid 2px #fff;
+	border-top: solid 1px #666;
+}
+
+a.toggle:hover{
+	color: #ff0000;
+}
+
+.noshow{
+	display: none !important;
+}

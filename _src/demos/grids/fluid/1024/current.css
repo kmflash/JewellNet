@@ -1,0 +1,309 @@
+/*		--- SEVEN COLUMN GRID ACTIVE --- 448px wide || 4.464285714% gutters (2 * 2.232142857%);  Formula: (x * 64 - 20) / 448 * 100
+		
+    | 1            || 2             || 3             || 4             || 5             || 6       || 7            |     
+----------------------------------------------------------------------------------------–-------------------------------
+ 5% | 9.821428571% || 24.107142857% || 38.392857143% || 52.678571429% || 66.964285714% || 81.25% || 95.535714286% | 5%	
+
+*/
+
+@media screen and (min-width: 480px){ /*mobile: landscape*/
+	.outerGutterWidth{
+		left: -2.232142857%;
+		width: 2.232142857%;
+	}
+	
+	.columnWidth{
+		width: 9.821428571%;
+	}
+	
+	.innerGutterWidth{
+		width: 4.464285714%;
+		left: 9.821428571%;
+	}
+	
+	body{
+		font-size: 100%; //14.4px
+	}
+	
+	#wrapper{
+		position: relative;
+		min-width: 448px;
+		width: 90%;
+	}
+	
+	#gridOverlays img.threetwenty, #gridOverlays img.sevensixtyeight, #gridOverlays img.thousandtwentyfour, #gridOverlays img.sixteenhundred{
+		display: none;
+	}
+	
+	#gridOverlays img.foureighty{
+		display: inline;
+	}
+	.nav{
+		height: 1em;
+	}
+	
+	h3, .col{
+		width: 95.535714286%;
+		margin-left: 2.232142857%;
+		margin-right: 2.232142857%;
+	}
+	
+	.ad{
+		float: right;
+	}
+	
+	.leftRail{
+		width: 38.392857143%;
+		float: left;
+		height: 9.416666666666667em;
+	}
+	
+	.rightRail{
+		width: 52.678571429%;
+		margin-right: 0;
+		float: left;
+		height: 9.416666666666667em;
+	}
+	
+}
+
+
+/*		--- TWELVE COLUMN GRID ACTIVE --- 768px wide || 2.604166667% gutters (2 * 1.302083334%); Formula: (x * 64 - 20) / 768 * 100
+		
+----|| 1            || 2             || 3             || 4             || 5       || 6             || 7             || 8        || 9             || 10            || 11       || 12            |----
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 5%	|| 5.729166667% || 5.729166667% || 22.395833333% || 30.729166667% || 39.0625% || 47.395833333% || 55.729166667% || 64.0625% || 72.395833333% || 80.729166667% || 89.0625% || 97.395833332% | 5% 
+
+*/
+
+@media screen and (min-width: 768px){ /*tablet: portrait */
+	
+	.outerGutterWidth{
+		left: -1.302083334%;
+		width: 1.302083334%;
+	}
+	
+	.columnWidth{
+		width: 5.729166667%;
+	}
+	
+	.innerGutterWidth{
+		width: 2.604166667%;
+		left: 5.729166667%;
+	}
+	body{
+		font-size: 90%; //14.4px
+	}
+	
+	#wrapper{
+		min-width: 768px;
+		width: 90%;
+	}
+	
+	#gridOverlays img.threetwenty, #gridOverlays img.foureighty, #gridOverlays img.thousandtwentyfour, #gridOverlays img.sixteenhundred{
+		display: none;
+	}
+	
+	#gridOverlays img.sevensixtyeight{
+		display: inline;
+	}
+	
+	.nav{
+		height: 1em;
+	}
+	
+	h3, .col{
+		width: 97.395833332%;
+		margin-left: 1.302083334%;
+		margin-right: 1.302083334%;
+	}
+	
+	.ad{
+		width: 47.395833333%;
+		margin-right: 1.302083334%;
+		float: right;
+		clear: right;
+		height: 300px;
+	}
+
+	
+	.ad_leaderboards{
+		height: 90px;
+	}
+
+	.leftRail{
+		width: 22.395833333%;
+		float: left;
+		height: 50em;
+	}
+	
+	.rightRail{
+		width: 47.395833333%;
+		height: 20.833333333333333em;
+	}
+	
+	.withLeft{
+		width: 72.395833333%;
+	}
+	
+	#wrapper .M, #wrapper .M2{
+		display: none;
+	}
+	
+	#wrapper .L, #wrapper .L2, #wrapper .B3, #wrapper .B2, #wrapper .B{
+		display: block;
+	}
+	
+}
+
+/*		--- SIXTEEN COLUMN GRID ACTIVE --- 1024px wide || 1.953125% gutters (2 * .9765625%); formula: (x * 64 - 20) / 1024 * 100
+		
+----| 1         || 2          || 3          || 4          || 5          || 6          || 7         || 8          || 9          || 10         || 11         || 12         || 13         || 14         || 15         || 16         |----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 5% | 4.296875% || 10.546875% || 16.796875% || 23.046875% || 29.296875% || 35.546875% ||41.796875% || 48.046875% || 54.296875% || 60.546875% || 66.796875% || 73.046875% || 79.296875% || 85.546875% || 91.796875% || 98.046875% | 5% 
+
+*/
+
+@media screen and (min-width: 1024px){
+	.outerGutterWidth{
+		left: -.9765625%;
+		width: .9765625%;
+	}
+	
+	.columnWidth{
+		width: 4.296875%;
+	}
+	
+	.innerGutterWidth{
+		width: 1.953125%;
+		left: 4.296875%;
+	}
+	body{
+		font-size: 100%;
+	}
+	
+	#wrapper{
+		min-width: 1024px;
+	}
+	
+	#gridOverlays img.threetwenty, #gridOverlays img.foureighty, #gridOverlays img.sevensixtyeight, #gridOverlays img.sixteenhundred{
+		display: none;
+	}
+	
+	#gridOverlays img.thousandtwentyfour{
+		display: inline;
+	}
+	
+	h3, .col{
+		width: 98.046875%;
+		margin-left: .9765625%;
+		margin-right: .9765625%;
+	}
+
+	.contentWell{
+		width: 60.546875%; /* 620 / 1024 */
+		float: left;
+	}
+	
+	.withLeft{
+		width: 48.046875%; /* 492 / 1024 */
+	}
+	
+	.leftRail{
+		width: 10.546875%; /* 108 / 1024 */
+		height: 50em;
+		float: left;
+	}
+	
+	.ad{
+		width: 35.546875%; /* 364 / 1024 */
+		
+	}
+	
+	.rightRail{
+		height: 30.25em;
+		width: 35.546875%; /* 364 / 1024 */
+		float: right;
+	}
+}
+
+/*		--- TWENTY-FIVE COLUMN GRID ACTIVE --- 1600px wide || 1.25% gutters (2 * .625%); formula: (x * 64 - 20) / 1600 * 100
+		
+----[ 1     || 2     || 3      || 4      || 5      || 6      || 7      || 8      || 9      || 10     || 11     || 12     || 13     || 14     || 15     || 16     || 17     || 18     || 19    || 20     || 21     || 22     || 23     || 24     || 25     ]----
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 5% [ 2.75% || 6.75% || 10.75% || 14.75% || 18.75% || 22.75% || 26.75% || 30.75% || 34.75% || 38.75% || 42.75% || 46.75% || 50.75% || 54.75% || 58.75% || 62.75% || 66.75% || 70.75% || 74.75 || 78.75% || 82.75% || 86.75% || 90.75% || 94.75% || 98.75% ] 5% 
+
+*/
+
+@media screen and (min-width: 1600px){
+	.outerGutterWidth{
+		float: none;
+		left: -.625%;
+		width: .625%;
+	}
+	
+	.columnWidth{
+		float: none;
+		width: 2.75%;
+	}
+	
+	.innerGutterWidth{
+		float: none;
+		width: 1.25%;
+		left: 2.75%;
+	}
+	body{
+		font-size: 120%; // 19.2px
+	}
+	
+	#wrapper{
+		min-width: 1600px;
+	}
+	#gridOverlays img.threetwenty, #gridOverlays img.foureighty, #gridOverlays img.sevensixtyeight, #gridOverlays img.thousandtwentyfour{
+		display: none;
+	}
+	
+	#gridOverlays img.sixteenhundred{
+		display: inline;
+	}
+	
+	h3, .col{
+		width: 98.75%;
+		margin-left: 0.625%;
+		margin-right: 0.625%;
+		float: left;
+	}
+	
+	.leftRail{
+		width: 10.75%; /* 172 / 1600 */
+		height: 44.263157895em;
+	}
+	
+	.rightRail{
+		width: 14.75%; /* 236 / 1600 */
+		height: 44.263157895em;
+	}
+	
+	.contentWell{
+		width: 58.75%; /* 940 / 1600 */ 
+		height: 44.263157895em;
+	}
+	
+	.withLeft{
+		width: 46.75%; /* 748 / 1600 */
+		
+	}
+	.ad{
+		width: 22.75%; /* 364 / 1600 */
+		margin-right: .625%;
+	}
+	
+	.B3{
+		display: none;
+	}
+	
+	#wrapper .HP2, #wrapper .HP{
+		display: block;
+	}
+
+}

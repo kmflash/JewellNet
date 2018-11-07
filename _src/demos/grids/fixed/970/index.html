@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	
+	<title>Fixed 970</title>
+	<!-- Normalize all CSS rules to work cross-browser -->
+	<link rel="stylesheet" href="https://raw.github.com/necolas/normalize.css">
+	<!-- Load jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		body{
+			background-color: #eee;
+			font-size: 80%;
+			overflow-x: hidden;
+		}
+		
+		#wrapper{
+			width: 300px;
+			padding: 15px;
+			margin: auto;
+			background: url('bg.gif') 15px 0 white;
+		}
+		
+		#wrapper div{
+			opacity: .8;
+		}
+		
+		.clearboth{
+			clear: both;
+			height: 0;
+			visibility: hidden;
+		}
+		
+		.layoutType{
+			display: block;
+			text-align: center;
+		}
+		
+		h1{
+			display: block;
+			text-align: center;
+		}
+		
+		h2, h3{
+			font-size: .875em;
+			text-align: center;
+			margin: .875em 0 1em 0;
+			padding-bottom: .25em;
+			font-weight: normal;
+		}
+		
+		h2{
+			border-bottom: solid 1px red;
+			color: red;
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+		
+		h3{
+			border-bottom: solid 1px blue;
+			color: blue;
+		}
+		
+		.col{
+			background-color: white;
+			font-size: 1em;
+			text-align: center;
+			background: #ccc;
+			padding: .5em 0 .5em 0;
+			margin-bottom: 1em;
+			margin-right: 20px;
+			float: left;
+			width: 100%;
+			}
+			
+		.header, .footer, .tools, .nav{
+			height: 6.25em;
+		}
+			
+		.contentWell{
+			height: 50em;
+			background-color: #aaa;
+		}
+		
+		.rightRail{
+			height: 38px;
+		}
+		
+		p{
+			margin: 1em 10%;
+			text-align: left;
+		}
+
+	</style>
+
+	<link rel="stylesheet" href="current.css">
+
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Fixed 970px Grid<span></span></h1>
+		<h4 class='layoutType'>Layout Type: <span class='type'></span><br />Viewport Width: <span class='windowWidth'></span></h4>
+		<h2 class='wrapWidth'>Wrapper Width: <span></span></h2>
+		<h3 class='contentWidth'>Content Width: <span></span></h3>
+		<div class='header col'>Header <span></span></div>
+		<div class="contentWell col">Content Well <span></span><br />
+			<p>This is a <i>fixed</i> grid designed to <b>fit cleanly inside most screen sizes</b> as well as <b>accommodate the 970px standard pushdown ad</b>. The column/gutter widths do not change, but instead columns are added or removed based on available space.</p>
+			<p>44px columns, 20px gutters and 10px site wrapper margins (15px on 1024 desktop version to accommodate pushdown ad)</p>
+			<p>The layout changes at 480, 640, 1024 and 1600px</p>
+			<p><a href='javascript:history.back(1);'>BACK</a></p>
+		</div>
+		<div class="rightRail col">Ad <span></span></div>
+		<div class='tools col'>Right Rail <span></span></div>
+		
+		<div class="nav col">Navigation <span></span></div>
+		
+		<div class='footer col'>Footer <span></span></div>
+		<hr class='clearboth' />
+	</div>
+	
+	<script type="text/javascript" charset="utf-8">
+
+		
+		$(window).bind("resize", resizeWindow);
+		
+		
+		//set the bottom thresholds for each size
+		var huge = 1600;
+		var desktop = 1024;
+		var tablet = 640;
+
+		function resizeWindow( e ) {
+			
+			//update width readouts for elements
+			$('.wrapWidth span').html($('.wrapWidth').width() + "px");
+			$('.contentWidth span').html($('.contentWidth').width() + "px");
+			
+			$('.col').each(function(){
+				$(this).children('span').html($(this).width());
+			})
+			
+			var wwidth = $(window).width();
+				var theLayout = 'Mobile';
+				
+			if(wwidth < tablet){
+				$('.nav').remove().insertAfter('.tools');
+			}
+			
+			if(wwidth >= tablet && wwidth < desktop){
+				theLayout = 'Tablet';
+				$('.nav').remove().insertAfter('.header');
+			}
+			
+			if(wwidth >= desktop && wwidth < huge){
+				theLayout = 'Desktop';
+				$('.nav').remove().insertAfter('.header');
+				$('.tools').remove().insertAfter('.rightRail');
+			}
+			
+			if(wwidth >= huge){
+				theLayout = 'Huge';
+				$('.tools').remove().insertAfter('.contentWell');
+			}
+			
+			$('.layoutType .type').html(theLayout);
+			$('.layoutType .windowWidth').html(wwidth);
+			
+		}
+		resizeWindow();
+	</script>
+</body>
+</html>

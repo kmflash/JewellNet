@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	
+	<title>Current Scripps 994px grid</title>
+	<!-- Normalize all CSS rules to work cross-browser -->
+	<link rel="stylesheet" href="https://raw.github.com/necolas/normalize.css">
+	<!-- Load jQuery -->
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:700,400italic,400' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script src="../../js/grids.js"></script>
+	<link rel="stylesheet" href="../../css/ads.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		body{
+			background-color: #eee;
+			font-family: 'Ubuntu', Helvetica, Arial, Sans-serif;
+			font-size: 80%;
+		}
+		
+		/* Start with Mobile: Portrait */
+		
+		#wrapper{
+			width: 266px;
+			padding: 0 14px 0 14px;
+			margin: auto;
+			background: url('bg.gif') 14px 0 white;
+			text-shadow: 0 1px #fff;
+		}
+		
+		#wrapper div{
+			opacity: .8;
+		}
+		
+		.clearboth{
+			clear: both;
+			height: 0;
+			visibility: hidden;
+		}
+		
+		.layoutType{
+			display: block;
+			text-align: center;
+		}
+		
+		h1{
+			display: block;
+			text-align: center;
+		}
+		
+		h2, h3{
+			font-size: 80%;
+			text-align: center;
+			margin: .875em 0 1em 0;
+			padding-bottom: .25em;
+			font-weight: normal;
+			text-shadow: none;
+		}
+		
+		h2{
+			border-bottom: solid 1px red;
+			color: red;
+			margin-left: -14px;
+			margin-right: -14px;
+		}
+		
+		h3{
+			border-bottom: solid 1px blue;
+			color: blue;
+		}
+		
+		.col{
+			background-color: white;
+			font-size: 1em;
+			text-align: center;
+			background: #ddd;
+			padding: .5em 0 .5em 0;
+			margin-bottom: 1em;
+			margin-right: 14px;
+			float: left;
+			width: 100%;
+			-moz-border-radius: .25em;
+			-webkit-border-radius: .25em;
+			border-radius: .25em;
+			border-bottom: solid 1px #ccc;
+			}
+			
+		.header, .footer, .rightRail, .nav, .leftRail{
+			height: 6.25em;
+		}
+		
+		.hdr{
+			padding-top: 14px;
+		}
+		
+		.ad_leaderboard{
+			margin-top: 0;
+		}
+		
+		.ad{
+			float: left;
+			width: 100%;
+		}
+			
+		.contentWell{
+			height: 50em;
+			background-color: #eee;
+			float: left;
+		}
+		
+		.leftRail{
+			display: none;
+		}
+		
+		p{
+			margin: 1em;
+			text-align: left;
+		}
+		
+		.footer{
+			margin-bottom: -1px;
+		}
+
+		.M{
+			display: block;
+			clear: both;
+		}
+
+	</style>
+	<link rel="stylesheet" href="current.css">
+
+</head>
+<body>
+	<div id="wrapper">
+		<div class='hdr'>
+			<h1>Current Scripps Grid<span></span></h1>
+			<h4 class='layoutType'>Layout Type: <span class='type'></span><br />Viewport Width: <span class='windowWidth'></span></h4>
+			<h2 class='wrapWidth'>Wrapper Width: <span></span></h2>
+			<h3 class='contentWidth'>Content Width: <span></span></h3>
+		</div>
+		<div class='ad_leaderbaords'>
+			<div class='adslot L'><img src="../../img/728x90.gif" alt="728x90"></div>
+			<div class='adslot L2'><img src="../../img/768x90.gif" alt="768x90"></div>
+			<div class='adslot M'><img src="../../img/228x38.gif" alt="228x38"></div>
+			<div class='adslot M2'><img src="../../img/320x50.gif" width="320" height="50" alt="320x50"></div>
+			<div class='adslot M3'><img src="../../img/320x50.gif" width="320" height="50" alt="320x50"><img src="../../img/320x50.gif" width="320" height="50" alt="320x50"></div>
+		</div>
+		<div class='header col'>Header <span></span><br />
+			<a class='infoToggle' href='javascript:toggleHeader();'>Toggle Info</a>
+		</div>
+
+		<div class="contentWell col">Content Well <span></span><br />
+			<p>This is a <i>fixed</i> grid that is <b>identical to the current grid used across Scripps sites</b>. The column/gutter widths do not change, but instead columns are added or removed based on available space.</p>
+			<p>70px columns, 14px gutters and 14px site wrapper margins</p>
+			<p>The layout changes at 480, 768, 1024 and 1600px</p>
+			<p><a href='javascript:toggleLR();'>Toggle Left Rail</a></p>
+			<p><a href='javascript:history.back(1);'>BACK</a></p>
+		</div>
+		<div class="ad">
+			<div class='adslot B'><img src="../../img/300x150.gif" alt="300x150"></div>
+			<div class='adslot B2'><img src="../../img/300x250.gif" alt="300x250"></div>
+			<div class='adslot M'><img src="../../img/228x38.gif" alt="228x38"></div>
+			<div class='adslot M2'><img src="../../img/320x50.gif" width="320" height="50" alt="320x50"></div>
+			<div class='adslot HP2'><img src="../../img/336x850.gif" alt="336x850"></div>
+		</div>
+		<div class="leftRail col">Left Rail <span></span></div>
+		<div class='rightRail col'>Right Rail <span></span></div>
+		<div class="nav col">Navigation <span></span></div>
+		<div class='footer col'>Footer <span></span></div>
+		<hr class='clearboth' />
+	</div>
+	
+	<script type="text/javascript" charset="utf-8">
+
+		resizeWindow(); // populate numbers
+
+	</script>
+</body>
+</html>

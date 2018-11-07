@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	
+	<title>Fluid 1024</title>
+	<!-- Normalize all CSS rules to work cross-browser -->
+	<!-- <link rel="stylesheet" href="https://raw.github.com/necolas/normalize.css"> -->
+	<!-- Load jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:700,400italic,400' rel='stylesheet' type='text/css'>
+	<script src="../../js/grids.js"></script>
+	<link rel="stylesheet" href="../../css/ads.css">
+	<link rel="stylesheet" href="../../css/general.css">
+	<style type="text/css" media="screen">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+				/*style as if at 320px*/
+
+		/*		--- FIVE COLUMN GRID ACTIVE --- 320px wide || 6.25% gutters (2 * 3.125%)
+
+		| 1      || 2      || 3      || 4      || 5      |
+		--------------------------------------------------
+		| 13.75% || 33.75% || 53.75% || 73.75% || 93.75% |
+
+		*/
+		
+		.outerGutterWidth, .columnWidth, .innerGutterWidth{
+			position: relative;
+			font-size: 9px;
+			color: green;
+			border-bottom-color: green;
+		}
+		
+		.outerGutterWidth{
+			left: -3.125%;
+			width: 3.125%;
+		}
+		
+		.columnWidth{
+			width: 13.75%;
+		}
+		
+		.innerGutterWidth{
+			width: 6.25%;
+			left: 13.75%;
+		}
+		
+		body{
+			background: #eee;
+			font-family: 'Ubuntu', Helvetica, Arial, Sans-serif;
+			
+		}
+		
+		#wrapper{
+			min-width: 320px;
+			margin: auto;
+			position: relative;
+			overflow-x: hidden;
+			text-shadow: 0 1px #fff;
+		}
+		
+		#gridOverlays img{
+			width: 100%;
+			height: 100%;
+			display: none;
+			position: absolute;
+			z-index: -100;
+		}
+		
+		#gridOverlays img.threetwenty{
+			display: block;
+		}
+		
+		#wrapper div{
+			opacity: .8;
+		}
+		
+		.clearboth{
+			clear: both;
+			height: 0;
+			visibility: hidden;
+		}
+		
+		.layoutType{
+			display: block;
+			text-align: center;
+		}
+		
+		h1{
+			display: block;
+			text-align: center;
+		}
+		
+		h2, h3{
+			font-size: 80%;
+			text-align: center;
+			margin: .875em 0 1em 0;
+			padding-bottom: .25em;
+			text-shadow: none;
+			font-weight: normal;
+		}
+		
+		h2{
+			border-bottom: solid 1px red;
+			color: red;
+		}
+		
+		h3{
+			border-bottom: solid 1px blue;
+			color: blue;
+			margin-left: 3.125%;
+			margin-right: 3.125%;
+		}
+		
+		.col{
+			background-color: white;
+			font-size: 1em;
+			text-align: center;
+			background: #ddd;
+			padding: .5em 0 .5em 0;
+			margin: 0 3.125% 1em 3.125%;
+			float: left;
+			-moz-border-radius: .25em;
+			-webkit-border-radius: .25em;
+			border-radius: .25em;
+			width: 93.75%;
+			border-bottom: solid 1px #ccc;
+			}
+			
+		.header, .footer, .rightRail, .nav, .leftRail{
+			height: 6.25em;
+		}
+			
+		.contentWell{
+			height: 50em;
+			background-color: #eee;
+			float: left;
+		}
+		
+		.leftRail{
+			display: none;
+		}
+		
+		.ad, .ad_leaderboards{
+			clear: both;
+			width: 100%;
+			height: 50px;
+			margin-bottom: 1em;
+		}
+		
+		p{
+			margin: 1em;
+			text-align: left;
+		}
+		
+		.footer{
+			margin-bottom: -1px;
+		}
+		
+		#wrapper .M, #wrapper .M2{
+			display: block;
+		}
+		
+		.hdr{
+			display: none;
+		}
+	</style>
+	<link rel="stylesheet" href="current.css">
+</head>
+<body>
+	<div id='foldBox'><span>FOLD: <span class='foldHeight'></span>px</span></div>
+	<div id="wrapper">
+			<div id='gridOverlays'>
+				<img src="threetwenty.gif" class='threetwenty' />
+				<img src="foureighty.gif" class='foureighty' />
+				<img src="sevensixtyeight.gif" class="sevensixtyeight">
+				<img src="thousandtwentyfour.gif" class='thousandtwentyfour' />
+				<img src="sixteenhundred.gif" class='sixteenhundred' />
+			</div>
+			<div class='hdr'>
+				<h1>Fluid 1024px Grid<span></span></h1>
+				<h4 class='layoutType'>Layout Type: <span class='type'></span><br />Viewport Width: <span class='windowWidth'></span></h4>
+				<h2 class='wrapWidth'>Wrapper Width: <span></span></h2>
+				<h3 class='contentWidth'>Content Width: <span></span></h3>
+				<h3 class='outerGutterWidth'></h3>
+				<h3 class='columnWidth'></h3>
+				<h3 class='innerGutterWidth'></h3>
+			</div>
+			<div class='ad_leaderboards'>
+				<img class='L2' src="../../img/768x90.gif" alt="768x90" />
+				<img class='L' src="../../img/728x90.gif" alt="728x90" />
+				<div class='M3'><img src="../../img/320x50.gif" width="320" height="50" alt="320x50"><img src="../../img/320x50.gif" width="320" height="50" alt="320x50"></div>
+				<img class='M2' src="../../img/320x50.gif" width="320" height="50" alt="320x50" />
+				<img class='M' src="../../img/228x38.gif" alt="228x38" />
+			</div>
+			<div class='header col'>Header <span></span><br />
+				<a class='toggle' href='javascript:toggleHeader();'>Info</a>
+				<a class='toggle'href='javascript:toggleLR();'>Left Rail</a>
+				<a class='toggle on' href='javascript:toggleFold();'>Fold</a></div>
+		<div class="contentWell col">Content Well <span></span><br />
+			<p>This is a <i>fluid</i> grid designed to <b>fit cleanly inside <i>all</i> screen sizes</b>. At mobile sizes, the width is always 100% in order to maximize screen real estate. At sizes above 640px wide, the width is 90% of the viewport.</p>
+			<p>The columns and gutters change width based on the size of the window/device, so no targeting for devices is necessary. If needed, certain column widths can be locked to fit ads, for example. Likewise, the entire site can lock at a certain width within a certain range to allow for pushdown ads &amp; brandscaping.</p>
+			<p>Designing for a flexible grid involves choosing certain benchmark resolutions, and at those particular sizes all images appear at 100% size.</p>
+			<p>The layout changes at 480, 768, 1024 and 1600px</p>
+			<p><a href='javascript:history.back(1);'>BACK</a></p>
+		</div>
+		<div class="ad">
+			<img class='HP2' src="../../img/336x860.gif" alt="336x860">
+			<img class='HP' src="../../img/300x600.gif" width="300" height="600" alt="300x600">
+			<img class='B3' src="../../img/336x300.gif" width="336" height="300" alt="336x300">
+			<img class='B2' src="../../img/300x250.gif" alt="300x250">
+			<img class='B' src="../../img/300x150.gif" alt="300x150">
+			<img class='M2' src="../../img/320x50.gif" width="320" height="50" alt="320x50">
+			<img class='M' src="../../img/228x38.gif" alt="228x38">
+		</div>
+		<div class="leftRail col">Left Rail <span></span></div>
+		<div class='rightRail col'>Right Rail <span></span></div>
+		
+		<div class="nav col">Navigation <span></span></div>
+		
+		<div class='footer col'>Footer <span></span></div>
+		<hr class='clearboth' />
+	</div>
+	
+	<script type="text/javascript" charset="utf-8">
+
+		resizeWindow(); // populate numbers
+
+	</script>
+	</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>Scripps Grid Explorations</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:700,400italic,400' rel='stylesheet' type='text/css'>
+    <style type="text/css" media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 100%;
+            line-height: 150%;
+            background-color: #eee;
+            padding-top: 3em;
+            font-family: 'Ubuntu', Helvetica, Arial, Sans-serif;
+        }
+
+        #wrapper {
+            width: 80%;
+            background-color: #fff;
+            margin: auto;
+            position: relative;
+            padding: 2em 1.3671875%;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            border-bottom: solid 1px #ccc;
+        }
+
+        h1 {
+            color: #0066b3;
+            margin-bottom: .5em;
+        }
+
+        h2 {
+            color: #0066b3;
+            margin-bottom: .5em;
+        }
+
+        .clrfix {
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .fixed {
+            float: left;
+            width: 47.265625%;
+            margin: 3em 1.3671875% 0 0;
+        }
+
+        .fluid {
+            width: 47.265625%;
+            float: left;
+            margin-top: 3em;
+        }
+
+        ul {
+            margin: 2em 20%;
+        }
+
+        @media screen and (max-width: 480px) {
+
+            body {
+                font-size: 80%;
+            }
+
+            #wrapper {
+                padding: 2em 2.916666667%;
+            }
+
+            h1 {
+                line-height: 130%;
+            }
+
+            .fixed,
+            .fluid {
+                width: 100%;
+                float: none;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            body {
+                font-size: 120%;
+            }
+
+            .intro,
+            .fixed,
+            .fluid {
+                width: 30.666666666%;
+                margin: 0;
+                padding: 1.166666667%;
+                float: left;
+            }
+
+            h1 {
+                line-height: 106%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class='intro'>
+            <h1 id="scripps_grid_explorations">Scripps Grid Explorations</h1>
+            <p>
+                The following explorations highlight different approaches for the underlying architecture of the new
+                Food.com redesign. Here, we explore two distinct adaptive layout techniques:
+            </p>
+        </div>
+        <div class='fixed'>
+            <h2>Fixed</h2> The column &amp; gutter widths remain constant with columns being either added or taken away
+            based on available space. The benefit of this approach is ease of design &amp; development. Since column
+            widths do not change there are less opportunities for glitches to appear caused by wrapping and content
+            that is too large.
+            <ul>
+                <li><a href='fixed/current/'>Current Grid</a></li>
+                <li><a href='fixed/1024/'>1024px Grid</a></li>
+            </ul>
+        </div>
+        <div class='fluid'>
+            <h2>Fluid</h2>
+            The entire site scales with the size of the browser. Designing for this method is essentially the same; at
+            certain benchmarks all images and components would be at 100% and would scale down until the next benchmark
+            is reached. Development is a bit more tricky in that percentages are used instead of pixels. The benefit of
+            this type of grid is that the real estate is maximized for all resolutions and more 'future proof' in the
+            event another device category using different resolutions enters the market.
+            <ul>
+                <!-- <li><a href='fluid/golden/'>Golden Grid</a></li> -->
+                <li><a href='fluid/current'>Fluid Current Grid</a></li>
+                <li><a href='fluid/1024'>Fluid 1024px Grid</a></li>
+            </ul>
+        </div>
+        <hr class='clrfix'>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	
+	<title>Fluid Current Grid</title>
+	<!-- Normalize all CSS rules to work cross-browser -->
+	<!-- <link rel="stylesheet" href="https://raw.github.com/necolas/normalize.css"> -->
+	<!-- Load jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:700,400italic,400' rel='stylesheet' type='text/css'>
+	<script src="../../js/grids.js"></script>
+	<link rel="stylesheet" href="../../css/ads.css">
+	<link rel="stylesheet" href="../../css/general.css">
+	<style type="text/css" media="screen">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		/*style as if at 320px*/
+		
+/*		--- FOUR COLUMN GRID ACTIVE --- 294px wide || 4.761904761904762% gutters
+		
+|| 1             || 2             || 3             || 4             ||
+----------------------------------------------------------------------
+|| 19.047619048% || 42.857142857% || 66.666666667% || 90.476190476% ||
+
+*/		
+	body{
+		background: #eee;
+		font-size: 80%;
+		font-family: 'Ubuntu', Helvetica, Arial, Sans-serif;
+	}
+	
+	#wrapper{
+		min-width: 294px;
+		margin: auto;
+		position: relative;
+		overflow-x: hidden;
+		text-shadow: 0 1px #fff;
+	}
+	
+	#gridOverlays img{
+		width: 100%;
+		height: 100%;
+		display: none;
+		position: absolute;
+		z-index: -100;
+	}
+	
+	#gridOverlays img.threetwenty{
+		display: block;
+	}
+	
+	#wrapper div{
+		opacity: .8;
+	}
+	
+	.clearboth{
+		clear: both;
+		height: 0;
+		visibility: hidden;
+	}
+	
+	.layoutType{
+		display: block;
+		text-align: center;
+	}
+	
+	h1{
+		display: block;
+		text-align: center;
+	}
+	
+	h2, h3{
+		font-size: 80%;
+		text-align: center;
+		margin: .875em 0 1em 0;
+		padding-bottom: .25em;
+		text-shadow: none;
+		font-weight: normal;
+	}
+	
+	h2{
+		border-bottom: solid 1px red;
+		color: red;
+	}
+	
+	h3{
+		border-bottom: solid 1px blue;
+		color: blue;
+		margin-left: 4.761904761904762%; /* 14 / 294 */
+		margin-right: 4.761904761904762%;
+	}
+	
+	.col{
+		background-color: white;
+		font-size: 1em;
+		background: #ddd;
+		margin: 0 4.761904761904762% 1em 4.761904761904762%;
+		float: left;
+		-moz-border-radius: .25em;
+		-webkit-border-radius: .25em;
+		border-radius: .25em;
+		border-bottom: solid 1px #ccc;
+		width: 90.476190476190476%;
+		text-align: center;
+		padding-top: .5em;
+		}
+		
+	.header, .footer, .rightRail, .nav, .leftRail{
+		height: 6.25em;
+	}
+	
+	.ad, .ad_leaderboards{
+		clear: both;
+		width: 100%;
+		height: 50px;
+		margin-bottom: 1em;
+	}
+		
+	.contentWell{
+		float: left;
+		width: 90.476190476%;
+		height: 50em;
+	}
+	
+	.leftRail, .M{
+		display: none;
+	}
+	
+	p{
+		margin: 1em;
+		text-align: left;
+	}
+	
+	#wrapper .M, #wrapper .M2{
+		display: block;
+	}
+	
+	.footer{
+		margin-bottom: -1px;
+	}
+	
+	.hdr{
+		display: none;
+	}
+	
+	.outerGutterWidth, .columnWidth, .innerGutterWidth{
+		position: relative;
+		font-size: 9px;
+		color: green;
+		border-bottom-color: green;
+	}
+
+	.outerGutterWidth{
+		left: -4.761904761904762%;
+		width: 4.761904761904762%;
+	}
+
+	.columnWidth{
+		width: 19.047619048%;
+	}
+
+	.innerGutterWidth{
+		width: 4.761904761904762%;
+		left: 19.047619048%;
+	}
+	
+/*	BEGIN IMAGE STYLES */
+	#images{
+		display: none;
+		float: left;
+		width: 100%;
+		margin-left: 4.761904761904762%;
+	}
+	
+	#images div{
+		margin-bottom: 1em;
+	}
+	
+	#images div span{
+		display: block;
+	}
+	
+	#images #primary span, #images #secondary #sec{
+		width: 43.150684932%; /* (2 * 70 - 14) / 292 * 100 */
+	}
+	
+	#images #primary img, #images #superprimary img{
+		cursor: pointer;
+	}
+	
+	#images #primary #p img, #images #secondary img{
+		display: block;
+		max-width: 100%;
+	}
+	
+	#images #primary #superprimary{
+		display: none;
+	}
+	
+	.lg{
+		display: none !important;
+	}
+	
+	#images #secondary{
+		width: 100%;
+	}
+	
+	#images #secondary #sec{
+		float: left;
+	}
+	
+	#images #secondary span#tertiary{
+		width: 19.178082192%;
+		float: left;
+		margin-left: 4.794520548%;
+	}
+	
+	.clrfix{
+		height: 0;
+		visibility: hidden;
+		clear: both;
+	}
+	
+	#images #threex{
+		width: 100%;
+		margin-left: -4.794520548%;
+	}
+	#images #threex h4, #images #pGallery h4{
+		margin-left: 4.794520548%;
+		max-width: 100%;
+	}
+	
+	#images #threex img.sm{
+		width: 28.75%;
+		margin-left: 3.4375%;
+	}
+	
+	#images #lst{
+		width: 90.476190476%;
+	}
+	
+	#images #lst h4{
+		max-width: 100%;
+	}
+	
+	#images #lst span{
+		width: 20.699708455%;
+		float: right;
+	}
+	
+	#images #lst span img{
+		margin-bottom: 1em;
+		max-width: 100%;
+	}
+	
+	#images #pGallery{
+		clear: both;
+		width: 100%;
+		margin-left: -4.794520548%;
+	}
+	
+	#images #pGallery span{
+		width: 90.476190476%;
+		margin-left: 4.794520548%;
+	}
+	
+	#images #pGallery span img{
+		max-width: 100%;
+		display: block;
+		margin: auto;
+	}
+	</style>
+	
+	<link rel="stylesheet" href="current.css">
+</head>
+<body>
+	<div id='foldBox'><span>FOLD: <span class='foldHeight'></span>px</span></div>
+
+	<div id="wrapper">
+		<div id='gridOverlays'>
+			<img src="threetwenty.gif" class='threetwenty' />
+			<img src="foureighty.gif" class='foureighty' />
+			<img src="sevensixtyeight.gif" class="sevensixtyeight">
+			<img src="thousandtwentyfour.gif" class='thousandtwentyfour' />
+			<img src="sixteenhundred.gif" class='sixteenhundred' />
+		</div>
+		<div class='hdr'>
+			<h1>Fluid Current Grid<span></span></h1>
+			<h4 class='layoutType'>Layout Type: <span class='type'></span><br />Viewport Width: <span class='windowWidth'></span></h4>
+			<h2 class='wrapWidth'>Wrapper Width: <span></span></h2>
+			<h3 class='contentWidth'>Content Width: <span></span></h3>
+			<h3 class='outerGutterWidth'></h3>
+			<h3 class='columnWidth'></h3>
+			<h3 class='innerGutterWidth'></h3>
+		</div>
+		<div class='ad_leaderboards'>
+			<img class='L2' src="../../img/768x90.gif" alt="768x90" />
+			<img class='L' src="../../img/728x90.gif" alt="728x90" />
+			<div class='M3'><img src="../../img/320x50.gif" width="320" height="50" alt="320x50"><img src="../../img/320x50.gif" width="320" height="50" alt="320x50"></div>
+			<img class='M2' src="../../img/320x50.gif" width="320" height="50" alt="320x50" />
+			<img class='M' src="../../img/228x38.gif" alt="228x38" />
+		</div>
+		<div class='header col'>Header <span></span><br />
+			<a class='toggle' href='javascript:toggleHeader();'>Info</a>
+			<a class='toggle'href='javascript:toggleLR();'>Left Rail</a>
+			<a id='foldButton' class='toggle on' href='javascript:toggleFold();'>Fold</a>
+			<a class='toggle on' href='javascript:toggleImages();'>Image Roles</a>
+		</div>
+		<div class='contentWell col'>Content <span></span>
+		</div>
+		<div id='images'>
+			<div id="avatar">
+				<h4>Avatar</h4>
+				<img src='http://placehold.it/48x48' title='avatar' />
+			</div>
+			<div id="primary">
+				<h4>Primary/Super Primary</h4>
+				<span id='p'><img src='http://placehold.it/320x240' title='primary' /></span>
+				<div id='superprimary'>
+					<img class='sm' src='http://placehold.it/320x240' title='super primary' />
+					<img class='lg' src="http://placehold.it/616x462" title="super primary" />
+				</div>
+			</div>
+			<div id="secondary">
+				<h4>Secondary, Tertiary</h4>
+				<span id='sec'>
+					<img class='sm' src='http://placehold.it/320x240' title='secondary' />
+					<img class='lg' src="http://placehold.it/616x462" title="secondary">
+				</span>
+				<span id='tertiary'>
+					<img class='sm' src='http://placehold.it/120x90' title='tertiary' />
+					<img class='lg' src="http://placehold.it/266x200" title="secondary">
+				</span>
+				<hr class='clrfix' />
+			</div>
+			<div id="threex">
+				<h4>3-Across</h4>
+				<span class='imgbox'>
+					<img class='sm' src="http://placehold.it/120x90" title='3-across' />
+					<img class='sm' src="http://placehold.it/120x90" title='3-across' />
+					<img class='sm' src="http://placehold.it/120x90" title='3-across' />
+					<img class='lg' src="http://placehold.it/266x200" title='3-across' />
+					<img class='lg' src="http://placehold.it/266x200" title='3-across' />
+					<img class='lg' src="http://placehold.it/266x200" title='3-across' />
+				</span>
+			</div>
+			<div id="lst">
+				<h4>List</h4>
+				<span>
+					<img class='sm' src="http://placehold.it/92x69" title="list" />
+					<img class='sm' src="http://placehold.it/92x69" title="list" />
+					<img class='sm' src="http://placehold.it/92x69" title="list" />
+				</span>
+			</div>
+			<div id="pGallery">
+				<h4>Primary Gallery</h4>
+				<span><img class='sm' src='http://placehold.it/400x300' title='p-gallery'></span>
+				
+			</div>
+		</div>
+			<div class="ad">
+				<img class='HP2' src="../../img/336x860.gif" alt="336x860">
+				<img class='HP' src="../../img/300x600.gif" width="300" height="600" alt="300x600">
+				<img class='B3' src="../../img/336x300.gif" width="336" height="300" alt="336x300">
+				<img class='B2' src="../../img/300x250.gif" alt="300x250">
+				<img class='B' src="../../img/300x150.gif" alt="300x150">
+				<img class='M2' src="../../img/320x50.gif" width="320" height="50" alt="320x50">
+				<img class='M' src="../../img/228x38.gif" alt="228x38">
+			</div>
+			<div class="leftRail col">Left Rail <span></span></div>
+			<div class='rightRail col'>Right Rail <span></span></div>
+		
+			<div class="nav col">Navigation <span></span></div>
+		
+			<div class='footer col'>Footer <span></span></div>
+
+			<hr class='clearboth' />
+
+	</div>
+
+	<script type="text/javascript" charset="utf-8">
+
+		resizeWindow(); // populate numbers
+		
+
+	</script>
+	</body>
+</html>
