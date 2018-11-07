@@ -1,0 +1,378 @@
+
+
+/*		--- SIX COLUMN GRID ACTIVE --- 434px wide || 3.225806452% gutters
+		
+----|| 1             || 2             || 3             || 4             || 5             || 6             ||----
+----------------------------------------------------------------------------------------------------------------
+ 5%	|| 12.903225806% || 29.032258065% || 45.161290323% || 61.290322581% || 77.419354839% || 93.548387097% || 5%	
+
+*/
+
+@media screen and (min-width: 480px){ /*mobile: landscape*/
+	body{
+		font-size: 100%; /*14.4px*/
+	}
+
+	#wrapper{
+		position: relative;
+		min-width: 434px;
+		width: 90%;
+	}
+	
+	#gridOverlays img.threetwenty, #gridOverlays img.sevensixtyeight, #gridOverlays img.thousandtwentyfour, #gridOverlays img.sixteenhundred{
+		display: none;
+	}
+	
+	#gridOverlays img.foureighty{
+		display: inline;
+	}
+	
+	.nav{
+		height: 1em;
+	}
+	
+	h3, .col, .images{
+		width: 93.548387096%;
+		margin-left: 3.225806452%; /* 14 / 434 */
+		margin-right: 3.225806452%;
+	}
+	
+	.ad{
+		float: right;
+	}
+
+	.rightRail, .leftRail{
+		width: 45.161290323%; /*196 / 434 */
+		margin-right: 0;
+		float: left;
+		height: 9.416666666666667em;
+	}
+	
+	
+	.outerGutterWidth{
+		left: -3.225806452%;
+		width: 3.225806452%;
+	}
+	
+	.columnWidth{
+		width: 12.903225806%;
+	}
+	
+	.innerGutterWidth{
+		width: 3.225806452%;
+		left: 12.903225806%;
+	}
+	
+	#images{
+		margin-left: 3.225806452%;
+	}
+	
+	#images #primary span, #images #secondary #sec{
+		width: 45.161290323%;
+	}
+	
+	#images #primary #superprimary{
+		width: 93.548387097%;
+	}
+	
+	#images #primary #superprimary .sm{
+		display: none;
+	}
+	
+	#images #primary #superprimary .lg{
+		display: block !important;
+		max-width: 100%;
+	}
+	
+	#images #secondary span#tertiary{
+		width: 12.903225806%;
+		margin-left: 3.225806452%;
+	}
+	
+	#images #threex{
+		margin-left: -3.225806452%;
+		width: 100%;
+	}
+	
+	#images #threex h4, #images #pGallery h4{
+		margin-left: 3.225806452%;
+		max-width: 100%;
+	}
+	
+	#images #threex img.sm{
+		width: 29.032258065%;
+		margin-left: 3.225806452%;
+	}
+	
+	#images #lst{
+		width: 93.548387097%;
+	}
+	
+	#images #lst span{
+		width: 13.742071882%;
+	}
+}
+
+/*		--- TEN COLUMN GRID ACTIVE --- 714px wide || 1.960784314% gutters
+		
+----|| 1            || 2             || 3             || 4             || 5             || 6             || 7             || 8             || 9             || 10            ||----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 5%	|| 7.843137255% || 17.647058824% || 27.450980392% || 37.254901961% || 47.058823529% || 56.862745098% || 66.666666667% || 76.470588235% || 86.274509804% || 96.078431372% || 5% 
+
+*/
+
+@media screen and (min-width: 768px){ /*tablet: portrait */
+	body{
+		font-size: 80%; /* 13 */
+	}
+
+	#wrapper{
+		min-width: 714px;
+		width: 90%;
+	}
+
+	h3, .col, .images{
+		margin-left: 1.960784314% ;/* 14 / 714 */
+		margin-right: 1.960784314%;
+		width: 96.078431372%;
+	}
+
+	#gridOverlays img.threetwenty, #gridOverlays img.thousandtwentyfour, #gridOverlays img.sixteenhundred{
+		display: none;
+	}
+	
+	#gridOverlays img.sevensixtyeight{
+		display: inline;
+	}
+	
+	.ad{
+		width: 47.058823529%; /* 336 / 714 */
+		margin-right: 2%;
+		float: right;
+	}
+	
+	#wrapper .ad .M, #wrapper .ad .M2{
+		display: none;
+	}
+	
+	#wrapper .B, #wrapper .B2, #wrapper .B3{
+		display: block;
+	}
+	
+	.rightRail{
+		width: 47.058823529%; /* 336 / 714 */
+		height: 23.076923077em;
+	}
+	
+	.leftRail{
+		width: 27.450980392%; /* 196 /714 */
+		float: left;
+		height: 50em;
+	}
+	
+	body.withLeft .contentWell, body.withLeft .images{
+		width: 66.666666667%; /* 476 / 714 */
+		margin-left: 0;
+	}
+	
+	.outerGutterWidth{
+		left: -1.960784314%;
+		width: 1.960784314%;
+	}
+	
+	.columnWidth{
+		width: 7.843137255%;
+	}
+	
+	.innerGutterWidth{
+		width: 1.960784314%;
+		left: 7.843137255%;
+	}
+	
+	.sm{
+		display: none;
+	}
+	
+	.lg{
+		display: block;
+	}
+		
+}
+
+/*		--- FOURTEEN COLUMN GRID ACTIVE --- 994px wide || 1.408450704% gutters
+		
+----|| 1            || 2             || 3             || 4            || 5             || 6             || 7            || 8             || 9             || 10            || 11            || 12            || 13           || 14            ||----
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 5% || 5.633802817% || 12.676056338% || 19.718309859% || 26.76056338% || 33.802816901% || 40.845070423% ||47.887323944% || 54.929577465% || 61.971830986% || 69.014084507% || 76.056338028% || 83.098591549% || 90.14084507% || 97.183098592% || 5% 
+
+*/
+
+@media screen and (min-width: 1024px){ /* tablet: Landscape / desktop: standard*/
+
+	body{
+		font-size: 100%;
+	}
+	
+
+	#wrapper{
+		min-width: 994px;
+	}
+	
+	#gridOverlays img.threetwenty, #gridOverlays img.foureighty, #gridOverlays img.sevensixtyeight, #gridOverlays img.sixteenhundred{
+		display: none;
+	}
+	
+	#gridOverlays img.thousandtwentyfour{
+		display: inline;
+	}
+	
+	h3, .col, .images{
+		width: 97.183098592%;
+		margin-left: 1.408450704%; /* 14 / 994 */
+		margin-right: 1.408450704%;
+	}
+
+	.nav{
+		clear: both;
+	}
+	.contentWell, .images{
+		width: 61.971830986%; /* 616 / 994 */
+	}
+	
+	body.withLeft .contentWell, body.withLeft .images{
+		width: 40.845070423%; /* 406 / 994 */
+		margin-left: 1.408450704%;
+	}
+	
+	.leftRail{
+		width: 19.718309859%; /* 196 / 994 */
+		height: 50em;
+		margin-right: 0;
+		float: left;
+	}
+	
+	.ad{
+		clear: right;
+		width: 33.802816901%; /* 336 / 994 */
+		float: right;
+		margin-right: 1.408450704%;	
+		height: 300px;
+	}
+	
+	.ad_leaderboards{
+		height: 90px;
+	}
+	
+	.rightRail{
+		width: 33.802816901%; /* 336 / 994 */
+		float: right;
+		margin-left: 0;
+	}
+	
+	.outerGutterWidth{
+		left: -1.408450704%;
+		width: 1.408450704%;
+	}
+	
+	.columnWidth{
+		width: 5.633802817%;
+	}
+	
+	.innerGutterWidth{
+		width: 1.408450704%;
+		left: 5.633802817%;
+	}
+	
+	#wrapper .M, #wrapper .M2{
+		display: none;
+	}
+	
+	#wrapper .L, #wrapper .L2{
+		display: block;
+	}
+}
+
+/*		--- TWENTY-TWO COLUMN GRID ACTIVE --- 1554px wide || 0.900900901% gutters
+		
+-------|| 1            || 2            || 3             || 4             || 5             || 6             || 7             || 8             || 9           || 10            || 11           || 12            || 13            || 14            || 15            || 16            || 17            || 18           || 19            || 20            || 21            || 22            ||----
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	5% || 3.603603604% || 8.108108108% || 12.612612613% || 17.117117117% || 21.621621622% || 26.126126126% || 30.630630631% || 35.135135135% || 39.63963964 || 44.144144144% || 48.648648649 || 53.153153153% || 57.657657658% || 62.162162162% || 66.666666667% || 71.171171171% || 75.675675676% || 80.18018018% || 84.684684685% || 89.189189189% || 93.693693694% || 98.198198198% || 5% 
+
+*/
+
+
+@media screen and (min-width: 1600px){
+
+	body{
+		font-size: 120%;  /* 19.2px */
+	}
+
+	#wrapper{
+		min-width: 1554px;
+	}
+	#gridOverlays img.threetwenty, #gridOverlays img.thousandtwentyfour, #gridOverlays img.foureighty, #gridOverlays img.sevensixtyeight{
+		display: none;
+	}
+	
+	#gridOverlays img.sixteenhundred{
+		display: block;
+	}
+	
+	h3, .col, .images{
+		width: 98.198198198%;
+		margin-left: 0.900900901%; /* 14 / 1554 */
+		margin-right: 0.900900901%;
+		float: left;
+	}
+	
+	.rightRail{
+		width: 17.117117117%; /* 266 / 1554 */
+		height: 44.791666667em;/* 860 / 19.2 */
+		margin-right: 0;
+	}
+	
+	.leftRail{
+		width: 12.612612613%; /* 196 / 1554 */
+		height: 44.791666667em;/* 860 / 19.2 */
+		margin-right: 0;
+	}
+	
+	.contentWell, .images{
+		width: 57.657657658%; /* 896 / 1554 */ 
+		height: 44.791666667em;/* 860 / 19.2 */
+		margin-right: 0;
+	}
+	
+	body.withLeft .contentWell, body.withLeft .images{
+		width: 44.144144144%; /* 686 / 1554 */
+		margin-left: 0.900900901%
+	}
+	.ad{
+		width: 21.621621622%; /* 336 / 1554 */
+		height: 37.802197802197802em;
+		margin-right: 0.900900901%; /* 14 / 1554 */
+	}
+	
+	#wrapper .HP, #wrapper .HP2{
+		display: block;
+	}
+	
+	.outerGutterWidth, .innerGutterWidth, .columnWidth{
+		float: none;
+	}
+	
+	.outerGutterWidth{
+		left: -0.900900901%;
+		width: 0.900900901%;
+	}
+	
+	.columnWidth{
+		width: 3.603603604%;
+	}
+	
+	.innerGutterWidth{
+		width: 0.900900901%;
+		left: 3.603603604%;
+	}
+
+}

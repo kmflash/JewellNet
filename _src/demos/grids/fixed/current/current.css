@@ -1,0 +1,132 @@
+@media screen and (min-width: 480px){ /*mobile: landscape*/
+	body{
+		font-size: 100%;
+	}
+	
+	#wrapper{
+		width: 406px;
+	}
+	
+	.M{
+		display: none;
+	}
+	
+	.M2{
+		display: block;
+		clear: both;
+	}
+}
+
+@media screen and (min-width: 768px){ /*tablet: portrait */
+	body{
+		font-size: 80%;
+	}
+	#wrapper{
+		width: 546px;
+	}
+	
+	.nav{
+		height: 1em;
+	}
+	
+	.ad{
+		width: 336px;
+		float: right;
+		margin-right: 0;
+	}
+	
+	.rightRail, .leftRail{
+		width: 196px;
+		float: left;
+		height: 138px;
+	}
+	
+	.B{
+		display: block;
+	}
+	
+	
+	.C, .C4, .ad .M2{
+		display: none;
+	}
+	
+	
+}
+
+@media screen and (min-width: 1024px){ /*desktop: standard*/
+
+	#wrapper{
+		width: 966px;
+	}
+	
+	.header, .nav{
+		width: 100%;
+	}
+	
+	.contentWell{
+		width: 616px;
+		margin-right: 14px;
+	}
+	
+	.withLeft{
+		float: left;
+		width: 406px;
+	}
+	
+	.leftRail{
+		width: 196px;
+		float: left;
+		height: 50em;
+	}
+	
+	.rightRail{
+		width: 336px;
+		margin-right: 0;
+		height: 24em;
+	}
+	
+	.L, .B2{
+		display: block;
+	}
+	
+	.B, .M2, .M3{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1600px){
+	body{
+		font-size: 120%;
+	}
+	#wrapper{
+		width: 1526px;
+		position: relative;
+	}
+	
+	.leftRail{
+		height: 860px;
+	}
+	
+	.rightRail{
+		width: 336px;
+		margin-right: 14px;
+	}
+	
+	.contentWell{
+		width: 826px;
+		height: 860px;
+	}
+	
+	.withLeft{
+		width: 616px;
+	}
+	
+	.B, .B2{
+		display: none;
+	}	
+	
+	.HP2{
+		display: block;
+	}
+
+}

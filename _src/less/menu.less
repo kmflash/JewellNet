@@ -40,7 +40,7 @@
     height: 0;
     width: 0;
     background-color: @color-black;
-    transition: all @springy-transition;
+    transition: width @springy-transition, height @springy-transition;
     overflow: hidden;
 
     ul {
@@ -93,7 +93,6 @@
     align-items: flex-start;
 
     &-wrapper {
-      height: @menu-height;
       width: 0;
       ul {
         margin: 16px 20px;
@@ -128,10 +127,6 @@
       }
 
       &-wrapper {
-        @media @sm {
-          height: @menu-height;
-        }
-
         @media @md {
           width: @menu-width;
         }
@@ -164,7 +159,7 @@ body.scrolled {
         &-wrapper {
           background-color: transparent;
           width: auto;
-          height: auto;
+          height: auto !important;
 
           li {
             display: inline-block;

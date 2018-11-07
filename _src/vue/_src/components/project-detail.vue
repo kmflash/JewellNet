@@ -56,7 +56,7 @@ export default {
   },
   mounted() {
     document.body.id = "detail";
-    // document.body.className = "scrolled";
+    document.body.className = "scrolled";
   }
 };
 </script>

@@ -124,7 +124,12 @@ module.exports = function(grunt) {
         tasks: ["jshint:lib_test", "qunit"]
       },
       default: {
-        files: ["_src/less/*.less", "_src/js/*.js", "_src/**/*.html"],
+        files: [
+          "_src/less/*.less",
+          "_src/js/*.js",
+          "_src/**/*.html",
+          "_src/json/**.json"
+        ],
         tasks: "local"
       }
     },

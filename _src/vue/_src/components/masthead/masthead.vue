@@ -6,7 +6,7 @@
             <h1 class="masthead__headline">
               <router-link :to="{name: 'home'}">{{this.siteData.myName}}</router-link>
             </h1>
-            <aside class="masthead__aside" v-html="siteData.tagline"></aside>
+            <aside class="masthead__aside" v-html="siteData.tagline" v-if="this.$route.name === 'home'"></aside>
           </div>
           <masthead-links v-if="this.$route.name === 'home'" :linx="siteData.mastheadLinks"></masthead-links>
         </div>
