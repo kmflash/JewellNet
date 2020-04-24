@@ -10,6 +10,9 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+  "scripts": {
+    "dev": "cd _src/vue; npm run dev"
+  },
   "devDependencies": {
     "grunt": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
