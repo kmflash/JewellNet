@@ -1,7 +1,7 @@
 {
   "name": "jewell-net",
   "title": "Jewell Net",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "The Personal Portfolio Site of David Jewell",
   "author": "David Jewell <me@davidjewell.nyc>",
   "homepage": "https://www.davidjewell.nyc",
@@ -11,20 +11,20 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-less": "^2.0.0",
-    "grunt-contrib-qunit": "^2.0.0",
+    "grunt-contrib-qunit": "^3.1.0",
     "grunt-contrib-uglify": "^3.4.0",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-postcss": "^0.9.0"
   },
   "dependencies": {
-    "autoprefixer": "^9.1.5",
+    "autoprefixer": "^9.7.6",
     "grunt-text-replace": "^0.4.0",
-    "nodemailer": "^4.6.8",
+    "nodemailer": "^4.7.0",
     "pixrem": "^4.0.1"
   }
 }
