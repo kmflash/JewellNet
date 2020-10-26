@@ -15,20 +15,20 @@
     width: 10000px;
     height: 10000px;
     position: absolute;
-    transition: background-position .5s ease-out;
-    transition: background-color .15s ease-in-out;
+    transition: background-position 0.5s ease-out;
+    transition: background-color 0.15s ease-in-out;
     z-index: -1;
 
     &.hovering {
-      background-color: fade(@color-magenta, 80%);
+      background-color: fade(@color-brand, 80%);
     }
   }
 
-
-  h1,a {
+  h1,
+  a {
     text-transform: uppercase;
     font-size: 72px;
-    color: @color-magenta;
+    color: @color-brand;
     letter-spacing: -1.8px;
     margin: 0 0 25px;
     line-height: 1;
@@ -43,7 +43,7 @@
 
   a {
     &:hover {
-    color: white;
+      color: white;
     }
   }
 
