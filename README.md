@@ -19,6 +19,6 @@ Navigate to [./\_src/vue](_src/vue) and `$ npm run dev`.
 This repo utilizes Grunt as a task runner. Will eventually move to yarn... someday.
 
 ### Scripts
-- `dev` compiles from [./\_src/](_src) => [./dist/dev/](dist/dev)
-- `prod` compiles and minifies from [./\_src/](_src) => [./dist/prod](dist/prod)
+- `dev` compiles from [./\_src/](_src) => **./dist/dev**
+- `prod` compiles and minifies from [./\_src/](_src) => **./dist/prod**
 - `watch` runs a watcher and runs `dev` once a change is detected.
