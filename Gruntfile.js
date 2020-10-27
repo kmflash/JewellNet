@@ -342,7 +342,7 @@ module.exports = function(grunt) {
         map: true, // inline sourcemaps
         processors: [
           require("pixrem")(), // add fallbacks for rem units
-          require("autoprefixer")({ browsers: "last 2 versions" }) // add vendor prefixes
+          require("autoprefixer")({ overrideBrowserslist: "last 2 versions" }) // add vendor prefixes
         ]
       },
       vue: {
