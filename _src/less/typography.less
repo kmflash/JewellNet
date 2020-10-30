@@ -16,13 +16,32 @@ h1 {
   font-family: @font-normal;
   font-weight: @font-normal-light;
   font-size: @h1-sm;
-  line-height: 1;
+  line-height: @h1-sm-lh;
   text-transform: uppercase;
   letter-spacing: @h1-sm-ls;
 
+  @media @xs {
+    font-size: @h1-xs;
+    line-height: @h1-xs-lh;
+    letter-spacing: 0;
+  }
+
   @media @md {
+    font-size: @h1-md;
+    line-height: @h1-md-lh;
+    letter-spacing: @h1-md-ls;
+  }
+
+  @media @lg {
     font-size: @h1-lg;
+    line-height: @h1-lg-lh;
     letter-spacing: @h1-lg-ls;
+  }
+
+  @media @xl {
+    font-size: @h1-xl;
+    line-height: @h1-xl-lh;
+    letter-spacing: @h1-xl-ls;
   }
 }
 
