@@ -11,12 +11,20 @@
 
 // Colors
 @color-brand: #ff17a2;
+@color-dark-brand: #5a0337;
 @color-black: #000;
 @color-dark-grey: #4a4a4a;
 @color-mid-grey: #7f7f7f;
 @color-light-grey: #c8c8c8;
 @color-lightest-grey: #efefef;
 @color-white: #fff;
+
+// Gradients
+@gradient-bg: linear-gradient(
+  180deg,
+  @color-dark-brand 0%,
+  @color-black 43.55%
+);
 
 // validation colors
 @color-success-bg: #eeffeb;
@@ -25,7 +33,7 @@
 @color-warning-bg: #ffd4d2;
 
 // Color applications
-@color-bg: @color-white;
+@color-bg: @gradient-bg;
 @color-highlight: @color-brand;
 @color-slideshow-bg: @color-dark-grey;
 
