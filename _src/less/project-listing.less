@@ -6,12 +6,10 @@
   margin: @listing-spacing-sm / 2 0 @listing-spacing-sm / 2;
 
   a {
-    text-decoration: none;
-    color: @color-black;
+    color: @color-white;
 
     @{no-touch} &:hover {
-      color: @color-brand;
-      text-decoration: none;
+      color: @color-black;
 
       .project-listing__img {
         background-color: @color-brand;
@@ -20,6 +18,10 @@
           filter: grayscale(100%);
           opacity: 0.4;
         }
+      }
+
+      .project-listing__title {
+        background-color: @color-brand;
       }
     }
   }
@@ -38,7 +40,8 @@
   }
 
   &__title {
-    margin-top: 7px;
+    background-color: @color-mid-brand;
+    padding: 20px 15px;
   }
 
   @media @md {

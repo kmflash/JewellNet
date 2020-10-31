@@ -189,9 +189,11 @@
     font-size: @intro-sm;
     line-height: @intro-sm-lh;
     color: @color-white;
+    margin-bottom: 30px;
 
     strong {
       font-family: @font-mono-med;
+      color: @color-brand;
     }
 
     @media @md {
@@ -201,18 +203,7 @@
     }
 
     @media @lg {
-      width: 100%;
-      margin-top: 40px;
-      font-size: @intro-lg;
-      line-height: @intro-lg-lh;
-    }
-
-    @media @xl {
-      width: 666px;
-      align-self: flex-end;
-      margin-top: 23px;
-      font-size: @intro-xl;
-      line-height: @intro-xl-lh;
+      display: none;
     }
   }
 
@@ -291,6 +282,22 @@ body.scrolled {
 
 // home page specific styles
 body#home {
+  .masthead {
+    @media @lg {
+      width: 100%;
+      margin-top: 40px;
+      font-size: @intro-lg;
+      line-height: @intro-lg-lh;
+    }
+
+    @media @xl {
+      width: 666px;
+      align-self: flex-end;
+      margin-top: 23px;
+      font-size: @intro-xl;
+      line-height: @intro-xl-lh;
+    }
+  }
   @media @xl {
     .masthead {
       &__headline {

@@ -50,7 +50,6 @@ h2 {
   font-weight: @font-normal-med;
   font-size: @h2-sm;
   line-height: 1;
-  text-transform: uppercase;
   letter-spacing: @h2-sm-ls;
 
   @media @md {
@@ -60,12 +59,12 @@ h2 {
 }
 
 .h2-wrapper {
-  border-top: solid @h2-border-height @color-black;
+  border-top: solid @h2-border-height @color-white;
   width: 100%;
   justify-self: center;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 
   h2 {
     margin: -@h2-border-height 0 0;
@@ -87,7 +86,6 @@ h2 {
 
 h3 {
   font-weight: @font-normal-med;
-  text-transform: uppercase;
   font-size: @h3;
   line-height: @h3-lh;
   letter-spacing: @h3-ls;
