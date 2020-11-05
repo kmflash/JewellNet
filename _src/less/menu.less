@@ -24,7 +24,7 @@
     }
 
     @{no-touch} &:hover {
-      background-color: @color-black;
+      background-color: @color-dark-brand;
 
       svg {
         fill: @color-white;
@@ -84,8 +84,7 @@
   }
 
   @media @md {
-    position: absolute;
-    top: 28px;
+    top: @menu-pos-md;
     left: 0;
     bottom: auto;
     right: auto;
@@ -112,6 +111,70 @@
     }
   }
 
+  @media @lg {
+    top: @tl-height * -1;
+    left: unset;
+    position: relative;
+
+    &-burger {
+      display: none;
+    }
+
+    &-list {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &-wrapper {
+      background-color: transparent;
+      width: auto;
+      height: auto !important;
+
+      ul {
+        margin: 18px 0 0 0;
+
+        @media @xl {
+          margin-top: 30px;
+        }
+      }
+
+      li {
+        display: inline-block;
+        margin: 0 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.disabled a {
+          color: @color-light-grey;
+        }
+      }
+
+      a {
+        color: @color-brand;
+        font-size: @menu-font-size-lg;
+        line-height: 1;
+
+        @{no-touch} &:hover {
+          color: @color-white;
+          border-top-color: @color-brand;
+        }
+
+        @{no-touch} &:active {
+          border-top-color: @color-white;
+        }
+
+        @media @xl {
+          font-size: @menu-font-size-xl;
+        }
+      }
+    }
+  }
+
+  @media @xl {
+    top: 0;
+  }
   &.open {
     .masthead__menu {
       &-burger {
@@ -129,60 +192,6 @@
       &-wrapper {
         @media @md {
           width: @menu-width;
-        }
-      }
-    }
-  }
-}
-
-body.scrolled {
-  .masthead {
-    &__menu {
-      @media @md {
-        top: @menu-pos-md;
-      }
-
-      @media @lg {
-        top: 0;
-        left: unset;
-        position: relative;
-
-        &-burger {
-          display: none;
-        }
-
-        &-list {
-          margin-left: 0;
-          margin-right: 0;
-        }
-
-        &-wrapper {
-          background-color: transparent;
-          width: auto;
-          height: auto !important;
-
-          li {
-            display: inline-block;
-            margin: 0 20px;
-
-            &:last-child {
-              margin-right: 0;
-            }
-
-            &.disabled a {
-              color: @color-light-grey;
-            }
-          }
-
-          a {
-            color: @color-brand;
-            font-size: @menu-font-size-lg;
-
-            @{no-touch} &:hover {
-              color: @color-black;
-              border-top-color: @color-brand;
-            }
-          }
         }
       }
     }

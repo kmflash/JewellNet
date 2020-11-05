@@ -8,7 +8,13 @@
     align-items: center;
     margin-bottom: 10px;
 
+    @media @md {
+      width: @bp-container-md;
+      margin: auto;
+    }
+
     @media @lg {
+      width: @bp-container-lg;
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -16,6 +22,7 @@
 
     @media @xl {
       align-items: flex-start;
+      width: 100%;
     }
   }
 
@@ -39,15 +46,21 @@
     }
 
     @media @md {
-      margin-bottom: 10px;
+      margin-bottom: 4px;
     }
 
     @media @lg {
+      font-size: @h1-lg;
+      line-height: @h1-lg-lh;
+      letter-spacing: @h1-lg-ls;
       width: unset;
     }
 
     @media @xl {
       flex-grow: 0;
+      font-size: @h1-xl;
+      line-height: @h1-xl-lh;
+      letter-spacing: @h1-xl-ls;
     }
 
     &-wrapper {
@@ -59,21 +72,20 @@
 
       @media @lg {
         display: flex;
-        width: 100%;
+        width: auto;
       }
 
       @media @xl {
         align-items: flex-start;
-        width: 100%;
         flex-direction: column;
       }
     }
 
     &-block {
       @media @xl {
-        width: 100%;
         display: flex;
         align-items: baseline;
+        flex-direction: column;
       }
     }
   }
@@ -123,7 +135,7 @@
     }
 
     @media @lg {
-      margin-right: 0;
+      display: none;
     }
 
     @media @xl {
@@ -207,6 +219,10 @@
     }
   }
 
+  @media @md {
+    width: 100%;
+  }
+
   @media @lg {
     width: @bp-container-lg;
     margin: auto;
@@ -215,109 +231,100 @@
 
   @media @xl {
     width: @bp-container-xl;
-    // min-height: 300px;
   }
 }
 
 // styles to apply once we've scrolled
-body.scrolled {
-  .masthead {
-    width: 100%;
-    height: 68px;
-    background-image: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0) 0%,
-      #ffffff 61%
-    );
-    border-top: solid @tl-scroll-height @color-light-grey;
+// body.scrolled {
+//   .masthead {
+//     width: 100%;
+//     height: 68px;
 
-    &__inner-wrapper {
-      @media @md {
-        width: @bp-container-md;
-        margin: auto;
-      }
+//     &__inner-wrapper {
+//       @media @md {
+//         width: @bp-container-md;
+//         margin: auto;
+//       }
 
-      @media @lg {
-        width: @bp-container-lg;
-        justify-content: space-between;
-      }
+//       @media @lg {
+//         width: @bp-container-lg;
+//         justify-content: space-between;
+//       }
 
-      @media @xl {
-        width: @bp-container-xl;
-        flex-direction: row;
-      }
-    }
+//       @media @xl {
+//         width: @bp-container-xl;
+//         flex-direction: row;
+//       }
+//     }
 
-    &__headline {
-      border-top-width: @tl-scroll-height;
-      font-size: @h1-sm-scrolled;
-      margin-top: -@tl-scroll-height;
+//     &__headline {
+//       border-top-width: @tl-scroll-height;
+//       font-size: @h1-sm-scrolled;
+//       margin-top: -@tl-scroll-height;
 
-      @media @md-only {
-        &-block {
-          text-align: center;
-        }
-      }
+//       @media @md-only {
+//         &-block {
+//           text-align: center;
+//         }
+//       }
 
-      @media @xl {
-        padding-top: 10px;
-      }
+//       @media @xl {
+//         padding-top: 10px;
+//       }
 
-      &-wrapper {
-        width: auto;
-      }
-    }
+//       &-wrapper {
+//         width: auto;
+//       }
+//     }
 
-    &__links,
-    &__aside,
-    &__intro {
-      display: none;
-    }
+//     &__links,
+//     &__aside,
+//     &__intro {
+//       display: none;
+//     }
 
-    @media @md {
-      height: auto;
-    }
-  }
-}
+//     @media @md {
+//       height: auto;
+//     }
+//   }
+// }
 
 // home page specific styles
-body#home {
-  .masthead {
-    @media @lg {
-      width: 100%;
-      margin-top: 40px;
-      font-size: @intro-lg;
-      line-height: @intro-lg-lh;
-    }
+// body#home {
+//   .masthead {
+//     @media @lg {
+//       font-size: @intro-lg;
+//       line-height: @intro-lg-lh;
+//     }
 
-    @media @xl {
-      width: 666px;
-      align-self: flex-end;
-      margin-top: 23px;
-      font-size: @intro-xl;
-      line-height: @intro-xl-lh;
-    }
-  }
-  @media @xl {
-    .masthead {
-      &__headline {
-        // padding-top: 42px;
-        flex-grow: unset;
+//     @media @xl {
+//       width: 666px;
+//       align-self: flex-end;
+//       margin-top: 23px;
+//       font-size: @intro-xl;
+//       line-height: @intro-xl-lh;
+//     }
+//   }
+//   @media @xl {
+//     .masthead {
+//       &__headline {
+//         // padding-top: 42px;
+//         flex-grow: unset;
 
-        &-wrapper {
-          width: unset;
-        }
+//         &-wrapper {
+//           width: unset;
+//         }
 
-        &-block {
-          width: unset;
-          display: inline-block;
-          align-items: unset;
-        }
-      }
+//         &-block {
+//           width: unset;
+//           display: inline-block;
+//           align-items: unset;
+//         }
+//       }
 
-      &__aside {
-        text-align-last: left;
-      }
-    }
-  }
-}
+//       &__aside {
+//         text-align-last: left;
+//       }
+//     }
+//   }
+// }
