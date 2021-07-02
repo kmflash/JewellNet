@@ -27,7 +27,7 @@
   "dependencies": {
     "autoprefixer": "^9.8.6",
     "grunt-text-replace": "^0.4.0",
-    "nodemailer": "^4.7.0",
+    "nodemailer": "^6.4.16",
     "pixrem": "^4.0.1"
   }
 }
